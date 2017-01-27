@@ -10,9 +10,6 @@ import UIKit
 
 class ViewController: UIViewController, UITextFieldDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
-    // photo overlay fields
-    
-    
     // title variables
     @IBOutlet weak var BtnTitleCheckbox: UIButton!
     @IBOutlet weak var TitleInput: UITextField!
@@ -72,7 +69,7 @@ class ViewController: UIViewController, UITextFieldDelegate, UIImagePickerContro
         LocationInput.delegate = self;
         DateInput.delegate = self;
         
-        // Date picker
+        // Date picker toolbar customization
         let toolBar = UIToolbar(frame: CGRect(x: 0, y: self.view.frame.size.height/6, width: self.view.frame.size.width, height: 40.0))
         
         toolBar.layer.position = CGPoint(x: self.view.frame.size.width/2, y: self.view.frame.size.height-20.0)
@@ -81,7 +78,7 @@ class ViewController: UIViewController, UITextFieldDelegate, UIImagePickerContro
         
         toolBar.tintColor = UIColor.white
         
-        toolBar.backgroundColor = UIColor.black
+        toolBar.backgroundColor = UIColor(red:169/255, green: 203/255, blue: 74/255, alpha: 1)
         
         
         let todayBtn = UIBarButtonItem(title: "Today", style: UIBarButtonItemStyle.plain, target: self, action: #selector(ViewController.tappedToolBarBtn))
@@ -90,23 +87,10 @@ class ViewController: UIViewController, UITextFieldDelegate, UIImagePickerContro
         
         let flexSpace = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.flexibleSpace, target: self, action: nil)
         
-        let label = UILabel(frame: CGRect(x: 0, y: 0, width: self.view.frame.size.width / 3, height: self.view.frame.size.height))
-        
-        label.font = UIFont(name: "Helvetica", size: 12)
-        
-        label.backgroundColor = UIColor.clear
-        
-        label.textColor = UIColor.white
-        
-        label.text = "Select the Date"
-        
-        label.textAlignment = NSTextAlignment.center
-        
-        let textBtn = UIBarButtonItem(customView: label)
-        
-        toolBar.setItems([todayBtn,flexSpace,textBtn,flexSpace,okBarBtn], animated: true)
+        toolBar.setItems([todayBtn,flexSpace,flexSpace,okBarBtn], animated: true)
         
         DateInput.inputAccessoryView = toolBar
+        DistanceInput.inputAccessoryView = toolBar
     }
 
     override func didReceiveMemoryWarning() {
@@ -141,12 +125,22 @@ class ViewController: UIViewController, UITextFieldDelegate, UIImagePickerContro
         
         let datePickerView: UIDatePicker = UIDatePicker()
         
-        datePickerView.datePickerMode = UIDatePickerMode.date
+        datePickerView.datePickerMode = UIDatePickerMode.dateAndTime
         
         sender.inputView = datePickerView
         
         DateInput.addTarget(self, action: #selector(ViewController.datePickerValueChanged(_:)), for: UIControlEvents.valueChanged)
         
+    }
+    
+    @IBAction func distanceFieldEditing(_ sender: UITextField) {
+        let distancePickerView: UIDatePicker = UIDatePicker()
+        
+        distancePickerView.datePickerMode = UIDatePickerMode.countDownTimer
+        
+        sender.inputView = distancePickerView
+        
+        DistanceInput.addTarget(self, action: #selector(ViewController.datePickerValueChanged(_:)), for: UIControlEvents.valueChanged)
     }
     
     func datePickerValueChanged(_ sender: UIDatePicker) {
@@ -161,6 +155,7 @@ class ViewController: UIViewController, UITextFieldDelegate, UIImagePickerContro
         
     }
 
+    // MARK: Checkboxes
     
     @IBAction func TapTitleCheckbox(_ sender: UIButton) {
         
@@ -227,9 +222,19 @@ class ViewController: UIViewController, UITextFieldDelegate, UIImagePickerContro
     }
     
     @IBAction func DateInputEdit(_ sender: UITextField) {
+        let distancePickerView:UIDatePicker = UIDatePicker()
+        
+        distancePickerView.datePickerMode = UIDatePickerMode.dateAndTime
+        
+        sender.inputView = distancePickerView
+        
+        distancePickerView.addTarget(self, action: #selector(ViewController.datePickerValueChanged(_:)), for: UIControlEvents.valueChanged)
+    }
+    
+    @IBAction func DistanceInputEdit(_ sender: UITextField) {
         let datePickerView:UIDatePicker = UIDatePicker()
         
-        datePickerView.datePickerMode = UIDatePickerMode.dateAndTime
+        datePickerView.datePickerMode = UIDatePickerMode.countDownTimer
         
         sender.inputView = datePickerView
         
