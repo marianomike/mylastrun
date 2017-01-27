@@ -36,10 +36,10 @@
                                 <rect key="frame" x="20" y="76" width="374" height="602"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Mlc-OZ-qXC">
-                                        <rect key="frame" x="0.0" y="0.0" width="374" height="633"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="374" height="445"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="25" translatesAutoresizingMaskIntoConstraints="NO" id="5KX-x3-qlR" userLabel="Stats Stack View">
-                                                <rect key="frame" x="0.0" y="0.0" width="374" height="633"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="374" height="445"/>
                                                 <subviews>
                                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" alignment="top" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="p07-Ww-E58" userLabel="Title Stack View">
                                                         <rect key="frame" x="0.0" y="0.0" width="374" height="69"/>
@@ -53,15 +53,19 @@
                                                             <stackView opaque="NO" contentMode="scaleToFill" spacing="7" translatesAutoresizingMaskIntoConstraints="NO" id="djG-op-b48" userLabel="Title Input Stack View">
                                                                 <rect key="frame" x="0.0" y="29" width="374" height="40"/>
                                                                 <subviews>
-                                                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="RUN" minimumFontSize="17" background="InputFieldBg" translatesAutoresizingMaskIntoConstraints="NO" id="Zm9-m6-8ro">
+                                                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" horizontalHuggingPriority="249" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="RUN" minimumFontSize="17" background="InputFieldBg" translatesAutoresizingMaskIntoConstraints="NO" id="Zm9-m6-8ro">
                                                                         <rect key="frame" x="0.0" y="0.0" width="327" height="40"/>
-                                                                        <color key="textColor" red="0.66131019589999995" green="0.79670530559999997" blue="0.28946194050000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                        <color key="textColor" red="0.47450980392156861" green="0.57647058823529407" blue="0.27843137254901962" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                         <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="24"/>
                                                                         <textInputTraits key="textInputTraits" autocapitalizationType="allCharacters" returnKeyType="done"/>
                                                                     </textField>
-                                                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Checked" translatesAutoresizingMaskIntoConstraints="NO" id="PtP-Pg-Zme">
+                                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EGg-bx-vHe">
                                                                         <rect key="frame" x="334" y="0.0" width="40" height="40"/>
-                                                                    </imageView>
+                                                                        <state key="normal" image="Checked"/>
+                                                                        <connections>
+                                                                            <action selector="TapTitleCheckbox:" destination="BYZ-38-t0r" eventType="touchUpInside" id="N31-JW-b5k"/>
+                                                                        </connections>
+                                                                    </button>
                                                                 </subviews>
                                                             </stackView>
                                                         </subviews>
@@ -69,172 +73,136 @@
                                                             <constraint firstAttribute="trailing" secondItem="djG-op-b48" secondAttribute="trailing" id="3K5-vM-GKt"/>
                                                         </constraints>
                                                     </stackView>
-                                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" alignment="top" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="kIn-DF-epn" userLabel="Date Stack View">
+                                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" alignment="top" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="Pd7-Bo-4vf" userLabel="Distance Stack View">
                                                         <rect key="frame" x="0.0" y="94" width="374" height="69"/>
                                                         <subviews>
-                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Date" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dHt-bS-zfP">
-                                                                <rect key="frame" x="0.0" y="0.0" width="32.333333333333336" height="19"/>
-                                                                <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="16"/>
-                                                                <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
-                                                                <nil key="highlightedColor"/>
-                                                            </label>
-                                                            <stackView opaque="NO" contentMode="scaleToFill" spacing="7" translatesAutoresizingMaskIntoConstraints="NO" id="kOR-Gj-N8L" userLabel="Title Input Stack View">
-                                                                <rect key="frame" x="0.0" y="29" width="374" height="40"/>
-                                                                <subviews>
-                                                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="January 8, 2017" minimumFontSize="17" background="InputFieldBg" translatesAutoresizingMaskIntoConstraints="NO" id="drR-Qw-ziV">
-                                                                        <rect key="frame" x="0.0" y="0.0" width="327" height="40"/>
-                                                                        <color key="textColor" red="0.66131019589999995" green="0.79670530559999997" blue="0.28946194050000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                                        <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="24"/>
-                                                                        <textInputTraits key="textInputTraits" autocapitalizationType="words" returnKeyType="done" enablesReturnKeyAutomatically="YES"/>
-                                                                    </textField>
-                                                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Checked" translatesAutoresizingMaskIntoConstraints="NO" id="096-b6-oI2">
-                                                                        <rect key="frame" x="334" y="0.0" width="40" height="40"/>
-                                                                    </imageView>
-                                                                </subviews>
-                                                            </stackView>
-                                                        </subviews>
-                                                        <constraints>
-                                                            <constraint firstAttribute="trailing" secondItem="kOR-Gj-N8L" secondAttribute="trailing" id="I12-2Z-N3C"/>
-                                                        </constraints>
-                                                    </stackView>
-                                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" alignment="top" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="EON-Ir-hA6" userLabel="Time Stack View">
-                                                        <rect key="frame" x="0.0" y="188" width="374" height="69"/>
-                                                        <subviews>
-                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Time" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ObC-Id-BdH">
-                                                                <rect key="frame" x="0.0" y="0.0" width="34" height="19"/>
-                                                                <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="16"/>
-                                                                <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
-                                                                <nil key="highlightedColor"/>
-                                                            </label>
-                                                            <stackView opaque="NO" contentMode="scaleToFill" spacing="7" translatesAutoresizingMaskIntoConstraints="NO" id="RoX-MR-dCs" userLabel="Title Input Stack View">
-                                                                <rect key="frame" x="0.0" y="29" width="374" height="40"/>
-                                                                <subviews>
-                                                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="8:45 am" minimumFontSize="17" background="InputFieldBg" translatesAutoresizingMaskIntoConstraints="NO" id="SDT-hB-a4j">
-                                                                        <rect key="frame" x="0.0" y="0.0" width="327" height="40"/>
-                                                                        <color key="textColor" red="0.66131019589999995" green="0.79670530559999997" blue="0.28946194050000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                                        <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="24"/>
-                                                                        <textInputTraits key="textInputTraits" autocapitalizationType="allCharacters" keyboardType="numbersAndPunctuation" returnKeyType="done"/>
-                                                                    </textField>
-                                                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Checked" translatesAutoresizingMaskIntoConstraints="NO" id="HXM-UJ-SMY">
-                                                                        <rect key="frame" x="334" y="0.0" width="40" height="40"/>
-                                                                    </imageView>
-                                                                </subviews>
-                                                            </stackView>
-                                                        </subviews>
-                                                        <constraints>
-                                                            <constraint firstAttribute="trailing" secondItem="RoX-MR-dCs" secondAttribute="trailing" id="6ix-Ki-Eh1"/>
-                                                        </constraints>
-                                                    </stackView>
-                                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" alignment="top" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="dVc-3B-Cph" userLabel="Title Stack View">
-                                                        <rect key="frame" x="0.0" y="282" width="374" height="69"/>
-                                                        <subviews>
-                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Distance" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MB5-Aj-o4B">
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Distance" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="961-x5-LDJ" userLabel="Distance">
                                                                 <rect key="frame" x="0.0" y="0.0" width="60" height="19"/>
                                                                 <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="16"/>
                                                                 <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
-                                                            <stackView opaque="NO" contentMode="scaleToFill" spacing="7" translatesAutoresizingMaskIntoConstraints="NO" id="Gpa-3i-dkb" userLabel="Title Input Stack View">
+                                                            <stackView opaque="NO" contentMode="scaleToFill" spacing="7" translatesAutoresizingMaskIntoConstraints="NO" id="zhb-wW-gX1" userLabel="Distance Input Stack View">
                                                                 <rect key="frame" x="0.0" y="29" width="374" height="40"/>
                                                                 <subviews>
-                                                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="26.2" minimumFontSize="17" background="InputFieldBg" translatesAutoresizingMaskIntoConstraints="NO" id="1cz-j8-BAs">
+                                                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" horizontalHuggingPriority="249" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="26.2" minimumFontSize="17" background="InputFieldBg" translatesAutoresizingMaskIntoConstraints="NO" id="WJn-Ze-kSo">
                                                                         <rect key="frame" x="0.0" y="0.0" width="327" height="40"/>
-                                                                        <color key="textColor" red="0.66131019589999995" green="0.79670530559999997" blue="0.28946194050000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                        <color key="textColor" red="0.47450980390000003" green="0.57647058819999997" blue="0.2784313725" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                         <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="24"/>
-                                                                        <textInputTraits key="textInputTraits" autocapitalizationType="allCharacters" keyboardType="numbersAndPunctuation" returnKeyType="done"/>
+                                                                        <textInputTraits key="textInputTraits" keyboardType="numbersAndPunctuation" returnKeyType="done"/>
                                                                     </textField>
-                                                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Checked" translatesAutoresizingMaskIntoConstraints="NO" id="RIv-2t-Ya6">
+                                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mxb-Pm-ucg">
                                                                         <rect key="frame" x="334" y="0.0" width="40" height="40"/>
-                                                                    </imageView>
+                                                                        <state key="normal" image="Checked"/>
+                                                                        <connections>
+                                                                            <action selector="TapDistanceCheckbox:" destination="BYZ-38-t0r" eventType="touchUpInside" id="etE-xK-uuO"/>
+                                                                        </connections>
+                                                                    </button>
                                                                 </subviews>
                                                             </stackView>
                                                         </subviews>
                                                         <constraints>
-                                                            <constraint firstAttribute="trailing" secondItem="Gpa-3i-dkb" secondAttribute="trailing" id="CRl-7A-Zcy"/>
+                                                            <constraint firstAttribute="trailing" secondItem="zhb-wW-gX1" secondAttribute="trailing" id="Bhy-97-Yi9"/>
                                                         </constraints>
                                                     </stackView>
-                                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" alignment="top" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="s7O-zw-sxc" userLabel="Title Stack View">
-                                                        <rect key="frame" x="0.0" y="376" width="374" height="69"/>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" alignment="top" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="ZDd-Su-9O1" userLabel="Time Stack View">
+                                                        <rect key="frame" x="0.0" y="188" width="374" height="69"/>
                                                         <subviews>
-                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Location" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="F5v-ZP-8cE">
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Time" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4OQ-Wn-iuh" userLabel="Time">
+                                                                <rect key="frame" x="0.0" y="0.0" width="34" height="19"/>
+                                                                <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="16"/>
+                                                                <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                            <stackView opaque="NO" contentMode="scaleToFill" spacing="7" translatesAutoresizingMaskIntoConstraints="NO" id="jBc-Qs-cfd" userLabel="Time Input Stack View">
+                                                                <rect key="frame" x="0.0" y="29" width="374" height="40"/>
+                                                                <subviews>
+                                                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" horizontalHuggingPriority="249" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="4:00:00" minimumFontSize="17" background="InputFieldBg" translatesAutoresizingMaskIntoConstraints="NO" id="bda-ng-J0N">
+                                                                        <rect key="frame" x="0.0" y="0.0" width="327" height="40"/>
+                                                                        <color key="textColor" red="0.47450980390000003" green="0.57647058819999997" blue="0.2784313725" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                        <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="24"/>
+                                                                        <textInputTraits key="textInputTraits" keyboardType="numbersAndPunctuation" returnKeyType="done"/>
+                                                                    </textField>
+                                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="65B-tw-e9k">
+                                                                        <rect key="frame" x="334" y="0.0" width="40" height="40"/>
+                                                                        <state key="normal" image="Checked"/>
+                                                                        <connections>
+                                                                            <action selector="TapTimeCheckbox:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Iqb-pv-6AS"/>
+                                                                        </connections>
+                                                                    </button>
+                                                                </subviews>
+                                                            </stackView>
+                                                        </subviews>
+                                                        <constraints>
+                                                            <constraint firstAttribute="trailing" secondItem="jBc-Qs-cfd" secondAttribute="trailing" id="30e-fO-4ag"/>
+                                                        </constraints>
+                                                    </stackView>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" alignment="top" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="w0O-79-KdO" userLabel="Location Stack View">
+                                                        <rect key="frame" x="0.0" y="282" width="374" height="69"/>
+                                                        <subviews>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Location" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9J6-w3-QEd" userLabel="Location">
                                                                 <rect key="frame" x="0.0" y="0.0" width="59.333333333333329" height="19"/>
                                                                 <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="16"/>
                                                                 <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
-                                                            <stackView opaque="NO" contentMode="scaleToFill" spacing="7" translatesAutoresizingMaskIntoConstraints="NO" id="LUt-jX-WYc" userLabel="Title Input Stack View">
+                                                            <stackView opaque="NO" contentMode="scaleToFill" spacing="7" translatesAutoresizingMaskIntoConstraints="NO" id="xeI-7F-mXG" userLabel="Location Input Stack View">
                                                                 <rect key="frame" x="0.0" y="29" width="374" height="40"/>
                                                                 <subviews>
-                                                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Fremont, CA" minimumFontSize="17" background="InputFieldBg" translatesAutoresizingMaskIntoConstraints="NO" id="U1S-zt-Rq1">
+                                                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" horizontalHuggingPriority="249" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Fremont, CA" minimumFontSize="17" background="InputFieldBg" translatesAutoresizingMaskIntoConstraints="NO" id="vSa-Si-9Oh">
                                                                         <rect key="frame" x="0.0" y="0.0" width="327" height="40"/>
-                                                                        <color key="textColor" red="0.66131019589999995" green="0.79670530559999997" blue="0.28946194050000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                        <color key="textColor" red="0.47450980390000003" green="0.57647058819999997" blue="0.2784313725" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                         <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="24"/>
-                                                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences" returnKeyType="done"/>
+                                                                        <textInputTraits key="textInputTraits" returnKeyType="done"/>
                                                                     </textField>
-                                                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Checked" translatesAutoresizingMaskIntoConstraints="NO" id="V6h-PB-8do">
+                                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Nmf-E9-ix9">
                                                                         <rect key="frame" x="334" y="0.0" width="40" height="40"/>
-                                                                    </imageView>
+                                                                        <state key="normal" image="Checked"/>
+                                                                        <connections>
+                                                                            <action selector="TapLocationCheckbox:" destination="BYZ-38-t0r" eventType="touchUpInside" id="bRf-UD-eYS"/>
+                                                                        </connections>
+                                                                    </button>
                                                                 </subviews>
                                                             </stackView>
                                                         </subviews>
                                                         <constraints>
-                                                            <constraint firstAttribute="trailing" secondItem="LUt-jX-WYc" secondAttribute="trailing" id="4jm-1J-ns4"/>
+                                                            <constraint firstAttribute="trailing" secondItem="xeI-7F-mXG" secondAttribute="trailing" id="83i-Uy-B96"/>
                                                         </constraints>
                                                     </stackView>
-                                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" alignment="top" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="DcH-nZ-4rh" userLabel="Title Stack View">
-                                                        <rect key="frame" x="0.0" y="470" width="374" height="69"/>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" alignment="top" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="1fp-G4-R0U" userLabel="Date Stack View">
+                                                        <rect key="frame" x="0.0" y="376" width="374" height="69"/>
                                                         <subviews>
-                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Temperature" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xOM-ew-Pui">
-                                                                <rect key="frame" x="0.0" y="0.0" width="86" height="19"/>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Date" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7zY-Cg-PXp" userLabel="Date">
+                                                                <rect key="frame" x="0.0" y="0.0" width="32.333333333333336" height="19"/>
                                                                 <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="16"/>
                                                                 <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
-                                                            <stackView opaque="NO" contentMode="scaleToFill" spacing="7" translatesAutoresizingMaskIntoConstraints="NO" id="7yS-FD-uSx" userLabel="Title Input Stack View">
+                                                            <stackView opaque="NO" contentMode="scaleToFill" spacing="7" translatesAutoresizingMaskIntoConstraints="NO" id="E45-Ir-FLv" userLabel="Date Input Stack View">
                                                                 <rect key="frame" x="0.0" y="29" width="374" height="40"/>
                                                                 <subviews>
-                                                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="95" minimumFontSize="17" background="InputFieldBg" translatesAutoresizingMaskIntoConstraints="NO" id="GbO-pR-ddg">
+                                                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" horizontalHuggingPriority="249" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="January 31, 2017" minimumFontSize="17" background="InputFieldBg" translatesAutoresizingMaskIntoConstraints="NO" id="NEk-Df-gvO">
                                                                         <rect key="frame" x="0.0" y="0.0" width="327" height="40"/>
-                                                                        <color key="textColor" red="0.66131019589999995" green="0.79670530559999997" blue="0.28946194050000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                        <color key="textColor" red="0.47450980390000003" green="0.57647058819999997" blue="0.2784313725" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                         <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="24"/>
-                                                                        <textInputTraits key="textInputTraits" keyboardType="numbersAndPunctuation" returnKeyType="done"/>
+                                                                        <textInputTraits key="textInputTraits" returnKeyType="done"/>
+                                                                        <connections>
+                                                                            <action selector="DateInputEdit:" destination="BYZ-38-t0r" eventType="editingDidEnd" id="L5i-qp-OUr"/>
+                                                                            <action selector="textFieldEditing:" destination="BYZ-38-t0r" eventType="editingDidEnd" id="aiR-9S-dSb"/>
+                                                                        </connections>
                                                                     </textField>
-                                                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Checked" translatesAutoresizingMaskIntoConstraints="NO" id="Sno-Bj-ngi">
+                                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LAY-xC-Rjl">
                                                                         <rect key="frame" x="334" y="0.0" width="40" height="40"/>
-                                                                    </imageView>
+                                                                        <state key="normal" image="Checked"/>
+                                                                        <connections>
+                                                                            <action selector="DateLocationCheckbox:" destination="BYZ-38-t0r" eventType="touchUpInside" id="jfI-rV-a4S"/>
+                                                                        </connections>
+                                                                    </button>
                                                                 </subviews>
                                                             </stackView>
                                                         </subviews>
                                                         <constraints>
-                                                            <constraint firstAttribute="trailing" secondItem="7yS-FD-uSx" secondAttribute="trailing" id="EgP-Zu-bpO"/>
-                                                        </constraints>
-                                                    </stackView>
-                                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" alignment="top" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="rJU-OU-nF2" userLabel="Title Stack View">
-                                                        <rect key="frame" x="0.0" y="564" width="374" height="69"/>
-                                                        <subviews>
-                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Weather" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mhj-mk-dS2">
-                                                                <rect key="frame" x="0.0" y="0.0" width="57.666666666666671" height="19"/>
-                                                                <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="16"/>
-                                                                <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
-                                                                <nil key="highlightedColor"/>
-                                                            </label>
-                                                            <stackView opaque="NO" contentMode="scaleToFill" spacing="7" translatesAutoresizingMaskIntoConstraints="NO" id="1SG-2R-Wgl" userLabel="Title Input Stack View">
-                                                                <rect key="frame" x="0.0" y="29" width="374" height="40"/>
-                                                                <subviews>
-                                                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="HOT" minimumFontSize="17" background="InputFieldBg" translatesAutoresizingMaskIntoConstraints="NO" id="qMM-g8-bSR">
-                                                                        <rect key="frame" x="0.0" y="0.0" width="327" height="40"/>
-                                                                        <color key="textColor" red="0.66131019589999995" green="0.79670530559999997" blue="0.28946194050000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                                        <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="24"/>
-                                                                        <textInputTraits key="textInputTraits" autocapitalizationType="allCharacters" returnKeyType="done"/>
-                                                                    </textField>
-                                                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Checked" translatesAutoresizingMaskIntoConstraints="NO" id="Fl4-gK-Vpb">
-                                                                        <rect key="frame" x="334" y="0.0" width="40" height="40"/>
-                                                                    </imageView>
-                                                                </subviews>
-                                                            </stackView>
-                                                        </subviews>
-                                                        <constraints>
-                                                            <constraint firstAttribute="trailing" secondItem="1SG-2R-Wgl" secondAttribute="trailing" id="bJG-3b-zgG"/>
+                                                            <constraint firstAttribute="trailing" secondItem="E45-Ir-FLv" secondAttribute="trailing" id="AXl-DF-hH6"/>
                                                         </constraints>
                                                     </stackView>
                                                 </subviews>
@@ -287,15 +255,27 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="KVa-LU-qTq"/>
+                    <connections>
+                        <outlet property="BtnDateCheckbox" destination="LAY-xC-Rjl" id="wmR-li-Url"/>
+                        <outlet property="BtnDistanceCheckbox" destination="mxb-Pm-ucg" id="IRp-BQ-hYI"/>
+                        <outlet property="BtnLocationCheckbox" destination="Nmf-E9-ix9" id="4k7-mI-vlV"/>
+                        <outlet property="BtnTimeCheckbox" destination="65B-tw-e9k" id="jaV-ks-nRx"/>
+                        <outlet property="BtnTitleCheckbox" destination="EGg-bx-vHe" id="IDf-7o-zzW"/>
+                        <outlet property="DateInput" destination="NEk-Df-gvO" id="9su-M6-H7Q"/>
+                        <outlet property="DistanceInput" destination="WJn-Ze-kSo" id="jlU-Dv-e9U"/>
+                        <outlet property="LocationInput" destination="vSa-Si-9Oh" id="f9V-A6-iW0"/>
+                        <outlet property="TimeInput" destination="bda-ng-J0N" id="WdL-xA-yjo"/>
+                        <outlet property="TitleInput" destination="Zm9-m6-8ro" id="SH4-6t-kUj"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="919.20000000000005" y="122.78860569715144"/>
+            <point key="canvasLocation" x="918.84057971014499" y="122.28260869565219"/>
         </scene>
-        <!--View Controller-->
+        <!--Photo Picker View Controller-->
         <scene sceneID="ZHc-PX-Z1D">
             <objects>
-                <viewController id="Uq2-wN-0xa" sceneMemberID="viewController">
+                <viewController id="Uq2-wN-0xa" customClass="PhotoPickerViewController" customModule="My_Last_Run" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="wcq-z0-mKp"/>
                         <viewControllerLayoutGuide type="bottom" id="7Yd-6w-hmP"/>
@@ -357,6 +337,13 @@
                                     <color key="titleColor" red="0.69803921570000005" green="0.82172495130000001" blue="0.32741087679999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                             </button>
+                            <textField opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="TITLE" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="my5-v9-val">
+                                <rect key="frame" x="77" y="219" width="260" height="110"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="60"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -379,35 +366,20 @@
                             <constraint firstItem="3Nh-1d-Hho" firstAttribute="leading" secondItem="cAg-1d-rvw" secondAttribute="leadingMargin" constant="70" id="w2e-JP-sac"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="PhotoTitle" destination="my5-v9-val" id="ey7-KM-ldX"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cO9-U4-MVH" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1720.8" y="121.88905547226388"/>
-        </scene>
-        <!--View Controller-->
-        <scene sceneID="YmD-LO-Lxy">
-            <objects>
-                <viewController id="e3n-Of-7Fm" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="63w-so-Jlw"/>
-                        <viewControllerLayoutGuide type="bottom" id="33j-nV-QkZ"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="fmM-VC-rba">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="3Na-ar-Ivr" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="2439" y="122"/>
+            <point key="canvasLocation" x="1720.289855072464" y="121.46739130434784"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="rpe-6U-3t5">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" navigationBarHidden="YES" id="LSZ-5p-ToD" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="wQ8-hg-xht">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="wQ8-hg-xht">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>

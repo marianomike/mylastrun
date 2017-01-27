@@ -13,6 +13,8 @@
 		7A3307801E387FBB00BC47BA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7A33077F1E387FBB00BC47BA /* Assets.xcassets */; };
 		7A3307831E387FBB00BC47BA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7A3307811E387FBB00BC47BA /* LaunchScreen.storyboard */; };
 		7A33078E1E387FBB00BC47BA /* MyLastRunTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A33078D1E387FBB00BC47BA /* MyLastRunTests.swift */; };
+		7A4AD4B71E3B339100A79076 /* aqua.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7A4AD4B61E3B339100A79076 /* aqua.ttf */; };
+		7A4AD4B91E3B362B00A79076 /* PhotoPickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A4AD4B81E3B362B00A79076 /* PhotoPickerViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,6 +38,8 @@
 		7A3307891E387FBB00BC47BA /* My Last RunTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "My Last RunTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		7A33078D1E387FBB00BC47BA /* MyLastRunTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyLastRunTests.swift; sourceTree = "<group>"; };
 		7A33078F1E387FBB00BC47BA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7A4AD4B61E3B339100A79076 /* aqua.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = aqua.ttf; path = ../../../../Downloads/aqua.ttf; sourceTree = "<group>"; };
+		7A4AD4B81E3B362B00A79076 /* PhotoPickerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotoPickerViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -80,6 +84,8 @@
 				7A3307781E387FBB00BC47BA /* AppDelegate.swift */,
 				7A33077A1E387FBB00BC47BA /* ViewController.swift */,
 				7A33077C1E387FBB00BC47BA /* Main.storyboard */,
+				7A4AD4B81E3B362B00A79076 /* PhotoPickerViewController.swift */,
+				7A4AD4B61E3B339100A79076 /* aqua.ttf */,
 				7A33077F1E387FBB00BC47BA /* Assets.xcassets */,
 				7A3307811E387FBB00BC47BA /* LaunchScreen.storyboard */,
 				7A3307841E387FBB00BC47BA /* Info.plist */,
@@ -181,6 +187,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7A4AD4B71E3B339100A79076 /* aqua.ttf in Resources */,
 				7A3307831E387FBB00BC47BA /* LaunchScreen.storyboard in Resources */,
 				7A3307801E387FBB00BC47BA /* Assets.xcassets in Resources */,
 				7A33077E1E387FBB00BC47BA /* Main.storyboard in Resources */,
@@ -203,6 +210,7 @@
 			files = (
 				7A33077B1E387FBB00BC47BA /* ViewController.swift in Sources */,
 				7A3307791E387FBB00BC47BA /* AppDelegate.swift in Sources */,
+				7A4AD4B91E3B362B00A79076 /* PhotoPickerViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
