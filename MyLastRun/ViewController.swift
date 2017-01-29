@@ -10,6 +10,8 @@ import UIKit
 
 class ViewController: UIViewController, UITextFieldDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
+    @IBOutlet weak var BtnNext: UIBarButtonItem!
+    
     // title variables
     @IBOutlet weak var BtnTitleCheckbox: UIButton!
     @IBOutlet weak var TitleInput: UITextField!
@@ -54,6 +56,7 @@ class ViewController: UIViewController, UITextFieldDelegate, UIImagePickerContro
         super.viewDidLoad()
         
         // Do any additional setup after loading the view, typically from a nib.
+        navigationItem.title = "STATS"
         
         // Initialize variables
         titleIsChecked = true
@@ -257,6 +260,15 @@ class ViewController: UIViewController, UITextFieldDelegate, UIImagePickerContro
         
     }
     
+    @IBAction func unwindToStats(segue: UIStoryboardSegue) {}
+    
+    // pass the value of the input throught the segue
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "showPicChooser" {
+            let picChooserViewController = segue.destination as? PhotoPickerViewController
+            picChooserViewController?.userTitleText = TitleInput.text
+        }
+    }
     
 
 }

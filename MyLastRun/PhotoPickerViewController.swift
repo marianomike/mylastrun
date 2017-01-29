@@ -9,22 +9,32 @@
 import UIKit
 
 class PhotoPickerViewController: UIViewController {
-
+    
+    // reference the new text field
     @IBOutlet weak var PhotoTitle: UITextField!
     
-    var statsViewController: ViewController?
+    // create variable for new text field to display
+    var userTitleText:String! = ""
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        PhotoTitle.text = statsViewController?.TitleInput.text
-
         // Do any additional setup after loading the view.
+        navigationItem.title = "PICTURE"
+        navigationItem.leftBarButtonItem = nil;
+        //navigationItem.hidesBackButton = b;
+        
+        PhotoTitle.text = userTitleText
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    
+    @IBAction func backToStats(_ sender: UIBarButtonItem) {
+        self.performSegue(withIdentifier: "unwindToStats", sender: self)
     }
     
 
