@@ -15,14 +15,14 @@ class PhotoPickerViewController: UIViewController {
     
     // create variable for new text field to display
     var userTitleText:String! = ""
+    var navigationBarAppearace = UINavigationBar.appearance()
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-        navigationItem.title = "PICTURE"
-        navigationItem.leftBarButtonItem = nil;
-        //navigationItem.hidesBackButton = b;
+        navigationItem.title = "CHOOSE PICTURE"
+        navigationItem.hidesBackButton = true
         
         PhotoTitle.text = userTitleText
     }

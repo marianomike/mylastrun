@@ -56,7 +56,7 @@ class ViewController: UIViewController, UITextFieldDelegate, UIImagePickerContro
         super.viewDidLoad()
         
         // Do any additional setup after loading the view, typically from a nib.
-        navigationItem.title = "STATS"
+        navigationItem.title = "ENTER STATS"
         
         // Initialize variables
         titleIsChecked = true
