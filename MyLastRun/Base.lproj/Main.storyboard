@@ -292,7 +292,7 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zRe-0x-Eu5">
                                 <rect key="frame" x="0.0" y="64" width="414" height="414"/>
                                 <subviews>
-                                    <imageView opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="temp_image2" translatesAutoresizingMaskIntoConstraints="NO" id="PoA-bH-1FE" userLabel="image">
+                                    <imageView opaque="NO" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="temp_image2" translatesAutoresizingMaskIntoConstraints="NO" id="PoA-bH-1FE" userLabel="image">
                                         <rect key="frame" x="0.0" y="0.0" width="414" height="414"/>
                                     </imageView>
                                     <textField opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.5" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="RUN" textAlignment="center" minimumFontSize="30" translatesAutoresizingMaskIntoConstraints="NO" id="my5-v9-val">
@@ -478,7 +478,11 @@
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rsJ-CI-vvI">
                                                         <rect key="frame" x="105" y="0.0" width="85" height="85"/>
+                                                        <gestureRecognizers/>
                                                         <state key="normal" image="BtnCamera"/>
+                                                        <connections>
+                                                            <action selector="openCameraButtonWithSender:" destination="Uq2-wN-0xa" eventType="touchUpInside" id="YM3-rs-e3f"/>
+                                                        </connections>
                                                     </button>
                                                 </subviews>
                                             </stackView>

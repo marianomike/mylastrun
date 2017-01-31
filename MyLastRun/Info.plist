@@ -48,5 +48,7 @@
 	</array>
 	<key>NSPhotoLibraryUsageDescription</key>
 	<string>Allows you to add your own photos</string>
+	<key>NSCameraUsageDescription</key>
+	<string>Allows you to take your own photos</string>
 </dict>
 </plist>
