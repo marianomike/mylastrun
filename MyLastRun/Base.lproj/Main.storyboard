@@ -30,8 +30,8 @@
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QaI-sI-jHt">
                                 <rect key="frame" x="20" y="76" width="374" height="602"/>
                                 <subviews>
-                                    <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Mlc-OZ-qXC">
-                                        <rect key="frame" x="0.0" y="-64" width="374" height="602"/>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Mlc-OZ-qXC">
+                                        <rect key="frame" x="0.0" y="0.0" width="374" height="445"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="25" translatesAutoresizingMaskIntoConstraints="NO" id="5KX-x3-qlR" userLabel="Stats Stack View">
                                                 <rect key="frame" x="0.0" y="0.0" width="374" height="445"/>
@@ -214,6 +214,11 @@
                                                         </constraints>
                                                     </stackView>
                                                 </subviews>
+                                                <constraints>
+                                                    <constraint firstItem="ZDd-Su-9O1" firstAttribute="centerY" secondItem="5KX-x3-qlR" secondAttribute="centerY" id="8e9-aT-9fJ"/>
+                                                    <constraint firstItem="1fp-G4-R0U" firstAttribute="top" secondItem="5KX-x3-qlR" secondAttribute="top" constant="376" id="clp-Wu-sPk"/>
+                                                    <constraint firstItem="Pd7-Bo-4vf" firstAttribute="top" secondItem="5KX-x3-qlR" secondAttribute="top" constant="94" id="wf3-6F-j1m"/>
+                                                </constraints>
                                             </stackView>
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -228,11 +233,14 @@
                                     </view>
                                 </subviews>
                                 <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="Mlc-OZ-qXC" secondAttribute="bottom" id="DeC-Ap-LQg"/>
+                                    <constraint firstItem="Mlc-OZ-qXC" firstAttribute="top" secondItem="QaI-sI-jHt" secondAttribute="top" id="GDP-6f-OjM"/>
                                     <constraint firstItem="Mlc-OZ-qXC" firstAttribute="leading" secondItem="QaI-sI-jHt" secondAttribute="leading" id="J2y-Q7-22L"/>
+                                    <constraint firstItem="Mlc-OZ-qXC" firstAttribute="leading" secondItem="QaI-sI-jHt" secondAttribute="leading" id="J9e-iD-aYO"/>
                                     <constraint firstAttribute="trailing" secondItem="Mlc-OZ-qXC" secondAttribute="trailing" id="MP3-QP-kKo"/>
                                     <constraint firstItem="Mlc-OZ-qXC" firstAttribute="width" secondItem="QaI-sI-jHt" secondAttribute="width" id="VTv-We-l72"/>
                                     <constraint firstItem="Mlc-OZ-qXC" firstAttribute="top" secondItem="QaI-sI-jHt" secondAttribute="top" id="lmq-z2-fpr"/>
-                                    <constraint firstAttribute="bottom" secondItem="Mlc-OZ-qXC" secondAttribute="bottom" constant="157" id="zGJ-kt-r7w"/>
+                                    <constraint firstAttribute="trailing" secondItem="Mlc-OZ-qXC" secondAttribute="trailing" id="pNr-cy-fNz"/>
                                 </constraints>
                             </scrollView>
                             <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="a9d-uN-Z45">
@@ -250,13 +258,13 @@
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="QaI-sI-jHt" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="AZG-ly-jFo"/>
-                            <constraint firstItem="QaI-sI-jHt" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="IAb-yX-1sr"/>
+                            <constraint firstItem="QaI-sI-jHt" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="I8J-S5-Ck1"/>
+                            <constraint firstItem="QaI-sI-jHt" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="12" id="QvF-qw-I74"/>
                             <constraint firstItem="a9d-uN-Z45" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="XkK-cA-LM2"/>
                             <constraint firstItem="a9d-uN-Z45" firstAttribute="top" secondItem="QaI-sI-jHt" secondAttribute="bottom" constant="14" id="XrK-bt-rp5"/>
+                            <constraint firstItem="QaI-sI-jHt" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="eWN-mS-TUK"/>
                             <constraint firstAttribute="bottom" secondItem="QaI-sI-jHt" secondAttribute="bottom" constant="58" id="mMz-Oa-3BF"/>
-                            <constraint firstItem="QaI-sI-jHt" firstAttribute="centerX" secondItem="a9d-uN-Z45" secondAttribute="centerX" id="oQL-hu-25n"/>
-                            <constraint firstItem="QaI-sI-jHt" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="12" id="qos-Q1-NOO"/>
+                            <constraint firstItem="QaI-sI-jHt" firstAttribute="centerX" secondItem="a9d-uN-Z45" secondAttribute="centerX" id="uJ4-Ev-M3x"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="KVa-LU-qTq"/>
@@ -294,8 +302,9 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zRe-0x-Eu5">
                                 <rect key="frame" x="0.0" y="64" width="414" height="414"/>
                                 <subviews>
-                                    <imageView opaque="NO" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="temp_image2" translatesAutoresizingMaskIntoConstraints="NO" id="PoA-bH-1FE" userLabel="image">
+                                    <imageView opaque="NO" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="PoA-bH-1FE" userLabel="image">
                                         <rect key="frame" x="0.0" y="0.0" width="414" height="414"/>
+                                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                     </imageView>
                                     <textField opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.5" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="RUN" textAlignment="center" minimumFontSize="30" translatesAutoresizingMaskIntoConstraints="NO" id="my5-v9-val">
                                         <rect key="frame" x="24" y="98" width="364" height="216"/>
@@ -535,7 +544,7 @@
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="LSZ-5p-ToD" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="wQ8-hg-xht">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="wQ8-hg-xht">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -557,6 +566,5 @@
         <image name="IconSunny" width="49" height="49"/>
         <image name="IconTimer" width="25" height="29"/>
         <image name="Vignette" width="375" height="375"/>
-        <image name="temp_image2" width="375" height="375"/>
     </resources>
 </document>

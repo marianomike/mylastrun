@@ -80,6 +80,7 @@ class ViewController: UIViewController, UITextFieldDelegate, UIImagePickerContro
         
         // Do any additional setup after loading the view, typically from a nib.
         navigationItem.title = "ENTER STATS"
+        navigationController?.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName: UIColor(red: 169/255, green: 203/255, blue: 74/255, alpha: 1.0)]
         
         // Initialize variables
         titleIsChecked = true
