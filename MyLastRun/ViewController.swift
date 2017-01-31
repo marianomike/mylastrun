@@ -8,9 +8,11 @@
 
 import UIKit
 
-class ViewController: UIViewController, UITextFieldDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+class ViewController: UIViewController, UITextFieldDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate, UIPickerViewDataSource, UIPickerViewDelegate {
     
     @IBOutlet weak var BtnNext: UIBarButtonItem!
+    @IBOutlet weak var MetricsInput: UITextField!
+    
     
     // title variables
     @IBOutlet weak var BtnTitleCheckbox: UIButton!
@@ -39,6 +41,11 @@ class ViewController: UIViewController, UITextFieldDelegate, UIImagePickerContro
     var locationIsChecked: Bool!
     var dateIsChecked: Bool!
     
+    var picker = UIPickerView()
+    
+    // time picker
+    var metricsOptions = ["M", "KM"]
+    
     // checkbox variables
     var checkbox = UIImage(named: "Checked")
     var unCheckbox = UIImage(named: "Unchecked")
@@ -66,6 +73,10 @@ class ViewController: UIViewController, UITextFieldDelegate, UIImagePickerContro
             }
         }
  */
+        picker.delegate = self
+        picker.dataSource = self
+        MetricsInput.inputView = picker
+        MetricsInput.tintColor = UIColor.clear
         
         // Do any additional setup after loading the view, typically from a nib.
         navigationItem.title = "ENTER STATS"
@@ -106,6 +117,7 @@ class ViewController: UIViewController, UITextFieldDelegate, UIImagePickerContro
         
         DateInput.inputAccessoryView = toolBar
         DistanceInput.inputAccessoryView = toolBar
+        MetricsInput.inputAccessoryView = toolBar
     }
 
     override func didReceiveMemoryWarning() {
@@ -116,6 +128,8 @@ class ViewController: UIViewController, UITextFieldDelegate, UIImagePickerContro
     func donePressed(_ sender: UIBarButtonItem) {
         
         DateInput.resignFirstResponder()
+        DistanceInput.resignFirstResponder()
+        MetricsInput.resignFirstResponder()
         
     }
     
@@ -123,9 +137,9 @@ class ViewController: UIViewController, UITextFieldDelegate, UIImagePickerContro
         
         let dateformatter = DateFormatter()
         
-        dateformatter.dateStyle = DateFormatter.Style.medium
+        dateformatter.dateStyle = DateFormatter.Style.full
         
-        dateformatter.timeStyle = DateFormatter.Style.none
+        dateformatter.timeStyle = DateFormatter.Style.full
         
         DateInput.text = dateformatter.string(from: Date())
         
@@ -164,7 +178,7 @@ class ViewController: UIViewController, UITextFieldDelegate, UIImagePickerContro
         
         dateFormatter.dateStyle = DateFormatter.Style.full
         
-        dateFormatter.timeStyle = DateFormatter.Style.none
+        dateFormatter.timeStyle = DateFormatter.Style.full
         
         DateInput.text = dateFormatter.string(from: sender.date)
         
@@ -280,6 +294,22 @@ class ViewController: UIViewController, UITextFieldDelegate, UIImagePickerContro
             let picChooserViewController = segue.destination as? PhotoPickerViewController
             picChooserViewController?.userTitleText = TitleInput.text
         }
+    }
+    
+    func numberOfComponents(in pickerView: UIPickerView) -> Int {
+        return 1
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        return metricsOptions.count
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        MetricsInput.text = metricsOptions[row]
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        return metricsOptions[row]
     }
     
 
