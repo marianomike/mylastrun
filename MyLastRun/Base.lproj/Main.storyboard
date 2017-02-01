@@ -84,11 +84,7 @@
                                                                         <rect key="frame" x="0.0" y="0.0" width="220" height="40"/>
                                                                         <color key="textColor" red="0.47450980390000003" green="0.57647058819999997" blue="0.2784313725" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                         <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="24"/>
-                                                                        <textInputTraits key="textInputTraits" keyboardType="numbersAndPunctuation" returnKeyType="done"/>
-                                                                        <connections>
-                                                                            <action selector="DistanceInputEdit:" destination="BYZ-38-t0r" eventType="touchUpInside" id="KPC-Tb-DQX"/>
-                                                                            <action selector="distanceFieldEditing:" destination="BYZ-38-t0r" eventType="editingDidEnd" id="eWp-bf-gUT"/>
-                                                                        </connections>
+                                                                        <textInputTraits key="textInputTraits" keyboardType="decimalPad" returnKeyType="done"/>
                                                                     </textField>
                                                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="M" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="E2h-wa-wqh">
                                                                         <rect key="frame" x="227" y="0.0" width="100" height="40"/>
@@ -302,7 +298,7 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zRe-0x-Eu5">
                                 <rect key="frame" x="0.0" y="64" width="414" height="414"/>
                                 <subviews>
-                                    <imageView opaque="NO" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="PoA-bH-1FE" userLabel="image">
+                                    <imageView opaque="NO" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="PoA-bH-1FE" userLabel="image">
                                         <rect key="frame" x="0.0" y="0.0" width="414" height="414"/>
                                         <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                     </imageView>

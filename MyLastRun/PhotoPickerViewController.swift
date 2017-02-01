@@ -39,7 +39,7 @@ class PhotoPickerViewController: UIViewController, UIImagePickerControllerDelega
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
         // The info dictionary may contain multiple representations of the image. You want to use the original.
-        guard let selectedImage = info[UIImagePickerControllerOriginalImage] as? UIImage else {
+        guard let selectedImage = info[UIImagePickerControllerEditedImage] as? UIImage else {
             fatalError("Expected a dictionary containing an image, but was provided the following: \(info)")
         }
         
@@ -52,14 +52,12 @@ class PhotoPickerViewController: UIViewController, UIImagePickerControllerDelega
     
     @IBAction func seletImageFromPhotoLibrary(_ sender: UITapGestureRecognizer) {
         // UIImagePickerController is a view controller that lets a user pick media from their photo library.
-        let imagePickerController = UIImagePickerController()
+        let image = UIImagePickerController()
+        image.delegate = self
+        image.sourceType = UIImagePickerControllerSourceType.photoLibrary
+        image.allowsEditing = true //or true additional setup required.
         
-        // Only allow photos to be picked, not taken.
-        imagePickerController.sourceType = .photoLibrary
-        
-        // Make sure ViewController is notified when the user picks an image.
-        imagePickerController.delegate = self
-        present(imagePickerController, animated: true, completion: nil)
+        self.present(image, animated: true, completion: nil)
     }
     
 
@@ -78,7 +76,7 @@ class PhotoPickerViewController: UIViewController, UIImagePickerControllerDelega
             let imagePicker = UIImagePickerController()
             imagePicker.delegate = self
             imagePicker.sourceType = UIImagePickerControllerSourceType.camera;
-            imagePicker.allowsEditing = false
+            imagePicker.allowsEditing = true
             self.present(imagePicker, animated: true, completion: nil)
         }
     }
