@@ -15,9 +15,15 @@ class PhotoPickerViewController: UIViewController, UIImagePickerControllerDelega
     
     // reference the new text field
     @IBOutlet weak var PhotoTitle: UITextField!
+    @IBOutlet weak var PhotoDistance: UITextField!
+    @IBOutlet weak var PhotoLocation: UITextField!
     
     // create variable for new text field to display
     var userTitleText:String! = ""
+    var userDistanceText:String! = ""
+    var userDistanceChoice:String! = ""
+    var userLocationText:String! = ""
+    
     var navigationBarAppearace = UINavigationBar.appearance()
     
     
@@ -28,6 +34,8 @@ class PhotoPickerViewController: UIViewController, UIImagePickerControllerDelega
         navigationItem.hidesBackButton = true
         
         PhotoTitle.text = userTitleText
+        PhotoDistance.text = userDistanceText + " " + userDistanceChoice
+        PhotoLocation.text = userLocationText
     }
     
     

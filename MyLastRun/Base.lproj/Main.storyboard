@@ -520,6 +520,8 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="PhotoDistance" destination="w9i-YU-lxW" id="2CD-OY-HR1"/>
+                        <outlet property="PhotoLocation" destination="mG2-ZO-Ccd" id="kY0-sO-GnR"/>
                         <outlet property="PhotoTitle" destination="my5-v9-val" id="ey7-KM-ldX"/>
                         <outlet property="photoImageView" destination="PoA-bH-1FE" id="2PF-HD-nHc"/>
                         <segue destination="OnX-Ea-q1E" kind="unwind" identifier="unwindToStats" unwindAction="unwindToStatsWithSegue:" id="Rjm-tl-sHX"/>

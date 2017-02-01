@@ -297,6 +297,17 @@ class ViewController: UIViewController, UITextFieldDelegate, UIImagePickerContro
         if segue.identifier == "showPicChooser" {
             let picChooserViewController = segue.destination as? PhotoPickerViewController
             picChooserViewController?.userTitleText = TitleInput.text
+            
+            var userDistanceChoice = MetricsInput.text
+            if(userDistanceChoice == "M"){
+                userDistanceChoice = "Miles"
+            }else if (userDistanceChoice == "KM"){
+                userDistanceChoice = "Kilometers"
+            }
+            
+            picChooserViewController?.userDistanceText = DistanceInput.text
+            picChooserViewController?.userDistanceChoice = userDistanceChoice
+            picChooserViewController?.userLocationText = LocationInput.text
         }
     }
     
