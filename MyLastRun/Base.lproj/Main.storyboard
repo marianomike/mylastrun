@@ -310,6 +310,11 @@
                                         <fontDescription key="fontDescription" name="AquaGrotesque" family="Aqua Grotesque" pointSize="125"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
+                                    <imageView opaque="NO" userInteractionEnabled="NO" alpha="0.80000001192092896" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="wTs-hc-O0e" userLabel="Cover">
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="414"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <gestureRecognizers/>
+                                    </imageView>
                                     <imageView opaque="NO" userInteractionEnabled="NO" alpha="0.80000000000000004" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Vignette" translatesAutoresizingMaskIntoConstraints="NO" id="CGB-Y2-ww1">
                                         <rect key="frame" x="0.0" y="0.0" width="414" height="414"/>
                                         <gestureRecognizers/>
@@ -332,7 +337,7 @@
                                                             <constraint firstAttribute="width" constant="20" id="G2H-MC-o7T"/>
                                                         </constraints>
                                                     </imageView>
-                                                    <textField opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="2:26:53" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="7gG-8Q-OYA">
+                                                    <textField opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="28.59" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="7gG-8Q-OYA">
                                                         <rect key="frame" x="28" y="0.0" width="80" height="20"/>
                                                         <constraints>
                                                             <constraint firstAttribute="width" constant="80" id="V3d-a1-vFB"/>
@@ -361,19 +366,19 @@
                                         </constraints>
                                     </stackView>
                                     <stackView opaque="NO" alpha="0.90000000000000002" contentMode="scaleToFill" axis="vertical" alignment="bottom" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="PEc-ET-7nm">
-                                        <rect key="frame" x="51" y="8" width="355" height="55"/>
+                                        <rect key="frame" x="51" y="8" width="355" height="68"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" spacing="6" translatesAutoresizingMaskIntoConstraints="NO" id="PZC-RE-fuz">
-                                                <rect key="frame" x="0.0" y="0.0" width="355" height="35"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="355" height="48"/>
                                                 <subviews>
                                                     <textField opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="60°" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="9sl-8Z-3Lc">
-                                                        <rect key="frame" x="0.0" y="0.0" width="314" height="35"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="314" height="48"/>
                                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                                        <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="36"/>
+                                                        <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="40"/>
                                                         <textInputTraits key="textInputTraits"/>
                                                     </textField>
                                                     <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="IconLightClouds" translatesAutoresizingMaskIntoConstraints="NO" id="1dB-O0-27c">
-                                                        <rect key="frame" x="320" y="0.0" width="35" height="35"/>
+                                                        <rect key="frame" x="320" y="0.0" width="35" height="48"/>
                                                         <constraints>
                                                             <constraint firstAttribute="width" constant="35" id="Kb0-O3-XFM"/>
                                                         </constraints>
@@ -381,7 +386,7 @@
                                                 </subviews>
                                             </stackView>
                                             <textField opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="FREMONT, CA" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="mG2-ZO-Ccd">
-                                                <rect key="frame" x="257" y="37" width="98" height="18"/>
+                                                <rect key="frame" x="257" y="50" width="98" height="18"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="15"/>
                                                 <textInputTraits key="textInputTraits"/>
@@ -428,7 +433,6 @@
                                     <constraint firstItem="CGB-Y2-ww1" firstAttribute="leading" secondItem="PoA-bH-1FE" secondAttribute="leading" id="DDB-Sd-Vym"/>
                                     <constraint firstItem="8vD-Nm-XBs" firstAttribute="leading" secondItem="zRe-0x-Eu5" secondAttribute="leadingMargin" id="KEc-pC-J8r"/>
                                     <constraint firstItem="my5-v9-val" firstAttribute="top" secondItem="zRe-0x-Eu5" secondAttribute="top" constant="98" id="LAl-bq-bgZ"/>
-                                    <constraint firstItem="my5-v9-val" firstAttribute="top" secondItem="PEc-ET-7nm" secondAttribute="bottom" constant="35" id="Ldw-py-6nX"/>
                                     <constraint firstItem="PEc-ET-7nm" firstAttribute="trailing" secondItem="mRQ-jt-mfH" secondAttribute="trailing" id="P4Y-mO-tMJ"/>
                                     <constraint firstItem="mRQ-jt-mfH" firstAttribute="top" secondItem="my5-v9-val" secondAttribute="bottom" constant="19" id="QPQ-Rs-Kff"/>
                                     <constraint firstAttribute="trailing" secondItem="PoA-bH-1FE" secondAttribute="trailing" id="XUm-SO-Vvr"/>

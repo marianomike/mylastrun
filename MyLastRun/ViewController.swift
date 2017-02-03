@@ -115,6 +115,38 @@ class ViewController: UIViewController, UITextFieldDelegate, UIImagePickerContro
         currentDateFormatter.dateStyle = DateFormatter.Style.medium
         currentDateFormatter.timeStyle = DateFormatter.Style.short
         DateInput.text = currentDateFormatter.string(from: currentDate)
+        
+        let monthFormatter = DateFormatter()
+        monthFormatter.dateFormat = "MMM"
+        let convertedMonth: String  = monthFormatter.string(from: currentDate)
+        dateMonth = convertedMonth
+        
+        let dayFormatter = DateFormatter()
+        dayFormatter.dateFormat = "d"
+        let convertedDay: String  = dayFormatter.string(from: currentDate)
+        dateDay = convertedDay
+        
+        let yearFormatter = DateFormatter()
+        yearFormatter.dateFormat = "yyyy"
+        let convertedYear: String  = yearFormatter.string(from: currentDate)
+        dateYear = convertedYear
+        
+        
+        let hourFormatter = DateFormatter()
+        hourFormatter.dateFormat = "h"
+        let convertedHour: String  = hourFormatter.string(from: currentDate)
+        dateHour = convertedHour
+        
+        let minuteFormatter = DateFormatter()
+        minuteFormatter.dateFormat = "m"
+        let convertedMinute: String  = minuteFormatter.string(from: currentDate)
+        dateMinutes = convertedMinute
+        
+        let timePeriodFormatter = DateFormatter()
+        timePeriodFormatter.dateFormat = "a"
+        let convertedTimePeriod: String  = timePeriodFormatter.string(from: currentDate)
+        dateTimePeriod = convertedTimePeriod
+        
         DateInput.tintColor = UIColor.clear
         
         
@@ -156,6 +188,7 @@ class ViewController: UIViewController, UITextFieldDelegate, UIImagePickerContro
         toolBarToday.setItems([todayBtn,flexSpace,flexSpace,okBarBtn], animated: true)
         
         DateInput.inputView = datePicker
+        datePicker.addTarget(self, action: #selector(ViewController.datePickerValueChanged(_:)), for: UIControlEvents.valueChanged)
         datePicker.setDate(currentDate, animated: true)
         DateInput.inputAccessoryView = toolBarToday
         DistanceInput.inputAccessoryView = toolBar
