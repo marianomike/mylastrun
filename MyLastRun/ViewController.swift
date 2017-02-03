@@ -52,12 +52,14 @@ class ViewController: UIViewController, UITextFieldDelegate, UIImagePickerContro
     
     var picker = UIPickerView()
     var datePicker = UIDatePicker()
+    var timePicker = UIPickerView()
     
-    // time picker
+    // metrics picker
     var metricsOptions = ["M", "KM"]
     
-    var hourOptions = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23", "24"]
-    var minuteOptions = ["00", "01", "02", "03", "04", "05", "06", "07", "08", "09", "10", "11", "12", "13"]
+    var hours  = Array (0...23)
+    var minutes = Array(0...59)
+    var seconds = Array(0...59)
     
     // checkbox variables
     var checkbox = UIImage(named: "Checked")
@@ -76,18 +78,17 @@ class ViewController: UIViewController, UITextFieldDelegate, UIImagePickerContro
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        /*
-        for family: String in UIFont.familyNames
-        {
-            print("\(family)")
-            for names: String in UIFont.fontNames(forFamilyName: family)
-            {
-                print("== \(names)")
-            }
-        }
- */
         picker.delegate = self
         picker.dataSource = self
+        picker.tag = 1;
+        
+        timePicker.delegate = self
+        timePicker.delegate = self
+        timePicker.tag = 2;
+        
+        TimeInput.inputView = timePicker
+        TimeInput.tintColor = UIColor.clear
+        
         MetricsInput.inputView = picker
         MetricsInput.tintColor = UIColor.clear
         
@@ -193,6 +194,7 @@ class ViewController: UIViewController, UITextFieldDelegate, UIImagePickerContro
         DateInput.inputAccessoryView = toolBarToday
         DistanceInput.inputAccessoryView = toolBar
         MetricsInput.inputAccessoryView = toolBar
+        TimeInput.inputAccessoryView = toolBar
     }
 
     override func didReceiveMemoryWarning() {
@@ -205,6 +207,7 @@ class ViewController: UIViewController, UITextFieldDelegate, UIImagePickerContro
         DateInput.resignFirstResponder()
         DistanceInput.resignFirstResponder()
         MetricsInput.resignFirstResponder()
+        TimeInput.resignFirstResponder()
         
     }
     
@@ -411,19 +414,67 @@ class ViewController: UIViewController, UITextFieldDelegate, UIImagePickerContro
     }
     
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
-        return 1
+        
+        var rowNumber = 0
+        
+        if (pickerView.tag == 1){
+            rowNumber = 1
+        }else if (pickerView.tag == 2){
+            rowNumber = 3
+        }
+        
+        return rowNumber
     }
     
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-        return metricsOptions.count
+        
+        var componentNumber = 0
+        
+        if (pickerView.tag == 1){
+            componentNumber = metricsOptions.count
+        }else if (pickerView.tag == 2){
+            //var row = pickerView.selectedRow(inComponent: 0)
+            //println("this is the pickerView\(row)")
+            
+            if (component == 0) {
+                componentNumber = hours.count
+            } else if (component == 1) {
+                componentNumber = minutes.count
+            } else if (component == 2) {
+                componentNumber = seconds.count
+            }
+        }
+        
+        return componentNumber
+        
     }
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-        MetricsInput.text = metricsOptions[row]
+        if (pickerView.tag == 1){
+            MetricsInput.text = metricsOptions[row]
+        }else if (pickerView.tag == 2){
+            //return 3
+        }
+        
     }
     
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        return metricsOptions[row]
+        
+        var rowTitle = ""
+        
+        if (pickerView.tag == 1){
+            rowTitle = metricsOptions[row]
+        }else if (pickerView.tag == 2){
+            if (component == 0) {
+                rowTitle = String(hours[row]) + "h"
+            } else if (component == 1) {
+                rowTitle = String(minutes[row]) + "m"
+            } else if (component == 2) {
+                rowTitle = String(seconds[row]) + "s"
+            }
+        }
+        
+        return rowTitle
     }
     
 
