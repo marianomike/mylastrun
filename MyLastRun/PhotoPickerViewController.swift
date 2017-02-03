@@ -17,12 +17,19 @@ class PhotoPickerViewController: UIViewController, UIImagePickerControllerDelega
     @IBOutlet weak var PhotoTitle: UITextField!
     @IBOutlet weak var PhotoDistance: UITextField!
     @IBOutlet weak var PhotoLocation: UITextField!
+    @IBOutlet weak var PhotoMonth: UITextField!
+    @IBOutlet weak var PhotoDay: UITextField!
+    @IBOutlet weak var PhotoYear: UITextField!
     
     // create variable for new text field to display
     var userTitleText:String! = ""
     var userDistanceText:String! = ""
     var userDistanceChoice:String! = ""
     var userLocationText:String! = ""
+    var userDate:String! = ""
+    var userMonth:String! = ""
+    var userDay:String! = ""
+    var userYear:String! = ""
     
     var navigationBarAppearace = UINavigationBar.appearance()
     
@@ -36,6 +43,9 @@ class PhotoPickerViewController: UIViewController, UIImagePickerControllerDelega
         PhotoTitle.text = userTitleText
         PhotoDistance.text = userDistanceText + " " + userDistanceChoice
         PhotoLocation.text = userLocationText
+        PhotoDay.text = userDay
+        PhotoMonth.text = userMonth
+        PhotoYear.text = userYear
     }
     
     

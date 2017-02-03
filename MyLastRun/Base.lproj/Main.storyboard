@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16C67" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="LSZ-5p-ToD">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="LSZ-5p-ToD">
     <device id="retina5_5" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -185,14 +185,13 @@
                                                             <stackView opaque="NO" contentMode="scaleToFill" spacing="7" translatesAutoresizingMaskIntoConstraints="NO" id="E45-Ir-FLv" userLabel="Date Input Stack View">
                                                                 <rect key="frame" x="0.0" y="29" width="374" height="40"/>
                                                                 <subviews>
-                                                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" horizontalHuggingPriority="249" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Jan 31, 2017 5:40 PM" borderStyle="roundedRect" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="NEk-Df-gvO">
+                                                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" horizontalHuggingPriority="249" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Jan 31, 2017 5:40 PM" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="NEk-Df-gvO">
                                                                         <rect key="frame" x="0.0" y="0.0" width="327" height="40"/>
                                                                         <color key="textColor" red="0.47450980390000003" green="0.57647058819999997" blue="0.2784313725" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                         <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="24"/>
                                                                         <textInputTraits key="textInputTraits" returnKeyType="done"/>
                                                                         <connections>
                                                                             <action selector="DateInputEdit:" destination="BYZ-38-t0r" eventType="editingDidEnd" id="L5i-qp-OUr"/>
-                                                                            <action selector="textFieldEditing:" destination="BYZ-38-t0r" eventType="editingDidEnd" id="aiR-9S-dSb"/>
                                                                         </connections>
                                                                     </textField>
                                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LAY-xC-Rjl">
@@ -348,7 +347,7 @@
                                                             <constraint firstAttribute="width" constant="18" id="PAn-qI-BAW"/>
                                                         </constraints>
                                                     </imageView>
-                                                    <textField opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="9'15&quot;" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="adH-OU-Lll">
+                                                    <textField opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="8'44&quot;" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="adH-OU-Lll">
                                                         <rect key="frame" x="142" y="0.0" width="256" height="20"/>
                                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                         <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="18"/>
@@ -367,13 +366,13 @@
                                             <stackView opaque="NO" contentMode="scaleToFill" spacing="6" translatesAutoresizingMaskIntoConstraints="NO" id="PZC-RE-fuz">
                                                 <rect key="frame" x="0.0" y="0.0" width="355" height="35"/>
                                                 <subviews>
-                                                    <textField opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="48°" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="9sl-8Z-3Lc">
+                                                    <textField opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="60°" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="9sl-8Z-3Lc">
                                                         <rect key="frame" x="0.0" y="0.0" width="314" height="35"/>
                                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                         <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="36"/>
                                                         <textInputTraits key="textInputTraits"/>
                                                     </textField>
-                                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="IconSunny" translatesAutoresizingMaskIntoConstraints="NO" id="1dB-O0-27c">
+                                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="IconLightClouds" translatesAutoresizingMaskIntoConstraints="NO" id="1dB-O0-27c">
                                                         <rect key="frame" x="320" y="0.0" width="35" height="35"/>
                                                         <constraints>
                                                             <constraint firstAttribute="width" constant="35" id="Kb0-O3-XFM"/>
@@ -520,9 +519,12 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="PhotoDay" destination="7GR-zd-a1k" id="JNV-h9-DWp"/>
                         <outlet property="PhotoDistance" destination="w9i-YU-lxW" id="2CD-OY-HR1"/>
                         <outlet property="PhotoLocation" destination="mG2-ZO-Ccd" id="kY0-sO-GnR"/>
+                        <outlet property="PhotoMonth" destination="6nY-ms-wMO" id="YDz-O6-fnh"/>
                         <outlet property="PhotoTitle" destination="my5-v9-val" id="ey7-KM-ldX"/>
+                        <outlet property="PhotoYear" destination="ANd-0N-dA2" id="rWj-YP-Ynj"/>
                         <outlet property="photoImageView" destination="PoA-bH-1FE" id="2PF-HD-nHc"/>
                         <segue destination="OnX-Ea-q1E" kind="unwind" identifier="unwindToStats" unwindAction="unwindToStatsWithSegue:" id="Rjm-tl-sHX"/>
                     </connections>
@@ -561,7 +563,7 @@
         <image name="BtnPhotos" width="85" height="85"/>
         <image name="Checked" width="40" height="40"/>
         <image name="IconClock-1" width="25" height="25"/>
-        <image name="IconSunny" width="49" height="49"/>
+        <image name="IconLightClouds" width="49" height="43"/>
         <image name="IconTimer" width="25" height="29"/>
         <image name="Vignette" width="375" height="375"/>
     </resources>

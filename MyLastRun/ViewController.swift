@@ -41,7 +41,17 @@ class ViewController: UIViewController, UITextFieldDelegate, UIImagePickerContro
     var locationIsChecked: Bool!
     var dateIsChecked: Bool!
     
+    // date
+    var dateMonth: String!
+    var dateDay: String!
+    var dateYear: String!
+    var dateHour: String!
+    var dateMinutes: String!
+    var dateSeconds: String!
+    var dateTimePeriod: String!
+    
     var picker = UIPickerView()
+    var datePicker = UIDatePicker()
     
     // time picker
     var metricsOptions = ["M", "KM"]
@@ -99,6 +109,15 @@ class ViewController: UIViewController, UITextFieldDelegate, UIImagePickerContro
         LocationInput.delegate = self;
         DateInput.delegate = self;
         
+        // populate date input with today's date
+        let currentDate = Date()
+        let currentDateFormatter = DateFormatter()
+        currentDateFormatter.dateStyle = DateFormatter.Style.medium
+        currentDateFormatter.timeStyle = DateFormatter.Style.short
+        DateInput.text = currentDateFormatter.string(from: currentDate)
+        DateInput.tintColor = UIColor.clear
+        
+        
         // Date picker toolbar customization
         let toolBar = UIToolbar(frame: CGRect(x: 0, y: self.view.frame.size.height/6, width: self.view.frame.size.width, height: 40.0))
         
@@ -117,9 +136,28 @@ class ViewController: UIViewController, UITextFieldDelegate, UIImagePickerContro
         
         let flexSpace = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.flexibleSpace, target: self, action: nil)
         
-        toolBar.setItems([todayBtn,flexSpace,flexSpace,okBarBtn], animated: true)
+        let doneBtn = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.done, target: self, action: #selector(ViewController.donePressed))
         
-        DateInput.inputAccessoryView = toolBar
+        let spaceBtn = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.flexibleSpace, target: self, action: nil)
+        
+        toolBar.setItems([spaceBtn,doneBtn], animated: true)
+        
+        // Date picker toolbar customization
+        let toolBarToday = UIToolbar(frame: CGRect(x: 0, y: self.view.frame.size.height/6, width: self.view.frame.size.width, height: 40.0))
+        
+        toolBarToday.layer.position = CGPoint(x: self.view.frame.size.width/2, y: self.view.frame.size.height-20.0)
+        
+        toolBarToday.barStyle = UIBarStyle.blackTranslucent
+        
+        toolBarToday.tintColor = UIColor.white
+        
+        toolBarToday.backgroundColor = UIColor(red:169/255, green: 203/255, blue: 74/255, alpha: 1)
+        
+        toolBarToday.setItems([todayBtn,flexSpace,flexSpace,okBarBtn], animated: true)
+        
+        DateInput.inputView = datePicker
+        datePicker.setDate(currentDate, animated: true)
+        DateInput.inputAccessoryView = toolBarToday
         DistanceInput.inputAccessoryView = toolBar
         MetricsInput.inputAccessoryView = toolBar
     }
@@ -139,13 +177,38 @@ class ViewController: UIViewController, UITextFieldDelegate, UIImagePickerContro
     
     func tappedToolBarBtn(_ sender: UIBarButtonItem) {
         
-        let dateformatter = DateFormatter()
+        let monthFormatter = DateFormatter()
+        monthFormatter.dateFormat = "MMM"
+        let convertedMonth: String  = monthFormatter.string(from: Date())
+        dateMonth = convertedMonth
         
-        dateformatter.dateStyle = DateFormatter.Style.full
+        let dayFormatter = DateFormatter()
+        dayFormatter.dateFormat = "d"
+        let convertedDay: String  = dayFormatter.string(from: Date())
+        dateDay = convertedDay
         
-        dateformatter.timeStyle = DateFormatter.Style.full
+        let yearFormatter = DateFormatter()
+        yearFormatter.dateFormat = "yyyy"
+        let convertedYear: String  = yearFormatter.string(from: Date())
+        dateYear = convertedYear
         
-        DateInput.text = dateformatter.string(from: Date())
+        
+        let hourFormatter = DateFormatter()
+        hourFormatter.dateFormat = "h"
+        let convertedHour: String  = hourFormatter.string(from: Date())
+        dateHour = convertedHour
+        
+        let minuteFormatter = DateFormatter()
+        minuteFormatter.dateFormat = "mm"
+        let convertedMinute: String  = minuteFormatter.string(from: Date())
+        dateMinutes = convertedMinute
+        
+        let timePeriodFormatter = DateFormatter()
+        timePeriodFormatter.dateFormat = "a"
+        let convertedTimePeriod: String  = timePeriodFormatter.string(from: Date())
+        dateTimePeriod = convertedTimePeriod
+        
+        DateInput.text = dateMonth + " " + dateDay + ", " + dateYear + ", " + dateHour + ":" + dateMinutes + " " + dateTimePeriod
         
         DateInput.resignFirstResponder()
     }
@@ -154,37 +217,46 @@ class ViewController: UIViewController, UITextFieldDelegate, UIImagePickerContro
         self.view.endEditing(true)
     }
     
-    @IBAction func textFieldEditing(_ sender: UITextField) {
-        
-        let datePickerView: UIDatePicker = UIDatePicker()
-        
-        datePickerView.datePickerMode = UIDatePickerMode.dateAndTime
-        
-        sender.inputView = datePickerView
-        
-        DateInput.addTarget(self, action: #selector(ViewController.datePickerValueChanged(_:)), for: UIControlEvents.valueChanged)
-        
-    }
-    
-    @IBAction func distanceFieldEditing(_ sender: UITextField) {
-        let distancePickerView: UIDatePicker = UIDatePicker()
-        
-        distancePickerView.datePickerMode = UIDatePickerMode.countDownTimer
-        
-        sender.inputView = distancePickerView
-        
-        DistanceInput.addTarget(self, action: #selector(ViewController.datePickerValueChanged(_:)), for: UIControlEvents.valueChanged)
-    }
     
     func datePickerValueChanged(_ sender: UIDatePicker) {
         
         let dateFormatter = DateFormatter()
-        
-        dateFormatter.dateStyle = DateFormatter.Style.full
-        
-        dateFormatter.timeStyle = DateFormatter.Style.full
+        dateFormatter.dateStyle = DateFormatter.Style.medium
+        dateFormatter.timeStyle = DateFormatter.Style.short
         
         DateInput.text = dateFormatter.string(from: sender.date)
+        
+        
+        let monthFormatter = DateFormatter()
+        monthFormatter.dateFormat = "MMM"
+        let convertedMonth: String  = monthFormatter.string(from: sender.date)
+        dateMonth = convertedMonth
+        
+        let dayFormatter = DateFormatter()
+        dayFormatter.dateFormat = "d"
+        let convertedDay: String  = dayFormatter.string(from: sender.date)
+        dateDay = convertedDay
+        
+        let yearFormatter = DateFormatter()
+        yearFormatter.dateFormat = "yyyy"
+        let convertedYear: String  = yearFormatter.string(from: sender.date)
+        dateYear = convertedYear
+        
+        
+        let hourFormatter = DateFormatter()
+        hourFormatter.dateFormat = "h"
+        let convertedHour: String  = hourFormatter.string(from: sender.date)
+        dateHour = convertedHour
+        
+        let minuteFormatter = DateFormatter()
+        minuteFormatter.dateFormat = "m"
+        let convertedMinute: String  = minuteFormatter.string(from: sender.date)
+        dateMinutes = convertedMinute
+        
+        let timePeriodFormatter = DateFormatter()
+        timePeriodFormatter.dateFormat = "a"
+        let convertedTimePeriod: String  = timePeriodFormatter.string(from: sender.date)
+        dateTimePeriod = convertedTimePeriod
         
     }
 
@@ -255,24 +327,15 @@ class ViewController: UIViewController, UITextFieldDelegate, UIImagePickerContro
     }
     
     @IBAction func DateInputEdit(_ sender: UITextField) {
-        let distancePickerView:UIDatePicker = UIDatePicker()
-        
-        distancePickerView.datePickerMode = UIDatePickerMode.dateAndTime
-        
-        sender.inputView = distancePickerView
-        
-        distancePickerView.addTarget(self, action: #selector(ViewController.datePickerValueChanged(_:)), for: UIControlEvents.valueChanged)
-    }
-    
-    @IBAction func DistanceInputEdit(_ sender: UITextField) {
         let datePickerView:UIDatePicker = UIDatePicker()
         
-        datePickerView.datePickerMode = UIDatePickerMode.countDownTimer
+        datePickerView.datePickerMode = UIDatePickerMode.dateAndTime
         
         sender.inputView = datePickerView
         
         datePickerView.addTarget(self, action: #selector(ViewController.datePickerValueChanged(_:)), for: UIControlEvents.valueChanged)
     }
+    
     
     @IBAction func DateLocationCheckbox(_ sender: UIButton) {
         
@@ -308,6 +371,9 @@ class ViewController: UIViewController, UITextFieldDelegate, UIImagePickerContro
             picChooserViewController?.userDistanceText = DistanceInput.text
             picChooserViewController?.userDistanceChoice = userDistanceChoice
             picChooserViewController?.userLocationText = LocationInput.text
+            picChooserViewController?.userDay = dateDay
+            picChooserViewController?.userMonth = dateMonth
+            picChooserViewController?.userYear = dateYear
         }
     }
     
