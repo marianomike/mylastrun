@@ -13,7 +13,6 @@ class ViewController: UIViewController, UITextFieldDelegate, UIImagePickerContro
     @IBOutlet weak var BtnNext: UIBarButtonItem!
     @IBOutlet weak var MetricsInput: UITextField!
     
-    
     // title variables
     @IBOutlet weak var BtnTitleCheckbox: UIButton!
     @IBOutlet weak var TitleInput: UITextField!
@@ -50,13 +49,13 @@ class ViewController: UIViewController, UITextFieldDelegate, UIImagePickerContro
     var dateSeconds: String!
     var dateTimePeriod: String!
     
+    // pickers
     var picker = UIPickerView()
     var datePicker = UIDatePicker()
     var timePicker = UIPickerView()
     
-    // metrics picker
+    // picker options
     var metricsOptions = ["M", "KM"]
-    
     var hours  = Array (0...23)
     var minutes = Array(0...59)
     var seconds = Array(0...59)
@@ -64,7 +63,6 @@ class ViewController: UIViewController, UITextFieldDelegate, UIImagePickerContro
     // checkbox variables
     var checkbox = UIImage(named: "Checked")
     var unCheckbox = UIImage(named: "Unchecked")
-    
     
     //MARK: UITextFieldDelegate
     
@@ -76,25 +74,18 @@ class ViewController: UIViewController, UITextFieldDelegate, UIImagePickerContro
     
 
     override func viewDidLoad() {
+        
         super.viewDidLoad()
         
-        picker.delegate = self
-        picker.dataSource = self
-        picker.tag = 1;
-        
-        timePicker.delegate = self
-        timePicker.delegate = self
-        timePicker.tag = 2;
-        
-        TimeInput.inputView = timePicker
-        TimeInput.tintColor = UIColor.clear
-        
-        MetricsInput.inputView = picker
-        MetricsInput.tintColor = UIColor.clear
-        
-        // Do any additional setup after loading the view, typically from a nib.
+        // title bar
         navigationItem.title = "ENTER STATS"
         navigationController?.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName: UIColor(red: 169/255, green: 203/255, blue: 74/255, alpha: 1.0)]
+        
+        // get today's date
+        let currentDate = Date()
+        let currentDateFormatter = DateFormatter()
+        currentDateFormatter.dateStyle = DateFormatter.Style.medium
+        currentDateFormatter.timeStyle = DateFormatter.Style.short
         
         // Initialize variables
         titleIsChecked = true
@@ -109,14 +100,30 @@ class ViewController: UIViewController, UITextFieldDelegate, UIImagePickerContro
         TimeInput.delegate = self;
         LocationInput.delegate = self;
         DateInput.delegate = self;
+        picker.delegate = self
+        picker.dataSource = self
+        timePicker.delegate = self
+        timePicker.delegate = self
         
-        // populate date input with today's date
-        let currentDate = Date()
-        let currentDateFormatter = DateFormatter()
-        currentDateFormatter.dateStyle = DateFormatter.Style.medium
-        currentDateFormatter.timeStyle = DateFormatter.Style.short
+        // Assign Tags to pickers
+        picker.tag = 1;
+        timePicker.tag = 2;
+        
+        // Set which picker which input should use and hide the cursor
+        TimeInput.inputView = timePicker
+        TimeInput.tintColor = UIColor.clear
+        
+        MetricsInput.inputView = picker
+        MetricsInput.tintColor = UIColor.clear
+        
+        DateInput.inputView = datePicker
+        DateInput.tintColor = UIColor.clear
+        
+        // Set input date to current date
         DateInput.text = currentDateFormatter.string(from: currentDate)
         
+        // Assign current date to variables
+        // TO DO: Make a function out of the below
         let monthFormatter = DateFormatter()
         monthFormatter.dateFormat = "MMM"
         let convertedMonth: String  = monthFormatter.string(from: currentDate)
@@ -131,7 +138,6 @@ class ViewController: UIViewController, UITextFieldDelegate, UIImagePickerContro
         yearFormatter.dateFormat = "yyyy"
         let convertedYear: String  = yearFormatter.string(from: currentDate)
         dateYear = convertedYear
-        
         
         let hourFormatter = DateFormatter()
         hourFormatter.dateFormat = "h"
@@ -148,10 +154,11 @@ class ViewController: UIViewController, UITextFieldDelegate, UIImagePickerContro
         let convertedTimePeriod: String  = timePeriodFormatter.string(from: currentDate)
         dateTimePeriod = convertedTimePeriod
         
-        DateInput.tintColor = UIColor.clear
+        // set the date picker to today's date by default
+        datePicker.addTarget(self, action: #selector(ViewController.datePickerValueChanged(_:)), for: UIControlEvents.valueChanged)
+        datePicker.setDate(currentDate, animated: true)
         
-        
-        // Date picker toolbar customization
+        // Create tool bar for picker without Today button
         let toolBar = UIToolbar(frame: CGRect(x: 0, y: self.view.frame.size.height/6, width: self.view.frame.size.width, height: 40.0))
         
         toolBar.layer.position = CGPoint(x: self.view.frame.size.width/2, y: self.view.frame.size.height-20.0)
@@ -175,7 +182,7 @@ class ViewController: UIViewController, UITextFieldDelegate, UIImagePickerContro
         
         toolBar.setItems([spaceBtn,doneBtn], animated: true)
         
-        // Date picker toolbar customization
+        // Create tool bar for picker with Today button
         let toolBarToday = UIToolbar(frame: CGRect(x: 0, y: self.view.frame.size.height/6, width: self.view.frame.size.width, height: 40.0))
         
         toolBarToday.layer.position = CGPoint(x: self.view.frame.size.width/2, y: self.view.frame.size.height-20.0)
@@ -188,9 +195,7 @@ class ViewController: UIViewController, UITextFieldDelegate, UIImagePickerContro
         
         toolBarToday.setItems([todayBtn,flexSpace,flexSpace,okBarBtn], animated: true)
         
-        DateInput.inputView = datePicker
-        datePicker.addTarget(self, action: #selector(ViewController.datePickerValueChanged(_:)), for: UIControlEvents.valueChanged)
-        datePicker.setDate(currentDate, animated: true)
+        // Assign Toolbars to pickers
         DateInput.inputAccessoryView = toolBarToday
         DistanceInput.inputAccessoryView = toolBar
         MetricsInput.inputAccessoryView = toolBar
@@ -202,6 +207,7 @@ class ViewController: UIViewController, UITextFieldDelegate, UIImagePickerContro
         // Dispose of any resources that can be recreated.
     }
     
+    // close the keyboard when custom toolbar done is pressed
     func donePressed(_ sender: UIBarButtonItem) {
         
         DateInput.resignFirstResponder()
@@ -211,6 +217,7 @@ class ViewController: UIViewController, UITextFieldDelegate, UIImagePickerContro
         
     }
     
+    // when Today's date is pressed, set it to today
     func tappedToolBarBtn(_ sender: UIBarButtonItem) {
         
         let monthFormatter = DateFormatter()
@@ -253,7 +260,7 @@ class ViewController: UIViewController, UITextFieldDelegate, UIImagePickerContro
         self.view.endEditing(true)
     }
     
-    
+    // when user picks own date, set it to this
     func datePickerValueChanged(_ sender: UIDatePicker) {
         
         let dateFormatter = DateFormatter()
@@ -391,7 +398,7 @@ class ViewController: UIViewController, UITextFieldDelegate, UIImagePickerContro
     
     @IBAction func unwindToStats(segue: UIStoryboardSegue) {}
     
-    // pass the value of the input throught the segue
+    // pass variables through to next view
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "showPicChooser" {
             let picChooserViewController = segue.destination as? PhotoPickerViewController
@@ -422,7 +429,6 @@ class ViewController: UIViewController, UITextFieldDelegate, UIImagePickerContro
         }else if (pickerView.tag == 2){
             rowNumber = 3
         }
-        
         return rowNumber
     }
     
@@ -444,9 +450,7 @@ class ViewController: UIViewController, UITextFieldDelegate, UIImagePickerContro
                 componentNumber = seconds.count
             }
         }
-        
         return componentNumber
-        
     }
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
@@ -455,7 +459,6 @@ class ViewController: UIViewController, UITextFieldDelegate, UIImagePickerContro
         }else if (pickerView.tag == 2){
             //return 3
         }
-        
     }
     
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
@@ -473,10 +476,7 @@ class ViewController: UIViewController, UITextFieldDelegate, UIImagePickerContro
                 rowTitle = String(seconds[row]) + "s"
             }
         }
-        
         return rowTitle
     }
-    
-
 }
 
