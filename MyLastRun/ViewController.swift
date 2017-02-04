@@ -33,6 +33,12 @@ class ViewController: UIViewController, UITextFieldDelegate, UIImagePickerContro
     @IBOutlet weak var DateInput: UITextField!
     @IBOutlet weak var BtnDateCheckbox: UIButton!
     
+    @IBOutlet weak var BtnPhotos: UIButton!
+    @IBOutlet weak var BtnCamera: UIButton!
+    
+    @IBOutlet weak var ImageChoice: UIImageView!
+    
+    
     // checked variables
     var titleIsChecked: Bool!
     var distanceIsChecked: Bool!
@@ -55,7 +61,7 @@ class ViewController: UIViewController, UITextFieldDelegate, UIImagePickerContro
     var timePicker = UIPickerView()
     
     // picker options
-    var metricsOptions = ["M", "KM"]
+    var metricsOptions = ["Miles", "Kilometers"]
     var hours  = Array (0...23)
     var minutes = Array(0...59)
     var seconds = Array(0...59)
@@ -78,7 +84,7 @@ class ViewController: UIViewController, UITextFieldDelegate, UIImagePickerContro
         super.viewDidLoad()
         
         // title bar
-        navigationItem.title = "ENTER STATS"
+        navigationItem.title = "ENTER RUN DATA"
         navigationController?.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName: UIColor(red: 169/255, green: 203/255, blue: 74/255, alpha: 1.0)]
         
         // get today's date
@@ -302,6 +308,46 @@ class ViewController: UIViewController, UITextFieldDelegate, UIImagePickerContro
         dateTimePeriod = convertedTimePeriod
         
     }
+    
+    //MARK: UIImagePickerControllerDelegate
+    func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
+        // Dismiss the picker if the user canceled.
+        dismiss(animated: true, completion: nil)
+    }
+    
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
+        // The info dictionary may contain multiple representations of the image. You want to use the original.
+        guard let selectedImage = info[UIImagePickerControllerEditedImage] as? UIImage else {
+            fatalError("Expected a dictionary containing an image, but was provided the following: \(info)")
+        }
+        
+        // Set photoImageView to display the selected image.
+        ImageChoice.image = selectedImage
+        
+        // Dismiss the picker.
+        dismiss(animated: true, completion: nil)
+    }
+    
+    //MARK: Photo Buttons
+    @IBAction func ChoosePhoto(_ sender: UIButton) {
+        // UIImagePickerController is a view controller that lets a user pick media from their photo library.
+        let image = UIImagePickerController()
+        image.delegate = self
+        image.sourceType = UIImagePickerControllerSourceType.photoLibrary
+        image.allowsEditing = true //or true additional setup required.
+        
+        self.present(image, animated: true, completion: nil)
+    }
+    
+    @IBAction func OpenCamera(_ sender: UIButton) {
+        if UIImagePickerController.isSourceTypeAvailable(UIImagePickerControllerSourceType.camera) {
+            let imagePicker = UIImagePickerController()
+            imagePicker.delegate = self
+            imagePicker.sourceType = UIImagePickerControllerSourceType.camera;
+            imagePicker.allowsEditing = true
+            self.present(imagePicker, animated: true, completion: nil)
+        }
+    }
 
     // MARK: Checkboxes
     
@@ -417,6 +463,7 @@ class ViewController: UIViewController, UITextFieldDelegate, UIImagePickerContro
             picChooserViewController?.userDay = dateDay
             picChooserViewController?.userMonth = dateMonth
             picChooserViewController?.userYear = dateYear
+            picChooserViewController?.passedImage = ImageChoice.image
         }
     }
     

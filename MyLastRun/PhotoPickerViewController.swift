@@ -12,6 +12,7 @@ class PhotoPickerViewController: UIViewController, UIImagePickerControllerDelega
     
     // reference the Image
     @IBOutlet weak var photoImageView: UIImageView!
+    var passedImage: UIImage!
     
     // reference the text fields
     @IBOutlet weak var PhotoTitle: UITextField!
@@ -39,8 +40,8 @@ class PhotoPickerViewController: UIViewController, UIImagePickerControllerDelega
         super.viewDidLoad()
         
         // set the title of the view
-        navigationItem.title = "CHOOSE PICTURE"
-        navigationItem.hidesBackButton = true
+        navigationItem.title = "CUSTOMIZE"
+        //navigationItem.hidesBackButton = true
         
         // set the text fields to the variables
         PhotoTitle.text = userTitleText
@@ -49,6 +50,8 @@ class PhotoPickerViewController: UIViewController, UIImagePickerControllerDelega
         PhotoDay.text = userDay
         PhotoMonth.text = userMonth.capitalized
         PhotoYear.text = userYear
+        
+        photoImageView.image = passedImage
     }
     
     
