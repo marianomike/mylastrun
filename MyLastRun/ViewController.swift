@@ -33,10 +33,16 @@ class ViewController: UIViewController, UITextFieldDelegate, UIImagePickerContro
     @IBOutlet weak var DateInput: UITextField!
     @IBOutlet weak var BtnDateCheckbox: UIButton!
     
+    // weather variables
+    @IBOutlet weak var DegreesInput: UITextField!
+    @IBOutlet weak var WeatherInput: UITextField!
+    
     @IBOutlet weak var BtnPhotos: UIButton!
     @IBOutlet weak var BtnCamera: UIButton!
     
     @IBOutlet weak var ImageChoice: UIImageView!
+    @IBOutlet weak var ChooseStackView: UIStackView!
+    @IBOutlet weak var DeletePhoto: UIButton!
     
     
     // checked variables
@@ -59,9 +65,11 @@ class ViewController: UIViewController, UITextFieldDelegate, UIImagePickerContro
     var picker = UIPickerView()
     var datePicker = UIDatePicker()
     var timePicker = UIPickerView()
+    var weatherPicker = UIPickerView()
     
     // picker options
     var metricsOptions = ["Miles", "Kilometers"]
+    var weatherOptions = ["Sunny", "Partly Cloudy", "Cloudy", "Raining", "Snowing"]
     var hours  = Array (0...23)
     var minutes = Array(0...59)
     var seconds = Array(0...59)
@@ -87,6 +95,8 @@ class ViewController: UIViewController, UITextFieldDelegate, UIImagePickerContro
         navigationItem.title = "ENTER RUN DATA"
         navigationController?.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName: UIColor(red: 169/255, green: 203/255, blue: 74/255, alpha: 1.0)]
         
+        //navigationController?.navigationBar.ba = [NSForegroundColorAttributeName: UIColor(red: 169/255, green: 203/255, blue: 74/255, alpha: 1.0)]
+        
         // get today's date
         let currentDate = Date()
         let currentDateFormatter = DateFormatter()
@@ -100,20 +110,27 @@ class ViewController: UIViewController, UITextFieldDelegate, UIImagePickerContro
         locationIsChecked = true
         dateIsChecked = true
         
+        // hide the delete photo button
+        DeletePhoto.alpha = 0;
+        
         // Handle the text field's user input through delegate callbacks.
         TitleInput.delegate = self;
         DistanceInput.delegate = self;
         TimeInput.delegate = self;
         LocationInput.delegate = self;
         DateInput.delegate = self;
+        
         picker.delegate = self
         picker.dataSource = self
         timePicker.delegate = self
-        timePicker.delegate = self
+        timePicker.dataSource = self
+        weatherPicker.delegate = self
+        weatherPicker.dataSource = self
         
         // Assign Tags to pickers
-        picker.tag = 1;
-        timePicker.tag = 2;
+        picker.tag = 1
+        timePicker.tag = 2
+        weatherPicker.tag = 3
         
         // Set which picker which input should use and hide the cursor
         TimeInput.inputView = timePicker
@@ -124,6 +141,9 @@ class ViewController: UIViewController, UITextFieldDelegate, UIImagePickerContro
         
         DateInput.inputView = datePicker
         DateInput.tintColor = UIColor.clear
+        
+        WeatherInput.inputView = weatherPicker
+        WeatherInput.tintColor = UIColor.clear
         
         // Set input date to current date
         DateInput.text = currentDateFormatter.string(from: currentDate)
@@ -204,6 +224,8 @@ class ViewController: UIViewController, UITextFieldDelegate, UIImagePickerContro
         // Assign Toolbars to pickers
         DateInput.inputAccessoryView = toolBarToday
         DistanceInput.inputAccessoryView = toolBar
+        DegreesInput.inputAccessoryView = toolBar
+        WeatherInput.inputAccessoryView = toolBar
         MetricsInput.inputAccessoryView = toolBar
         TimeInput.inputAccessoryView = toolBar
     }
@@ -220,6 +242,8 @@ class ViewController: UIViewController, UITextFieldDelegate, UIImagePickerContro
         DistanceInput.resignFirstResponder()
         MetricsInput.resignFirstResponder()
         TimeInput.resignFirstResponder()
+        DegreesInput.resignFirstResponder()
+        WeatherInput.resignFirstResponder()
         
     }
     
@@ -323,6 +347,8 @@ class ViewController: UIViewController, UITextFieldDelegate, UIImagePickerContro
         
         // Set photoImageView to display the selected image.
         ImageChoice.image = selectedImage
+        DeletePhoto.alpha = 1;
+        ChooseStackView.alpha = 0;
         
         // Dismiss the picker.
         dismiss(animated: true, completion: nil)
@@ -348,6 +374,13 @@ class ViewController: UIViewController, UITextFieldDelegate, UIImagePickerContro
             self.present(imagePicker, animated: true, completion: nil)
         }
     }
+    
+    @IBAction func DeletePhoto(_ sender: UIButton) {
+        ChooseStackView.alpha = 1
+        DeletePhoto.alpha = 0
+        ImageChoice.image = nil
+    }
+    
 
     // MARK: Checkboxes
     
@@ -475,6 +508,8 @@ class ViewController: UIViewController, UITextFieldDelegate, UIImagePickerContro
             rowNumber = 1
         }else if (pickerView.tag == 2){
             rowNumber = 3
+        }else if (pickerView.tag == 3){
+            rowNumber = 1
         }
         return rowNumber
     }
@@ -496,6 +531,8 @@ class ViewController: UIViewController, UITextFieldDelegate, UIImagePickerContro
             } else if (component == 2) {
                 componentNumber = seconds.count
             }
+        }else if (pickerView.tag == 3){
+            componentNumber = weatherOptions.count
         }
         return componentNumber
     }
@@ -505,6 +542,8 @@ class ViewController: UIViewController, UITextFieldDelegate, UIImagePickerContro
             MetricsInput.text = metricsOptions[row]
         }else if (pickerView.tag == 2){
             //return 3
+        }else if (pickerView.tag == 3){
+            WeatherInput.text = weatherOptions[row]
         }
     }
     
@@ -522,6 +561,8 @@ class ViewController: UIViewController, UITextFieldDelegate, UIImagePickerContro
             } else if (component == 2) {
                 rowTitle = String(seconds[row]) + "s"
             }
+        }else if (pickerView.tag == 3){
+            rowTitle = weatherOptions[row]
         }
         return rowTitle
     }

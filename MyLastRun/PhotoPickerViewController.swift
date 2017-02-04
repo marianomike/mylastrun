@@ -41,7 +41,6 @@ class PhotoPickerViewController: UIViewController, UIImagePickerControllerDelega
         
         // set the title of the view
         navigationItem.title = "CUSTOMIZE"
-        //navigationItem.hidesBackButton = true
         
         // set the text fields to the variables
         PhotoTitle.text = userTitleText
