@@ -10,10 +10,10 @@ import UIKit
 
 class PhotoPickerViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
-    
+    // reference the Image
     @IBOutlet weak var photoImageView: UIImageView!
     
-    // reference the new text field
+    // reference the text fields
     @IBOutlet weak var PhotoTitle: UITextField!
     @IBOutlet weak var PhotoDistance: UITextField!
     @IBOutlet weak var PhotoLocation: UITextField!
@@ -21,7 +21,7 @@ class PhotoPickerViewController: UIViewController, UIImagePickerControllerDelega
     @IBOutlet weak var PhotoDay: UITextField!
     @IBOutlet weak var PhotoYear: UITextField!
     
-    // create variable for new text field to display
+    // create variables for the text fields to display
     var userTitleText:String! = ""
     var userDistanceText:String! = ""
     var userDistanceChoice:String! = ""
@@ -31,15 +31,18 @@ class PhotoPickerViewController: UIViewController, UIImagePickerControllerDelega
     var userDay:String! = ""
     var userYear:String! = ""
     
+    // reference the navigation bar
     var navigationBarAppearace = UINavigationBar.appearance()
     
-    
     override func viewDidLoad() {
+        
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        
+        // set the title of the view
         navigationItem.title = "CHOOSE PICTURE"
         navigationItem.hidesBackButton = true
         
+        // set the text fields to the variables
         PhotoTitle.text = userTitleText
         PhotoDistance.text = userDistanceText + " " + userDistanceChoice
         PhotoLocation.text = userLocationText
