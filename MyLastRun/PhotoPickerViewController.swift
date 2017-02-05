@@ -72,7 +72,8 @@ class PhotoPickerViewController: UIViewController, UIImagePickerControllerDelega
     }
     
     @IBAction func SaveToCamaraRoll(_ sender: UIButton) {
-        saveImage()
+        //saveImage()
+        shareImage()
     }
     
     func saveImage() {
@@ -87,15 +88,36 @@ class PhotoPickerViewController: UIViewController, UIImagePickerControllerDelega
         UIImageWriteToSavedPhotosAlbum(image!, nil, nil, nil)
     }
     
+    func shareImage() {
+        // image to share
+        //let image = UIImage(named: "Image")
+        
+        //Create the UIImage
+        //UIGraphicsBeginImageContext(PhotoView.frame.size)
+        UIGraphicsBeginImageContextWithOptions(PhotoView.frame.size, false, UIScreen.main.scale)
+        PhotoView.layer.render(in: UIGraphicsGetCurrentContext()!)
+        let image = UIGraphicsGetImageFromCurrentImageContext()
+        UIGraphicsEndImageContext()
+        
+        // set up activity view controller
+        let imageToShare = [ image! ]
+        let activityViewController = UIActivityViewController(activityItems: imageToShare, applicationActivities: nil)
+        activityViewController.popoverPresentationController?.sourceView = self.view // so that iPads won't crash
+        
+        // exclude some activity types from the list (optional)
+        //activityViewController.excludedActivityTypes = [ UIActivityType.airDrop, UIActivityType.postToFacebook ]
+        
+        // present the view controller
+        self.present(activityViewController, animated: true, completion: nil)
+    }
+    
     func image(image: UIImage!, didFinishSavingWithError error: NSError!, contextInfo: AnyObject!) {
         if (error != nil) {
             // Something wrong happened.
         } else {
-            let alertController = UIAlertController(title: "My Last Run", message:
-                "Photo saved to your Camera Roll", preferredStyle: UIAlertControllerStyle.alert)
-            alertController.addAction(UIAlertAction(title: "Dismiss", style: UIAlertActionStyle.default,handler: nil))
-            
-            self.present(alertController, animated: true, completion: nil)
+            let alert = UIAlertController(title: "Alert", message: "Message", preferredStyle: UIAlertControllerStyle.alert)
+            alert.addAction(UIAlertAction(title: "Click", style: UIAlertActionStyle.default, handler: nil))
+            self.present(alert, animated: true, completion: nil)
         }
     }
     

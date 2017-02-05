@@ -371,12 +371,7 @@
                                         <fontDescription key="fontDescription" name="AquaGrotesque" family="Aqua Grotesque" pointSize="125"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
-                                    <imageView opaque="NO" userInteractionEnabled="NO" alpha="0.80000001192092896" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="wTs-hc-O0e" userLabel="Cover">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="414"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <gestureRecognizers/>
-                                    </imageView>
-                                    <imageView opaque="NO" userInteractionEnabled="NO" alpha="0.80000000000000004" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="CFC1F942-23A9-491A-A052-A334BB8BE1EA" translatesAutoresizingMaskIntoConstraints="NO" id="CGB-Y2-ww1">
+                                    <imageView opaque="NO" userInteractionEnabled="NO" alpha="0.80000000000000004" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="795E3743-D6E3-4E36-A9D2-7C930D01705B" translatesAutoresizingMaskIntoConstraints="NO" id="CGB-Y2-ww1">
                                         <rect key="frame" x="0.0" y="0.0" width="414" height="414"/>
                                         <gestureRecognizers/>
                                     </imageView>
@@ -506,25 +501,43 @@
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="u3d-TV-FTQ">
-                                <rect key="frame" x="0.0" y="478" width="414" height="214"/>
+                                <rect key="frame" x="0.0" y="478" width="414" height="258"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vAx-mL-n2z">
-                                        <rect key="frame" x="167" y="67" width="80" height="80"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
-                                        <state key="normal" title="Save To Camera Roll" image="Download"/>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vAx-mL-n2z">
+                                        <rect key="frame" x="157" y="23" width="100" height="100"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="vAx-mL-n2z" secondAttribute="height" multiplier="1:1" id="JcJ-3T-V80"/>
+                                            <constraint firstAttribute="height" constant="100" id="dz5-mt-3r5"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
+                                        <state key="normal" title="Share" image="Share">
+                                            <color key="titleColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
                                         <connections>
                                             <action selector="SaveToCamaraRoll:" destination="Uq2-wN-0xa" eventType="touchUpInside" id="Ytb-1f-HLH"/>
                                         </connections>
                                     </button>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Share Photo" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gq0-3W-aGA">
+                                        <rect key="frame" x="137" y="155" width="141" height="28.666666666666629"/>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="24"/>
+                                        <color key="textColor" red="0.47450980390000003" green="0.57647058819999997" blue="0.2784313725" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstItem="vAx-mL-n2z" firstAttribute="centerX" secondItem="gq0-3W-aGA" secondAttribute="centerX" id="EUK-jS-1Kk"/>
+                                    <constraint firstItem="gq0-3W-aGA" firstAttribute="top" secondItem="vAx-mL-n2z" secondAttribute="bottom" constant="32" id="PSh-KS-aN2"/>
+                                    <constraint firstItem="vAx-mL-n2z" firstAttribute="centerX" secondItem="u3d-TV-FTQ" secondAttribute="centerX" id="UGH-Gv-d8u"/>
+                                    <constraint firstItem="vAx-mL-n2z" firstAttribute="top" secondItem="u3d-TV-FTQ" secondAttribute="top" constant="23" id="Va5-ka-GNO"/>
+                                </constraints>
                             </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="zRe-0x-Eu5" firstAttribute="top" secondItem="wcq-z0-mKp" secondAttribute="bottom" id="BDO-gf-wwZ"/>
                             <constraint firstItem="zRe-0x-Eu5" firstAttribute="leading" secondItem="cAg-1d-rvw" secondAttribute="leading" id="FTF-g3-6xf"/>
-                            <constraint firstItem="7Yd-6w-hmP" firstAttribute="top" secondItem="u3d-TV-FTQ" secondAttribute="bottom" constant="44" id="IrN-lv-Rcd"/>
+                            <constraint firstItem="7Yd-6w-hmP" firstAttribute="top" secondItem="u3d-TV-FTQ" secondAttribute="bottom" id="IrN-lv-Rcd"/>
                             <constraint firstItem="zRe-0x-Eu5" firstAttribute="leading" secondItem="u3d-TV-FTQ" secondAttribute="leading" id="JuM-56-B1p"/>
                             <constraint firstItem="u3d-TV-FTQ" firstAttribute="top" secondItem="zRe-0x-Eu5" secondAttribute="bottom" id="Qsr-VL-u5C"/>
                             <constraint firstItem="zRe-0x-Eu5" firstAttribute="trailing" secondItem="u3d-TV-FTQ" secondAttribute="trailing" id="ch8-0v-GkC"/>
@@ -556,7 +569,7 @@
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="LSZ-5p-ToD" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="wQ8-hg-xht">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="wQ8-hg-xht">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="tintColor" red="0.47450980390000003" green="0.57647058819999997" blue="0.2784313725" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -572,9 +585,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="BtnCamera" width="85" height="85"/>
-        <image name="BtnPhotos" width="85" height="85"/>
-        <image name="CFC1F942-23A9-491A-A052-A334BB8BE1EA" width="375" height="375">
+        <image name="795E3743-D6E3-4E36-A9D2-7C930D01705B" width="375" height="375">
             <mutableData key="keyedArchiveRepresentation">
 YnBsaXN0MDDUAQIDBAUGPT5YJHZlcnNpb25YJG9iamVjdHNZJGFyY2hpdmVyVCR0b3ASAAGGoK4HCBMU
 GR4fIyQrLjE3OlUkbnVsbNUJCgsMDQ4PEBESVk5TU2l6ZVYkY2xhc3NcTlNJbWFnZUZsYWdzVk5TUmVw
@@ -10003,10 +10014,12 @@ AAifYgAIn2oACJ93AAiffAAIn34ACJ+AAAifhQAIn40ACJ+QAAiflQAIn50ACJ+gAAifsgAIn7UACJ+6
 AAAAAAAABAEAAAAAAAAAQQAAAAAAAAAAAAAAAAAIn7w
 </mutableData>
         </image>
+        <image name="BtnCamera" width="85" height="85"/>
+        <image name="BtnPhotos" width="85" height="85"/>
         <image name="Delete" width="76" height="76"/>
-        <image name="Download" width="170" height="170"/>
         <image name="IconClock-1" width="25" height="25"/>
         <image name="IconLightClouds" width="49" height="43"/>
         <image name="IconTimer" width="25" height="29"/>
+        <image name="Share" width="170" height="170"/>
     </resources>
 </document>
