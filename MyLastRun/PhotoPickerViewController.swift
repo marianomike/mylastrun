@@ -49,7 +49,7 @@ class PhotoPickerViewController: UIViewController, UIImagePickerControllerDelega
         super.viewDidLoad()
         
         // set the title of the view
-        navigationItem.title = "CUSTOMIZE"
+        navigationItem.title = "PREVIEW"
         
         // set the text fields to the variables
         PhotoTitle.text = userTitleText
