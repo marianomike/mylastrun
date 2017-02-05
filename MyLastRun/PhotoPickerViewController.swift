@@ -24,6 +24,8 @@ class PhotoPickerViewController: UIViewController, UIImagePickerControllerDelega
     @IBOutlet weak var PhotoYear: UITextField!
     @IBOutlet weak var PhotoWeatherIcon: UIImageView!
     @IBOutlet weak var PhotoDegrees: UITextField!
+    @IBOutlet weak var PhotoDuration: UITextField!
+    @IBOutlet weak var PhotoPace: UITextField!
     
     // create variables for the text fields to display
     var userTitleText:String! = ""
@@ -36,6 +38,8 @@ class PhotoPickerViewController: UIViewController, UIImagePickerControllerDelega
     var userYear:String! = ""
     var userDegrees:String! = ""
     var userWeatherIcon:String! = ""
+    var userDuration:String! = ""
+    var userPace:String! = ""
     
     // reference the navigation bar
     var navigationBarAppearace = UINavigationBar.appearance()
@@ -55,6 +59,8 @@ class PhotoPickerViewController: UIViewController, UIImagePickerControllerDelega
         PhotoMonth.text = userMonth.uppercased()
         PhotoYear.text = userYear
         PhotoDegrees.text = userDegrees + "°"
+        PhotoDuration.text = userDuration
+        PhotoPace.text = userPace
         
         photoImageView.image = passedImage
         

@@ -25,6 +25,10 @@ class ViewController: UIViewController, UITextFieldDelegate, UIImagePickerContro
     @IBOutlet weak var BtnTimeCheckbox: UIButton!
     @IBOutlet weak var TimeInput: UITextField!
     
+    // pace variables
+    @IBOutlet weak var PaceInput: UITextField!
+    
+    
     // location variables
     @IBOutlet weak var BtnLocationCheckbox: UIButton!
     @IBOutlet weak var LocationInput: UITextField!
@@ -52,6 +56,16 @@ class ViewController: UIViewController, UITextFieldDelegate, UIImagePickerContro
     var locationIsChecked: Bool!
     var dateIsChecked: Bool!
     
+    // duration
+    var durHour: String!
+    var durMinutes: String!
+    var durSeconds: String!
+    
+    // pace
+    var paceHour: String!
+    var paceMinutes: String!
+    var paceSeconds: String!
+    
     // date
     var dateMonth: String!
     var dateDay: String!
@@ -66,6 +80,7 @@ class ViewController: UIViewController, UITextFieldDelegate, UIImagePickerContro
     var datePicker = UIDatePicker()
     var timePicker = UIPickerView()
     var weatherPicker = UIPickerView()
+    var pacePicker = UIPickerView()
     
     // picker options
     var metricsOptions = ["Miles", "Kilometers"]
@@ -95,8 +110,6 @@ class ViewController: UIViewController, UITextFieldDelegate, UIImagePickerContro
         navigationItem.title = "ENTER RUN DATA"
         navigationController?.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName: UIColor(red: 169/255, green: 203/255, blue: 74/255, alpha: 1.0)]
         
-        //navigationController?.navigationBar.ba = [NSForegroundColorAttributeName: UIColor(red: 169/255, green: 203/255, blue: 74/255, alpha: 1.0)]
-        
         // get today's date
         let currentDate = Date()
         let currentDateFormatter = DateFormatter()
@@ -120,6 +133,7 @@ class ViewController: UIViewController, UITextFieldDelegate, UIImagePickerContro
         LocationInput.delegate = self
         DateInput.delegate = self
         DegreesInput.delegate = self
+        PaceInput.delegate = self
         
         picker.delegate = self
         picker.dataSource = self
@@ -127,11 +141,14 @@ class ViewController: UIViewController, UITextFieldDelegate, UIImagePickerContro
         timePicker.dataSource = self
         weatherPicker.delegate = self
         weatherPicker.dataSource = self
+        pacePicker.delegate = self
+        pacePicker.dataSource = self
         
         // Assign Tags to pickers
         picker.tag = 1
         timePicker.tag = 2
         weatherPicker.tag = 3
+        pacePicker.tag = 4
         
         // Set which picker which input should use and hide the cursor
         TimeInput.inputView = timePicker
@@ -145,6 +162,9 @@ class ViewController: UIViewController, UITextFieldDelegate, UIImagePickerContro
         
         WeatherInput.inputView = weatherPicker
         WeatherInput.tintColor = UIColor.clear
+        
+        PaceInput.inputView = pacePicker
+        PaceInput.tintColor = UIColor.clear
         
         // Set input date to current date
         DateInput.text = currentDateFormatter.string(from: currentDate)
@@ -229,6 +249,7 @@ class ViewController: UIViewController, UITextFieldDelegate, UIImagePickerContro
         WeatherInput.inputAccessoryView = toolBar
         MetricsInput.inputAccessoryView = toolBar
         TimeInput.inputAccessoryView = toolBar
+        PaceInput.inputAccessoryView = toolBar
     }
 
     override func didReceiveMemoryWarning() {
@@ -245,6 +266,7 @@ class ViewController: UIViewController, UITextFieldDelegate, UIImagePickerContro
         TimeInput.resignFirstResponder()
         DegreesInput.resignFirstResponder()
         WeatherInput.resignFirstResponder()
+        PaceInput.resignFirstResponder()
         
     }
     
@@ -517,6 +539,8 @@ class ViewController: UIViewController, UITextFieldDelegate, UIImagePickerContro
             picChooserViewController?.passedImage = ImageChoice.image
             picChooserViewController?.userDegrees = DegreesInput.text
             picChooserViewController?.userWeatherIcon = WeatherInput.text
+            picChooserViewController?.userDuration = TimeInput.text
+            picChooserViewController?.userPace = PaceInput.text
         }
     }
     
@@ -530,6 +554,8 @@ class ViewController: UIViewController, UITextFieldDelegate, UIImagePickerContro
             rowNumber = 3
         }else if (pickerView.tag == 3){
             rowNumber = 1
+        }else if (pickerView.tag == 4){
+            rowNumber = 2
         }
         return rowNumber
     }
@@ -541,8 +567,6 @@ class ViewController: UIViewController, UITextFieldDelegate, UIImagePickerContro
         if (pickerView.tag == 1){
             componentNumber = metricsOptions.count
         }else if (pickerView.tag == 2){
-            //var row = pickerView.selectedRow(inComponent: 0)
-            //println("this is the pickerView\(row)")
             
             if (component == 0) {
                 componentNumber = hours.count
@@ -553,6 +577,13 @@ class ViewController: UIViewController, UITextFieldDelegate, UIImagePickerContro
             }
         }else if (pickerView.tag == 3){
             componentNumber = weatherOptions.count
+        }else if (pickerView.tag == 4){
+            
+            if (component == 0) {
+                componentNumber = minutes.count
+            } else if (component == 1) {
+                componentNumber = seconds.count
+            }
         }
         return componentNumber
     }
@@ -561,9 +592,39 @@ class ViewController: UIViewController, UITextFieldDelegate, UIImagePickerContro
         if (pickerView.tag == 1){
             MetricsInput.text = metricsOptions[row]
         }else if (pickerView.tag == 2){
-            //return 3
+            durHour = String(pickerView.selectedRow(inComponent: 0))
+            durMinutes = String(pickerView.selectedRow(inComponent: 1))
+            durSeconds = String(pickerView.selectedRow(inComponent: 2))
+            
+            if(durSeconds.characters.count == 1){
+                durSeconds = "0" + durSeconds
+            }
+            
+            if(durMinutes.characters.count == 1){
+                durMinutes = "0" + durMinutes
+            }
+            print(durHour)
+            if(durHour == "0"){
+                TimeInput.text = durMinutes + ":" + durSeconds
+            }else{
+                TimeInput.text = durHour + ":" + durMinutes + ":" + durSeconds
+            }
+            TimeInput.text = durHour + ":" + durMinutes + ":" + durSeconds
+            //print(dateHour + ":" + dateMinutes + ":" + dateSeconds)
         }else if (pickerView.tag == 3){
             WeatherInput.text = weatherOptions[row]
+        }else if (pickerView.tag == 4){
+            paceMinutes = String(pickerView.selectedRow(inComponent: 0))
+            paceSeconds = String(pickerView.selectedRow(inComponent: 1))
+            
+            if(paceSeconds.characters.count == 1){
+                paceSeconds = "0" + paceSeconds
+            }
+            
+            if(paceMinutes.characters.count == 1){
+                paceMinutes = "0" + paceMinutes
+            }
+            PaceInput.text = paceMinutes + ":" + paceSeconds
         }
     }
     
@@ -583,6 +644,12 @@ class ViewController: UIViewController, UITextFieldDelegate, UIImagePickerContro
             }
         }else if (pickerView.tag == 3){
             rowTitle = weatherOptions[row]
+        }else if (pickerView.tag == 4){
+            if (component == 0) {
+                rowTitle = String(minutes[row]) + "m"
+            } else if (component == 1) {
+                rowTitle = String(seconds[row]) + "s"
+            }
         }
         return rowTitle
     }
