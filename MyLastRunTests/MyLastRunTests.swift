@@ -7,7 +7,7 @@
 //
 
 import XCTest
-@testable import MyLastRun
+@testable import My_Last_Run
 
 class MyLastRunTests: XCTestCase {
     

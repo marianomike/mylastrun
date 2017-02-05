@@ -52,9 +52,9 @@ class PhotoPickerViewController: UIViewController, UIImagePickerControllerDelega
         PhotoDistance.text = userDistanceText + " " + userDistanceChoice
         PhotoLocation.text = userLocationText
         PhotoDay.text = userDay
-        PhotoMonth.text = userMonth.capitalized
+        PhotoMonth.text = userMonth.uppercased()
         PhotoYear.text = userYear
-        PhotoDegrees.text = userDegrees
+        PhotoDegrees.text = userDegrees + "°"
         
         photoImageView.image = passedImage
         
