@@ -14,6 +14,7 @@ class PhotoPickerViewController: UIViewController, UIImagePickerControllerDelega
     @IBOutlet weak var photoImageView: UIImageView!
     var passedImage: UIImage!
     
+    @IBOutlet weak var PhotoView: UIView!
     // reference the text fields
     @IBOutlet weak var PhotoTitle: UITextField!
     @IBOutlet weak var PhotoDistance: UITextField!
@@ -67,6 +68,34 @@ class PhotoPickerViewController: UIViewController, UIImagePickerControllerDelega
             PhotoWeatherIcon.image = #imageLiteral(resourceName: "IconRain")
         } else if(userWeatherIcon == "Snowing"){
             PhotoWeatherIcon.image = #imageLiteral(resourceName: "IconSnow")
+        }
+    }
+    
+    @IBAction func SaveToCamaraRoll(_ sender: UIButton) {
+        saveImage()
+    }
+    
+    func saveImage() {
+        //Create the UIImage
+        //UIGraphicsBeginImageContext(PhotoView.frame.size)
+        UIGraphicsBeginImageContextWithOptions(PhotoView.frame.size, false, UIScreen.main.scale)
+        PhotoView.layer.render(in: UIGraphicsGetCurrentContext()!)
+        let image = UIGraphicsGetImageFromCurrentImageContext()
+        UIGraphicsEndImageContext()
+        
+        //Save it to the camera roll
+        UIImageWriteToSavedPhotosAlbum(image!, nil, nil, nil)
+    }
+    
+    func image(image: UIImage!, didFinishSavingWithError error: NSError!, contextInfo: AnyObject!) {
+        if (error != nil) {
+            // Something wrong happened.
+        } else {
+            let alertController = UIAlertController(title: "My Last Run", message:
+                "Photo saved to your Camera Roll", preferredStyle: UIAlertControllerStyle.alert)
+            alertController.addAction(UIAlertAction(title: "Dismiss", style: UIAlertActionStyle.default,handler: nil))
+            
+            self.present(alertController, animated: true, completion: nil)
         }
     }
     
