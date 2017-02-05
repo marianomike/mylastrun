@@ -114,11 +114,12 @@ class ViewController: UIViewController, UITextFieldDelegate, UIImagePickerContro
         DeletePhoto.alpha = 0;
         
         // Handle the text field's user input through delegate callbacks.
-        TitleInput.delegate = self;
-        DistanceInput.delegate = self;
-        TimeInput.delegate = self;
-        LocationInput.delegate = self;
-        DateInput.delegate = self;
+        TitleInput.delegate = self
+        DistanceInput.delegate = self
+        TimeInput.delegate = self
+        LocationInput.delegate = self
+        DateInput.delegate = self
+        DegreesInput.delegate = self
         
         picker.delegate = self
         picker.dataSource = self
@@ -288,6 +289,23 @@ class ViewController: UIViewController, UITextFieldDelegate, UIImagePickerContro
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         self.view.endEditing(true)
+    }
+    
+    func textFieldDidBeginEditing(_ textField: UITextField) {
+        animateViewMoving(up: true, moveValue: 100)
+    }
+    func textFieldDidEndEditing(_ textField: UITextField) {
+        animateViewMoving(up: false, moveValue: 100)
+    }
+    
+    func animateViewMoving (up:Bool, moveValue :CGFloat){
+        let movementDuration:TimeInterval = 0.3
+        let movement:CGFloat = ( up ? -moveValue : moveValue)
+        UIView.beginAnimations( "animateView", context: nil)
+        UIView.setAnimationBeginsFromCurrentState(true)
+        UIView.setAnimationDuration(movementDuration )
+        self.view.frame = self.view.frame.offsetBy(dx: 0,  dy: movement)
+        UIView.commitAnimations()
     }
     
     // when user picks own date, set it to this
@@ -497,6 +515,8 @@ class ViewController: UIViewController, UITextFieldDelegate, UIImagePickerContro
             picChooserViewController?.userMonth = dateMonth
             picChooserViewController?.userYear = dateYear
             picChooserViewController?.passedImage = ImageChoice.image
+            picChooserViewController?.userDegrees = DegreesInput.text
+            picChooserViewController?.userWeatherIcon = WeatherInput.text
         }
     }
     

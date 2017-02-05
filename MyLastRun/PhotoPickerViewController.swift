@@ -21,6 +21,8 @@ class PhotoPickerViewController: UIViewController, UIImagePickerControllerDelega
     @IBOutlet weak var PhotoMonth: UITextField!
     @IBOutlet weak var PhotoDay: UITextField!
     @IBOutlet weak var PhotoYear: UITextField!
+    @IBOutlet weak var PhotoWeatherIcon: UIImageView!
+    @IBOutlet weak var PhotoDegrees: UITextField!
     
     // create variables for the text fields to display
     var userTitleText:String! = ""
@@ -31,6 +33,8 @@ class PhotoPickerViewController: UIViewController, UIImagePickerControllerDelega
     var userMonth:String! = ""
     var userDay:String! = ""
     var userYear:String! = ""
+    var userDegrees:String! = ""
+    var userWeatherIcon:String! = ""
     
     // reference the navigation bar
     var navigationBarAppearace = UINavigationBar.appearance()
@@ -49,8 +53,21 @@ class PhotoPickerViewController: UIViewController, UIImagePickerControllerDelega
         PhotoDay.text = userDay
         PhotoMonth.text = userMonth.capitalized
         PhotoYear.text = userYear
+        PhotoDegrees.text = userDegrees
         
         photoImageView.image = passedImage
+        
+        if(userWeatherIcon == "Sunny"){
+            PhotoWeatherIcon.image = #imageLiteral(resourceName: "IconSunny")
+        } else if(userWeatherIcon == "Partly Cloudy"){
+            PhotoWeatherIcon.image = #imageLiteral(resourceName: "IconLightClouds")
+        } else if(userWeatherIcon == "Cloudy"){
+            PhotoWeatherIcon.image = #imageLiteral(resourceName: "IconCloudy")
+        } else if(userWeatherIcon == "Raining"){
+            PhotoWeatherIcon.image = #imageLiteral(resourceName: "IconRain")
+        } else if(userWeatherIcon == "Snowing"){
+            PhotoWeatherIcon.image = #imageLiteral(resourceName: "IconSnow")
+        }
     }
     
     

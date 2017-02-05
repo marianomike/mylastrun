@@ -169,9 +169,6 @@
                                                                         <color key="textColor" red="0.47450980390000003" green="0.57647058819999997" blue="0.2784313725" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                         <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="24"/>
                                                                         <textInputTraits key="textInputTraits" keyboardType="decimalPad" returnKeyType="done"/>
-                                                                        <connections>
-                                                                            <action selector="DateInputEdit:" destination="BYZ-38-t0r" eventType="editingDidEnd" id="9Iw-QF-JSu"/>
-                                                                        </connections>
                                                                     </textField>
                                                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" horizontalHuggingPriority="249" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Sunny" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="XAN-Lg-9jz">
                                                                         <rect key="frame" x="174" y="0.0" width="200" height="45.333333333333371"/>
@@ -527,10 +524,12 @@
                     </view>
                     <connections>
                         <outlet property="PhotoDay" destination="7GR-zd-a1k" id="JNV-h9-DWp"/>
+                        <outlet property="PhotoDegrees" destination="9sl-8Z-3Lc" id="rqW-wX-Wps"/>
                         <outlet property="PhotoDistance" destination="w9i-YU-lxW" id="2CD-OY-HR1"/>
                         <outlet property="PhotoLocation" destination="mG2-ZO-Ccd" id="kY0-sO-GnR"/>
                         <outlet property="PhotoMonth" destination="6nY-ms-wMO" id="YDz-O6-fnh"/>
                         <outlet property="PhotoTitle" destination="my5-v9-val" id="ey7-KM-ldX"/>
+                        <outlet property="PhotoWeatherIcon" destination="1dB-O0-27c" id="dfA-Fm-prQ"/>
                         <outlet property="PhotoYear" destination="ANd-0N-dA2" id="rWj-YP-Ynj"/>
                         <outlet property="photoImageView" destination="PoA-bH-1FE" id="2PF-HD-nHc"/>
                         <segue destination="OnX-Ea-q1E" kind="unwind" identifier="unwindToStats" unwindAction="unwindToStatsWithSegue:" id="Rjm-tl-sHX"/>
@@ -546,7 +545,7 @@
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="LSZ-5p-ToD" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="wQ8-hg-xht">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="wQ8-hg-xht">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="tintColor" red="0.47450980390000003" green="0.57647058819999997" blue="0.2784313725" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
