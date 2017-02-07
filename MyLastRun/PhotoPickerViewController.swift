@@ -65,43 +65,102 @@ class PhotoPickerViewController: UIViewController, UIImagePickerControllerDelega
         photoImageView.image = passedImage
         
         if(userWeatherIcon == "Sunny"){
+            
+            guard let image = photoImageView?.image, let cgimg = image.cgImage else {
+                print("imageView doesn't have an image!")
+                return
+            }
+            
+            let openGLContext = EAGLContext(api: .openGLES2)
+            let context = CIContext(eaglContext: openGLContext!)
+            
+            let coreImage = CIImage(cgImage: cgimg)
+            
+            let monoFilter = CIFilter(name: "CITemperatureAndTint")
+            monoFilter?.setValue(coreImage, forKey: kCIInputImageKey)
+            monoFilter?.setValue(CIVector(x:6500, y:0), forKey:"inputNeutral")
+            monoFilter?.setValue(CIVector(x:4000, y:0), forKey:"inputTargetNeutral")
+            //monoFilter?.setValue(CIVector, vectorWithX:1000, Y:630, forKey:kCIInputTargetImageKey)
+            //monoFilter.setValue()
+            
+            if let monoOutput = monoFilter?.value(forKey: kCIOutputImageKey) as? CIImage {
+                let exposureFilter = CIFilter(name: "CIExposureAdjust")
+                exposureFilter?.setValue(monoOutput, forKey: kCIInputImageKey)
+                exposureFilter?.setValue(1, forKey: kCIInputEVKey)
+                
+                if let exposureOutput = exposureFilter?.value(forKey: kCIOutputImageKey) as? CIImage {
+                    let output = context.createCGImage(exposureOutput, from: exposureOutput.extent)
+                    let result = UIImage(cgImage: output!)
+                    photoImageView?.image = result
+                }
+            }
+            
             PhotoWeatherIcon.image = #imageLiteral(resourceName: "IconSunny")
         } else if(userWeatherIcon == "Partly Cloudy"){
+            
+            guard let image = photoImageView?.image, let cgimg = image.cgImage else {
+                print("imageView doesn't have an image!")
+                return
+            }
+            
+            let openGLContext = EAGLContext(api: .openGLES2)
+            let context = CIContext(eaglContext: openGLContext!)
+            
+            let coreImage = CIImage(cgImage: cgimg)
+            
+            let monoFilter = CIFilter(name: "CIPhotoEffectMono")
+            monoFilter?.setValue(coreImage, forKey: kCIInputImageKey)
+            
+            if let monoOutput = monoFilter?.value(forKey: kCIOutputImageKey) as? CIImage {
+                let exposureFilter = CIFilter(name: "CIExposureAdjust")
+                exposureFilter?.setValue(monoOutput, forKey: kCIInputImageKey)
+                exposureFilter?.setValue(1, forKey: kCIInputEVKey)
+                
+                if let exposureOutput = exposureFilter?.value(forKey: kCIOutputImageKey) as? CIImage {
+                    let output = context.createCGImage(exposureOutput, from: exposureOutput.extent)
+                    let result = UIImage(cgImage: output!)
+                    photoImageView?.image = result
+                }
+            }
+
+            
             PhotoWeatherIcon.image = #imageLiteral(resourceName: "IconLightClouds")
         } else if(userWeatherIcon == "Cloudy"){
             PhotoWeatherIcon.image = #imageLiteral(resourceName: "IconCloudy")
+            guard let image = photoImageView?.image, let cgimg = image.cgImage else {
+                print("imageView doesn't have an image!")
+                return
+            }
+            
+            let openGLContext = EAGLContext(api: .openGLES2)
+            let context = CIContext(eaglContext: openGLContext!)
+            
+            let coreImage = CIImage(cgImage: cgimg)
+            
+            let sepiaFilter = CIFilter(name: "CISepiaTone")
+            sepiaFilter?.setValue(coreImage, forKey: kCIInputImageKey)
+            sepiaFilter?.setValue(1, forKey: kCIInputIntensityKey)
+            
+            if let sepiaOutput = sepiaFilter?.value(forKey: kCIOutputImageKey) as? CIImage {
+                let exposureFilter = CIFilter(name: "CIExposureAdjust")
+                exposureFilter?.setValue(sepiaOutput, forKey: kCIInputImageKey)
+                exposureFilter?.setValue(1, forKey: kCIInputEVKey)
+                
+                if let exposureOutput = exposureFilter?.value(forKey: kCIOutputImageKey) as? CIImage {
+                    let output = context.createCGImage(exposureOutput, from: exposureOutput.extent)
+                    let result = UIImage(cgImage: output!)
+                    photoImageView?.image = result
+                }
+            }
         } else if(userWeatherIcon == "Raining"){
             PhotoWeatherIcon.image = #imageLiteral(resourceName: "IconRain")
         } else if(userWeatherIcon == "Snowing"){
             PhotoWeatherIcon.image = #imageLiteral(resourceName: "IconSnow")
         }
         
-        guard let image = photoImageView?.image, let cgimg = image.cgImage else {
-            print("imageView doesn't have an image!")
-            return
-        }
         
-        let openGLContext = EAGLContext(api: .openGLES2)
-        let context = CIContext(eaglContext: openGLContext!)
-        
-        let coreImage = CIImage(cgImage: cgimg)
-        
-        let sepiaFilter = CIFilter(name: "CISepiaTone")
-        sepiaFilter?.setValue(coreImage, forKey: kCIInputImageKey)
-        sepiaFilter?.setValue(1, forKey: kCIInputIntensityKey)
-        
-        if let sepiaOutput = sepiaFilter?.value(forKey: kCIOutputImageKey) as? CIImage {
-            let exposureFilter = CIFilter(name: "CIExposureAdjust")
-            exposureFilter?.setValue(sepiaOutput, forKey: kCIInputImageKey)
-            exposureFilter?.setValue(1, forKey: kCIInputEVKey)
-            
-            if let exposureOutput = exposureFilter?.value(forKey: kCIOutputImageKey) as? CIImage {
-                let output = context.createCGImage(exposureOutput, from: exposureOutput.extent)
-                let result = UIImage(cgImage: output!)
-                photoImageView?.image = result
-            }
-        }
     }
+    
     
     @IBAction func SaveToCamaraRoll(_ sender: UIButton) {
         //saveImage()
