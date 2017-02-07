@@ -75,6 +75,32 @@ class PhotoPickerViewController: UIViewController, UIImagePickerControllerDelega
         } else if(userWeatherIcon == "Snowing"){
             PhotoWeatherIcon.image = #imageLiteral(resourceName: "IconSnow")
         }
+        
+        guard let image = photoImageView?.image, let cgimg = image.cgImage else {
+            print("imageView doesn't have an image!")
+            return
+        }
+        
+        let openGLContext = EAGLContext(api: .openGLES2)
+        let context = CIContext(eaglContext: openGLContext!)
+        
+        let coreImage = CIImage(cgImage: cgimg)
+        
+        let sepiaFilter = CIFilter(name: "CISepiaTone")
+        sepiaFilter?.setValue(coreImage, forKey: kCIInputImageKey)
+        sepiaFilter?.setValue(1, forKey: kCIInputIntensityKey)
+        
+        if let sepiaOutput = sepiaFilter?.value(forKey: kCIOutputImageKey) as? CIImage {
+            let exposureFilter = CIFilter(name: "CIExposureAdjust")
+            exposureFilter?.setValue(sepiaOutput, forKey: kCIInputImageKey)
+            exposureFilter?.setValue(1, forKey: kCIInputEVKey)
+            
+            if let exposureOutput = exposureFilter?.value(forKey: kCIOutputImageKey) as? CIImage {
+                let output = context.createCGImage(exposureOutput, from: exposureOutput.extent)
+                let result = UIImage(cgImage: output!)
+                photoImageView?.image = result
+            }
+        }
     }
     
     @IBAction func SaveToCamaraRoll(_ sender: UIButton) {
