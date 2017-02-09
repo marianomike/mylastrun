@@ -64,28 +64,31 @@ class PhotoPickerViewController: UIViewController, UIImagePickerControllerDelega
         PhotoPace.text = userPace
         
         photoImageView.image = passedImage
-        passedImage = resizeImage(image: passedImage, targetSize: CGSize.init(width: 2048, height: 2048))
+        print(passedImage.size.width)
+        print(passedImage.size.height)
+        passedImage = resizeImage(image: passedImage, targetSize: CGSize.init(width: 3072, height: 3072))
+        
+        guard let image = passedImage, let cgimg = image.cgImage else {
+            print("imageView doesn't have an image!")
+            return
+        }
+        
+        let openGLContext = EAGLContext(api: .openGLES2)
+        let context = CIContext(eaglContext: openGLContext!)
+        
+        let coreImage = CIImage(cgImage: cgimg)
+        
+        //var filterImage = UIImage()
         
         if(userWeatherIcon == "Sunny"){
-            guard let image = passedImage, let cgimg = image.cgImage else {
+            
+            guard let filterImage = UIImage(named: "filter_sun"), let cgimgFilter = filterImage.cgImage else {
                 print("imageView doesn't have an image!")
                 return
             }
             
-            guard let imageFilter = UIImage(named: "filter_sun"), let cgimgFilter = imageFilter.cgImage else {
-                print("imageView doesn't have an image!")
-                return
-            }
-            print(cgimg.height)
-            //print(cgimg.width)
-            
-            print(cgimgFilter.height)
-            
-            let openGLContext = EAGLContext(api: .openGLES2)
-            let context = CIContext(eaglContext: openGLContext!)
-            
-            let coreImage = CIImage(cgImage: cgimg)
             let coreImageFilter = CIImage(cgImage: cgimgFilter)
+            print(cgimgFilter.width)
             
             let overlayFilter = CIFilter(name: "CIOverlayBlendMode")
             overlayFilter?.setValue(coreImageFilter, forKey: kCIInputBackgroundImageKey)
@@ -104,41 +107,115 @@ class PhotoPickerViewController: UIViewController, UIImagePickerControllerDelega
             }
 
             PhotoWeatherIcon.image = #imageLiteral(resourceName: "IconSunny")
+            
         } else if(userWeatherIcon == "Partly Cloudy"){
-            PhotoWeatherIcon.image = #imageLiteral(resourceName: "IconLightClouds")
-        } else if(userWeatherIcon == "Cloudy"){
-            PhotoWeatherIcon.image = #imageLiteral(resourceName: "IconCloudy")
-            guard let image = photoImageView?.image, let cgimg = image.cgImage else {
+            
+            guard let imageFilter = UIImage(named: "filter_cloudy"), let cgimgFilter = imageFilter.cgImage else {
                 print("imageView doesn't have an image!")
                 return
             }
             
-            let openGLContext = EAGLContext(api: .openGLES2)
-            let context = CIContext(eaglContext: openGLContext!)
+            let coreImageFilter = CIImage(cgImage: cgimgFilter)
             
-            let coreImage = CIImage(cgImage: cgimg)
+            let overlayFilter = CIFilter(name: "CIOverlayBlendMode")
+            overlayFilter?.setValue(coreImageFilter, forKey: kCIInputBackgroundImageKey)
+            overlayFilter?.setValue(coreImage, forKey: kCIInputImageKey)
             
-            let sepiaFilter = CIFilter(name: "CISepiaTone")
-            sepiaFilter?.setValue(coreImage, forKey: kCIInputImageKey)
-            sepiaFilter?.setValue(1, forKey: kCIInputIntensityKey)
-            
-            if let sepiaOutput = sepiaFilter?.value(forKey: kCIOutputImageKey) as? CIImage {
+            if let overlayOutput = overlayFilter?.value(forKey: kCIOutputImageKey) as? CIImage {
                 let exposureFilter = CIFilter(name: "CIExposureAdjust")
-                exposureFilter?.setValue(sepiaOutput, forKey: kCIInputImageKey)
+                exposureFilter?.setValue(overlayOutput, forKey: kCIInputImageKey)
                 exposureFilter?.setValue(1, forKey: kCIInputEVKey)
                 
                 if let exposureOutput = exposureFilter?.value(forKey: kCIOutputImageKey) as? CIImage {
-                    let output = context.createCGImage(exposureOutput, from: exposureOutput.extent)
+                    let output = context.createCGImage(overlayOutput, from: exposureOutput.extent)
                     let result = UIImage(cgImage: output!)
                     photoImageView?.image = result
                 }
             }
+            
+            PhotoWeatherIcon.image = #imageLiteral(resourceName: "IconLightClouds")
+            
+        } else if(userWeatherIcon == "Cloudy"){
+            
+            guard let imageFilter = UIImage(named: "filter_cloudy"), let cgimgFilter = imageFilter.cgImage else {
+                print("imageView doesn't have an image!")
+                return
+            }
+            
+            let coreImageFilter = CIImage(cgImage: cgimgFilter)
+            
+            let overlayFilter = CIFilter(name: "CIOverlayBlendMode")
+            overlayFilter?.setValue(coreImageFilter, forKey: kCIInputBackgroundImageKey)
+            overlayFilter?.setValue(coreImage, forKey: kCIInputImageKey)
+            
+            if let overlayOutput = overlayFilter?.value(forKey: kCIOutputImageKey) as? CIImage {
+                let exposureFilter = CIFilter(name: "CIExposureAdjust")
+                exposureFilter?.setValue(overlayOutput, forKey: kCIInputImageKey)
+                exposureFilter?.setValue(1, forKey: kCIInputEVKey)
+                
+                if let exposureOutput = exposureFilter?.value(forKey: kCIOutputImageKey) as? CIImage {
+                    let output = context.createCGImage(overlayOutput, from: exposureOutput.extent)
+                    let result = UIImage(cgImage: output!)
+                    photoImageView?.image = result
+                }
+            }
+            
+            PhotoWeatherIcon.image = #imageLiteral(resourceName: "IconCloudy")
+            
         } else if(userWeatherIcon == "Raining"){
+            
+            guard let imageFilter = UIImage(named: "filter_rain"), let cgimgFilter = imageFilter.cgImage else {
+                print("imageView doesn't have an image!")
+                return
+            }
+            
+            let coreImageFilter = CIImage(cgImage: cgimgFilter)
+            
+            let overlayFilter = CIFilter(name: "CIOverlayBlendMode")
+            overlayFilter?.setValue(coreImageFilter, forKey: kCIInputBackgroundImageKey)
+            overlayFilter?.setValue(coreImage, forKey: kCIInputImageKey)
+            
+            if let overlayOutput = overlayFilter?.value(forKey: kCIOutputImageKey) as? CIImage {
+                let exposureFilter = CIFilter(name: "CIExposureAdjust")
+                exposureFilter?.setValue(overlayOutput, forKey: kCIInputImageKey)
+                exposureFilter?.setValue(1, forKey: kCIInputEVKey)
+                
+                if let exposureOutput = exposureFilter?.value(forKey: kCIOutputImageKey) as? CIImage {
+                    let output = context.createCGImage(overlayOutput, from: exposureOutput.extent)
+                    let result = UIImage(cgImage: output!)
+                    photoImageView?.image = result
+                }
+            }
+            
             PhotoWeatherIcon.image = #imageLiteral(resourceName: "IconRain")
+            
         } else if(userWeatherIcon == "Snowing"){
+            
+            guard let imageFilter = UIImage(named: "filter_snow"), let cgimgFilter = imageFilter.cgImage else {
+                print("imageView doesn't have an image!")
+                return
+            }
+            
+            let coreImageFilter = CIImage(cgImage: cgimgFilter)
+            
+            let overlayFilter = CIFilter(name: "CIOverlayBlendMode")
+            overlayFilter?.setValue(coreImageFilter, forKey: kCIInputBackgroundImageKey)
+            overlayFilter?.setValue(coreImage, forKey: kCIInputImageKey)
+            
+            if let overlayOutput = overlayFilter?.value(forKey: kCIOutputImageKey) as? CIImage {
+                let exposureFilter = CIFilter(name: "CIExposureAdjust")
+                exposureFilter?.setValue(overlayOutput, forKey: kCIInputImageKey)
+                exposureFilter?.setValue(1, forKey: kCIInputEVKey)
+                
+                if let exposureOutput = exposureFilter?.value(forKey: kCIOutputImageKey) as? CIImage {
+                    let output = context.createCGImage(overlayOutput, from: exposureOutput.extent)
+                    let result = UIImage(cgImage: output!)
+                    photoImageView?.image = result
+                }
+            }
+            
             PhotoWeatherIcon.image = #imageLiteral(resourceName: "IconSnow")
         }
-        
         
     }
     
