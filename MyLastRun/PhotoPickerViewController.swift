@@ -12,6 +12,7 @@ class PhotoPickerViewController: UIViewController, UIImagePickerControllerDelega
     
     // reference the Image
     @IBOutlet weak var photoImageView: UIImageView!
+    
     var passedImage: UIImage!
     
     @IBOutlet weak var PhotoView: UIView!
@@ -63,67 +64,47 @@ class PhotoPickerViewController: UIViewController, UIImagePickerControllerDelega
         PhotoPace.text = userPace
         
         photoImageView.image = passedImage
+        passedImage = resizeImage(image: passedImage, targetSize: CGSize.init(width: 2048, height: 2048))
         
         if(userWeatherIcon == "Sunny"){
-            
-            guard let image = photoImageView?.image, let cgimg = image.cgImage else {
+            guard let image = passedImage, let cgimg = image.cgImage else {
                 print("imageView doesn't have an image!")
                 return
             }
+            
+            guard let imageFilter = UIImage(named: "filter_sun"), let cgimgFilter = imageFilter.cgImage else {
+                print("imageView doesn't have an image!")
+                return
+            }
+            print(cgimg.height)
+            //print(cgimg.width)
+            
+            print(cgimgFilter.height)
             
             let openGLContext = EAGLContext(api: .openGLES2)
             let context = CIContext(eaglContext: openGLContext!)
             
             let coreImage = CIImage(cgImage: cgimg)
+            let coreImageFilter = CIImage(cgImage: cgimgFilter)
             
-            let monoFilter = CIFilter(name: "CITemperatureAndTint")
-            monoFilter?.setValue(coreImage, forKey: kCIInputImageKey)
-            monoFilter?.setValue(CIVector(x:6500, y:0), forKey:"inputNeutral")
-            monoFilter?.setValue(CIVector(x:4000, y:0), forKey:"inputTargetNeutral")
-            //monoFilter?.setValue(CIVector, vectorWithX:1000, Y:630, forKey:kCIInputTargetImageKey)
-            //monoFilter.setValue()
+            let overlayFilter = CIFilter(name: "CIOverlayBlendMode")
+            overlayFilter?.setValue(coreImageFilter, forKey: kCIInputBackgroundImageKey)
+            overlayFilter?.setValue(coreImage, forKey: kCIInputImageKey)
             
-            if let monoOutput = monoFilter?.value(forKey: kCIOutputImageKey) as? CIImage {
+            if let overlayOutput = overlayFilter?.value(forKey: kCIOutputImageKey) as? CIImage {
                 let exposureFilter = CIFilter(name: "CIExposureAdjust")
-                exposureFilter?.setValue(monoOutput, forKey: kCIInputImageKey)
+                exposureFilter?.setValue(overlayOutput, forKey: kCIInputImageKey)
                 exposureFilter?.setValue(1, forKey: kCIInputEVKey)
                 
                 if let exposureOutput = exposureFilter?.value(forKey: kCIOutputImageKey) as? CIImage {
-                    let output = context.createCGImage(exposureOutput, from: exposureOutput.extent)
-                    let result = UIImage(cgImage: output!)
-                    photoImageView?.image = result
-                }
-            }
-            
-            PhotoWeatherIcon.image = #imageLiteral(resourceName: "IconSunny")
-        } else if(userWeatherIcon == "Partly Cloudy"){
-            
-            guard let image = photoImageView?.image, let cgimg = image.cgImage else {
-                print("imageView doesn't have an image!")
-                return
-            }
-            
-            let openGLContext = EAGLContext(api: .openGLES2)
-            let context = CIContext(eaglContext: openGLContext!)
-            
-            let coreImage = CIImage(cgImage: cgimg)
-            
-            let monoFilter = CIFilter(name: "CIPhotoEffectMono")
-            monoFilter?.setValue(coreImage, forKey: kCIInputImageKey)
-            
-            if let monoOutput = monoFilter?.value(forKey: kCIOutputImageKey) as? CIImage {
-                let exposureFilter = CIFilter(name: "CIExposureAdjust")
-                exposureFilter?.setValue(monoOutput, forKey: kCIInputImageKey)
-                exposureFilter?.setValue(1, forKey: kCIInputEVKey)
-                
-                if let exposureOutput = exposureFilter?.value(forKey: kCIOutputImageKey) as? CIImage {
-                    let output = context.createCGImage(exposureOutput, from: exposureOutput.extent)
+                    let output = context.createCGImage(overlayOutput, from: exposureOutput.extent)
                     let result = UIImage(cgImage: output!)
                     photoImageView?.image = result
                 }
             }
 
-            
+            PhotoWeatherIcon.image = #imageLiteral(resourceName: "IconSunny")
+        } else if(userWeatherIcon == "Partly Cloudy"){
             PhotoWeatherIcon.image = #imageLiteral(resourceName: "IconLightClouds")
         } else if(userWeatherIcon == "Cloudy"){
             PhotoWeatherIcon.image = #imageLiteral(resourceName: "IconCloudy")
@@ -165,6 +146,32 @@ class PhotoPickerViewController: UIViewController, UIImagePickerControllerDelega
     @IBAction func SaveToCamaraRoll(_ sender: UIButton) {
         //saveImage()
         shareImage()
+    }
+    
+    func resizeImage(image: UIImage, targetSize: CGSize) -> UIImage {
+        let size = image.size
+        
+        let widthRatio  = targetSize.width  / image.size.width
+        let heightRatio = targetSize.height / image.size.height
+        
+        // Figure out what our orientation is, and use that to form the rectangle
+        var newSize: CGSize
+        if(widthRatio > heightRatio) {
+            newSize = CGSize(width: size.width * heightRatio, height: size.height * heightRatio)
+        } else {
+            newSize = CGSize(width: size.width * widthRatio,  height: size.height * widthRatio)
+        }
+        
+        // This is the rect that we've calculated out and this is what is actually used below
+        let rect = CGRect(x: 0, y: 0, width: newSize.width, height: newSize.height)
+        
+        // Actually do the resizing to the rect using the ImageContext stuff
+        UIGraphicsBeginImageContextWithOptions(newSize, false, 1.0)
+        image.draw(in: rect)
+        let newImage = UIGraphicsGetImageFromCurrentImageContext()
+        UIGraphicsEndImageContext()
+        
+        return newImage!
     }
     
     func saveImage() {
