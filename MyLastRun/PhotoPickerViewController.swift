@@ -64,10 +64,11 @@ class PhotoPickerViewController: UIViewController, UIImagePickerControllerDelega
         PhotoPace.text = userPace
         
         photoImageView.image = passedImage
-        print(passedImage.size.width)
-        print(passedImage.size.height)
-        passedImage = resizeImage(image: passedImage, targetSize: CGSize.init(width: 3072, height: 3072))
+        //print(passedImage.size.width)
+        //print(passedImage.size.height)
+        //passedImage = resizeImage(image: passedImage, targetSize: CGSize.init(width: 3072, height: 3072))
         
+        /*
         guard let image = passedImage, let cgimg = image.cgImage else {
             print("imageView doesn't have an image!")
             return
@@ -77,11 +78,12 @@ class PhotoPickerViewController: UIViewController, UIImagePickerControllerDelega
         let context = CIContext(eaglContext: openGLContext!)
         
         let coreImage = CIImage(cgImage: cgimg)
-        
+        */
         //var filterImage = UIImage()
         
         if(userWeatherIcon == "Sunny"){
             
+            /*
             guard let filterImage = UIImage(named: "filter_sun"), let cgimgFilter = filterImage.cgImage else {
                 print("imageView doesn't have an image!")
                 return
@@ -105,11 +107,12 @@ class PhotoPickerViewController: UIViewController, UIImagePickerControllerDelega
                     photoImageView?.image = result
                 }
             }
+ */
 
             PhotoWeatherIcon.image = #imageLiteral(resourceName: "IconSunny")
             
         } else if(userWeatherIcon == "Partly Cloudy"){
-            
+            /*
             guard let imageFilter = UIImage(named: "filter_cloudy"), let cgimgFilter = imageFilter.cgImage else {
                 print("imageView doesn't have an image!")
                 return
@@ -132,11 +135,11 @@ class PhotoPickerViewController: UIViewController, UIImagePickerControllerDelega
                     photoImageView?.image = result
                 }
             }
-            
+            */
             PhotoWeatherIcon.image = #imageLiteral(resourceName: "IconLightClouds")
             
         } else if(userWeatherIcon == "Cloudy"){
-            
+            /*
             guard let imageFilter = UIImage(named: "filter_cloudy"), let cgimgFilter = imageFilter.cgImage else {
                 print("imageView doesn't have an image!")
                 return
@@ -159,11 +162,11 @@ class PhotoPickerViewController: UIViewController, UIImagePickerControllerDelega
                     photoImageView?.image = result
                 }
             }
-            
+            */
             PhotoWeatherIcon.image = #imageLiteral(resourceName: "IconCloudy")
             
         } else if(userWeatherIcon == "Raining"){
-            
+            /*
             guard let imageFilter = UIImage(named: "filter_rain"), let cgimgFilter = imageFilter.cgImage else {
                 print("imageView doesn't have an image!")
                 return
@@ -186,11 +189,11 @@ class PhotoPickerViewController: UIViewController, UIImagePickerControllerDelega
                     photoImageView?.image = result
                 }
             }
-            
+            */
             PhotoWeatherIcon.image = #imageLiteral(resourceName: "IconRain")
             
         } else if(userWeatherIcon == "Snowing"){
-            
+            /*
             guard let imageFilter = UIImage(named: "filter_snow"), let cgimgFilter = imageFilter.cgImage else {
                 print("imageView doesn't have an image!")
                 return
@@ -213,7 +216,7 @@ class PhotoPickerViewController: UIViewController, UIImagePickerControllerDelega
                     photoImageView?.image = result
                 }
             }
-            
+            */
             PhotoWeatherIcon.image = #imageLiteral(resourceName: "IconSnow")
         }
         
