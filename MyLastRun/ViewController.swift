@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import HealthKit
 
 class ViewController: UIViewController, UITextFieldDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate, UIPickerViewDataSource, UIPickerViewDelegate {
     
@@ -47,6 +48,8 @@ class ViewController: UIViewController, UITextFieldDelegate, UIImagePickerContro
     @IBOutlet weak var ImageChoice: UIImageView!
     @IBOutlet weak var ChooseStackView: UIStackView!
     @IBOutlet weak var DeletePhoto: UIButton!
+    
+    let healthManager:HealthKitManager = HealthKitManager()
     
     
     // checked variables
@@ -105,6 +108,7 @@ class ViewController: UIViewController, UITextFieldDelegate, UIImagePickerContro
     override func viewDidLoad() {
         
         super.viewDidLoad()
+        getHealthKitPermission()
         
         // title bar
         navigationItem.title = "ENTER RUN DATA"
@@ -250,6 +254,26 @@ class ViewController: UIViewController, UITextFieldDelegate, UIImagePickerContro
         MetricsInput.inputAccessoryView = toolBar
         TimeInput.inputAccessoryView = toolBar
         PaceInput.inputAccessoryView = toolBar
+    }
+    
+    func getHealthKitPermission() {
+        
+        // Seek authorization in HealthKitManager.swift.
+        healthManager.authorizeHealthKit { (authorized,  error) -> Void in
+            if authorized {
+                
+                // Get and set the user's height.
+                self.setLastWorkout()
+                //healthManager.
+            } else {
+
+            }
+        }
+    }
+    
+    func setLastWorkout() {
+         //let workoutSample = HKSampleType.quantityTypeForIdentifier(HK)
+        //print(workoutSample)
     }
 
     override func didReceiveMemoryWarning() {

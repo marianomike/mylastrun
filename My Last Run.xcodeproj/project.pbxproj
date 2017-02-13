@@ -14,6 +14,9 @@
 		7A3307831E387FBB00BC47BA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7A3307811E387FBB00BC47BA /* LaunchScreen.storyboard */; };
 		7A33078E1E387FBB00BC47BA /* MyLastRunTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A33078D1E387FBB00BC47BA /* MyLastRunTests.swift */; };
 		7A4AD4B91E3B362B00A79076 /* PhotoPickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A4AD4B81E3B362B00A79076 /* PhotoPickerViewController.swift */; };
+		7AD952C21E51487D00BE7C56 /* HealthKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7AD952C11E51487D00BE7C56 /* HealthKit.framework */; };
+		7AD952C41E51805300BE7C56 /* AddViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AD952C31E51805300BE7C56 /* AddViewController.swift */; };
+		7AD952C61E518A7200BE7C56 /* HealthKitManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AD952C51E518A7200BE7C56 /* HealthKitManager.swift */; };
 		7AF6FB771E3CF77000DB520B /* aqua.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7AF6FB761E3CF77000DB520B /* aqua.ttf */; };
 /* End PBXBuildFile section */
 
@@ -39,6 +42,10 @@
 		7A33078D1E387FBB00BC47BA /* MyLastRunTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyLastRunTests.swift; sourceTree = "<group>"; };
 		7A33078F1E387FBB00BC47BA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7A4AD4B81E3B362B00A79076 /* PhotoPickerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotoPickerViewController.swift; sourceTree = "<group>"; };
+		7AD952BF1E51487D00BE7C56 /* My Last Run.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "My Last Run.entitlements"; sourceTree = "<group>"; };
+		7AD952C11E51487D00BE7C56 /* HealthKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HealthKit.framework; path = System/Library/Frameworks/HealthKit.framework; sourceTree = SDKROOT; };
+		7AD952C31E51805300BE7C56 /* AddViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddViewController.swift; sourceTree = "<group>"; };
+		7AD952C51E518A7200BE7C56 /* HealthKitManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HealthKitManager.swift; sourceTree = "<group>"; };
 		7AF6FB761E3CF77000DB520B /* aqua.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = aqua.ttf; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -47,6 +54,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7AD952C21E51487D00BE7C56 /* HealthKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -63,9 +71,11 @@
 		7A33076C1E387FBB00BC47BA = {
 			isa = PBXGroup;
 			children = (
+				7AD952BF1E51487D00BE7C56 /* My Last Run.entitlements */,
 				7A3307771E387FBB00BC47BA /* MyLastRun */,
 				7A33078C1E387FBB00BC47BA /* MyLastRunTests */,
 				7A3307761E387FBB00BC47BA /* Products */,
+				7AD952C01E51487D00BE7C56 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -89,6 +99,8 @@
 				7AF6FB761E3CF77000DB520B /* aqua.ttf */,
 				7A3307811E387FBB00BC47BA /* LaunchScreen.storyboard */,
 				7A3307841E387FBB00BC47BA /* Info.plist */,
+				7AD952C31E51805300BE7C56 /* AddViewController.swift */,
+				7AD952C51E518A7200BE7C56 /* HealthKitManager.swift */,
 			);
 			path = MyLastRun;
 			sourceTree = "<group>";
@@ -100,6 +112,14 @@
 				7A33078F1E387FBB00BC47BA /* Info.plist */,
 			);
 			path = MyLastRunTests;
+			sourceTree = "<group>";
+		};
+		7AD952C01E51487D00BE7C56 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				7AD952C11E51487D00BE7C56 /* HealthKit.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -158,6 +178,9 @@
 							com.apple.BackgroundModes = {
 								enabled = 0;
 							};
+							com.apple.HealthKit = {
+								enabled = 1;
+							};
 						};
 					};
 					7A3307881E387FBB00BC47BA = {
@@ -215,6 +238,8 @@
 			files = (
 				7A33077B1E387FBB00BC47BA /* ViewController.swift in Sources */,
 				7A3307791E387FBB00BC47BA /* AppDelegate.swift in Sources */,
+				7AD952C41E51805300BE7C56 /* AddViewController.swift in Sources */,
+				7AD952C61E518A7200BE7C56 /* HealthKitManager.swift in Sources */,
 				7A4AD4B91E3B362B00A79076 /* PhotoPickerViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -354,6 +379,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = "My Last Run.entitlements";
 				DEVELOPMENT_TEAM = 87JCH7AUCM;
 				INFOPLIST_FILE = MyLastRun/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
@@ -369,6 +395,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = "My Last Run.entitlements";
 				DEVELOPMENT_TEAM = 87JCH7AUCM;
 				INFOPLIST_FILE = MyLastRun/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
