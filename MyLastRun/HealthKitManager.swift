@@ -29,13 +29,7 @@ class HealthKitManager {
         
         // Request authorization to read and/or write the specific data.
         healthKitStore.requestAuthorization(toShare: [], read: healthDataToRead) { (success, error) -> Void in
-            if success {
-                print("success")
-            } else {
-                print("failure")
-            }
-            
-            if let error = error { print(error) }
+            completion?(true, error as NSError?)
         }
     }
     

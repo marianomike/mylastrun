@@ -50,6 +50,7 @@ class ViewController: UIViewController, UITextFieldDelegate, UIImagePickerContro
     @IBOutlet weak var DeletePhoto: UIButton!
     
     let healthManager:HealthKitManager = HealthKitManager()
+    var distance:HKQuantitySample?
     
     
     // checked variables
@@ -263,7 +264,7 @@ class ViewController: UIViewController, UITextFieldDelegate, UIImagePickerContro
             if authorized {
                 
                 // Get and set the user's height.
-                self.setLastWorkout()
+                //self.setLastWorkout()
                 //healthManager.
             } else {
 
@@ -272,8 +273,20 @@ class ViewController: UIViewController, UITextFieldDelegate, UIImagePickerContro
     }
     
     func setLastWorkout() {
-         //let workoutSample = HKSampleType.quantityTypeForIdentifier(HK)
-        //print(workoutSample)
+        print("called")
+        let workoutSample = HKObjectType.quantityType(forIdentifier: HKQuantityTypeIdentifier.distanceWalkingRunning)
+        
+        self.healthManager.getLastWorkout(sampleType: workoutSample!, completion: { (mostRecentDistance, error) -> Void in
+            
+            if( error != nil )
+            {
+                print("Error reading weight from HealthKit Store: \(error?.localizedDescription)")
+                return;
+            }
+            
+            self.distance = mostRecentDistance as? HKQuantitySample;
+            print(self.distance as Any)
+        });
     }
 
     override func didReceiveMemoryWarning() {
