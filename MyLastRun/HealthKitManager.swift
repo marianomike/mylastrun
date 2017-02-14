@@ -17,7 +17,15 @@ class HealthKitManager {
         
         // State the health data type(s) we want to read from HealthKit.
         //let healthDataToRead = Set(arrayLiteral: HKWorkoutType(forIdentifier: HKQuantityTypeIdentifier.)!)
-        let healthDataToRead: Set<HKObjectType> = Set([ HKObjectType.workoutType() ])
+        //let healthDataToRead: Set([ HKObjectType.workoutType(), HKObjectType.quantityType(forIdentifier: HKQuantityTypeIdentifier.distanceWalkingRunning)])
+        
+        //let healthKitTypeToRead = Set(arrayLiteral: HKObjectType.workoutType(), HKObjectType.quantityType(forIdentifier: HKQuantityTypeIdentifier.distanceWalkingRunning))
+        
+        let healthDataToRead: Set<HKObjectType> = [
+            HKObjectType.quantityType(forIdentifier: HKQuantityTypeIdentifier.distanceWalkingRunning)!,
+            HKObjectType.workoutType()
+        ]
+
         
         // State the health data type(s) we want to write from HealthKit.
         //let healthDataToWrite = Set(arrayLiteral: HKObjectType.quantityType(forIdentifier: HKQuantityTypeIdentifier.distanceWalkingRunning)!)
@@ -33,36 +41,21 @@ class HealthKitManager {
         }
     }
     
-    func getLastWorkout(sampleType: HKSampleType , completion: ((HKSample?, NSError?) -> Void)!) {
-        
-        // Predicate for the height query
-        let distantPastWorkout = NSDate.distantPast as NSDate
-        let currentDate = NSDate()
-        let lastWorkoutPredicate = HKQuery.predicateForSamples(withStart: distantPastWorkout as Date, end: currentDate as Date, options: [])
-        
-        // Get the single most recent height
-        let sortDescriptor = NSSortDescriptor(key: HKSampleSortIdentifierStartDate, ascending: false)
-        
-        // Query HealthKit for the last Height entry.
-        let workoutQuery = HKSampleQuery(sampleType: sampleType, predicate: lastWorkoutPredicate, limit: 1, sortDescriptors: [sortDescriptor]) { (sampleQuery, results, error ) -> Void in
-            
-            /*
-            if let queryError = error {
-                completion(nil, queryError)
-                return
-            }
- */
-            
-            // Set the first HKQuantitySample in results as the most recent height.
-            let lastWorkout = results!.first
+    func readRunningWorkouts(completion: (([AnyObject]?, NSError?) -> Void)!) {
+        // 1. Predicate to read only running workouts
+        let predicate =  HKQuery.predicateForWorkouts(with: HKWorkoutActivityType.running)
+        // 2. Order the workouts by date
+        let sortDescriptor = NSSortDescriptor(key:HKSampleSortIdentifierStartDate, ascending: false)
+        // 3. Create the query
+        let sampleQuery = HKSampleQuery(sampleType: HKWorkoutType.workoutType(), predicate: predicate, limit: 0, sortDescriptors: [sortDescriptor]) {
+            (sampleQuery, results, error ) -> Void in
             
             if completion != nil {
-                completion(lastWorkout, nil)
+                completion(results, nil)
             }
         }
-        
-        // Time to execute the query.
-        self.healthKitStore.execute(workoutQuery)
+        // 4. Execute the query
+        self.healthKitStore.execute(sampleQuery)
     }
     
 }

@@ -51,6 +51,7 @@ class ViewController: UIViewController, UITextFieldDelegate, UIImagePickerContro
     
     let healthManager:HealthKitManager = HealthKitManager()
     var distance:HKQuantitySample?
+    var workouts = [HKWorkout]()
     
     
     // checked variables
@@ -265,28 +266,37 @@ class ViewController: UIViewController, UITextFieldDelegate, UIImagePickerContro
                 
                 // Get and set the user's height.
                 //self.setLastWorkout()
-                //healthManager.
+                self.healthManager.readRunningWorkouts(completion: { (results, error) -> Void in
+                    if( error != nil )
+                    {
+                        print("Error reading workouts: \(error?.localizedDescription)")
+                        return;
+                    }
+                    else
+                    {
+                        print("Workouts read successfully!")
+                    }
+                    
+                    //Kkeep workouts and refresh tableview in main thread
+                    self.workouts = results as! [HKWorkout]
+                    /*
+                    dispatch_async(dispatch_get_main_queue(), { () -> Void in
+                        self.tableView.reloadData()
+                    });
+ */
+                    //print(self.workouts)
+                    
+                    for i in 0 ..< self.workouts.count{
+                        print("\(i) \(self.workouts[i].totalDistance as Any)")
+                        print(self.workouts[i].startDate as Any)
+                        print(self.workouts[i].duration as Any)
+                    }
+                    
+                })
             } else {
 
             }
         }
-    }
-    
-    func setLastWorkout() {
-        print("called")
-        let workoutSample = HKObjectType.quantityType(forIdentifier: HKQuantityTypeIdentifier.distanceWalkingRunning)
-        
-        self.healthManager.getLastWorkout(sampleType: workoutSample!, completion: { (mostRecentDistance, error) -> Void in
-            
-            if( error != nil )
-            {
-                print("Error reading weight from HealthKit Store: \(error?.localizedDescription)")
-                return;
-            }
-            
-            self.distance = mostRecentDistance as? HKQuantitySample;
-            print(self.distance as Any)
-        });
     }
 
     override func didReceiveMemoryWarning() {
