@@ -186,32 +186,7 @@ class ViewController: UIViewController, UITextFieldDelegate, UIImagePickerContro
         
         // Set input date to current date
         DateInput.text = currentDateFormatter.string(from: currentDate)
-        
-        // Assign current date to variables
-        // TO DO: Make a function out of the below
-        monthFormatter.dateFormat = formatMonth
-        let convertedMonth: String  = monthFormatter.string(from: currentDate)
-        dateMonth = convertedMonth
-        
-        dayFormatter.dateFormat = formatDay
-        let convertedDay: String  = dayFormatter.string(from: currentDate)
-        dateDay = convertedDay
-        
-        yearFormatter.dateFormat = formatYear
-        let convertedYear: String  = yearFormatter.string(from: currentDate)
-        dateYear = convertedYear
-        
-        hourFormatter.dateFormat = formatHour
-        let convertedHour: String  = hourFormatter.string(from: currentDate)
-        dateHour = convertedHour
-        
-        minuteFormatter.dateFormat = formatMinutes
-        let convertedMinute: String  = minuteFormatter.string(from: currentDate)
-        dateMinutes = convertedMinute
-        
-        timePeriodFormatter.dateFormat = formatTimePeriod
-        let convertedTimePeriod: String  = timePeriodFormatter.string(from: currentDate)
-        dateTimePeriod = convertedTimePeriod
+        updateDates(date: currentDate)
         
         // set the date picker to today's date by default
         datePicker.addTarget(self, action: #selector(ViewController.datePickerValueChanged(_:)), for: UIControlEvents.valueChanged)
@@ -274,6 +249,32 @@ class ViewController: UIViewController, UITextFieldDelegate, UIImagePickerContro
         }
     }
     
+    func updateDates(date: Date){
+        monthFormatter.dateFormat = formatMonth
+        let convertedMonth: String  = monthFormatter.string(from: date)
+        dateMonth = convertedMonth
+        
+        dayFormatter.dateFormat = formatDay
+        let convertedDay: String  = dayFormatter.string(from: date)
+        dateDay = convertedDay
+        
+        yearFormatter.dateFormat = formatYear
+        let convertedYear: String  = yearFormatter.string(from: date)
+        dateYear = convertedYear
+        
+        hourFormatter.dateFormat = formatHour
+        let convertedHour: String  = hourFormatter.string(from: date)
+        dateHour = convertedHour
+        
+        minuteFormatter.dateFormat = formatMinutes
+        let convertedMinute: String  = minuteFormatter.string(from: date)
+        dateMinutes = convertedMinute
+        
+        timePeriodFormatter.dateFormat = formatTimePeriod
+        let convertedTimePeriod: String  = timePeriodFormatter.string(from: date)
+        dateTimePeriod = convertedTimePeriod
+    }
+    
     func getAllRuns(){
         self.healthManager.readRunningWorkouts(completion: { (results, error) -> Void in
             if( error != nil )
@@ -317,30 +318,7 @@ class ViewController: UIViewController, UITextFieldDelegate, UIImagePickerContro
     // when Today's date is pressed, set it to today
     func tappedToolBarBtn(_ sender: UIBarButtonItem) {
         
-        monthFormatter.dateFormat = formatMonth
-        let convertedMonth: String  = monthFormatter.string(from: Date())
-        dateMonth = convertedMonth
-        
-        dayFormatter.dateFormat = formatDay
-        let convertedDay: String  = dayFormatter.string(from: Date())
-        dateDay = convertedDay
-        
-        yearFormatter.dateFormat = formatYear
-        let convertedYear: String  = yearFormatter.string(from: Date())
-        dateYear = convertedYear
-        
-        
-        hourFormatter.dateFormat = formatHour
-        let convertedHour: String  = hourFormatter.string(from: Date())
-        dateHour = convertedHour
-        
-        minuteFormatter.dateFormat = formatMinutes
-        let convertedMinute: String  = minuteFormatter.string(from: Date())
-        dateMinutes = convertedMinute
-        
-        timePeriodFormatter.dateFormat = formatTimePeriod
-        let convertedTimePeriod: String  = timePeriodFormatter.string(from: Date())
-        dateTimePeriod = convertedTimePeriod
+        updateDates(date: Date())
         
         DateInput.text = dateMonth + " " + dateDay + ", " + dateYear + ", " + dateHour + ":" + dateMinutes + " " + dateTimePeriod
         
@@ -378,29 +356,7 @@ class ViewController: UIViewController, UITextFieldDelegate, UIImagePickerContro
         
         DateInput.text = dateFormatter.string(from: sender.date)
         
-        monthFormatter.dateFormat = formatMonth
-        let convertedMonth: String  = monthFormatter.string(from: sender.date)
-        dateMonth = convertedMonth
-        
-        dayFormatter.dateFormat = formatDay
-        let convertedDay: String  = dayFormatter.string(from: sender.date)
-        dateDay = convertedDay
-        
-        yearFormatter.dateFormat = formatYear
-        let convertedYear: String  = yearFormatter.string(from: sender.date)
-        dateYear = convertedYear
-        
-        hourFormatter.dateFormat = formatHour
-        let convertedHour: String  = hourFormatter.string(from: sender.date)
-        dateHour = convertedHour
-        
-        minuteFormatter.dateFormat = formatMinutes
-        let convertedMinute: String  = minuteFormatter.string(from: sender.date)
-        dateMinutes = convertedMinute
-        
-        timePeriodFormatter.dateFormat = formatTimePeriod
-        let convertedTimePeriod: String  = timePeriodFormatter.string(from: sender.date)
-        dateTimePeriod = convertedTimePeriod
+        updateDates(date: sender.date)
         
     }
     
