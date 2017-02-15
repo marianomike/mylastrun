@@ -66,6 +66,9 @@ class ViewController: UIViewController, UITextFieldDelegate, UIImagePickerContro
     let timePeriodFormatter = DateFormatter()
     let formatTimePeriod = "a"
     
+    let formatter = DateComponentsFormatter()
+    let distanceFormatter = LengthFormatter()
+    
     // checked variables
     var titleIsChecked: Bool!
     var distanceIsChecked: Bool!
@@ -291,13 +294,47 @@ class ViewController: UIViewController, UITextFieldDelegate, UIImagePickerContro
             
             // print workouts
             for i in 0 ..< self.workouts.count{
-                print("\(i) \(self.workouts[i].totalDistance as Any)")
-                print(self.workouts[i].startDate as Any)
-                print(self.workouts[i].duration as Any)
+                print(self.convertKMToMiles(distance: self.workouts[i].totalDistance!))
+                print(self.convertDate(date: self.workouts[i].startDate))
+                //print(self.workouts[i].accessibilityActivationPoint)
+                print(self.convertDuration(duration: self.workouts[i].duration))
+            }
+            
+            DispatchQueue.main.async(){
+                self.DateInput.text = self.convertDate(date: self.workouts[0].startDate)
+                self.DistanceInput.text = String(describing: self.convertKMToMiles(distance: self.workouts[0].totalDistance!))
+                self.TimeInput.text = self.convertDuration(duration: self.workouts[0].duration)
+                
+                self.updateDates(date: self.workouts[0].startDate)
             }
             
         })
     }
+    
+    func convertDuration(duration: TimeInterval) -> String{
+        formatter.unitsStyle = .positional
+        formatter.allowedUnits = [ .hour, .minute, .second ]
+        formatter.zeroFormattingBehavior = [ .pad ]
+        
+        let convertedDuration = formatter.string(from: duration)
+        return convertedDuration!
+    }
+    
+    func convertDate(date: Date) -> String{
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateStyle = DateFormatter.Style.medium
+        dateFormatter.timeStyle = DateFormatter.Style.short
+        
+        let convertedDate = dateFormatter.string(from: date)
+        return convertedDate
+    }
+    
+    func convertKMToMiles(distance: HKQuantity) -> String{
+        let distanceInKM = distance.doubleValue(for: HKUnit.meterUnit(with: HKMetricPrefix.kilo))
+        let convertedMiles = distanceFormatter.string(fromValue: distanceInKM, unit: LengthFormatter.Unit.mile)
+        return convertedMiles
+    }
+ 
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
