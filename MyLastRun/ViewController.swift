@@ -330,7 +330,8 @@ class ViewController: UIViewController, UITextFieldDelegate, UIImagePickerContro
     }
     
     func convertKMToMiles(distance: HKQuantity) -> String{
-        let distanceInKM = distance.doubleValue(for: HKUnit.meterUnit(with: HKMetricPrefix.kilo))
+        //distanceFormatter. =
+        let distanceInKM = distance.doubleValue(for: HKUnit.mile())
         let convertedMiles = distanceFormatter.string(fromValue: distanceInKM, unit: LengthFormatter.Unit.mile)
         return convertedMiles
     }
