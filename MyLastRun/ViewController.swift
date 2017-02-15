@@ -29,7 +29,6 @@ class ViewController: UIViewController, UITextFieldDelegate, UIImagePickerContro
     // pace variables
     @IBOutlet weak var PaceInput: UITextField!
     
-    
     // location variables
     @IBOutlet weak var BtnLocationCheckbox: UIButton!
     @IBOutlet weak var LocationInput: UITextField!
@@ -52,7 +51,20 @@ class ViewController: UIViewController, UITextFieldDelegate, UIImagePickerContro
     let healthManager:HealthKitManager = HealthKitManager()
     var distance:HKQuantitySample?
     var workouts = [HKWorkout]()
+    var lastRun = [HKWorkout]()
     
+    let monthFormatter = DateFormatter()
+    let formatMonth = "MMM"
+    let dayFormatter = DateFormatter()
+    let formatDay = "d"
+    let yearFormatter = DateFormatter()
+    let formatYear = "yyyy"
+    let hourFormatter = DateFormatter()
+    let formatHour = "h"
+    let minuteFormatter = DateFormatter()
+    let formatMinutes = "m"
+    let timePeriodFormatter = DateFormatter()
+    let formatTimePeriod = "a"
     
     // checked variables
     var titleIsChecked: Bool!
@@ -177,33 +189,27 @@ class ViewController: UIViewController, UITextFieldDelegate, UIImagePickerContro
         
         // Assign current date to variables
         // TO DO: Make a function out of the below
-        let monthFormatter = DateFormatter()
-        monthFormatter.dateFormat = "MMM"
+        monthFormatter.dateFormat = formatMonth
         let convertedMonth: String  = monthFormatter.string(from: currentDate)
         dateMonth = convertedMonth
         
-        let dayFormatter = DateFormatter()
-        dayFormatter.dateFormat = "d"
+        dayFormatter.dateFormat = formatDay
         let convertedDay: String  = dayFormatter.string(from: currentDate)
         dateDay = convertedDay
         
-        let yearFormatter = DateFormatter()
-        yearFormatter.dateFormat = "yyyy"
+        yearFormatter.dateFormat = formatYear
         let convertedYear: String  = yearFormatter.string(from: currentDate)
         dateYear = convertedYear
         
-        let hourFormatter = DateFormatter()
-        hourFormatter.dateFormat = "h"
+        hourFormatter.dateFormat = formatHour
         let convertedHour: String  = hourFormatter.string(from: currentDate)
         dateHour = convertedHour
         
-        let minuteFormatter = DateFormatter()
-        minuteFormatter.dateFormat = "m"
+        minuteFormatter.dateFormat = formatMinutes
         let convertedMinute: String  = minuteFormatter.string(from: currentDate)
         dateMinutes = convertedMinute
         
-        let timePeriodFormatter = DateFormatter()
-        timePeriodFormatter.dateFormat = "a"
+        timePeriodFormatter.dateFormat = formatTimePeriod
         let convertedTimePeriod: String  = timePeriodFormatter.string(from: currentDate)
         dateTimePeriod = convertedTimePeriod
         
@@ -259,44 +265,37 @@ class ViewController: UIViewController, UITextFieldDelegate, UIImagePickerContro
     }
     
     func getHealthKitPermission() {
-        
-        // Seek authorization in HealthKitManager.swift.
         healthManager.authorizeHealthKit { (authorized,  error) -> Void in
             if authorized {
-                
-                // Get and set the user's height.
-                //self.setLastWorkout()
-                self.healthManager.readRunningWorkouts(completion: { (results, error) -> Void in
-                    if( error != nil )
-                    {
-                        print("Error reading workouts: \(error?.localizedDescription)")
-                        return;
-                    }
-                    else
-                    {
-                        print("Workouts read successfully!")
-                    }
-                    
-                    //Kkeep workouts and refresh tableview in main thread
-                    self.workouts = results as! [HKWorkout]
-                    /*
-                    dispatch_async(dispatch_get_main_queue(), { () -> Void in
-                        self.tableView.reloadData()
-                    });
- */
-                    //print(self.workouts)
-                    
-                    for i in 0 ..< self.workouts.count{
-                        print("\(i) \(self.workouts[i].totalDistance as Any)")
-                        print(self.workouts[i].startDate as Any)
-                        print(self.workouts[i].duration as Any)
-                    }
-                    
-                })
+                self.getAllRuns()
             } else {
-
+                
             }
         }
+    }
+    
+    func getAllRuns(){
+        self.healthManager.readRunningWorkouts(completion: { (results, error) -> Void in
+            if( error != nil )
+            {
+                print("Error reading workouts: \(error?.localizedDescription)")
+                return;
+            }
+            else
+            {
+                print("Workouts read successfully!")
+            }
+            
+            self.workouts = results as! [HKWorkout]
+            
+            // print workouts
+            for i in 0 ..< self.workouts.count{
+                print("\(i) \(self.workouts[i].totalDistance as Any)")
+                print(self.workouts[i].startDate as Any)
+                print(self.workouts[i].duration as Any)
+            }
+            
+        })
     }
 
     override func didReceiveMemoryWarning() {
@@ -306,7 +305,6 @@ class ViewController: UIViewController, UITextFieldDelegate, UIImagePickerContro
     
     // close the keyboard when custom toolbar done is pressed
     func donePressed(_ sender: UIBarButtonItem) {
-        
         DateInput.resignFirstResponder()
         DistanceInput.resignFirstResponder()
         MetricsInput.resignFirstResponder()
@@ -314,40 +312,33 @@ class ViewController: UIViewController, UITextFieldDelegate, UIImagePickerContro
         DegreesInput.resignFirstResponder()
         WeatherInput.resignFirstResponder()
         PaceInput.resignFirstResponder()
-        
     }
     
     // when Today's date is pressed, set it to today
     func tappedToolBarBtn(_ sender: UIBarButtonItem) {
         
-        let monthFormatter = DateFormatter()
-        monthFormatter.dateFormat = "MMM"
+        monthFormatter.dateFormat = formatMonth
         let convertedMonth: String  = monthFormatter.string(from: Date())
         dateMonth = convertedMonth
         
-        let dayFormatter = DateFormatter()
-        dayFormatter.dateFormat = "d"
+        dayFormatter.dateFormat = formatDay
         let convertedDay: String  = dayFormatter.string(from: Date())
         dateDay = convertedDay
         
-        let yearFormatter = DateFormatter()
-        yearFormatter.dateFormat = "yyyy"
+        yearFormatter.dateFormat = formatYear
         let convertedYear: String  = yearFormatter.string(from: Date())
         dateYear = convertedYear
         
         
-        let hourFormatter = DateFormatter()
-        hourFormatter.dateFormat = "h"
+        hourFormatter.dateFormat = formatHour
         let convertedHour: String  = hourFormatter.string(from: Date())
         dateHour = convertedHour
         
-        let minuteFormatter = DateFormatter()
-        minuteFormatter.dateFormat = "mm"
+        minuteFormatter.dateFormat = formatMinutes
         let convertedMinute: String  = minuteFormatter.string(from: Date())
         dateMinutes = convertedMinute
         
-        let timePeriodFormatter = DateFormatter()
-        timePeriodFormatter.dateFormat = "a"
+        timePeriodFormatter.dateFormat = formatTimePeriod
         let convertedTimePeriod: String  = timePeriodFormatter.string(from: Date())
         dateTimePeriod = convertedTimePeriod
         
@@ -360,6 +351,7 @@ class ViewController: UIViewController, UITextFieldDelegate, UIImagePickerContro
         self.view.endEditing(true)
     }
     
+    // move up textfields when editing
     func textFieldDidBeginEditing(_ textField: UITextField) {
         animateViewMoving(up: true, moveValue: 100)
     }
@@ -386,35 +378,27 @@ class ViewController: UIViewController, UITextFieldDelegate, UIImagePickerContro
         
         DateInput.text = dateFormatter.string(from: sender.date)
         
-        
-        let monthFormatter = DateFormatter()
-        monthFormatter.dateFormat = "MMM"
+        monthFormatter.dateFormat = formatMonth
         let convertedMonth: String  = monthFormatter.string(from: sender.date)
         dateMonth = convertedMonth
         
-        let dayFormatter = DateFormatter()
-        dayFormatter.dateFormat = "d"
+        dayFormatter.dateFormat = formatDay
         let convertedDay: String  = dayFormatter.string(from: sender.date)
         dateDay = convertedDay
         
-        let yearFormatter = DateFormatter()
-        yearFormatter.dateFormat = "yyyy"
+        yearFormatter.dateFormat = formatYear
         let convertedYear: String  = yearFormatter.string(from: sender.date)
         dateYear = convertedYear
         
-        
-        let hourFormatter = DateFormatter()
-        hourFormatter.dateFormat = "h"
+        hourFormatter.dateFormat = formatHour
         let convertedHour: String  = hourFormatter.string(from: sender.date)
         dateHour = convertedHour
         
-        let minuteFormatter = DateFormatter()
-        minuteFormatter.dateFormat = "m"
+        minuteFormatter.dateFormat = formatMinutes
         let convertedMinute: String  = minuteFormatter.string(from: sender.date)
         dateMinutes = convertedMinute
         
-        let timePeriodFormatter = DateFormatter()
-        timePeriodFormatter.dateFormat = "a"
+        timePeriodFormatter.dateFormat = formatTimePeriod
         let convertedTimePeriod: String  = timePeriodFormatter.string(from: sender.date)
         dateTimePeriod = convertedTimePeriod
         
