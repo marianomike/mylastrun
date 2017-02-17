@@ -13,6 +13,7 @@
 		7A3307801E387FBB00BC47BA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7A33077F1E387FBB00BC47BA /* Assets.xcassets */; };
 		7A3307831E387FBB00BC47BA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7A3307811E387FBB00BC47BA /* LaunchScreen.storyboard */; };
 		7A33078E1E387FBB00BC47BA /* MyLastRunTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A33078D1E387FBB00BC47BA /* MyLastRunTests.swift */; };
+		7A3EDB921E55834600EB5E14 /* GetLocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A3EDB911E55834600EB5E14 /* GetLocation.swift */; };
 		7A4AD4B91E3B362B00A79076 /* PhotoPickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A4AD4B81E3B362B00A79076 /* PhotoPickerViewController.swift */; };
 		7AD952C21E51487D00BE7C56 /* HealthKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7AD952C11E51487D00BE7C56 /* HealthKit.framework */; };
 		7AD952C41E51805300BE7C56 /* AddViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AD952C31E51805300BE7C56 /* AddViewController.swift */; };
@@ -41,6 +42,7 @@
 		7A3307891E387FBB00BC47BA /* My Last RunTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "My Last RunTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		7A33078D1E387FBB00BC47BA /* MyLastRunTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyLastRunTests.swift; sourceTree = "<group>"; };
 		7A33078F1E387FBB00BC47BA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7A3EDB911E55834600EB5E14 /* GetLocation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GetLocation.swift; sourceTree = "<group>"; };
 		7A4AD4B81E3B362B00A79076 /* PhotoPickerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotoPickerViewController.swift; sourceTree = "<group>"; };
 		7AD952BF1E51487D00BE7C56 /* My Last Run.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "My Last Run.entitlements"; sourceTree = "<group>"; };
 		7AD952C11E51487D00BE7C56 /* HealthKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HealthKit.framework; path = System/Library/Frameworks/HealthKit.framework; sourceTree = SDKROOT; };
@@ -94,6 +96,7 @@
 				7A3307781E387FBB00BC47BA /* AppDelegate.swift */,
 				7A33077A1E387FBB00BC47BA /* ViewController.swift */,
 				7A33077C1E387FBB00BC47BA /* Main.storyboard */,
+				7A3EDB911E55834600EB5E14 /* GetLocation.swift */,
 				7A4AD4B81E3B362B00A79076 /* PhotoPickerViewController.swift */,
 				7A33077F1E387FBB00BC47BA /* Assets.xcassets */,
 				7AF6FB761E3CF77000DB520B /* aqua.ttf */,
@@ -239,6 +242,7 @@
 				7A33077B1E387FBB00BC47BA /* ViewController.swift in Sources */,
 				7A3307791E387FBB00BC47BA /* AppDelegate.swift in Sources */,
 				7AD952C41E51805300BE7C56 /* AddViewController.swift in Sources */,
+				7A3EDB921E55834600EB5E14 /* GetLocation.swift in Sources */,
 				7AD952C61E518A7200BE7C56 /* HealthKitManager.swift in Sources */,
 				7A4AD4B91E3B362B00A79076 /* PhotoPickerViewController.swift in Sources */,
 			);

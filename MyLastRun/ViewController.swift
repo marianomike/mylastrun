@@ -8,6 +8,8 @@
 
 import UIKit
 import HealthKit
+import CoreLocation
+import MapKit
 
 class ViewController: UIViewController, UITextFieldDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate, UIPickerViewDataSource, UIPickerViewDelegate {
     
@@ -126,6 +128,17 @@ class ViewController: UIViewController, UITextFieldDelegate, UIImagePickerContro
         
         super.viewDidLoad()
         getHealthKitPermission()
+        
+        /*
+        let loc = GetLocation()
+        
+        loc.getAddress { result in
+            
+            if let city = result["City"] as? String {
+                print(city)
+            }
+        }
+ */
         
         // title bar
         navigationItem.title = "ENTER RUN DATA"
@@ -293,12 +306,14 @@ class ViewController: UIViewController, UITextFieldDelegate, UIImagePickerContro
             self.workouts = results as! [HKWorkout]
             
             // print workouts
-            for i in 0 ..< self.workouts.count{
-                print(self.convertKMToMiles(distance: self.workouts[i].totalDistance!))
-                print(self.convertDate(date: self.workouts[i].startDate))
+            
+            //for i in 0 ..< self.workouts.count{
+                //print(self.convertKMToMiles(distance: self.workouts[i].totalDistance!))
+                //print(self.workouts[i].metadata as Any!)
                 //print(self.workouts[i].accessibilityActivationPoint)
-                print(self.convertDuration(duration: self.workouts[i].duration))
-            }
+                //print(self.convertDuration(duration: self.workouts[i].duration))
+            //}
+ 
             
             DispatchQueue.main.async(){
                 self.DateInput.text = self.convertDate(date: self.workouts[0].startDate)
@@ -306,6 +321,7 @@ class ViewController: UIViewController, UITextFieldDelegate, UIImagePickerContro
                 self.TimeInput.text = self.convertDuration(duration: self.workouts[0].duration)
                 
                 self.updateDates(date: self.workouts[0].startDate)
+                self.datePicker.setDate(self.workouts[0].startDate, animated: true)
             }
             
         })
@@ -330,10 +346,25 @@ class ViewController: UIViewController, UITextFieldDelegate, UIImagePickerContro
     }
     
     func convertKMToMiles(distance: HKQuantity) -> String{
-        //distanceFormatter. =
+        //distanceFormatter.numberFormatter.numberStyle =
         let distanceInKM = distance.doubleValue(for: HKUnit.mile())
-        let convertedMiles = distanceFormatter.string(fromValue: distanceInKM, unit: LengthFormatter.Unit.mile)
+        var convertedMiles = distanceFormatter.string(fromValue: distanceInKM, unit: LengthFormatter.Unit.mile)
+        convertedMiles = String(convertedMiles.characters.dropLast(3))
         return convertedMiles
+    }
+    
+    func milesToKilometers(speedInMPH:Double) ->Double {
+        let speedInKPH = speedInMPH * 1.60934
+        return speedInKPH as Double
+    }
+    
+    func kilometersToMiles(speedInMPH:Double) ->Double {
+        let speedInKPH = speedInMPH / 1.60934
+        return speedInKPH as Double
+    }
+    
+    func PaceCalculator (minutes:Double, seconds:Double, distance:Double) -> Double{
+        return ((minutes*60) + seconds) / distance
     }
  
 

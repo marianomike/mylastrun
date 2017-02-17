@@ -63,10 +63,10 @@ class PhotoPickerViewController: UIViewController, UIImagePickerControllerDelega
         PhotoDuration.text = userDuration
         PhotoPace.text = userPace
         
-        photoImageView.image = passedImage
         //print(passedImage.size.width)
         //print(passedImage.size.height)
         //passedImage = resizeImage(image: passedImage, targetSize: CGSize.init(width: 3072, height: 3072))
+        photoImageView.image = passedImage
         
         /*
         guard let image = passedImage, let cgimg = image.cgImage else {

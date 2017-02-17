@@ -19,11 +19,15 @@
 	<key>CFBundleShortVersionString</key>
 	<string>1.0</string>
 	<key>CFBundleVersion</key>
-	<string>2</string>
+	<string>3</string>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
 	<key>NSCameraUsageDescription</key>
 	<string>Allows you to take your own photos</string>
+	<key>NSHealthShareUsageDescription</key>
+	<string>Allows access to running data</string>
+	<key>NSHealthUpdateUsageDescription</key>
+	<string>Allows access to running data</string>
 	<key>NSPhotoLibraryUsageDescription</key>
 	<string>Allows you to add your own photos</string>
 	<key>UIAppFonts</key>
@@ -51,9 +55,9 @@
 		<string>UIInterfaceOrientationLandscapeLeft</string>
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
-	<key>NSHealthShareUsageDescription</key>
-	<string>Allows access to running data</string>
-	<key>NSHealthUpdateUsageDescription</key>
-	<string>Allows access to running data</string>
+	<key>NSLocationAlwaysUsageDescription</key>
+	<string>App needs location</string>
+	<key>NSLocationWhenInUseUsageDescription</key>
+	<string>App needs location</string>
 </dict>
 </plist>
