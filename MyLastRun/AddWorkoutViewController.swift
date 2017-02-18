@@ -13,6 +13,13 @@ class AddWorkoutViewController: UITableViewController, UINavigationControllerDel
     
     var workouts = [HKWorkout]()
     let healthManager:HealthKitManager = HealthKitManager()
+    let formatter = DateComponentsFormatter()
+    
+    var selectedDate: String!
+    var selectedDistance: String!
+    var selectedDuration: String!
+    var selectedPace: String!
+    var selectedDateObject = Date()
     
     @IBOutlet weak var BtnCancel: UIBarButtonItem!
 
@@ -20,7 +27,7 @@ class AddWorkoutViewController: UITableViewController, UINavigationControllerDel
         super.viewDidLoad()
         
         // set the title of the view
-        navigationItem.title = "ALL MY RUNS"
+        navigationItem.title = "CHOOSE RUN"
         navigationController?.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName: UIColor(red: 169/255, green: 203/255, blue: 74/255, alpha: 1.0)]
 
         // Uncomment the following line to preserve selection between presentations
@@ -62,6 +69,15 @@ class AddWorkoutViewController: UITableViewController, UINavigationControllerDel
             
             DispatchQueue.main.async(){
                 self.tableView.reloadData()
+                let indexPath = IndexPath(row: 0, section: 0)
+                self.tableView.selectRow(at: indexPath, animated: true, scrollPosition: .bottom)
+                
+                self.selectedDate = String(describing: self.convertDate(date: self.workouts[0].startDate))
+                self.selectedDistance = String(describing: self.convertKMToMiles(distance: self.workouts[0].totalDistance!))
+                self.selectedDuration = String(describing: self.convertDuration(duration: self.workouts[0].duration))
+                self.selectedPace = String(describing: self.calculatePace(distance: self.workouts[0].totalDistance!, duration: self.workouts[0].duration))
+                
+                self.selectedDateObject = self.workouts[0].startDate
             }
             
         })
@@ -73,7 +89,7 @@ class AddWorkoutViewController: UITableViewController, UINavigationControllerDel
     
     func convertDate(date: Date) -> String{
         let dateFormatter = DateFormatter()
-        dateFormatter.dateStyle = DateFormatter.Style.short
+        dateFormatter.dateStyle = DateFormatter.Style.medium
         dateFormatter.timeStyle = DateFormatter.Style.short
         
         let convertedDate = dateFormatter.string(from: date)
@@ -88,6 +104,29 @@ class AddWorkoutViewController: UITableViewController, UINavigationControllerDel
         var convertedMiles = distanceFormatter.string(fromValue: distanceInKM, unit: LengthFormatter.Unit.mile)
         convertedMiles = String(convertedMiles.characters.dropLast(3))
         return convertedMiles
+    }
+    
+    func calculatePace(distance: HKQuantity, duration: TimeInterval) -> String{
+        let distanceInKM = distance.doubleValue(for: HKUnit.mile())
+        let pace = duration/distanceInKM
+        
+        let formatter = DateComponentsFormatter()
+        
+        formatter.unitsStyle = .positional
+        formatter.allowedUnits = [ .minute, .second ]
+        formatter.zeroFormattingBehavior = [ .pad ]
+        
+        let convertedPace = formatter.string(from: pace)
+        return convertedPace!
+        
+    }
+    func convertDuration(duration: TimeInterval) -> String{
+        formatter.unitsStyle = .positional
+        formatter.allowedUnits = [ .hour, .minute, .second ]
+        formatter.zeroFormattingBehavior = [ .pad ]
+        
+        let convertedDuration = formatter.string(from: duration)
+        return convertedDuration!
     }
     
 
@@ -117,6 +156,21 @@ class AddWorkoutViewController: UITableViewController, UINavigationControllerDel
         // Configure the cell...
 
         return cell
+    }
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let index = indexPath.row
+        print(index)
+        //let cell: UITableViewCell = tableView.cellForRow(at: indexPath)!
+        selectedDate = String(describing: convertDate(date: workouts[index].startDate))
+        selectedDistance = String(describing: convertKMToMiles(distance: workouts[index].totalDistance!))
+        selectedDuration = String(describing: convertDuration(duration: workouts[index].duration))
+        selectedPace = String(describing: calculatePace(distance: self.workouts[index].totalDistance!, duration: self.workouts[index].duration))
+        
+        selectedDateObject = self.workouts[index].startDate
+        
+
+        //print(selectedDate)
     }
     
 
@@ -155,7 +209,7 @@ class AddWorkoutViewController: UITableViewController, UINavigationControllerDel
     }
     */
 
-    /*
+    
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
@@ -163,6 +217,6 @@ class AddWorkoutViewController: UITableViewController, UINavigationControllerDel
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
     }
-    */
+    
 
 }

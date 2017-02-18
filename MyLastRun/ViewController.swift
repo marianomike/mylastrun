@@ -648,7 +648,19 @@ class ViewController: UIViewController, UITextFieldDelegate, UIImagePickerContro
         
     }
     
-    @IBAction func unwindToStats(segue: UIStoryboardSegue) {}
+    @IBAction func unwindToStats(segue: UIStoryboardSegue) {
+        if let modalVC = segue.source as? AddWorkoutViewController, segue.identifier == "closeModal" {
+                
+            //let text = modalVC.textField.text
+            DateInput.text = modalVC.selectedDate
+            DistanceInput.text = modalVC.selectedDistance
+            TimeInput.text = modalVC.selectedDuration
+            PaceInput.text = modalVC.selectedPace
+            updateDates(date: modalVC.selectedDateObject)
+                
+            // Now do stuff with the text.
+        }
+    }
     
     // pass variables through to next view
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
