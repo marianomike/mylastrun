@@ -307,24 +307,40 @@ class ViewController: UIViewController, UITextFieldDelegate, UIImagePickerContro
             
             // print workouts
             
-            //for i in 0 ..< self.workouts.count{
+            for i in 0 ..< self.workouts.count{
                 //print(self.convertKMToMiles(distance: self.workouts[i].totalDistance!))
-                //print(self.workouts[i].metadata as Any!)
+               //print(self.workouts[i].duration)
+                print(self.calculatePace(distance: self.workouts[i].totalDistance!, duration: self.workouts[i].duration))
                 //print(self.workouts[i].accessibilityActivationPoint)
                 //print(self.convertDuration(duration: self.workouts[i].duration))
-            //}
+            }
  
             
             DispatchQueue.main.async(){
+                
                 self.DateInput.text = self.convertDate(date: self.workouts[0].startDate)
                 self.DistanceInput.text = String(describing: self.convertKMToMiles(distance: self.workouts[0].totalDistance!))
                 self.TimeInput.text = self.convertDuration(duration: self.workouts[0].duration)
+                self.PaceInput.text = self.calculatePace(distance: self.workouts[0].totalDistance!, duration: self.workouts[0].duration)
                 
                 self.updateDates(date: self.workouts[0].startDate)
                 self.datePicker.setDate(self.workouts[0].startDate, animated: true)
             }
             
         })
+    }
+    
+    func calculatePace(distance: HKQuantity, duration: TimeInterval) -> String{
+        let distanceInKM = distance.doubleValue(for: HKUnit.mile())
+        let pace = duration/distanceInKM
+        
+        formatter.unitsStyle = .positional
+        formatter.allowedUnits = [ .minute, .second ]
+        formatter.zeroFormattingBehavior = [ .pad ]
+        
+        let convertedPace = formatter.string(from: pace)
+        return convertedPace!
+        
     }
     
     func convertDuration(duration: TimeInterval) -> String{
