@@ -314,6 +314,7 @@ class ViewController: UIViewController, UITextFieldDelegate, UIImagePickerContro
             self.workouts = results as! [HKWorkout]
             
             // print workouts
+            print(self.workouts.count)
             
             //for i in 0 ..< self.workouts.count{
                 //print(self.convertKMToMiles(distance: self.workouts[i].totalDistance!))
@@ -327,15 +328,18 @@ class ViewController: UIViewController, UITextFieldDelegate, UIImagePickerContro
             
             DispatchQueue.main.async(){
                 
-                let lastDistance = self.convertKMToMiles(distance: self.workouts[0].totalDistance!)
+                if(self.workouts.count != 0){
                 
-                self.DateInput.text = self.convertDate(date: self.workouts[0].startDate)
-                self.DistanceInput.text = String(describing: lastDistance)
-                self.TimeInput.text = self.convertDuration(duration: self.workouts[0].duration)
-                self.PaceInput.text = self.calculatePace(distance: self.workouts[0].totalDistance!, duration: self.workouts[0].duration)
+                    let lastDistance = self.convertKMToMiles(distance: self.workouts[0].totalDistance!)
                 
-                self.updateDates(date: self.workouts[0].startDate)
-                self.datePicker.setDate(self.workouts[0].startDate, animated: true)
+                    self.DateInput.text = self.convertDate(date: self.workouts[0].startDate)
+                    self.DistanceInput.text = String(describing: lastDistance)
+                    self.TimeInput.text = self.convertDuration(duration: self.workouts[0].duration)
+                    self.PaceInput.text = self.calculatePace(distance: self.workouts[0].totalDistance!, duration: self.workouts[0].duration)
+                
+                    self.updateDates(date: self.workouts[0].startDate)
+                    self.datePicker.setDate(self.workouts[0].startDate, animated: true)
+                }
             }
             
         })

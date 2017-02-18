@@ -68,16 +68,19 @@ class AddWorkoutViewController: UITableViewController, UINavigationControllerDel
             */
             
             DispatchQueue.main.async(){
-                self.tableView.reloadData()
-                let indexPath = IndexPath(row: 0, section: 0)
-                self.tableView.selectRow(at: indexPath, animated: true, scrollPosition: .bottom)
                 
-                self.selectedDate = String(describing: self.convertDate(date: self.workouts[0].startDate))
-                self.selectedDistance = String(describing: self.convertKMToMiles(distance: self.workouts[0].totalDistance!))
-                self.selectedDuration = String(describing: self.convertDuration(duration: self.workouts[0].duration))
-                self.selectedPace = String(describing: self.calculatePace(distance: self.workouts[0].totalDistance!, duration: self.workouts[0].duration))
+                if(self.workouts.count != 0){
+                    self.tableView.reloadData()
+                    let indexPath = IndexPath(row: 0, section: 0)
+                    self.tableView.selectRow(at: indexPath, animated: true, scrollPosition: .bottom)
                 
-                self.selectedDateObject = self.workouts[0].startDate
+                    self.selectedDate = String(describing: self.convertDate(date: self.workouts[0].startDate))
+                    self.selectedDistance = String(describing: self.convertKMToMiles(distance: self.workouts[0].totalDistance!))
+                    self.selectedDuration = String(describing: self.convertDuration(duration: self.workouts[0].duration))
+                    self.selectedPace = String(describing: self.calculatePace(distance: self.workouts[0].totalDistance!, duration: self.workouts[0].duration))
+                
+                    self.selectedDateObject = self.workouts[0].startDate
+                }
             }
             
         })
