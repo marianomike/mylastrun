@@ -114,7 +114,7 @@ class ViewController: UIViewController, UITextFieldDelegate, UIImagePickerContro
     
     // picker options
     var metricsOptions = ["Miles", "Kilometers"]
-    var weatherOptions = ["Sunny", "Partly Cloudy", "Cloudy", "Raining", "Snowing"]
+    var weatherOptions = ["None", "Sunny", "Partly Cloudy", "Cloudy", "Raining", "Snowing"]
     var hours  = Array (0...23)
     var minutes = Array(0...59)
     var seconds = Array(0...59)
@@ -149,7 +149,7 @@ class ViewController: UIViewController, UITextFieldDelegate, UIImagePickerContro
  */
         
         // title bar
-        navigationItem.title = "ENTER RUN DATA"
+        navigationItem.title = "MY LAST RUN"
         navigationController?.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName: UIColor(red: 169/255, green: 203/255, blue: 74/255, alpha: 1.0)]
         
         // get today's date
@@ -374,7 +374,8 @@ class ViewController: UIViewController, UITextFieldDelegate, UIImagePickerContro
     
     func convertKMToMiles(distance: HKQuantity) -> String{
         //distanceFormatter.numberFormatter.numberStyle =
-        let distanceInKM = distance.doubleValue(for: HKUnit.mile())
+        var distanceInKM = distance.doubleValue(for: HKUnit.mile())
+        distanceInKM = distanceInKM.roundTo(places: 2)
         var convertedMiles = distanceFormatter.string(fromValue: distanceInKM, unit: LengthFormatter.Unit.mile)
         convertedMiles = String(convertedMiles.characters.dropLast(3))
         return convertedMiles
@@ -666,6 +667,10 @@ class ViewController: UIViewController, UITextFieldDelegate, UIImagePickerContro
             picChooserViewController?.userWeatherIcon = WeatherInput.text
             picChooserViewController?.userDuration = TimeInput.text
             picChooserViewController?.userPace = PaceInput.text
+        }else if segue.identifier == "showWorkouts"{
+            //let workoutChooser = segue.destination as? AddWorkoutViewController
+            //print (workouts)
+            //workoutChooser?.passedWorkouts = workouts
         }
     }
     

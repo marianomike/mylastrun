@@ -59,7 +59,12 @@ class PhotoPickerViewController: UIViewController, UIImagePickerControllerDelega
         PhotoDay.text = userDay
         PhotoMonth.text = userMonth.uppercased()
         PhotoYear.text = userYear
-        PhotoDegrees.text = userDegrees + "°"
+        if(userDegrees == ""){
+            PhotoDegrees.text = ""
+        }else{
+            PhotoDegrees.text = userDegrees + "°"
+        }
+        
         PhotoDuration.text = userDuration
         PhotoPace.text = userPace
         
@@ -80,8 +85,10 @@ class PhotoPickerViewController: UIViewController, UIImagePickerControllerDelega
         let coreImage = CIImage(cgImage: cgimg)
         */
         //var filterImage = UIImage()
-        
-        if(userWeatherIcon == "Sunny"){
+        if(userWeatherIcon == "None"){
+            PhotoWeatherIcon.image = nil
+
+        } else if(userWeatherIcon == "Sunny"){
             
             /*
             guard let filterImage = UIImage(named: "filter_sun"), let cgimgFilter = filterImage.cgImage else {
