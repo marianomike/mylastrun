@@ -394,7 +394,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zRe-0x-Eu5">
-                                <rect key="frame" x="27.5" y="90" width="320" height="320"/>
+                                <rect key="frame" x="28" y="90" width="320" height="320"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="LUr-4g-A3Q">
                                         <rect key="frame" x="0.0" y="-1" width="320" height="320"/>
@@ -405,7 +405,7 @@
                                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                             </imageView>
-                                            <imageView opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="789F584C-2F63-49AF-995A-EDD66E681450" translatesAutoresizingMaskIntoConstraints="NO" id="CGB-Y2-ww1">
+                                            <imageView opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="9B70D707-682A-459F-A515-DD14F5EE3916" translatesAutoresizingMaskIntoConstraints="NO" id="CGB-Y2-ww1">
                                                 <rect key="frame" x="0.0" y="-1" width="320" height="322"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                                 <gestureRecognizers/>
@@ -619,7 +619,7 @@
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="LSZ-5p-ToD" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="wQ8-hg-xht">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="wQ8-hg-xht">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="tintColor" red="0.47450980390000003" green="0.57647058819999997" blue="0.2784313725" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -638,7 +638,7 @@
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="li5-Fk-cNt" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="cqq-i6-71X">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="cqq-i6-71X">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -653,7 +653,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="789F584C-2F63-49AF-995A-EDD66E681450" width="375" height="375">
+        <image name="9B70D707-682A-459F-A515-DD14F5EE3916" width="375" height="375">
             <mutableData key="keyedArchiveRepresentation">
 YnBsaXN0MDDUAQIDBAUGPT5YJHZlcnNpb25YJG9iamVjdHNZJGFyY2hpdmVyVCR0b3ASAAGGoK4HCBMU
 GR4fIyQrLjE3OlUkbnVsbNUJCgsMDQ4PEBESVk5TU2l6ZVYkY2xhc3NcTlNJbWFnZUZsYWdzVk5TUmVw

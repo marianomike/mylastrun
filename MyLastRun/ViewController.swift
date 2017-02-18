@@ -11,6 +11,14 @@ import HealthKit
 import CoreLocation
 import MapKit
 
+extension Double {
+    /// Rounds the double to decimal places value
+    func roundTo(places:Int) -> Double {
+        let divisor = pow(10.0, Double(places))
+        return (self * divisor).rounded() / divisor
+    }
+}
+
 class ViewController: UIViewController, UITextFieldDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate, UIPickerViewDataSource, UIPickerViewDelegate {
     
     @IBOutlet weak var BtnNext: UIBarButtonItem!
@@ -307,19 +315,22 @@ class ViewController: UIViewController, UITextFieldDelegate, UIImagePickerContro
             
             // print workouts
             
-            for i in 0 ..< self.workouts.count{
+            //for i in 0 ..< self.workouts.count{
                 //print(self.convertKMToMiles(distance: self.workouts[i].totalDistance!))
                //print(self.workouts[i].duration)
-                print(self.calculatePace(distance: self.workouts[i].totalDistance!, duration: self.workouts[i].duration))
+                //print(self.calculatePace(distance: self.workouts[i].totalDistance!, duration: self.workouts[i].duration))
+                //print(self.milesToKilometers(speedInMPH: 3.16))
                 //print(self.workouts[i].accessibilityActivationPoint)
                 //print(self.convertDuration(duration: self.workouts[i].duration))
-            }
+            //}
  
             
             DispatchQueue.main.async(){
                 
+                let lastDistance = self.convertKMToMiles(distance: self.workouts[0].totalDistance!)
+                
                 self.DateInput.text = self.convertDate(date: self.workouts[0].startDate)
-                self.DistanceInput.text = String(describing: self.convertKMToMiles(distance: self.workouts[0].totalDistance!))
+                self.DistanceInput.text = String(describing: lastDistance)
                 self.TimeInput.text = self.convertDuration(duration: self.workouts[0].duration)
                 self.PaceInput.text = self.calculatePace(distance: self.workouts[0].totalDistance!, duration: self.workouts[0].duration)
                 
@@ -379,9 +390,58 @@ class ViewController: UIViewController, UITextFieldDelegate, UIImagePickerContro
         return speedInKPH as Double
     }
     
-    func PaceCalculator (minutes:Double, seconds:Double, distance:Double) -> Double{
-        return ((minutes*60) + seconds) / distance
+    func updateToKM(){
+        let distanceInMiles = Double(DistanceInput.text!)
+        var distanceInKilometers = milesToKilometers(speedInMPH: distanceInMiles!)
+        distanceInKilometers = distanceInKilometers.roundTo(places: 2)
+        DistanceInput.text = String(describing:distanceInKilometers)
+        
+        let duration = parseDuration(TimeInput.text!)
+        let pace = duration/distanceInKilometers
+        print(pace)
+        
+        formatter.unitsStyle = .positional
+        formatter.allowedUnits = [ .minute, .second ]
+        formatter.zeroFormattingBehavior = [ .pad ]
+        
+        let convertedPace = formatter.string(from: pace)
+        PaceInput.text = convertedPace
+        
     }
+    
+    func parseDuration(_ timeString:String) -> TimeInterval {
+        guard !timeString.isEmpty else {
+            return 0
+        }
+        
+        var interval:Double = 0
+        
+        let parts = timeString.components(separatedBy: ":")
+        for (index, part) in parts.reversed().enumerated() {
+            interval += (Double(part) ?? 0) * pow(Double(60), Double(index))
+        }
+        
+        return interval
+    }
+    
+    func updateToMiles(){
+        let distanceInKm = Double(DistanceInput.text!)
+        var distanceInMiles = kilometersToMiles(speedInMPH: distanceInKm!)
+        distanceInMiles = distanceInMiles.roundTo(places: 2)
+        DistanceInput.text = String(describing:distanceInMiles)
+        
+        let duration = parseDuration(TimeInput.text!)
+        let pace = duration/distanceInMiles
+        print(pace)
+        
+        formatter.unitsStyle = .positional
+        formatter.allowedUnits = [ .minute, .second ]
+        formatter.zeroFormattingBehavior = [ .pad ]
+        
+        let convertedPace = formatter.string(from: pace)
+        PaceInput.text = convertedPace
+    }
+    
  
 
     override func didReceiveMemoryWarning() {
@@ -593,17 +653,10 @@ class ViewController: UIViewController, UITextFieldDelegate, UIImagePickerContro
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "showPicChooser" {
             let picChooserViewController = segue.destination as? PhotoPickerViewController
+            
             picChooserViewController?.userTitleText = TitleInput.text
-            
-            var userDistanceChoice = MetricsInput.text
-            if(userDistanceChoice == "M"){
-                userDistanceChoice = "Miles"
-            }else if (userDistanceChoice == "KM"){
-                userDistanceChoice = "Kilometers"
-            }
-            
             picChooserViewController?.userDistanceText = DistanceInput.text
-            picChooserViewController?.userDistanceChoice = userDistanceChoice
+            picChooserViewController?.userDistanceChoice = MetricsInput.text
             picChooserViewController?.userLocationText = LocationInput.text
             picChooserViewController?.userDay = dateDay
             picChooserViewController?.userMonth = dateMonth
@@ -663,6 +716,12 @@ class ViewController: UIViewController, UITextFieldDelegate, UIImagePickerContro
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         if (pickerView.tag == 1){
             MetricsInput.text = metricsOptions[row]
+            
+            if(metricsOptions[row] == "Miles"){
+                updateToMiles()
+            }else if(metricsOptions[row] == "Kilometers"){
+                updateToKM()
+            }
         }else if (pickerView.tag == 2){
             durHour = String(pickerView.selectedRow(inComponent: 0))
             durMinutes = String(pickerView.selectedRow(inComponent: 1))
