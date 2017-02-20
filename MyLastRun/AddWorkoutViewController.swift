@@ -14,6 +14,8 @@ class AddWorkoutViewController: UITableViewController, UINavigationControllerDel
     var workouts = [HKWorkout]()
     let healthManager:HealthKitManager = HealthKitManager()
     let formatter = DateComponentsFormatter()
+    var passedInt = 0
+    var selectedInt: Int!
     
     var selectedDate: String!
     var selectedDistance: String!
@@ -25,6 +27,7 @@ class AddWorkoutViewController: UITableViewController, UINavigationControllerDel
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        print(passedInt)
         
         // set the title of the view
         navigationItem.title = "CHOOSE RUN"
@@ -71,6 +74,8 @@ class AddWorkoutViewController: UITableViewController, UINavigationControllerDel
                 
                 if(self.workouts.count != 0){
                     self.tableView.reloadData()
+                    self.setDefault(defaultInt: self.passedInt)
+                    /*
                     let indexPath = IndexPath(row: 0, section: 0)
                     self.tableView.selectRow(at: indexPath, animated: true, scrollPosition: .bottom)
                 
@@ -80,10 +85,24 @@ class AddWorkoutViewController: UITableViewController, UINavigationControllerDel
                     self.selectedPace = String(describing: self.calculatePace(distance: self.workouts[0].totalDistance!, duration: self.workouts[0].duration))
                 
                     self.selectedDateObject = self.workouts[0].startDate
+ */
                 }
             }
             
         })
+    }
+    
+    func setDefault(defaultInt: Int){
+        let indexPath = IndexPath(row: defaultInt, section: 0)
+        self.tableView.selectRow(at: indexPath, animated: true, scrollPosition: .bottom)
+        
+        self.selectedDate = String(describing: self.convertDate(date: self.workouts[defaultInt].startDate))
+        self.selectedDistance = String(describing: self.convertKMToMiles(distance: self.workouts[defaultInt].totalDistance!))
+        self.selectedDuration = String(describing: self.convertDuration(duration: self.workouts[defaultInt].duration))
+        self.selectedPace = String(describing: self.calculatePace(distance: self.workouts[defaultInt].totalDistance!, duration: self.workouts[defaultInt].duration))
+        
+        self.selectedDateObject = self.workouts[defaultInt].startDate
+        self.selectedInt = defaultInt
     }
     
     @IBAction func CancelAdd(_ sender: UIBarButtonItem) {
@@ -163,7 +182,7 @@ class AddWorkoutViewController: UITableViewController, UINavigationControllerDel
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let index = indexPath.row
-        print(index)
+        //print(index)
         //let cell: UITableViewCell = tableView.cellForRow(at: indexPath)!
         selectedDate = String(describing: convertDate(date: workouts[index].startDate))
         selectedDistance = String(describing: convertKMToMiles(distance: workouts[index].totalDistance!))
@@ -171,7 +190,7 @@ class AddWorkoutViewController: UITableViewController, UINavigationControllerDel
         selectedPace = String(describing: calculatePace(distance: self.workouts[index].totalDistance!, duration: self.workouts[index].duration))
         
         selectedDateObject = self.workouts[index].startDate
-        
+        selectedInt = index
 
         //print(selectedDate)
     }
@@ -216,10 +235,12 @@ class AddWorkoutViewController: UITableViewController, UINavigationControllerDel
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
+    /*
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
     }
+ */
     
 
 }

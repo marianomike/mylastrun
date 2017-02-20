@@ -62,6 +62,7 @@ class ViewController: UIViewController, UITextFieldDelegate, UIImagePickerContro
     var distance:HKQuantitySample?
     var workouts = [HKWorkout]()
     var lastRun = [HKWorkout]()
+    var selectedRun: Int!
     
     let monthFormatter = DateFormatter()
     let formatMonth = "MMM"
@@ -339,6 +340,7 @@ class ViewController: UIViewController, UITextFieldDelegate, UIImagePickerContro
                 
                     self.updateDates(date: self.workouts[0].startDate)
                     self.datePicker.setDate(self.workouts[0].startDate, animated: true)
+                    self.selectedRun = 0;
                 }
             }
             
@@ -661,6 +663,8 @@ class ViewController: UIViewController, UITextFieldDelegate, UIImagePickerContro
             TimeInput.text = modalVC.selectedDuration
             PaceInput.text = modalVC.selectedPace
             updateDates(date: modalVC.selectedDateObject)
+            selectedRun = modalVC.selectedInt
+            print("returned \(selectedRun)")
                 
             // Now do stuff with the text.
         }
@@ -684,9 +688,11 @@ class ViewController: UIViewController, UITextFieldDelegate, UIImagePickerContro
             picChooserViewController?.userDuration = TimeInput.text
             picChooserViewController?.userPace = PaceInput.text
         }else if segue.identifier == "showWorkouts"{
-            //let workoutChooser = segue.destination as? AddWorkoutViewController
+            let workoutChooser = segue.destination as? AddWorkoutViewController
             //print (workouts)
-            //workoutChooser?.passedWorkouts = workouts
+            print("trying to pass \(selectedRun)")
+            workoutChooser?.passedInt = selectedRun
+            
         }
     }
     

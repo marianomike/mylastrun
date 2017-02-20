@@ -14,8 +14,12 @@ class PhotoPickerViewController: UIViewController, UIImagePickerControllerDelega
     @IBOutlet weak var photoImageView: UIImageView!
     
     var passedImage: UIImage!
+    var currentLayout = 1
     
     @IBOutlet weak var PhotoView: UIView!
+    @IBOutlet weak var Layout1: UIView!
+    @IBOutlet weak var Layout2: UIView!
+    
     // reference the text fields
     @IBOutlet weak var PhotoTitle: UITextField!
     @IBOutlet weak var PhotoDistance: UITextField!
@@ -42,6 +46,14 @@ class PhotoPickerViewController: UIViewController, UIImagePickerControllerDelega
     var userDuration:String! = ""
     var userPace:String! = ""
     
+    @IBOutlet weak var PhotoTitle2: UITextField!
+    @IBOutlet weak var PhotoDistance2: UITextField!
+    @IBOutlet weak var PhotoLocation2: UITextField!
+    @IBOutlet weak var PhotoDate2: UITextField!
+    @IBOutlet weak var PhotoWeatherIcon2: UIImageView!
+    @IBOutlet weak var PhotoDuration2: UITextField!
+    @IBOutlet weak var PhotoPace2: UITextField!
+    
     // reference the navigation bar
     var navigationBarAppearace = UINavigationBar.appearance()
     
@@ -49,9 +61,14 @@ class PhotoPickerViewController: UIViewController, UIImagePickerControllerDelega
         
         super.viewDidLoad()
         
+        //hide layouts
+        Layout1.alpha = 0
+        Layout2.alpha = 0
+        
         // set the title of the view
         navigationItem.title = "PREVIEW"
         
+        //populate layout 1 text
         // set the text fields to the variables
         PhotoTitle.text = userTitleText
         PhotoDistance.text = userDistanceText + " " + userDistanceChoice
@@ -64,14 +81,35 @@ class PhotoPickerViewController: UIViewController, UIImagePickerControllerDelega
         }else{
             PhotoDegrees.text = userDegrees + "°"
         }
-        
         PhotoDuration.text = userDuration
         PhotoPace.text = userPace
+        
+        PhotoTitle2.text = userTitleText
+        if(userTitleText == ""){
+            PhotoTitle2.alpha = 0
+        }
+        PhotoDistance2.text = userDistanceText + " " + userDistanceChoice
+        PhotoLocation2.text = userLocationText
+        PhotoDate2.text = userMonth + " " + userDay + ", " + userYear
+        PhotoDuration2.text = userDuration
+        PhotoPace2.text = userPace
         
         //print(passedImage.size.width)
         //print(passedImage.size.height)
         //passedImage = resizeImage(image: passedImage, targetSize: CGSize.init(width: 3072, height: 3072))
-        photoImageView.image = passedImage
+        if(passedImage != nil){
+            photoImageView.image = passedImage
+        }
+        
+        if(currentLayout == 1){
+            Layout1.alpha = 1
+            Layout2.alpha = 0
+            currentLayout = 1
+        }else if(currentLayout == 1){
+            Layout1.alpha = 0
+            Layout2.alpha = 1
+            currentLayout = 2
+        }
         
         /*
         guard let image = passedImage, let cgimg = image.cgImage else {
@@ -87,6 +125,7 @@ class PhotoPickerViewController: UIViewController, UIImagePickerControllerDelega
         //var filterImage = UIImage()
         if(userWeatherIcon == "None"){
             PhotoWeatherIcon.image = nil
+            PhotoWeatherIcon2.image = nil
 
         } else if(userWeatherIcon == "Sunny"){
             
@@ -117,6 +156,7 @@ class PhotoPickerViewController: UIViewController, UIImagePickerControllerDelega
  */
 
             PhotoWeatherIcon.image = #imageLiteral(resourceName: "IconSunny")
+            PhotoWeatherIcon2.image = #imageLiteral(resourceName: "IconSunny")
             
         } else if(userWeatherIcon == "Partly Cloudy"){
             /*
@@ -144,6 +184,7 @@ class PhotoPickerViewController: UIViewController, UIImagePickerControllerDelega
             }
             */
             PhotoWeatherIcon.image = #imageLiteral(resourceName: "IconLightClouds")
+            PhotoWeatherIcon2.image = #imageLiteral(resourceName: "IconLightClouds")
             
         } else if(userWeatherIcon == "Cloudy"){
             /*
@@ -171,6 +212,7 @@ class PhotoPickerViewController: UIViewController, UIImagePickerControllerDelega
             }
             */
             PhotoWeatherIcon.image = #imageLiteral(resourceName: "IconCloudy")
+            PhotoWeatherIcon2.image = #imageLiteral(resourceName: "IconCloudy")
             
         } else if(userWeatherIcon == "Raining"){
             /*
@@ -198,6 +240,7 @@ class PhotoPickerViewController: UIViewController, UIImagePickerControllerDelega
             }
             */
             PhotoWeatherIcon.image = #imageLiteral(resourceName: "IconRain")
+            PhotoWeatherIcon2.image = #imageLiteral(resourceName: "IconRain")
             
         } else if(userWeatherIcon == "Snowing"){
             /*
@@ -225,6 +268,7 @@ class PhotoPickerViewController: UIViewController, UIImagePickerControllerDelega
             }
             */
             PhotoWeatherIcon.image = #imageLiteral(resourceName: "IconSnow")
+            PhotoWeatherIcon2.image = #imageLiteral(resourceName: "IconSnow")
         }
         
     }
@@ -260,6 +304,18 @@ class PhotoPickerViewController: UIViewController, UIImagePickerControllerDelega
         
         return newImage!
     }
+    @IBAction func showLayout1(_ sender: UIButton) {
+        Layout1.alpha = 1
+        Layout2.alpha = 0
+        currentLayout = 1
+    }
+    
+    @IBAction func showLayout2(_ sender: UIButton) {
+        Layout1.alpha = 0
+        Layout2.alpha = 1
+        currentLayout = 2
+    }
+    
     
     func saveImage() {
         //Create the UIImage
@@ -279,10 +335,12 @@ class PhotoPickerViewController: UIViewController, UIImagePickerControllerDelega
         
         //Create the UIImage
         //UIGraphicsBeginImageContext(PhotoView.frame.size)
+        //let imageSize = CGSize(width: 1024, height: 1024)
         UIGraphicsBeginImageContextWithOptions(PhotoView.frame.size, false, UIScreen.main.scale)
         PhotoView.layer.render(in: UIGraphicsGetCurrentContext()!)
         let image = UIGraphicsGetImageFromCurrentImageContext()
         UIGraphicsEndImageContext()
+        
         
         // set up activity view controller
         let imageToShare = [ image! ]
