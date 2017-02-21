@@ -19,8 +19,11 @@ class PhotoPickerViewController: UIViewController, UIImagePickerControllerDelega
     @IBOutlet weak var PhotoView: UIView!
     @IBOutlet weak var Layout1: UIView!
     @IBOutlet weak var Layout2: UIView!
+    @IBOutlet weak var Layout3: UIView!
+    @IBOutlet weak var Layout4: UIView!
     
-    // reference the text fields
+    
+    // Layout 1
     @IBOutlet weak var PhotoTitle: UITextField!
     @IBOutlet weak var PhotoDistance: UITextField!
     @IBOutlet weak var PhotoLocation: UITextField!
@@ -31,6 +34,32 @@ class PhotoPickerViewController: UIViewController, UIImagePickerControllerDelega
     @IBOutlet weak var PhotoDegrees: UITextField!
     @IBOutlet weak var PhotoDuration: UITextField!
     @IBOutlet weak var PhotoPace: UITextField!
+    
+    // Layout 2
+    @IBOutlet weak var PhotoTitle2: UITextField!
+    @IBOutlet weak var PhotoDistance2: UITextField!
+    @IBOutlet weak var PhotoLocation2: UITextField!
+    @IBOutlet weak var PhotoDate2: UITextField!
+    @IBOutlet weak var PhotoWeatherIcon2: UIImageView!
+    @IBOutlet weak var PhotoDuration2: UITextField!
+    @IBOutlet weak var PhotoPace2: UITextField!
+    
+    // Layout 3
+    @IBOutlet weak var PhotoTitle3: UITextField!
+    @IBOutlet weak var PhotoDistance3: UITextField!
+    @IBOutlet weak var PhotoMetrics3: UITextField!
+    @IBOutlet weak var PhotoDate3: UITextField!
+    @IBOutlet weak var PhotoDuration3: UITextField!
+    @IBOutlet weak var PhotoPace3: UITextField!
+    @IBOutlet weak var PhotoLocation3: UITextField!
+    
+    // Layout 4
+    @IBOutlet weak var PhotoTitle4: UITextField!
+    @IBOutlet weak var PhotoDistance4: UITextField!
+    @IBOutlet weak var PhotoDate4: UITextField!
+    @IBOutlet weak var PhotoTime4: UITextField!
+    @IBOutlet weak var PhotoLocation4: UITextField!
+    
     
     // create variables for the text fields to display
     var userTitleText:String! = ""
@@ -46,13 +75,7 @@ class PhotoPickerViewController: UIViewController, UIImagePickerControllerDelega
     var userDuration:String! = ""
     var userPace:String! = ""
     
-    @IBOutlet weak var PhotoTitle2: UITextField!
-    @IBOutlet weak var PhotoDistance2: UITextField!
-    @IBOutlet weak var PhotoLocation2: UITextField!
-    @IBOutlet weak var PhotoDate2: UITextField!
-    @IBOutlet weak var PhotoWeatherIcon2: UIImageView!
-    @IBOutlet weak var PhotoDuration2: UITextField!
-    @IBOutlet weak var PhotoPace2: UITextField!
+    
     
     // reference the navigation bar
     var navigationBarAppearace = UINavigationBar.appearance()
@@ -64,11 +87,13 @@ class PhotoPickerViewController: UIViewController, UIImagePickerControllerDelega
         //hide layouts
         Layout1.alpha = 0
         Layout2.alpha = 0
+        Layout3.alpha = 0
+        Layout4.alpha = 0
         
         // set the title of the view
         navigationItem.title = "PREVIEW"
         
-        //populate layout 1 text
+        // populate layout 1 text
         // set the text fields to the variables
         PhotoTitle.text = userTitleText
         PhotoDistance.text = userDistanceText + " " + userDistanceChoice
@@ -84,7 +109,8 @@ class PhotoPickerViewController: UIViewController, UIImagePickerControllerDelega
         PhotoDuration.text = userDuration
         PhotoPace.text = userPace
         
-        PhotoTitle2.text = userTitleText
+        // populate layout 2
+        PhotoTitle2.text = userTitleText.uppercased()
         if(userTitleText == ""){
             PhotoTitle2.alpha = 0
         }
@@ -93,6 +119,27 @@ class PhotoPickerViewController: UIViewController, UIImagePickerControllerDelega
         PhotoDate2.text = userMonth + " " + userDay + ", " + userYear
         PhotoDuration2.text = userDuration
         PhotoPace2.text = userPace
+        
+        // populate layout 3
+        PhotoTitle3.text = userTitleText.uppercased()
+        PhotoDistance3.text = userDistanceText
+        PhotoLocation3.text = userLocationText
+        PhotoDate3.text = userMonth + " " + userDay + ", " + userYear
+        PhotoDuration3.text = userDuration
+        PhotoPace3.text = userPace
+        
+        // populate layout 4
+        PhotoTitle4.text = userTitleText.uppercased()
+        PhotoDistance4.text = userDistanceText
+        PhotoLocation4.text = userLocationText
+        PhotoDate4.text = userMonth + " " + userDay + ", " + userYear
+        PhotoTime4.text = "Duration: " + userDuration + "・" + "Pace: " + userPace
+        
+        if(userDistanceChoice == "Miles"){
+            PhotoMetrics3.text = "M"
+        }else if(userDistanceChoice == "Kilometers"){
+            PhotoMetrics3.text = "K"
+        }
         
         //print(passedImage.size.width)
         //print(passedImage.size.height)
@@ -111,162 +158,24 @@ class PhotoPickerViewController: UIViewController, UIImagePickerControllerDelega
             currentLayout = 2
         }
         
-        /*
-        guard let image = passedImage, let cgimg = image.cgImage else {
-            print("imageView doesn't have an image!")
-            return
-        }
-        
-        let openGLContext = EAGLContext(api: .openGLES2)
-        let context = CIContext(eaglContext: openGLContext!)
-        
-        let coreImage = CIImage(cgImage: cgimg)
-        */
-        //var filterImage = UIImage()
+        // set weather icons
         if(userWeatherIcon == "None"){
             PhotoWeatherIcon.image = nil
             PhotoWeatherIcon2.image = nil
 
         } else if(userWeatherIcon == "Sunny"){
-            
-            /*
-            guard let filterImage = UIImage(named: "filter_sun"), let cgimgFilter = filterImage.cgImage else {
-                print("imageView doesn't have an image!")
-                return
-            }
-            
-            let coreImageFilter = CIImage(cgImage: cgimgFilter)
-            print(cgimgFilter.width)
-            
-            let overlayFilter = CIFilter(name: "CIOverlayBlendMode")
-            overlayFilter?.setValue(coreImageFilter, forKey: kCIInputBackgroundImageKey)
-            overlayFilter?.setValue(coreImage, forKey: kCIInputImageKey)
-            
-            if let overlayOutput = overlayFilter?.value(forKey: kCIOutputImageKey) as? CIImage {
-                let exposureFilter = CIFilter(name: "CIExposureAdjust")
-                exposureFilter?.setValue(overlayOutput, forKey: kCIInputImageKey)
-                exposureFilter?.setValue(1, forKey: kCIInputEVKey)
-                
-                if let exposureOutput = exposureFilter?.value(forKey: kCIOutputImageKey) as? CIImage {
-                    let output = context.createCGImage(overlayOutput, from: exposureOutput.extent)
-                    let result = UIImage(cgImage: output!)
-                    photoImageView?.image = result
-                }
-            }
- */
-
             PhotoWeatherIcon.image = #imageLiteral(resourceName: "IconSunny")
             PhotoWeatherIcon2.image = #imageLiteral(resourceName: "IconSunny")
-            
         } else if(userWeatherIcon == "Partly Cloudy"){
-            /*
-            guard let imageFilter = UIImage(named: "filter_cloudy"), let cgimgFilter = imageFilter.cgImage else {
-                print("imageView doesn't have an image!")
-                return
-            }
-            
-            let coreImageFilter = CIImage(cgImage: cgimgFilter)
-            
-            let overlayFilter = CIFilter(name: "CIOverlayBlendMode")
-            overlayFilter?.setValue(coreImageFilter, forKey: kCIInputBackgroundImageKey)
-            overlayFilter?.setValue(coreImage, forKey: kCIInputImageKey)
-            
-            if let overlayOutput = overlayFilter?.value(forKey: kCIOutputImageKey) as? CIImage {
-                let exposureFilter = CIFilter(name: "CIExposureAdjust")
-                exposureFilter?.setValue(overlayOutput, forKey: kCIInputImageKey)
-                exposureFilter?.setValue(1, forKey: kCIInputEVKey)
-                
-                if let exposureOutput = exposureFilter?.value(forKey: kCIOutputImageKey) as? CIImage {
-                    let output = context.createCGImage(overlayOutput, from: exposureOutput.extent)
-                    let result = UIImage(cgImage: output!)
-                    photoImageView?.image = result
-                }
-            }
-            */
             PhotoWeatherIcon.image = #imageLiteral(resourceName: "IconLightClouds")
             PhotoWeatherIcon2.image = #imageLiteral(resourceName: "IconLightClouds")
-            
         } else if(userWeatherIcon == "Cloudy"){
-            /*
-            guard let imageFilter = UIImage(named: "filter_cloudy"), let cgimgFilter = imageFilter.cgImage else {
-                print("imageView doesn't have an image!")
-                return
-            }
-            
-            let coreImageFilter = CIImage(cgImage: cgimgFilter)
-            
-            let overlayFilter = CIFilter(name: "CIOverlayBlendMode")
-            overlayFilter?.setValue(coreImageFilter, forKey: kCIInputBackgroundImageKey)
-            overlayFilter?.setValue(coreImage, forKey: kCIInputImageKey)
-            
-            if let overlayOutput = overlayFilter?.value(forKey: kCIOutputImageKey) as? CIImage {
-                let exposureFilter = CIFilter(name: "CIExposureAdjust")
-                exposureFilter?.setValue(overlayOutput, forKey: kCIInputImageKey)
-                exposureFilter?.setValue(1, forKey: kCIInputEVKey)
-                
-                if let exposureOutput = exposureFilter?.value(forKey: kCIOutputImageKey) as? CIImage {
-                    let output = context.createCGImage(overlayOutput, from: exposureOutput.extent)
-                    let result = UIImage(cgImage: output!)
-                    photoImageView?.image = result
-                }
-            }
-            */
             PhotoWeatherIcon.image = #imageLiteral(resourceName: "IconCloudy")
             PhotoWeatherIcon2.image = #imageLiteral(resourceName: "IconCloudy")
-            
         } else if(userWeatherIcon == "Raining"){
-            /*
-            guard let imageFilter = UIImage(named: "filter_rain"), let cgimgFilter = imageFilter.cgImage else {
-                print("imageView doesn't have an image!")
-                return
-            }
-            
-            let coreImageFilter = CIImage(cgImage: cgimgFilter)
-            
-            let overlayFilter = CIFilter(name: "CIOverlayBlendMode")
-            overlayFilter?.setValue(coreImageFilter, forKey: kCIInputBackgroundImageKey)
-            overlayFilter?.setValue(coreImage, forKey: kCIInputImageKey)
-            
-            if let overlayOutput = overlayFilter?.value(forKey: kCIOutputImageKey) as? CIImage {
-                let exposureFilter = CIFilter(name: "CIExposureAdjust")
-                exposureFilter?.setValue(overlayOutput, forKey: kCIInputImageKey)
-                exposureFilter?.setValue(1, forKey: kCIInputEVKey)
-                
-                if let exposureOutput = exposureFilter?.value(forKey: kCIOutputImageKey) as? CIImage {
-                    let output = context.createCGImage(overlayOutput, from: exposureOutput.extent)
-                    let result = UIImage(cgImage: output!)
-                    photoImageView?.image = result
-                }
-            }
-            */
             PhotoWeatherIcon.image = #imageLiteral(resourceName: "IconRain")
             PhotoWeatherIcon2.image = #imageLiteral(resourceName: "IconRain")
-            
         } else if(userWeatherIcon == "Snowing"){
-            /*
-            guard let imageFilter = UIImage(named: "filter_snow"), let cgimgFilter = imageFilter.cgImage else {
-                print("imageView doesn't have an image!")
-                return
-            }
-            
-            let coreImageFilter = CIImage(cgImage: cgimgFilter)
-            
-            let overlayFilter = CIFilter(name: "CIOverlayBlendMode")
-            overlayFilter?.setValue(coreImageFilter, forKey: kCIInputBackgroundImageKey)
-            overlayFilter?.setValue(coreImage, forKey: kCIInputImageKey)
-            
-            if let overlayOutput = overlayFilter?.value(forKey: kCIOutputImageKey) as? CIImage {
-                let exposureFilter = CIFilter(name: "CIExposureAdjust")
-                exposureFilter?.setValue(overlayOutput, forKey: kCIInputImageKey)
-                exposureFilter?.setValue(1, forKey: kCIInputEVKey)
-                
-                if let exposureOutput = exposureFilter?.value(forKey: kCIOutputImageKey) as? CIImage {
-                    let output = context.createCGImage(overlayOutput, from: exposureOutput.extent)
-                    let result = UIImage(cgImage: output!)
-                    photoImageView?.image = result
-                }
-            }
-            */
             PhotoWeatherIcon.image = #imageLiteral(resourceName: "IconSnow")
             PhotoWeatherIcon2.image = #imageLiteral(resourceName: "IconSnow")
         }
@@ -307,14 +216,35 @@ class PhotoPickerViewController: UIViewController, UIImagePickerControllerDelega
     @IBAction func showLayout1(_ sender: UIButton) {
         Layout1.alpha = 1
         Layout2.alpha = 0
+        Layout3.alpha = 0
+        Layout4.alpha = 0
         currentLayout = 1
     }
     
     @IBAction func showLayout2(_ sender: UIButton) {
         Layout1.alpha = 0
         Layout2.alpha = 1
+        Layout3.alpha = 0
+        Layout4.alpha = 0
         currentLayout = 2
     }
+    
+    @IBAction func showLayout3(_ sender: UIButton) {
+        Layout1.alpha = 0
+        Layout2.alpha = 0
+        Layout3.alpha = 1
+        Layout4.alpha = 0
+        currentLayout = 3
+    }
+    
+    @IBAction func showLayout4(_ sender: UIButton) {
+        Layout1.alpha = 0
+        Layout2.alpha = 0
+        Layout3.alpha = 0
+        Layout4.alpha = 1
+        currentLayout = 4
+    }
+    
     
     
     func saveImage() {
