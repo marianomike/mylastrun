@@ -88,6 +88,8 @@ class PhotoPickerViewController: UIViewController, UIImagePickerControllerDelega
         
         super.viewDidLoad()
         
+        navigationController?.delegate = self
+        
         //hide layouts
         hideLayouts()
         
@@ -156,12 +158,15 @@ class PhotoPickerViewController: UIViewController, UIImagePickerControllerDelega
         }else if(currentLayout == 2){
             Layout2.alpha = 1
             currentLayout = 2
+            btnLayout2.isSelected = true
         }else if(currentLayout == 3){
             Layout3.alpha = 1
             currentLayout = 3
+            btnLayout3.isSelected = true
         }else if(currentLayout == 4){
             Layout4.alpha = 1
             currentLayout = 4
+            btnLayout4.isSelected = true
         }
         
         // set weather icons
@@ -321,6 +326,12 @@ class PhotoPickerViewController: UIViewController, UIImagePickerControllerDelega
         }
     }
     
+    func navigationController(_ navigationController: UINavigationController, willShow viewController: UIViewController, animated: Bool) {
+        if let controller = viewController as? ViewController {
+            controller.photoLayout = currentLayout
+        }
+    }
+    
     
     //MARK: UIImagePickerControllerDelegate
     func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
@@ -345,18 +356,22 @@ class PhotoPickerViewController: UIViewController, UIImagePickerControllerDelega
         self.performSegue(withIdentifier: "unwindToStats", sender: self)
     }
     
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
 
-    /*
+    
     // MARK: - Navigation
-
+    /*
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
+        let mainViewController = segue.destination as? ViewController
+        print (currentLayout)
+        mainViewController?.photoLayout = currentLayout
     }
     */
 

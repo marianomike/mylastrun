@@ -27,6 +27,7 @@ class AddWorkoutViewController: UITableViewController, UINavigationControllerDel
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        navigationController?.delegate = self
         print(passedInt)
         
         // set the title of the view
@@ -193,6 +194,12 @@ class AddWorkoutViewController: UITableViewController, UINavigationControllerDel
         selectedInt = index
 
         //print(selectedDate)
+    }
+    
+    func navigationController(_ navigationController: UINavigationController, willShow viewController: UIViewController, animated: Bool) {
+        if let controller = viewController as? ViewController {
+            controller.selectedRun = selectedInt
+        }
     }
     
 

@@ -48,6 +48,7 @@ class ViewController: UIViewController, UITextFieldDelegate, UIImagePickerContro
     var workouts = [HKWorkout]()
     var lastRun = [HKWorkout]()
     var selectedRun: Int!
+    var photoLayout = 1
     
     let monthFormatter = DateFormatter()
     let formatMonth = "MMM"
@@ -589,6 +590,7 @@ class ViewController: UIViewController, UITextFieldDelegate, UIImagePickerContro
             picChooserViewController?.userWeatherIcon = WeatherInput.text
             picChooserViewController?.userDuration = TimeInput.text
             picChooserViewController?.userPace = PaceInput.text
+            picChooserViewController?.currentLayout = photoLayout
         }else if segue.identifier == "showWorkouts"{
             let workoutChooser = segue.destination as? AddWorkoutViewController
             //print (workouts)
