@@ -21,6 +21,10 @@ class PhotoPickerViewController: UIViewController, UIImagePickerControllerDelega
     @IBOutlet weak var Layout2: UIView!
     @IBOutlet weak var Layout3: UIView!
     @IBOutlet weak var Layout4: UIView!
+    @IBOutlet weak var btnLayout1: UIButton!
+    @IBOutlet weak var btnLayout2: UIButton!
+    @IBOutlet weak var btnLayout3: UIButton!
+    @IBOutlet weak var btnLayout4: UIButton!
     
     
     // Layout 1
@@ -85,10 +89,7 @@ class PhotoPickerViewController: UIViewController, UIImagePickerControllerDelega
         super.viewDidLoad()
         
         //hide layouts
-        Layout1.alpha = 0
-        Layout2.alpha = 0
-        Layout3.alpha = 0
-        Layout4.alpha = 0
+        hideLayouts()
         
         // set the title of the view
         navigationItem.title = "PREVIEW"
@@ -130,7 +131,7 @@ class PhotoPickerViewController: UIViewController, UIImagePickerControllerDelega
         
         // populate layout 4
         PhotoTitle4.text = userTitleText.uppercased()
-        PhotoDistance4.text = userDistanceText
+        PhotoDistance4.text = userDistanceText + " " + userDistanceChoice
         PhotoLocation4.text = userLocationText
         PhotoDate4.text = userMonth + " " + userDay + ", " + userYear
         PhotoTime4.text = "Duration: " + userDuration + "・" + "Pace: " + userPace
@@ -150,12 +151,17 @@ class PhotoPickerViewController: UIViewController, UIImagePickerControllerDelega
         
         if(currentLayout == 1){
             Layout1.alpha = 1
-            Layout2.alpha = 0
             currentLayout = 1
-        }else if(currentLayout == 1){
-            Layout1.alpha = 0
+            btnLayout1.isSelected = true
+        }else if(currentLayout == 2){
             Layout2.alpha = 1
             currentLayout = 2
+        }else if(currentLayout == 3){
+            Layout3.alpha = 1
+            currentLayout = 3
+        }else if(currentLayout == 4){
+            Layout4.alpha = 1
+            currentLayout = 4
         }
         
         // set weather icons
@@ -188,6 +194,13 @@ class PhotoPickerViewController: UIViewController, UIImagePickerControllerDelega
         shareImage()
     }
     
+    func hideLayouts(){
+        Layout1.alpha = 0
+        Layout2.alpha = 0
+        Layout3.alpha = 0
+        Layout4.alpha = 0
+    }
+    
     func resizeImage(image: UIImage, targetSize: CGSize) -> UIImage {
         let size = image.size
         
@@ -213,12 +226,22 @@ class PhotoPickerViewController: UIViewController, UIImagePickerControllerDelega
         
         return newImage!
     }
+    
+    func deselectButtons(){
+        btnLayout1.isSelected = false
+        btnLayout2.isSelected = false
+        btnLayout3.isSelected = false
+        btnLayout4.isSelected = false
+    }
+    
     @IBAction func showLayout1(_ sender: UIButton) {
         Layout1.alpha = 1
         Layout2.alpha = 0
         Layout3.alpha = 0
         Layout4.alpha = 0
         currentLayout = 1
+        deselectButtons()
+        sender.isSelected = true
     }
     
     @IBAction func showLayout2(_ sender: UIButton) {
@@ -227,6 +250,8 @@ class PhotoPickerViewController: UIViewController, UIImagePickerControllerDelega
         Layout3.alpha = 0
         Layout4.alpha = 0
         currentLayout = 2
+        deselectButtons()
+        sender.isSelected = true
     }
     
     @IBAction func showLayout3(_ sender: UIButton) {
@@ -235,6 +260,8 @@ class PhotoPickerViewController: UIViewController, UIImagePickerControllerDelega
         Layout3.alpha = 1
         Layout4.alpha = 0
         currentLayout = 3
+        deselectButtons()
+        sender.isSelected = true
     }
     
     @IBAction func showLayout4(_ sender: UIButton) {
@@ -243,9 +270,9 @@ class PhotoPickerViewController: UIViewController, UIImagePickerControllerDelega
         Layout3.alpha = 0
         Layout4.alpha = 1
         currentLayout = 4
+        deselectButtons()
+        sender.isSelected = true
     }
-    
-    
     
     func saveImage() {
         //Create the UIImage
@@ -314,18 +341,6 @@ class PhotoPickerViewController: UIViewController, UIImagePickerControllerDelega
         dismiss(animated: true, completion: nil)
     }
     
-    @IBAction func seletImageFromPhotoLibrary(_ sender: UITapGestureRecognizer) {
-        // UIImagePickerController is a view controller that lets a user pick media from their photo library.
-        let image = UIImagePickerController()
-        image.delegate = self
-        image.sourceType = UIImagePickerControllerSourceType.photoLibrary
-        image.allowsEditing = true //or true additional setup required.
-        
-        self.present(image, animated: true, completion: nil)
-    }
-    
-
-    
     @IBAction func backToStats(_ sender: UIBarButtonItem) {
         self.performSegue(withIdentifier: "unwindToStats", sender: self)
     }
@@ -334,17 +349,6 @@ class PhotoPickerViewController: UIViewController, UIImagePickerControllerDelega
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
-    @IBAction func openCameraButton(sender: UIButton) {
-        if UIImagePickerController.isSourceTypeAvailable(UIImagePickerControllerSourceType.camera) {
-            let imagePicker = UIImagePickerController()
-            imagePicker.delegate = self
-            imagePicker.sourceType = UIImagePickerControllerSourceType.camera;
-            imagePicker.allowsEditing = true
-            self.present(imagePicker, animated: true, completion: nil)
-        }
-    }
-    
 
     /*
     // MARK: - Navigation

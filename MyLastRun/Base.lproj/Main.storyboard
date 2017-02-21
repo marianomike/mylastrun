@@ -7,7 +7,6 @@
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
-        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
@@ -49,11 +48,11 @@
                                                             <stackView opaque="NO" contentMode="scaleToFill" spacing="7" translatesAutoresizingMaskIntoConstraints="NO" id="djG-op-b48" userLabel="Title Input Stack View">
                                                                 <rect key="frame" x="0.0" y="29" width="335" height="36.5"/>
                                                                 <subviews>
-                                                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" horizontalHuggingPriority="249" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="RUN" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="Zm9-m6-8ro">
+                                                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" horizontalHuggingPriority="249" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="Zm9-m6-8ro">
                                                                         <rect key="frame" x="0.0" y="0.0" width="335" height="36.5"/>
                                                                         <color key="textColor" red="0.47450980392156861" green="0.57647058823529407" blue="0.27843137254901962" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                         <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="20"/>
-                                                                        <textInputTraits key="textInputTraits" returnKeyType="done"/>
+                                                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences" returnKeyType="done"/>
                                                                     </textField>
                                                                 </subviews>
                                                             </stackView>
@@ -202,7 +201,7 @@
                                                             <stackView opaque="NO" contentMode="scaleToFill" spacing="7" translatesAutoresizingMaskIntoConstraints="NO" id="xeI-7F-mXG" userLabel="Location Input Stack View">
                                                                 <rect key="frame" x="0.0" y="29" width="335" height="36.5"/>
                                                                 <subviews>
-                                                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" horizontalHuggingPriority="249" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="California" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="vSa-Si-9Oh">
+                                                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" horizontalHuggingPriority="249" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="vSa-Si-9Oh">
                                                                         <rect key="frame" x="0.0" y="0.0" width="335" height="36.5"/>
                                                                         <color key="textColor" red="0.47450980390000003" green="0.57647058819999997" blue="0.2784313725" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                         <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="20"/>
@@ -463,7 +462,7 @@
                                         </constraints>
                                     </view>
                                     <view opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eLF-RL-ERj" userLabel="Layout1">
-                                        <rect key="frame" x="0.0" y="0.0" width="320" height="320"/>
+                                        <rect key="frame" x="-0.5" y="0.0" width="320" height="320"/>
                                         <subviews>
                                             <textField opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.5" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="RUN" textAlignment="center" minimumFontSize="8" translatesAutoresizingMaskIntoConstraints="NO" id="my5-v9-val">
                                                 <rect key="frame" x="26" y="108" width="265" height="119"/>
@@ -509,12 +508,8 @@
                                                     <constraint firstAttribute="bottom" secondItem="ANd-0N-dA2" secondAttribute="bottom" id="xEt-Ai-Xmk"/>
                                                 </constraints>
                                             </stackView>
-                                            <imageView userInteractionEnabled="NO" alpha="0.80000000000000004" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="IconLightClouds" translatesAutoresizingMaskIntoConstraints="NO" id="1dB-O0-27c">
-                                                <rect key="frame" x="275" y="7" width="36" height="34"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
-                                            </imageView>
                                             <textField opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.80000000000000004" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="FREMONT, CA" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="mG2-ZO-Ccd">
-                                                <rect key="frame" x="52" y="42" width="260" height="18"/>
+                                                <rect key="frame" x="52" y="8" width="260" height="18"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="14"/>
@@ -575,8 +570,12 @@
                                                 <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="34"/>
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
+                                            <imageView userInteractionEnabled="NO" alpha="0.80000000000000004" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="IconLightClouds" translatesAutoresizingMaskIntoConstraints="NO" id="1dB-O0-27c">
+                                                <rect key="frame" x="276" y="25" width="36" height="34"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                                            </imageView>
                                             <textField opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.80000000000000004" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="60°" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="9sl-8Z-3Lc">
-                                                <rect key="frame" x="51" y="7" width="224" height="34"/>
+                                                <rect key="frame" x="52" y="25" width="224" height="34"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="36"/>
@@ -593,120 +592,69 @@
                                             <constraint firstAttribute="bottom" secondItem="swn-Vf-tI0" secondAttribute="bottom" constant="8" id="IHY-g7-fUc"/>
                                         </constraints>
                                     </view>
-                                    <view opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6m2-K7-Z9m" userLabel="Layout2">
-                                        <rect key="frame" x="0.0" y="0.0" width="320" height="320"/>
+                                    <view opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="6m2-K7-Z9m" userLabel="Layout2">
+                                        <rect key="frame" x="-1" y="0.0" width="320" height="320"/>
+                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                         <subviews>
-                                            <imageView userInteractionEnabled="NO" alpha="0.80000000000000004" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="TopGradient" translatesAutoresizingMaskIntoConstraints="NO" id="jzV-ad-g3x">
+                                            <imageView userInteractionEnabled="NO" alpha="0.80000000000000004" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="TopGradient" translatesAutoresizingMaskIntoConstraints="NO" id="jzV-ad-g3x">
                                                 <rect key="frame" x="0.0" y="8" width="214" height="34"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="height" constant="34" id="uts-4E-6o1"/>
-                                                </constraints>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             </imageView>
-                                            <textField opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.80000000000000004" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="MARATHON TRAINING" textAlignment="center" minimumFontSize="1" background="TitleGradient" translatesAutoresizingMaskIntoConstraints="NO" id="vd3-DN-qJ0">
+                                            <textField opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.80000000000000004" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="MARATHON TRAINING" textAlignment="center" minimumFontSize="1" background="TitleGradient" translatesAutoresizingMaskIntoConstraints="NO" id="vd3-DN-qJ0">
                                                 <rect key="frame" x="7" y="255" width="305" height="37"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="height" constant="37" id="efh-Xw-7hL"/>
-                                                </constraints>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <fontDescription key="fontDescription" name="HelveticaNeue-ThinItalic" family="Helvetica Neue" pointSize="80"/>
                                                 <textInputTraits key="textInputTraits" autocapitalizationType="allCharacters"/>
                                             </textField>
-                                            <textField opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.80000000000000004" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="July 24, 1977 at 8:45 am" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="sSA-Pl-FBF">
+                                            <textField opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.80000000000000004" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="July 24, 1977 at 8:45 am" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="sSA-Pl-FBF">
                                                 <rect key="frame" x="81" y="297" width="158" height="17"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
-                                            <stackView opaque="NO" contentMode="scaleToFill" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="08L-xJ-tUO">
-                                                <rect key="frame" x="8" y="44" width="82" height="20"/>
-                                                <subviews>
-                                                    <imageView userInteractionEnabled="NO" alpha="0.80000000000000004" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="IconClock-1" translatesAutoresizingMaskIntoConstraints="NO" id="Px6-oC-rS7">
-                                                        <rect key="frame" x="0.0" y="0.0" width="17" height="20"/>
-                                                        <constraints>
-                                                            <constraint firstAttribute="height" constant="20" id="3Gv-6A-Cfl"/>
-                                                            <constraint firstAttribute="width" secondItem="Px6-oC-rS7" secondAttribute="height" multiplier="25:29" id="Ksp-c7-eLP"/>
-                                                        </constraints>
-                                                    </imageView>
-                                                    <textField opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.80000000000000004" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="4:28:59" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="b3s-Tr-T2v">
-                                                        <rect key="frame" x="22" y="0.0" width="60" height="20"/>
-                                                        <constraints>
-                                                            <constraint firstAttribute="width" constant="60" id="Mcn-84-8A9"/>
-                                                        </constraints>
-                                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="14"/>
-                                                        <textInputTraits key="textInputTraits"/>
-                                                    </textField>
-                                                </subviews>
-                                                <constraints>
-                                                    <constraint firstItem="b3s-Tr-T2v" firstAttribute="leading" secondItem="Px6-oC-rS7" secondAttribute="trailing" constant="5" id="RJf-3n-ZHw"/>
-                                                </constraints>
-                                            </stackView>
-                                            <textField opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.80000000000000004" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="15.88 Miles" textAlignment="natural" adjustsFontSizeToFit="NO" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="OBC-6E-JmI">
+                                            <imageView userInteractionEnabled="NO" alpha="0.80000000000000004" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="IconClock-1" translatesAutoresizingMaskIntoConstraints="NO" id="Px6-oC-rS7">
+                                                <rect key="frame" x="89" y="46" width="16" height="16"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            </imageView>
+                                            <textField opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.80000000000000004" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="4:28:59" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="b3s-Tr-T2v">
+                                                <rect key="frame" x="27" y="45" width="60" height="20"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                            </textField>
+                                            <textField opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.80000000000000004" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="15.88 Miles" textAlignment="natural" adjustsFontSizeToFit="NO" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="OBC-6E-JmI">
                                                 <rect key="frame" x="8" y="8" width="206" height="34"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="28"/>
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
-                                            <textField opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.80000000000000004" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="FREMONT, CA" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="t5D-Hv-q1I">
-                                                <rect key="frame" x="99" y="234" width="122" height="18"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="height" constant="18" id="bEy-FN-UCC"/>
-                                                </constraints>
+                                            <textField opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.80000000000000004" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="FREMONT, CA" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="t5D-Hv-q1I">
+                                                <rect key="frame" x="8" y="234" width="304" height="18"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
-                                            <stackView opaque="NO" contentMode="scaleToFill" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="VY9-eI-ved">
-                                                <rect key="frame" x="98" y="44" width="105" height="20"/>
-                                                <subviews>
-                                                    <imageView userInteractionEnabled="NO" alpha="0.80000000000000004" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="IconTimer" translatesAutoresizingMaskIntoConstraints="NO" id="mnS-Jo-rvL">
-                                                        <rect key="frame" x="0.0" y="0.0" width="20" height="20"/>
-                                                        <constraints>
-                                                            <constraint firstAttribute="width" constant="20" id="6cp-rI-WBt"/>
-                                                            <constraint firstAttribute="height" constant="20" id="hpg-iV-o4g"/>
-                                                        </constraints>
-                                                    </imageView>
-                                                    <textField opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.80000000000000004" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="8'44&quot;" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="KZD-7j-1NP">
-                                                        <rect key="frame" x="25" y="0.0" width="80" height="20"/>
-                                                        <constraints>
-                                                            <constraint firstAttribute="width" constant="80" id="MkB-K8-Tuu"/>
-                                                        </constraints>
-                                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="14"/>
-                                                        <textInputTraits key="textInputTraits"/>
-                                                    </textField>
-                                                </subviews>
-                                            </stackView>
-                                            <imageView userInteractionEnabled="NO" alpha="0.80000000000000004" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="IconLightClouds" translatesAutoresizingMaskIntoConstraints="NO" id="gHy-1x-nUQ">
-                                                <rect key="frame" x="285" y="8" width="27" height="31"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="width" constant="27" id="Xir-fg-hkc"/>
-                                                    <constraint firstAttribute="height" constant="31" id="uyM-q7-shd"/>
-                                                </constraints>
+                                            <imageView userInteractionEnabled="NO" alpha="0.80000000000000004" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="IconTimer" translatesAutoresizingMaskIntoConstraints="NO" id="mnS-Jo-rvL">
+                                                <rect key="frame" x="8" y="45" width="15" height="17"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                                             </imageView>
+                                            <imageView userInteractionEnabled="NO" alpha="0.80000000000000004" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="IconLightClouds" translatesAutoresizingMaskIntoConstraints="NO" id="gHy-1x-nUQ">
+                                                <rect key="frame" x="285" y="8" width="27" height="31"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            </imageView>
+                                            <textField opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.80000000000000004" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="8'44&quot;" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="KZD-7j-1NP">
+                                                <rect key="frame" x="110" y="45" width="54" height="20"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                            </textField>
                                         </subviews>
-                                        <constraints>
-                                            <constraint firstItem="vd3-DN-qJ0" firstAttribute="centerX" secondItem="sSA-Pl-FBF" secondAttribute="centerX" id="0ce-o6-J6B"/>
-                                            <constraint firstAttribute="trailing" secondItem="gHy-1x-nUQ" secondAttribute="trailing" constant="8" id="23H-Om-PSe"/>
-                                            <constraint firstItem="VY9-eI-ved" firstAttribute="top" secondItem="08L-xJ-tUO" secondAttribute="bottom" constant="-20" id="5cZ-9c-446"/>
-                                            <constraint firstItem="OBC-6E-JmI" firstAttribute="top" secondItem="6m2-K7-Z9m" secondAttribute="topMargin" id="80R-DL-WOJ"/>
-                                            <constraint firstItem="08L-xJ-tUO" firstAttribute="top" secondItem="jzV-ad-g3x" secondAttribute="bottom" constant="2" id="H5P-Gw-XyJ"/>
-                                            <constraint firstItem="08L-xJ-tUO" firstAttribute="leading" secondItem="6m2-K7-Z9m" secondAttribute="leadingMargin" id="Ioc-iv-acK"/>
-                                            <constraint firstItem="VY9-eI-ved" firstAttribute="leading" secondItem="OBC-6E-JmI" secondAttribute="leading" constant="90" id="LPz-Rk-4hu"/>
-                                            <constraint firstItem="vd3-DN-qJ0" firstAttribute="trailing" secondItem="6m2-K7-Z9m" secondAttribute="trailingMargin" id="Sbh-7o-qiX"/>
-                                            <constraint firstItem="vd3-DN-qJ0" firstAttribute="top" secondItem="t5D-Hv-q1I" secondAttribute="bottom" constant="3" id="brm-by-P3v"/>
-                                            <constraint firstAttribute="trailing" secondItem="jzV-ad-g3x" secondAttribute="trailing" constant="106" id="cRM-w5-zyU"/>
-                                            <constraint firstItem="sSA-Pl-FBF" firstAttribute="top" secondItem="vd3-DN-qJ0" secondAttribute="bottom" constant="5" id="djL-Xv-jt0"/>
-                                            <constraint firstItem="t5D-Hv-q1I" firstAttribute="trailing" secondItem="OBC-6E-JmI" secondAttribute="trailing" constant="7" id="f7N-Gd-0IE"/>
-                                            <constraint firstItem="t5D-Hv-q1I" firstAttribute="leading" secondItem="6m2-K7-Z9m" secondAttribute="leading" constant="99" id="i0m-fl-AMS"/>
-                                            <constraint firstAttribute="bottom" secondItem="vd3-DN-qJ0" secondAttribute="bottom" constant="28" id="j88-RN-PYM"/>
-                                            <constraint firstItem="08L-xJ-tUO" firstAttribute="top" secondItem="gHy-1x-nUQ" secondAttribute="top" constant="36" id="n5P-jK-Ire"/>
-                                            <constraint firstItem="t5D-Hv-q1I" firstAttribute="trailing" secondItem="jzV-ad-g3x" secondAttribute="trailing" constant="7" id="nca-dO-dK7"/>
-                                            <constraint firstItem="08L-xJ-tUO" firstAttribute="leading" secondItem="VY9-eI-ved" secondAttribute="leading" constant="-90" id="pp0-fH-vx9"/>
-                                            <constraint firstItem="vd3-DN-qJ0" firstAttribute="centerX" secondItem="6m2-K7-Z9m" secondAttribute="centerX" id="wSM-du-Bh6"/>
-                                            <constraint firstItem="jzV-ad-g3x" firstAttribute="top" secondItem="6m2-K7-Z9m" secondAttribute="top" constant="8" id="wUL-C5-tiy"/>
-                                            <constraint firstItem="jzV-ad-g3x" firstAttribute="leading" secondItem="6m2-K7-Z9m" secondAttribute="leading" id="zdf-RA-zsv"/>
-                                        </constraints>
                                     </view>
                                     <view opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="F31-cg-QtU" userLabel="Layout3">
                                         <rect key="frame" x="0.0" y="0.0" width="320" height="320"/>
@@ -754,7 +702,7 @@
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
                                             <textField opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.80000001192092896" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="FREMONT, CA" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="5yp-Oe-JWg">
-                                                <rect key="frame" x="99" y="235" width="122" height="18"/>
+                                                <rect key="frame" x="8" y="234" width="304" height="18"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="14"/>
@@ -782,32 +730,32 @@
                                                 <rect key="frame" x="8" y="26" width="304" height="18"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="14"/>
+                                                <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
                                             <textField opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.80000001192092896" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="26.2" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="0yI-Ff-w8d">
                                                 <rect key="frame" x="8" y="231" width="304" height="59"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                                                 <nil key="textColor"/>
-                                                <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="50"/>
+                                                <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="50"/>
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
                                             <textField opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.80000001192092896" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="July 24, 1977 at 8:45 am" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="qyg-OS-s1s">
                                                 <rect key="frame" x="8" y="8" width="304" height="17"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="14"/>
+                                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="18"/>
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
                                             <textField opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.80000001192092896" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="MARATHON TRAINING" minimumFontSize="1" translatesAutoresizingMaskIntoConstraints="NO" id="KCL-2B-D23">
                                                 <rect key="frame" x="8" y="208" width="304" height="23"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="18"/>
+                                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits" autocapitalizationType="allCharacters"/>
                                             </textField>
                                             <textField opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.80000001192092896" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Duration: 4:28:59" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="wYs-EY-rNF">
-                                                <rect key="frame" x="8" y="292" width="304" height="20"/>
+                                                <rect key="frame" x="8" y="293" width="304" height="25"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="14"/>
@@ -821,22 +769,14 @@
                                     <constraint firstItem="LUr-4g-A3Q" firstAttribute="trailing" secondItem="eLF-RL-ERj" secondAttribute="trailing" id="BRm-b2-iGa"/>
                                     <constraint firstAttribute="bottom" secondItem="eLF-RL-ERj" secondAttribute="bottom" id="MTO-Nn-Jca"/>
                                     <constraint firstItem="LUr-4g-A3Q" firstAttribute="leading" secondItem="eLF-RL-ERj" secondAttribute="leading" id="Slt-k4-9Ss"/>
-                                    <constraint firstItem="6m2-K7-Z9m" firstAttribute="top" secondItem="eLF-RL-ERj" secondAttribute="top" id="Wo0-oh-dss"/>
-                                    <constraint firstItem="6m2-K7-Z9m" firstAttribute="leading" secondItem="LUr-4g-A3Q" secondAttribute="leading" id="YgF-zX-tot"/>
                                     <constraint firstAttribute="bottom" secondItem="eLF-RL-ERj" secondAttribute="bottom" id="cev-e4-GZk"/>
                                     <constraint firstItem="eLF-RL-ERj" firstAttribute="top" secondItem="zRe-0x-Eu5" secondAttribute="top" id="cfk-le-Sqo"/>
                                     <constraint firstAttribute="height" constant="320" id="cpb-Gy-o7M"/>
-                                    <constraint firstItem="6m2-K7-Z9m" firstAttribute="leading" secondItem="zRe-0x-Eu5" secondAttribute="leading" id="hyb-mt-LtJ"/>
                                     <constraint firstItem="LUr-4g-A3Q" firstAttribute="top" secondItem="zRe-0x-Eu5" secondAttribute="top" id="iAe-hL-dAe"/>
-                                    <constraint firstItem="6m2-K7-Z9m" firstAttribute="bottom" secondItem="LUr-4g-A3Q" secondAttribute="bottom" id="k9t-t4-vdi"/>
-                                    <constraint firstItem="6m2-K7-Z9m" firstAttribute="trailing" secondItem="LUr-4g-A3Q" secondAttribute="trailing" id="lcj-Ic-Sff"/>
-                                    <constraint firstItem="6m2-K7-Z9m" firstAttribute="top" secondItem="zRe-0x-Eu5" secondAttribute="top" id="ls3-mh-c4X"/>
                                     <constraint firstItem="eLF-RL-ERj" firstAttribute="leading" secondItem="zRe-0x-Eu5" secondAttribute="leading" id="mpv-rb-GJv"/>
                                     <constraint firstAttribute="bottom" secondItem="LUr-4g-A3Q" secondAttribute="bottom" id="n5s-WB-VHv"/>
                                     <constraint firstAttribute="trailing" secondItem="eLF-RL-ERj" secondAttribute="trailing" id="q7L-E1-dYo"/>
                                     <constraint firstAttribute="width" constant="320" id="tsV-fY-Ar3"/>
-                                    <constraint firstAttribute="bottom" secondItem="6m2-K7-Z9m" secondAttribute="bottom" id="uNl-FR-4h3"/>
-                                    <constraint firstAttribute="trailing" secondItem="6m2-K7-Z9m" secondAttribute="trailing" id="vWA-2Q-l80"/>
                                 </constraints>
                             </view>
                             <stackView opaque="NO" contentMode="scaleToFill" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="UZN-Hf-WWk">
@@ -849,6 +789,7 @@
                                             <constraint firstAttribute="width" constant="35" id="uRp-I5-l5n"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
+                                        <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <state key="normal" title="1" backgroundImage="LayoutCircle">
                                             <color key="titleColor" red="0.47450980390000003" green="0.57647058819999997" blue="0.2784313725" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
@@ -863,6 +804,7 @@
                                             <constraint firstAttribute="height" constant="35" id="y0u-fp-OAn"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
+                                        <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <state key="normal" title="2" backgroundImage="LayoutCircle">
                                             <color key="titleColor" red="0.47450980390000003" green="0.57647058819999997" blue="0.2784313725" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
@@ -877,6 +819,7 @@
                                             <constraint firstAttribute="height" constant="35" id="IQE-K4-asi"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
+                                        <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <state key="normal" title="3" backgroundImage="LayoutCircle">
                                             <color key="titleColor" red="0.47450980390000003" green="0.57647058819999997" blue="0.2784313725" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
@@ -892,6 +835,7 @@
                                             <constraint firstAttribute="width" constant="35" id="Q02-3c-8lx"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
+                                        <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <state key="normal" title="4" backgroundImage="LayoutCircle">
                                             <color key="titleColor" red="0.47450980390000003" green="0.57647058819999997" blue="0.2784313725" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
@@ -970,6 +914,10 @@
                         <outlet property="PhotoWeatherIcon" destination="1dB-O0-27c" id="dfA-Fm-prQ"/>
                         <outlet property="PhotoWeatherIcon2" destination="gHy-1x-nUQ" id="FOQ-9f-vfe"/>
                         <outlet property="PhotoYear" destination="ANd-0N-dA2" id="rWj-YP-Ynj"/>
+                        <outlet property="btnLayout1" destination="gXP-qn-DdZ" id="bLw-PW-UuS"/>
+                        <outlet property="btnLayout2" destination="VJx-YW-38H" id="XXg-bk-RJE"/>
+                        <outlet property="btnLayout3" destination="SEc-Y0-2cn" id="b5j-1r-e3A"/>
+                        <outlet property="btnLayout4" destination="xEj-7j-wzb" id="QaK-y1-gzx"/>
                         <outlet property="photoImageView" destination="CGB-Y2-ww1" id="K4N-2Z-BAG"/>
                         <segue destination="OnX-Ea-q1E" kind="unwind" identifier="unwindToStats" unwindAction="unwindToStatsWithSegue:" id="Rjm-tl-sHX"/>
                     </connections>

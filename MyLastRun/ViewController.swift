@@ -24,28 +24,13 @@ class ViewController: UIViewController, UITextFieldDelegate, UIImagePickerContro
     @IBOutlet weak var BtnNext: UIBarButtonItem!
     @IBOutlet weak var MetricsInput: UITextField!
     
-    // title variables
-    @IBOutlet weak var BtnTitleCheckbox: UIButton!
+    // input variables
     @IBOutlet weak var TitleInput: UITextField!
-    
-    // distance variables
-    @IBOutlet weak var BtnDistanceCheckbox: UIButton!
     @IBOutlet weak var DistanceInput: UITextField!
-    
-    // time variables
-    @IBOutlet weak var BtnTimeCheckbox: UIButton!
     @IBOutlet weak var TimeInput: UITextField!
-    
-    // pace variables
     @IBOutlet weak var PaceInput: UITextField!
-    
-    // location variables
-    @IBOutlet weak var BtnLocationCheckbox: UIButton!
     @IBOutlet weak var LocationInput: UITextField!
-    
-    // date variables
     @IBOutlet weak var DateInput: UITextField!
-    @IBOutlet weak var BtnDateCheckbox: UIButton!
     
     // weather variables
     @IBOutlet weak var DegreesInput: UITextField!
@@ -560,73 +545,6 @@ class ViewController: UIViewController, UITextFieldDelegate, UIImagePickerContro
         ImageChoice.image = nil
     }
     
-
-    // MARK: Checkboxes
-    
-    @IBAction func TapTitleCheckbox(_ sender: UIButton) {
-        
-        if titleIsChecked == true {
-            titleIsChecked = false
-        }else{
-            titleIsChecked = true
-        }
-        
-        if titleIsChecked == true {
-            BtnTitleCheckbox.setImage(checkbox, for: UIControlState.normal)
-        } else {
-            BtnTitleCheckbox.setImage(unCheckbox, for: UIControlState.normal)
-        }
-
-    }
-    
-    @IBAction func TapDistanceCheckbox(_ sender: UIButton) {
-        
-        if timeIsChecked == true {
-            timeIsChecked = false
-        }else{
-            timeIsChecked = true
-        }
-        
-        if timeIsChecked == true {
-            BtnDistanceCheckbox.setImage(checkbox, for: UIControlState.normal)
-        } else {
-            BtnDistanceCheckbox.setImage(unCheckbox, for: UIControlState.normal)
-        }
-        
-    }
-    
-    @IBAction func TapTimeCheckbox(_ sender: UIButton) {
-        
-        if distanceIsChecked == true {
-            distanceIsChecked = false
-        }else{
-            distanceIsChecked = true
-        }
-        
-        if distanceIsChecked == true {
-            BtnTimeCheckbox.setImage(checkbox, for: UIControlState.normal)
-        } else {
-            BtnTimeCheckbox.setImage(unCheckbox, for: UIControlState.normal)
-        }
-        
-    }
-    
-    @IBAction func TapLocationCheckbox(_ sender: UIButton) {
-        
-        if locationIsChecked == true {
-            locationIsChecked = false
-        }else{
-            locationIsChecked = true
-        }
-        
-        if locationIsChecked == true {
-            BtnLocationCheckbox.setImage(checkbox, for: UIControlState.normal)
-        } else {
-            BtnLocationCheckbox.setImage(unCheckbox, for: UIControlState.normal)
-        }
-        
-    }
-    
     @IBAction func DateInputEdit(_ sender: UITextField) {
         let datePickerView:UIDatePicker = UIDatePicker()
         
@@ -637,22 +555,6 @@ class ViewController: UIViewController, UITextFieldDelegate, UIImagePickerContro
         datePickerView.addTarget(self, action: #selector(ViewController.datePickerValueChanged(_:)), for: UIControlEvents.valueChanged)
     }
     
-    
-    @IBAction func DateLocationCheckbox(_ sender: UIButton) {
-        
-        if dateIsChecked == true {
-            dateIsChecked = false
-        }else{
-            dateIsChecked = true
-        }
-        
-        if dateIsChecked == true {
-            BtnDateCheckbox.setImage(checkbox, for: UIControlState.normal)
-        } else {
-            BtnDateCheckbox.setImage(unCheckbox, for: UIControlState.normal)
-        }
-        
-    }
     
     @IBAction func unwindToStats(segue: UIStoryboardSegue) {
         if let modalVC = segue.source as? AddWorkoutViewController, segue.identifier == "closeModal" {
