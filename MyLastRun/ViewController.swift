@@ -8,8 +8,6 @@
 
 import UIKit
 import HealthKit
-import CoreLocation
-import MapKit
 
 extension Double {
     /// Rounds the double to decimal places value
