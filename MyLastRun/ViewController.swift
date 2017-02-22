@@ -122,17 +122,6 @@ class ViewController: UIViewController, UITextFieldDelegate, UIImagePickerContro
         super.viewDidLoad()
         getHealthKitPermission()
         
-        /*
-        let loc = GetLocation()
-        
-        loc.getAddress { result in
-            
-            if let city = result["City"] as? String {
-                print(city)
-            }
-        }
- */
-        
         // title bar
         navigationItem.title = "MY LAST RUN"
         navigationController?.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName: UIColor(red: 169/255, green: 203/255, blue: 74/255, alpha: 1.0)]

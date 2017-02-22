@@ -23,9 +23,15 @@ class HealthKitManager {
         if !HKHealthStore.isHealthDataAvailable() {
             print("Can't access HealthKit.")
         }
-        
+        /*
         healthKitStore.requestAuthorization(toShare: [], read: healthDataToRead) { (success, error) -> Void in
             completion?(true, error as NSError?)
+        }
+        */
+        healthKitStore.requestAuthorization(toShare: [], read: healthDataToRead) { (success, error) -> Void in
+            if( completion != nil ) {
+                completion?(success, error as NSError?)
+            }
         }
     }
     
@@ -37,6 +43,11 @@ class HealthKitManager {
         
         let sampleQuery = HKSampleQuery(sampleType: HKWorkoutType.workoutType(), predicate: predicate, limit: 0, sortDescriptors: [sortDescriptor]) {
             (sampleQuery, results, error ) -> Void in
+            
+            if let queryError = error {
+                completion?(nil, queryError as NSError?)
+                return
+            }
             
             if completion != nil {
                 completion(results, nil)
