@@ -21,10 +21,13 @@ class PhotoPickerViewController: UIViewController, UIImagePickerControllerDelega
     @IBOutlet weak var Layout2: UIView!
     @IBOutlet weak var Layout3: UIView!
     @IBOutlet weak var Layout4: UIView!
+    @IBOutlet weak var Layout5: UIView!
+    
     @IBOutlet weak var btnLayout1: UIButton!
     @IBOutlet weak var btnLayout2: UIButton!
     @IBOutlet weak var btnLayout3: UIButton!
     @IBOutlet weak var btnLayout4: UIButton!
+    @IBOutlet weak var btnLayout5: UIButton!
     
     
     // Layout 1
@@ -63,6 +66,13 @@ class PhotoPickerViewController: UIViewController, UIImagePickerControllerDelega
     @IBOutlet weak var PhotoDate4: UITextField!
     @IBOutlet weak var PhotoTime4: UITextField!
     @IBOutlet weak var PhotoLocation4: UITextField!
+    
+    // Layout 5
+    @IBOutlet weak var PhotoTitle5: UITextField!
+    @IBOutlet weak var PhotoDistance5: UITextField!
+    @IBOutlet weak var PhotoDate5: UITextField!
+    @IBOutlet weak var PhotoTime5: UITextField!
+    @IBOutlet weak var PhotoLocation5: UITextField!
     
     
     // create variables for the text fields to display
@@ -131,6 +141,13 @@ class PhotoPickerViewController: UIViewController, UIImagePickerControllerDelega
         PhotoDuration3.text = userDuration
         PhotoPace3.text = userPace
         
+        if(userDistanceChoice == "Miles"){
+            PhotoMetrics3.text = "M"
+        }else if(userDistanceChoice == "Kilometers"){
+            PhotoMetrics3.text = "K"
+        }
+        
+        
         // populate layout 4
         PhotoTitle4.text = userTitleText.uppercased()
         PhotoDistance4.text = userDistanceText + " " + userDistanceChoice
@@ -138,11 +155,18 @@ class PhotoPickerViewController: UIViewController, UIImagePickerControllerDelega
         PhotoDate4.text = userMonth + " " + userDay + ", " + userYear
         PhotoTime4.text = "Duration: " + userDuration + "・" + "Pace: " + userPace
         
+        // populate layout 5
+        PhotoTitle5.text = userTitleText
         if(userDistanceChoice == "Miles"){
-            PhotoMetrics3.text = "M"
+            PhotoDistance5.text = userDistanceText + " M"
         }else if(userDistanceChoice == "Kilometers"){
-            PhotoMetrics3.text = "K"
+            PhotoDistance5.text = userDistanceText + " K"
         }
+        //PhotoDistance5.text = userDistanceText + " " + userDistanceChoice
+        PhotoLocation5.text = userLocationText
+        PhotoDate5.text = userMonth + " " + userDay + ", " + userYear
+        PhotoTime5.text = "Duration: " + userDuration + "・" + "Pace: " + userPace
+        
         
         //print(passedImage.size.width)
         //print(passedImage.size.height)
@@ -167,6 +191,10 @@ class PhotoPickerViewController: UIViewController, UIImagePickerControllerDelega
             Layout4.alpha = 1
             currentLayout = 4
             btnLayout4.isSelected = true
+        }else if(currentLayout == 5){
+            Layout5.alpha = 1
+            currentLayout = 5
+            btnLayout5.isSelected = true
         }
         
         // set weather icons
@@ -204,6 +232,7 @@ class PhotoPickerViewController: UIViewController, UIImagePickerControllerDelega
         Layout2.alpha = 0
         Layout3.alpha = 0
         Layout4.alpha = 0
+        Layout5.alpha = 0
     }
     
     func resizeImage(image: UIImage, targetSize: CGSize) -> UIImage {
@@ -237,6 +266,7 @@ class PhotoPickerViewController: UIViewController, UIImagePickerControllerDelega
         btnLayout2.isSelected = false
         btnLayout3.isSelected = false
         btnLayout4.isSelected = false
+        btnLayout5.isSelected = false
     }
     
     @IBAction func showLayout1(_ sender: UIButton) {
@@ -244,6 +274,7 @@ class PhotoPickerViewController: UIViewController, UIImagePickerControllerDelega
         Layout2.alpha = 0
         Layout3.alpha = 0
         Layout4.alpha = 0
+        Layout5.alpha = 0
         currentLayout = 1
         deselectButtons()
         sender.isSelected = true
@@ -254,6 +285,7 @@ class PhotoPickerViewController: UIViewController, UIImagePickerControllerDelega
         Layout2.alpha = 1
         Layout3.alpha = 0
         Layout4.alpha = 0
+        Layout5.alpha = 0
         currentLayout = 2
         deselectButtons()
         sender.isSelected = true
@@ -264,6 +296,7 @@ class PhotoPickerViewController: UIViewController, UIImagePickerControllerDelega
         Layout2.alpha = 0
         Layout3.alpha = 1
         Layout4.alpha = 0
+        Layout5.alpha = 0
         currentLayout = 3
         deselectButtons()
         sender.isSelected = true
@@ -274,10 +307,23 @@ class PhotoPickerViewController: UIViewController, UIImagePickerControllerDelega
         Layout2.alpha = 0
         Layout3.alpha = 0
         Layout4.alpha = 1
+        Layout5.alpha = 0
         currentLayout = 4
         deselectButtons()
         sender.isSelected = true
     }
+    
+    @IBAction func showLayout5(_ sender: UIButton) {
+        Layout1.alpha = 0
+        Layout2.alpha = 0
+        Layout3.alpha = 0
+        Layout4.alpha = 0
+        Layout5.alpha = 1
+        currentLayout = 5
+        deselectButtons()
+        sender.isSelected = true
+    }
+    
     
     func saveImage() {
         //Create the UIImage

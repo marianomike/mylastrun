@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7A01424C1E5FFFF100D9B06E /* SnellRoundhand.ttc in Resources */ = {isa = PBXBuildFile; fileRef = 7A01424B1E5FFFF100D9B06E /* SnellRoundhand.ttc */; };
 		7A3307791E387FBB00BC47BA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A3307781E387FBB00BC47BA /* AppDelegate.swift */; };
 		7A33077B1E387FBB00BC47BA /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A33077A1E387FBB00BC47BA /* ViewController.swift */; };
 		7A33077E1E387FBB00BC47BA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7A33077C1E387FBB00BC47BA /* Main.storyboard */; };
@@ -31,6 +32,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		7A01424B1E5FFFF100D9B06E /* SnellRoundhand.ttc */ = {isa = PBXFileReference; lastKnownFileType = file; path = SnellRoundhand.ttc; sourceTree = "<group>"; };
 		7A3307751E387FBB00BC47BA /* My Last Run.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "My Last Run.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		7A3307781E387FBB00BC47BA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7A33077A1E387FBB00BC47BA /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -96,6 +98,7 @@
 				7A33077C1E387FBB00BC47BA /* Main.storyboard */,
 				7A4AD4B81E3B362B00A79076 /* PhotoPickerViewController.swift */,
 				7A33077F1E387FBB00BC47BA /* Assets.xcassets */,
+				7A01424B1E5FFFF100D9B06E /* SnellRoundhand.ttc */,
 				7AF6FB761E3CF77000DB520B /* aqua.ttf */,
 				7A3307811E387FBB00BC47BA /* LaunchScreen.storyboard */,
 				7A3307841E387FBB00BC47BA /* Info.plist */,
@@ -219,6 +222,7 @@
 				7A3307831E387FBB00BC47BA /* LaunchScreen.storyboard in Resources */,
 				7A3307801E387FBB00BC47BA /* Assets.xcassets in Resources */,
 				7A33077E1E387FBB00BC47BA /* Main.storyboard in Resources */,
+				7A01424C1E5FFFF100D9B06E /* SnellRoundhand.ttc in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
