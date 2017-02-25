@@ -35,6 +35,14 @@
 	<key>UIAppFonts</key>
 	<array>
 		<string>aqua.ttf</string>
+		<string>SnellRoundhand.ttc</string>
+		<string>Nexa Bold.ttf</string>
+		<string>LeagueGothic-CondensedRegular.otf</string>
+		<string>Copperplate.ttc</string>
+		<string>LongTall.ttf</string>
+		<string>WalkwayExpandSemiBold.ttf</string>
+		<string>WalkwayObliqueBlack.ttf</string>
+		<string>Streetwear.otf</string>
 	</array>
 	<key>UILaunchStoryboardName</key>
 	<string>LaunchScreen</string>

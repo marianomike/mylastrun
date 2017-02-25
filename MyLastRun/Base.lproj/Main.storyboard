@@ -9,6 +9,21 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
+        <array key="Nexa Bold.otf">
+            <string>NexaBold</string>
+        </array>
+        <array key="OstrichSans-Black.otf">
+            <string>OstrichSans-Black</string>
+        </array>
+        <array key="Streetwear.otf">
+            <string>Streetwear</string>
+        </array>
+        <array key="WalkwayExpandSemiBold.ttf">
+            <string>WalkwayExpandSemiBold</string>
+        </array>
+        <array key="WalkwayObliqueBlack.ttf">
+            <string>WalkwayObliqueBlack</string>
+        </array>
         <array key="aqua.ttf">
             <string>AquaGrotesque</string>
         </array>
@@ -428,7 +443,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zRe-0x-Eu5">
-                                <rect key="frame" x="27.5" y="84" width="320" height="320"/>
+                                <rect key="frame" x="28" y="84" width="320" height="320"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LUr-4g-A3Q">
                                         <rect key="frame" x="0.0" y="0.0" width="320" height="320"/>
@@ -604,7 +619,7 @@
                                                 <rect key="frame" x="7" y="255" width="305" height="37"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                                <fontDescription key="fontDescription" name="HelveticaNeue-ThinItalic" family="Helvetica Neue" pointSize="80"/>
+                                                <fontDescription key="fontDescription" name="WalkwayObliqueBlack" family="Walkway Oblique Black" pointSize="77"/>
                                                 <textInputTraits key="textInputTraits" autocapitalizationType="allCharacters"/>
                                             </textField>
                                             <textField opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.80000000000000004" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="July 24, 1977 at 8:45 am" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="sSA-Pl-FBF">
@@ -629,7 +644,7 @@
                                                 <rect key="frame" x="8" y="8" width="206" height="34"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                                <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="28"/>
+                                                <fontDescription key="fontDescription" name="WalkwayExpandSemiBold" family="Walkway Expand SemiBold" pointSize="28"/>
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
                                             <textField opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.80000000000000004" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="FREMONT, CA" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="t5D-Hv-q1I">
@@ -672,47 +687,47 @@
                                                 <rect key="frame" x="7" y="275" width="305" height="37"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                                <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="20"/>
+                                                <fontDescription key="fontDescription" name="NexaBold" family="Nexa Bold" pointSize="20"/>
                                                 <textInputTraits key="textInputTraits" autocapitalizationType="allCharacters"/>
                                             </textField>
                                             <textField opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.80000001192092896" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="4:28:59" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="3uS-gP-4IX">
                                                 <rect key="frame" x="90" y="8" width="69" height="20"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
-                                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="14"/>
-                                                <textInputTraits key="textInputTraits"/>
-                                            </textField>
-                                            <textField opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.80000001192092896" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="26.2" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="a2I-ZG-KnQ">
-                                                <rect key="frame" x="97" y="118" width="124" height="63"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
-                                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                                <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="50"/>
+                                                <fontDescription key="fontDescription" name="NexaBold" family="Nexa Bold" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
                                             <textField opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.80000001192092896" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="M" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="a0i-4B-aDd">
                                                 <rect key="frame" x="97" y="180" width="124" height="30"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="26"/>
+                                                <fontDescription key="fontDescription" name="NexaBold" family="Nexa Bold" pointSize="26"/>
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
                                             <textField opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.80000001192092896" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="8'44&quot;" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="FY7-DL-PUd">
                                                 <rect key="frame" x="160" y="8" width="69" height="20"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
-                                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="14"/>
+                                                <fontDescription key="fontDescription" name="NexaBold" family="Nexa Bold" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
                                             <textField opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.80000001192092896" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="FREMONT, CA" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="5yp-Oe-JWg">
                                                 <rect key="frame" x="8" y="234" width="304" height="18"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="14"/>
+                                                <fontDescription key="fontDescription" name="NexaBold" family="Nexa Bold" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
                                             <textField opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.80000001192092896" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="July 24, 1977 at 8:45 am" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="qjg-XL-IPq">
-                                                <rect key="frame" x="81" y="72" width="158" height="17"/>
+                                                <rect key="frame" x="59" y="67" width="202" height="17"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="14"/>
+                                                <fontDescription key="fontDescription" name="NexaBold" family="Nexa Bold" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                            </textField>
+                                            <textField opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.80000001192092896" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="26.2" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="a2I-ZG-KnQ">
+                                                <rect key="frame" x="98" y="129" width="124" height="63"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                <fontDescription key="fontDescription" name="NexaBold" family="Nexa Bold" pointSize="50"/>
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
                                         </subviews>
@@ -764,14 +779,14 @@
                                         </subviews>
                                     </view>
                                     <view opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="anZ-9h-bgM" userLabel="Layout5">
-                                        <rect key="frame" x="0.0" y="0.0" width="320" height="320"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="321" height="320"/>
                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                         <subviews>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="ScriptFrame" translatesAutoresizingMaskIntoConstraints="NO" id="9d7-9y-GdF">
                                                 <rect key="frame" x="22" y="78" width="276" height="165"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                                             </imageView>
-                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="CenterBlur" translatesAutoresizingMaskIntoConstraints="NO" id="u9D-2a-pAp">
+                                            <imageView userInteractionEnabled="NO" alpha="0.59999999999999998" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="CenterBlur" translatesAutoresizingMaskIntoConstraints="NO" id="u9D-2a-pAp">
                                                 <rect key="frame" x="40" y="78" width="240" height="175"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             </imageView>
@@ -804,13 +819,125 @@
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
                                             <textField opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Marathon Training" textAlignment="center" minimumFontSize="1" translatesAutoresizingMaskIntoConstraints="NO" id="1hP-z2-k7P">
-                                                <rect key="frame" x="8" y="128" width="304" height="23"/>
+                                                <rect key="frame" x="8" y="121" width="305" height="45"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <fontDescription key="fontDescription" name="SnellRoundhand" family="Snell Roundhand" pointSize="28"/>
                                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                             </textField>
                                         </subviews>
+                                    </view>
+                                    <view opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="vUK-v9-g9y" userLabel="Layout6">
+                                        <rect key="frame" x="-1" y="0.0" width="322" height="320"/>
+                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                        <subviews>
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Label" translatesAutoresizingMaskIntoConstraints="NO" id="mOx-7v-4Qf">
+                                                <rect key="frame" x="40" y="113" width="244" height="87"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                                            </imageView>
+                                            <textField opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.80000001192092896" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Fremont, Ca" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="S2l-qi-TdK">
+                                                <rect key="frame" x="9" y="77" width="304" height="28"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                <fontDescription key="fontDescription" name="Streetwear" family="Streetwear" pointSize="18"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                            </textField>
+                                            <textField opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.80000001192092896" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="6/12/13" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="I1S-Rp-dFy">
+                                                <rect key="frame" x="10" y="162" width="304" height="17"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                <fontDescription key="fontDescription" name="Copperplate" family="Copperplate" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                            </textField>
+                                            <textField opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.80000001192092896" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Duration: 4:28:59" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="usE-hw-ERn">
+                                                <rect key="frame" x="9" y="202" width="304" height="25"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                <fontDescription key="fontDescription" name="Copperplate" family="Copperplate" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                            </textField>
+                                            <textField opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Marathon Training" textAlignment="center" minimumFontSize="1" translatesAutoresizingMaskIntoConstraints="NO" id="hur-U3-OSz">
+                                                <rect key="frame" x="7" y="216" width="305" height="52"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                <fontDescription key="fontDescription" name="Streetwear" family="Streetwear" pointSize="20"/>
+                                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                            </textField>
+                                            <textField opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.80000001192092896" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="26.2" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="wCj-mF-Sdh">
+                                                <rect key="frame" x="65" y="112" width="193" height="42"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                                                <fontDescription key="fontDescription" name="Copperplate-Bold" family="Copperplate" pointSize="40"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                            </textField>
+                                        </subviews>
+                                    </view>
+                                    <view opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="tFr-rc-TjC" userLabel="Layout7">
+                                        <rect key="frame" x="-1" y="0.0" width="322" height="320"/>
+                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                        <subviews>
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Ribbon" translatesAutoresizingMaskIntoConstraints="NO" id="odg-y4-TeQ">
+                                                <rect key="frame" x="18" y="0.0" width="74" height="126"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                                            </imageView>
+                                            <textField opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.80000001192092896" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Fremont, Ca" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="naQ-KY-ssz">
+                                                <rect key="frame" x="102" y="49" width="212" height="28"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                <fontDescription key="fontDescription" name="Copperplate" family="Copperplate" pointSize="16"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                            </textField>
+                                            <textField opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.80000001192092896" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Dec 31, 2017" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="iHR-zl-7K9">
+                                                <rect key="frame" x="8" y="134" width="99" height="17"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                <fontDescription key="fontDescription" name="Copperplate" family="Copperplate" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                            </textField>
+                                            <textField opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Marathon Training" textAlignment="center" minimumFontSize="1" translatesAutoresizingMaskIntoConstraints="NO" id="9c9-o8-wtL">
+                                                <rect key="frame" x="100" y="27" width="212" height="36"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                <fontDescription key="fontDescription" name="Streetwear" family="Streetwear" pointSize="20"/>
+                                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                            </textField>
+                                            <textField opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.80000001192092896" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="M" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="etB-fb-g7C">
+                                                <rect key="frame" x="44" y="20" width="23" height="10"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="12"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                            </textField>
+                                            <textField opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.80000001192092896" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="4:28:59" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="V8A-gE-Drv">
+                                                <rect key="frame" x="160" y="8" width="60" height="20"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                <fontDescription key="fontDescription" name="Copperplate" family="Copperplate" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                            </textField>
+                                            <imageView userInteractionEnabled="NO" alpha="0.80000001192092896" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="IconTimer" translatesAutoresizingMaskIntoConstraints="NO" id="Quk-Nd-oLM">
+                                                <rect key="frame" x="223" y="8" width="15" height="17"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                                            </imageView>
+                                            <imageView userInteractionEnabled="NO" alpha="0.80000001192092896" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="IconClock-1" translatesAutoresizingMaskIntoConstraints="NO" id="egp-79-BeG">
+                                                <rect key="frame" x="141" y="8" width="16" height="16"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            </imageView>
+                                            <textField opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.80000001192092896" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="8'44&quot;" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Sov-MA-NE4">
+                                                <rect key="frame" x="246" y="8" width="54" height="20"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                <fontDescription key="fontDescription" name="Copperplate" family="Copperplate" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                            </textField>
+                                            <textField opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.80000001192092896" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="26.26" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Llc-KA-772">
+                                                <rect key="frame" x="30" y="32" width="51" height="42"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                <fontDescription key="fontDescription" name="OstrichSans-Black" family="Ostrich Sans" pointSize="40"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                            </textField>
+                                        </subviews>
+                                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                     </view>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -829,7 +956,7 @@
                                 </constraints>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vAx-mL-n2z">
-                                <rect key="frame" x="150.5" y="557" width="75" height="75"/>
+                                <rect key="frame" x="151" y="557" width="75" height="75"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="75" id="BG2-iG-MMa"/>
                                     <constraint firstAttribute="width" constant="75" id="v6a-Zt-TRA"/>
@@ -849,8 +976,8 @@
                                 <color key="textColor" red="0.47450980390000003" green="0.57647058819999997" blue="0.2784313725" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <stackView opaque="NO" contentMode="scaleToFill" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="UZN-Hf-WWk">
-                                <rect key="frame" x="70" y="418" width="235" height="35"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" spacing="6" translatesAutoresizingMaskIntoConstraints="NO" id="UZN-Hf-WWk">
+                                <rect key="frame" x="47.5" y="418" width="281" height="35"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gXP-qn-DdZ">
                                         <rect key="frame" x="0.0" y="0.0" width="35" height="35"/>
@@ -858,7 +985,7 @@
                                             <constraint firstAttribute="height" constant="35" id="26d-7o-SBg"/>
                                             <constraint firstAttribute="width" constant="35" id="uRp-I5-l5n"/>
                                         </constraints>
-                                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="17"/>
                                         <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <state key="normal" title="1" backgroundImage="LayoutCircle">
                                             <color key="titleColor" red="0.47450980390000003" green="0.57647058819999997" blue="0.2784313725" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -868,12 +995,12 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VJx-YW-38H">
-                                        <rect key="frame" x="50" y="0.0" width="35" height="35"/>
+                                        <rect key="frame" x="41" y="0.0" width="35" height="35"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="35" id="5PJ-wG-eoJ"/>
                                             <constraint firstAttribute="height" constant="35" id="y0u-fp-OAn"/>
                                         </constraints>
-                                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="17"/>
                                         <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <state key="normal" title="2" backgroundImage="LayoutCircle">
                                             <color key="titleColor" red="0.47450980390000003" green="0.57647058819999997" blue="0.2784313725" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -883,12 +1010,12 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SEc-Y0-2cn">
-                                        <rect key="frame" x="100" y="0.0" width="35" height="35"/>
+                                        <rect key="frame" x="82" y="0.0" width="35" height="35"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="35" id="7Ub-0Q-F1b"/>
                                             <constraint firstAttribute="height" constant="35" id="IQE-K4-asi"/>
                                         </constraints>
-                                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="17"/>
                                         <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <state key="normal" title="3" backgroundImage="LayoutCircle">
                                             <color key="titleColor" red="0.47450980390000003" green="0.57647058819999997" blue="0.2784313725" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -899,12 +1026,12 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xEj-7j-wzb">
-                                        <rect key="frame" x="150" y="0.0" width="35" height="35"/>
+                                        <rect key="frame" x="123" y="0.0" width="35" height="35"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="35" id="Ml3-oF-te8"/>
                                             <constraint firstAttribute="width" constant="35" id="Q02-3c-8lx"/>
                                         </constraints>
-                                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="17"/>
                                         <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <state key="normal" title="4" backgroundImage="LayoutCircle">
                                             <color key="titleColor" red="0.47450980390000003" green="0.57647058819999997" blue="0.2784313725" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -916,12 +1043,12 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vWy-fP-VJY">
-                                        <rect key="frame" x="200" y="0.0" width="35" height="35"/>
+                                        <rect key="frame" x="164" y="0.0" width="35" height="35"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="35" id="OtH-lp-Yie"/>
                                             <constraint firstAttribute="width" constant="35" id="U7v-7S-dvW"/>
                                         </constraints>
-                                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="17"/>
                                         <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <state key="normal" title="5" backgroundImage="LayoutCircle">
                                             <color key="titleColor" red="0.47450980390000003" green="0.57647058819999997" blue="0.2784313725" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -931,6 +1058,44 @@
                                             <action selector="showLayout3:" destination="Uq2-wN-0xa" eventType="touchUpInside" id="vmS-AS-Diy"/>
                                             <action selector="showLayout4:" destination="Uq2-wN-0xa" eventType="touchUpInside" id="qtQ-Wj-oBi"/>
                                             <action selector="showLayout5:" destination="Uq2-wN-0xa" eventType="touchUpInside" id="JeN-sq-1Bz"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fg8-sf-MgY">
+                                        <rect key="frame" x="205" y="0.0" width="35" height="35"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="35" id="8yO-Ey-4QR"/>
+                                            <constraint firstAttribute="width" constant="35" id="bPE-zM-8K0"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="17"/>
+                                        <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <state key="normal" title="6" backgroundImage="LayoutCircle">
+                                            <color key="titleColor" red="0.47450980390000003" green="0.57647058819999997" blue="0.2784313725" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="showLayout2:" destination="Uq2-wN-0xa" eventType="touchUpInside" id="tGI-Xa-Y5Q"/>
+                                            <action selector="showLayout3:" destination="Uq2-wN-0xa" eventType="touchUpInside" id="ZxI-Uj-yAx"/>
+                                            <action selector="showLayout4:" destination="Uq2-wN-0xa" eventType="touchUpInside" id="l4A-Wg-MHx"/>
+                                            <action selector="showLayout5:" destination="Uq2-wN-0xa" eventType="touchUpInside" id="sNA-ej-KUb"/>
+                                            <action selector="showLayout6:" destination="Uq2-wN-0xa" eventType="touchUpInside" id="4j1-9v-0No"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hh0-un-FbP">
+                                        <rect key="frame" x="246" y="0.0" width="35" height="35"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="35" id="bdX-sB-VtU"/>
+                                            <constraint firstAttribute="width" constant="35" id="ezD-8d-R1G"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="17"/>
+                                        <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <state key="normal" title="7" backgroundImage="LayoutCircle">
+                                            <color key="titleColor" red="0.47450980390000003" green="0.57647058819999997" blue="0.2784313725" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="showLayout2:" destination="Uq2-wN-0xa" eventType="touchUpInside" id="UG2-mT-wwa"/>
+                                            <action selector="showLayout3:" destination="Uq2-wN-0xa" eventType="touchUpInside" id="dpO-1L-SbE"/>
+                                            <action selector="showLayout4:" destination="Uq2-wN-0xa" eventType="touchUpInside" id="h0D-Bd-Mgh"/>
+                                            <action selector="showLayout5:" destination="Uq2-wN-0xa" eventType="touchUpInside" id="saI-h2-VBk"/>
+                                            <action selector="showLayout7:" destination="Uq2-wN-0xa" eventType="touchUpInside" id="qZJ-eM-xqK"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -952,10 +1117,14 @@
                         <outlet property="Layout3" destination="F31-cg-QtU" id="Dnb-0n-lnY"/>
                         <outlet property="Layout4" destination="dee-wy-bS9" id="taJ-ax-Bx7"/>
                         <outlet property="Layout5" destination="anZ-9h-bgM" id="uS9-54-Fra"/>
+                        <outlet property="Layout6" destination="vUK-v9-g9y" id="pUg-zJ-3LM"/>
+                        <outlet property="Layout7" destination="tFr-rc-TjC" id="7rB-Zx-FyD"/>
                         <outlet property="PhotoDate2" destination="sSA-Pl-FBF" id="CPZ-5P-gn4"/>
                         <outlet property="PhotoDate3" destination="qjg-XL-IPq" id="xWL-ff-jIT"/>
                         <outlet property="PhotoDate4" destination="qyg-OS-s1s" id="jXG-UG-0yp"/>
                         <outlet property="PhotoDate5" destination="1UF-eU-GLt" id="ept-5U-6bD"/>
+                        <outlet property="PhotoDate6" destination="I1S-Rp-dFy" id="9wD-xT-4Aq"/>
+                        <outlet property="PhotoDate7" destination="iHR-zl-7K9" id="YbB-HD-c8W"/>
                         <outlet property="PhotoDay" destination="7GR-zd-a1k" id="JNV-h9-DWp"/>
                         <outlet property="PhotoDegrees" destination="9sl-8Z-3Lc" id="rqW-wX-Wps"/>
                         <outlet property="PhotoDistance" destination="w9i-YU-lxW" id="2CD-OY-HR1"/>
@@ -963,6 +1132,8 @@
                         <outlet property="PhotoDistance3" destination="a2I-ZG-KnQ" id="xs2-tW-Gi1"/>
                         <outlet property="PhotoDistance4" destination="0yI-Ff-w8d" id="W3h-7U-HPq"/>
                         <outlet property="PhotoDistance5" destination="uyg-13-vIs" id="McF-PQ-cn7"/>
+                        <outlet property="PhotoDistance6" destination="wCj-mF-Sdh" id="vPN-o5-dhG"/>
+                        <outlet property="PhotoDistance7" destination="Llc-KA-772" id="ZiN-3B-r3K"/>
                         <outlet property="PhotoDuration" destination="7gG-8Q-OYA" id="Kbm-OF-hBo"/>
                         <outlet property="PhotoDuration2" destination="b3s-Tr-T2v" id="CMe-dt-O8o"/>
                         <outlet property="PhotoDuration3" destination="3uS-gP-4IX" id="cV9-aQ-9v2"/>
@@ -971,18 +1142,26 @@
                         <outlet property="PhotoLocation3" destination="5yp-Oe-JWg" id="kKS-2B-0el"/>
                         <outlet property="PhotoLocation4" destination="Fah-ap-bTv" id="2JW-DK-uyn"/>
                         <outlet property="PhotoLocation5" destination="TrG-iJ-GGa" id="5Py-Vk-F3A"/>
+                        <outlet property="PhotoLocation6" destination="S2l-qi-TdK" id="Rcb-SW-3Sp"/>
+                        <outlet property="PhotoLocation7" destination="naQ-KY-ssz" id="FbG-Hg-AtO"/>
                         <outlet property="PhotoMetrics3" destination="a0i-4B-aDd" id="30b-vH-qaZ"/>
+                        <outlet property="PhotoMetrics7" destination="etB-fb-g7C" id="FTM-ii-3QT"/>
                         <outlet property="PhotoMonth" destination="6nY-ms-wMO" id="YDz-O6-fnh"/>
                         <outlet property="PhotoPace" destination="adH-OU-Lll" id="U51-b9-2Yy"/>
                         <outlet property="PhotoPace2" destination="KZD-7j-1NP" id="Bdr-gX-JdK"/>
                         <outlet property="PhotoPace3" destination="FY7-DL-PUd" id="tBo-4G-kOn"/>
+                        <outlet property="PhotoPace7" destination="Sov-MA-NE4" id="h40-Sl-Z33"/>
                         <outlet property="PhotoTime4" destination="wYs-EY-rNF" id="Tts-LJ-4sP"/>
                         <outlet property="PhotoTime5" destination="GQe-5z-eWN" id="6cu-6p-TlX"/>
+                        <outlet property="PhotoTime6" destination="usE-hw-ERn" id="wQF-dA-m7b"/>
+                        <outlet property="PhotoTime7" destination="V8A-gE-Drv" id="Mlm-F7-vHj"/>
                         <outlet property="PhotoTitle" destination="my5-v9-val" id="ey7-KM-ldX"/>
                         <outlet property="PhotoTitle2" destination="vd3-DN-qJ0" id="enE-9H-ZED"/>
                         <outlet property="PhotoTitle3" destination="KTJ-tc-cUL" id="KGr-ml-clm"/>
                         <outlet property="PhotoTitle4" destination="KCL-2B-D23" id="OwE-b7-R78"/>
                         <outlet property="PhotoTitle5" destination="1hP-z2-k7P" id="Iu3-Cj-fbp"/>
+                        <outlet property="PhotoTitle6" destination="hur-U3-OSz" id="7Sd-jf-K8S"/>
+                        <outlet property="PhotoTitle7" destination="9c9-o8-wtL" id="rh7-k3-iWK"/>
                         <outlet property="PhotoView" destination="zRe-0x-Eu5" id="eEp-8c-FED"/>
                         <outlet property="PhotoWeatherIcon" destination="1dB-O0-27c" id="dfA-Fm-prQ"/>
                         <outlet property="PhotoWeatherIcon2" destination="gHy-1x-nUQ" id="FOQ-9f-vfe"/>
@@ -992,6 +1171,8 @@
                         <outlet property="btnLayout3" destination="SEc-Y0-2cn" id="b5j-1r-e3A"/>
                         <outlet property="btnLayout4" destination="xEj-7j-wzb" id="QaK-y1-gzx"/>
                         <outlet property="btnLayout5" destination="vWy-fP-VJY" id="XfH-Wy-RCP"/>
+                        <outlet property="btnLayout6" destination="fg8-sf-MgY" id="U81-2H-uJu"/>
+                        <outlet property="btnLayout7" destination="hh0-un-FbP" id="dX0-66-NtF"/>
                         <outlet property="photoImageView" destination="CGB-Y2-ww1" id="K4N-2Z-BAG"/>
                         <segue destination="OnX-Ea-q1E" kind="unwind" identifier="unwindToStats" unwindAction="unwindToStatsWithSegue:" id="Rjm-tl-sHX"/>
                     </connections>
@@ -1006,7 +1187,7 @@
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="LSZ-5p-ToD" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="wQ8-hg-xht">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="wQ8-hg-xht">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="tintColor" red="0.47450980390000003" green="0.57647058819999997" blue="0.2784313725" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -1025,7 +1206,7 @@
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="AjS-XI-KTt" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="uw8-xd-991">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="uw8-xd-991">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -1048,8 +1229,10 @@
         <image name="IconClock-1" width="25" height="25"/>
         <image name="IconLightClouds" width="49" height="43"/>
         <image name="IconTimer" width="25" height="29"/>
+        <image name="Label" width="363" height="137"/>
         <image name="LayoutCircle" width="70" height="70"/>
         <image name="PlaceHolder" width="375" height="375"/>
+        <image name="Ribbon" width="158" height="246"/>
         <image name="ScriptFrame" width="472" height="322"/>
         <image name="Share" width="170" height="170"/>
         <image name="TimeBacker" width="393" height="50"/>

@@ -22,12 +22,17 @@ class PhotoPickerViewController: UIViewController, UIImagePickerControllerDelega
     @IBOutlet weak var Layout3: UIView!
     @IBOutlet weak var Layout4: UIView!
     @IBOutlet weak var Layout5: UIView!
+    @IBOutlet weak var Layout6: UIView!
+    @IBOutlet weak var Layout7: UIView!
+    
     
     @IBOutlet weak var btnLayout1: UIButton!
     @IBOutlet weak var btnLayout2: UIButton!
     @IBOutlet weak var btnLayout3: UIButton!
     @IBOutlet weak var btnLayout4: UIButton!
     @IBOutlet weak var btnLayout5: UIButton!
+    @IBOutlet weak var btnLayout6: UIButton!
+    @IBOutlet weak var btnLayout7: UIButton!
     
     
     // Layout 1
@@ -73,6 +78,23 @@ class PhotoPickerViewController: UIViewController, UIImagePickerControllerDelega
     @IBOutlet weak var PhotoDate5: UITextField!
     @IBOutlet weak var PhotoTime5: UITextField!
     @IBOutlet weak var PhotoLocation5: UITextField!
+    
+    // Layout 6
+    @IBOutlet weak var PhotoLocation6: UITextField!
+    @IBOutlet weak var PhotoDate6: UITextField!
+    @IBOutlet weak var PhotoTime6: UITextField!
+    @IBOutlet weak var PhotoTitle6: UITextField!
+    @IBOutlet weak var PhotoDistance6: UITextField!
+    
+    // Layout 7
+    @IBOutlet weak var PhotoLocation7: UITextField!
+    @IBOutlet weak var PhotoDate7: UITextField!
+    @IBOutlet weak var PhotoTitle7: UITextField!
+    @IBOutlet weak var PhotoDistance7: UITextField!
+    @IBOutlet weak var PhotoMetrics7: UITextField!
+    @IBOutlet weak var PhotoTime7: UITextField!
+    @IBOutlet weak var PhotoPace7: UITextField!
+    
     
     
     // create variables for the text fields to display
@@ -162,10 +184,33 @@ class PhotoPickerViewController: UIViewController, UIImagePickerControllerDelega
         }else if(userDistanceChoice == "Kilometers"){
             PhotoDistance5.text = userDistanceText + " K"
         }
-        //PhotoDistance5.text = userDistanceText + " " + userDistanceChoice
         PhotoLocation5.text = userLocationText
         PhotoDate5.text = userMonth + " " + userDay + ", " + userYear
         PhotoTime5.text = "Duration: " + userDuration + "・" + "Pace: " + userPace
+        
+        // populate layout 6
+        PhotoTitle6.text = userTitleText
+        if(userDistanceChoice == "Miles"){
+            PhotoDistance6.text = userDistanceText + " M"
+        }else if(userDistanceChoice == "Kilometers"){
+            PhotoDistance6.text = userDistanceText + " K"
+        }
+        PhotoLocation6.text = userLocationText
+        PhotoDate6.text = userMonth + " " + userDay + ", " + userYear
+        PhotoTime6.text = "Duration: " + userDuration + "・" + "Pace: " + userPace
+        
+        // populate layout 7
+        PhotoTitle7.text = userTitleText
+        if(userDistanceChoice == "Miles"){
+            PhotoMetrics7.text = "M"
+        }else if(userDistanceChoice == "Kilometers"){
+            PhotoMetrics7.text = "K"
+        }
+        PhotoDistance7.text = userDistanceText
+        PhotoLocation7.text = userLocationText
+        PhotoDate7.text = userMonth + " " + userDay + ", " + userYear
+        PhotoTime7.text = userDuration
+        PhotoPace7.text = userPace
         
         
         //print(passedImage.size.width)
@@ -195,6 +240,14 @@ class PhotoPickerViewController: UIViewController, UIImagePickerControllerDelega
             Layout5.alpha = 1
             currentLayout = 5
             btnLayout5.isSelected = true
+        }else if(currentLayout == 6){
+            Layout6.alpha = 1
+            currentLayout = 6
+            btnLayout6.isSelected = true
+        }else if(currentLayout == 7){
+            Layout7.alpha = 1
+            currentLayout = 7
+            btnLayout7.isSelected = true
         }
         
         // set weather icons
@@ -233,6 +286,8 @@ class PhotoPickerViewController: UIViewController, UIImagePickerControllerDelega
         Layout3.alpha = 0
         Layout4.alpha = 0
         Layout5.alpha = 0
+        Layout6.alpha = 0
+        Layout7.alpha = 0
     }
     
     func resizeImage(image: UIImage, targetSize: CGSize) -> UIImage {
@@ -267,63 +322,64 @@ class PhotoPickerViewController: UIViewController, UIImagePickerControllerDelega
         btnLayout3.isSelected = false
         btnLayout4.isSelected = false
         btnLayout5.isSelected = false
+        btnLayout6.isSelected = false
     }
     
     @IBAction func showLayout1(_ sender: UIButton) {
+        hideLayouts()
         Layout1.alpha = 1
-        Layout2.alpha = 0
-        Layout3.alpha = 0
-        Layout4.alpha = 0
-        Layout5.alpha = 0
         currentLayout = 1
         deselectButtons()
         sender.isSelected = true
     }
     
     @IBAction func showLayout2(_ sender: UIButton) {
-        Layout1.alpha = 0
+        hideLayouts()
         Layout2.alpha = 1
-        Layout3.alpha = 0
-        Layout4.alpha = 0
-        Layout5.alpha = 0
         currentLayout = 2
         deselectButtons()
         sender.isSelected = true
     }
     
     @IBAction func showLayout3(_ sender: UIButton) {
-        Layout1.alpha = 0
-        Layout2.alpha = 0
+        hideLayouts()
         Layout3.alpha = 1
-        Layout4.alpha = 0
-        Layout5.alpha = 0
         currentLayout = 3
         deselectButtons()
         sender.isSelected = true
     }
     
     @IBAction func showLayout4(_ sender: UIButton) {
-        Layout1.alpha = 0
-        Layout2.alpha = 0
-        Layout3.alpha = 0
+        hideLayouts()
         Layout4.alpha = 1
-        Layout5.alpha = 0
         currentLayout = 4
         deselectButtons()
         sender.isSelected = true
     }
     
     @IBAction func showLayout5(_ sender: UIButton) {
-        Layout1.alpha = 0
-        Layout2.alpha = 0
-        Layout3.alpha = 0
-        Layout4.alpha = 0
+        hideLayouts()
         Layout5.alpha = 1
         currentLayout = 5
         deselectButtons()
         sender.isSelected = true
     }
     
+    @IBAction func showLayout6(_ sender: UIButton) {
+        hideLayouts()
+        Layout6.alpha = 1
+        currentLayout = 6
+        deselectButtons()
+        sender.isSelected = true
+    }
+    
+    @IBAction func showLayout7(_ sender: UIButton) {
+        hideLayouts()
+        Layout7.alpha = 1
+        currentLayout = 7
+        deselectButtons()
+        sender.isSelected = true
+    }
     
     func saveImage() {
         //Create the UIImage
