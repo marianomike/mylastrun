@@ -13,7 +13,6 @@
 		7A0142541E614BF900D9B06E /* Nexa Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 7A0142531E614BF900D9B06E /* Nexa Bold.otf */; };
 		7A0142561E614D2400D9B06E /* WalkwayObliqueBlack.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7A0142551E614D2400D9B06E /* WalkwayObliqueBlack.ttf */; };
 		7A0142581E614D5900D9B06E /* WalkwayExpandSemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7A0142571E614D5900D9B06E /* WalkwayExpandSemiBold.ttf */; };
-		7A01425E1E6157DA00D9B06E /* LeagueGothic-CondensedRegular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 7A01425D1E6157DA00D9B06E /* LeagueGothic-CondensedRegular.otf */; };
 		7A0142621E615A7A00D9B06E /* OstrichSans-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = 7A0142611E615A7A00D9B06E /* OstrichSans-Medium.otf */; };
 		7A0142641E615AA600D9B06E /* OstrichSans-Black.otf in Resources */ = {isa = PBXBuildFile; fileRef = 7A0142631E615AA600D9B06E /* OstrichSans-Black.otf */; };
 		7A3307791E387FBB00BC47BA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A3307781E387FBB00BC47BA /* AppDelegate.swift */; };
@@ -46,7 +45,6 @@
 		7A0142531E614BF900D9B06E /* Nexa Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Nexa Bold.otf"; sourceTree = "<group>"; };
 		7A0142551E614D2400D9B06E /* WalkwayObliqueBlack.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = WalkwayObliqueBlack.ttf; sourceTree = "<group>"; };
 		7A0142571E614D5900D9B06E /* WalkwayExpandSemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = WalkwayExpandSemiBold.ttf; sourceTree = "<group>"; };
-		7A01425D1E6157DA00D9B06E /* LeagueGothic-CondensedRegular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "LeagueGothic-CondensedRegular.otf"; sourceTree = "<group>"; };
 		7A0142611E615A7A00D9B06E /* OstrichSans-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OstrichSans-Medium.otf"; sourceTree = "<group>"; };
 		7A0142631E615AA600D9B06E /* OstrichSans-Black.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OstrichSans-Black.otf"; sourceTree = "<group>"; };
 		7A3307751E387FBB00BC47BA /* My Last Run.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "My Last Run.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -117,7 +115,6 @@
 				7A01424B1E5FFFF100D9B06E /* SnellRoundhand.ttc */,
 				7AF6FB761E3CF77000DB520B /* aqua.ttf */,
 				7A0142531E614BF900D9B06E /* Nexa Bold.otf */,
-				7A01425D1E6157DA00D9B06E /* LeagueGothic-CondensedRegular.otf */,
 				7A01424D1E61456E00D9B06E /* Copperplate.ttc */,
 				7A0142631E615AA600D9B06E /* OstrichSans-Black.otf */,
 				7A0142611E615A7A00D9B06E /* OstrichSans-Medium.otf */,
@@ -252,7 +249,6 @@
 				7A3307801E387FBB00BC47BA /* Assets.xcassets in Resources */,
 				7A01424E1E61456E00D9B06E /* Copperplate.ttc in Resources */,
 				7A33077E1E387FBB00BC47BA /* Main.storyboard in Resources */,
-				7A01425E1E6157DA00D9B06E /* LeagueGothic-CondensedRegular.otf in Resources */,
 				7A0142541E614BF900D9B06E /* Nexa Bold.otf in Resources */,
 				7A01424C1E5FFFF100D9B06E /* SnellRoundhand.ttc in Resources */,
 			);

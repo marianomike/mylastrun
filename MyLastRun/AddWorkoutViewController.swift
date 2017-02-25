@@ -156,9 +156,27 @@ class AddWorkoutViewController: UITableViewController, UINavigationControllerDel
     // MARK: - Table view data source
 
     override func numberOfSections(in tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
-        return 1
+        if workouts.count > 0 {
+            self.tableView.backgroundView = nil
+            self.tableView.separatorStyle = .singleLine
+            return 1
+        }
+        
+        let rect = CGRect(x: 0,
+                          y: 0,
+                          width: self.tableView.bounds.size.width,
+                          height: self.tableView.bounds.size.height)
+        let noDataLabel: UILabel = UILabel(frame: rect)
+        
+        noDataLabel.text = "No run data in Apple Health."
+        noDataLabel.textColor = UIColor.lightGray
+        noDataLabel.textAlignment = NSTextAlignment.center
+        self.tableView.backgroundView = noDataLabel
+        self.tableView.separatorStyle = .none
+        
+        return 0
     }
+
 
     public override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
@@ -201,7 +219,6 @@ class AddWorkoutViewController: UITableViewController, UINavigationControllerDel
             controller.selectedRun = selectedInt
         }
     }
-    
 
     /*
     // Override to support conditional editing of the table view.

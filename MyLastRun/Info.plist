@@ -19,7 +19,7 @@
 	<key>CFBundleShortVersionString</key>
 	<string>1.0</string>
 	<key>CFBundleVersion</key>
-	<string>12</string>
+	<string>13</string>
 	<key>ITSAppUsesNonExemptEncryption</key>
 	<false/>
 	<key>LSRequiresIPhoneOS</key>
@@ -37,7 +37,6 @@
 		<string>aqua.ttf</string>
 		<string>SnellRoundhand.ttc</string>
 		<string>Nexa Bold.ttf</string>
-		<string>LeagueGothic-CondensedRegular.otf</string>
 		<string>Copperplate.ttc</string>
 		<string>LongTall.ttf</string>
 		<string>WalkwayExpandSemiBold.ttf</string>

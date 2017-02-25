@@ -323,6 +323,7 @@ class PhotoPickerViewController: UIViewController, UIImagePickerControllerDelega
         btnLayout4.isSelected = false
         btnLayout5.isSelected = false
         btnLayout6.isSelected = false
+        btnLayout7.isSelected = false
     }
     
     @IBAction func showLayout1(_ sender: UIButton) {
