@@ -579,10 +579,13 @@ class ViewController: UIViewController, UITextFieldDelegate, UIImagePickerContro
             picChooserViewController?.userPace = PaceInput.text
             picChooserViewController?.currentLayout = photoLayout
         }else if segue.identifier == "showWorkouts"{
-            let workoutChooser = segue.destination as? AddWorkoutViewController
-            //print (workouts)
+            
             print("trying to pass \(selectedRun)")
-            workoutChooser?.passedInt = selectedRun
+            let navVC = segue.destination as! UINavigationController
+            let tableVC = navVC.viewControllers.first as! AddWorkoutViewController
+            
+            tableVC.passedInt = selectedRun
+            tableVC.workouts = workouts
             
         }
     }

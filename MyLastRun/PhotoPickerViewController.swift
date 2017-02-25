@@ -95,8 +95,6 @@ class PhotoPickerViewController: UIViewController, UIImagePickerControllerDelega
     @IBOutlet weak var PhotoTime7: UITextField!
     @IBOutlet weak var PhotoPace7: UITextField!
     
-    
-    
     // create variables for the text fields to display
     var userTitleText:String! = ""
     var userDistanceText:String! = ""
@@ -110,8 +108,6 @@ class PhotoPickerViewController: UIViewController, UIImagePickerControllerDelega
     var userWeatherIcon:String! = ""
     var userDuration:String! = ""
     var userPace:String! = ""
-    
-    
     
     // reference the navigation bar
     var navigationBarAppearace = UINavigationBar.appearance()
@@ -406,9 +402,12 @@ class PhotoPickerViewController: UIViewController, UIImagePickerControllerDelega
         let image = UIGraphicsGetImageFromCurrentImageContext()
         UIGraphicsEndImageContext()
         
+        let imageSize = CGSize(width: 2048, height: 2048)
+        let resizedImage = resizeImage(image: image!, targetSize: imageSize)
+        
         
         // set up activity view controller
-        let imageToShare = [ image! ]
+        let imageToShare = [ resizedImage ]
         let activityViewController = UIActivityViewController(activityItems: imageToShare, applicationActivities: nil)
         activityViewController.popoverPresentationController?.sourceView = self.view // so that iPads won't crash
         

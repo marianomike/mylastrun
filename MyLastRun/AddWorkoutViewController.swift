@@ -16,6 +16,7 @@ class AddWorkoutViewController: UITableViewController, UINavigationControllerDel
     let formatter = DateComponentsFormatter()
     var passedInt = 0
     var selectedInt: Int!
+    //var delegate: SendDataDelegate?
     
     var selectedDate: String!
     var selectedDistance: String!
@@ -37,7 +38,8 @@ class AddWorkoutViewController: UITableViewController, UINavigationControllerDel
         // Uncomment the following line to preserve selection between presentations
         self.clearsSelectionOnViewWillAppear = false
         
-        getAllRuns()
+        //getAllRuns()
+        populateRuns()
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
@@ -48,49 +50,11 @@ class AddWorkoutViewController: UITableViewController, UINavigationControllerDel
         // Dispose of any resources that can be recreated.
     }
     
-    func getAllRuns(){
-        self.healthManager.readRunningWorkouts(completion: { (results, error) -> Void in
-            if( error != nil )
-            {
-                print("Error reading workouts: \(error?.localizedDescription)")
-                return;
-            }
-            else
-            {
-                print("Workouts read successfully!")
-            }
-            
-            self.workouts = results as! [HKWorkout]
-            //print(self.workouts)
-            
-            // print workouts
-            /*
-            for i in 0 ..< self.workouts.count{
-                print(self.convertDate(date: self.workouts[i].startDate))
-                print(self.convertKMToMiles(distance: self.workouts[i].totalDistance!))
-            }
-            */
-            
-            DispatchQueue.main.async(){
-                
-                if(self.workouts.count != 0){
-                    self.tableView.reloadData()
-                    self.setDefault(defaultInt: self.passedInt)
-                    /*
-                    let indexPath = IndexPath(row: 0, section: 0)
-                    self.tableView.selectRow(at: indexPath, animated: true, scrollPosition: .bottom)
-                
-                    self.selectedDate = String(describing: self.convertDate(date: self.workouts[0].startDate))
-                    self.selectedDistance = String(describing: self.convertKMToMiles(distance: self.workouts[0].totalDistance!))
-                    self.selectedDuration = String(describing: self.convertDuration(duration: self.workouts[0].duration))
-                    self.selectedPace = String(describing: self.calculatePace(distance: self.workouts[0].totalDistance!, duration: self.workouts[0].duration))
-                
-                    self.selectedDateObject = self.workouts[0].startDate
- */
-                }
-            }
-            
-        })
+    func populateRuns(){
+        if(self.workouts.count != 0){
+            self.tableView.reloadData()
+            self.setDefault(defaultInt: self.passedInt)
+        }
     }
     
     func setDefault(defaultInt: Int){
