@@ -391,12 +391,7 @@ class PhotoPickerViewController: UIViewController, UIImagePickerControllerDelega
     }
     
     func shareImage() {
-        // image to share
-        //let image = UIImage(named: "Image")
-        
-        //Create the UIImage
-        //UIGraphicsBeginImageContext(PhotoView.frame.size)
-        //let imageSize = CGSize(width: 1024, height: 1024)
+
         UIGraphicsBeginImageContextWithOptions(PhotoView.frame.size, false, UIScreen.main.scale)
         PhotoView.layer.render(in: UIGraphicsGetCurrentContext()!)
         let image = UIGraphicsGetImageFromCurrentImageContext()

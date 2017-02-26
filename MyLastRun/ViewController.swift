@@ -581,6 +581,9 @@ class ViewController: UIViewController, UITextFieldDelegate, UIImagePickerContro
         }else if segue.identifier == "showWorkouts"{
             
             print("trying to pass \(selectedRun)")
+            if(selectedRun == nil){
+                selectedRun = 0
+            }
             let navVC = segue.destination as! UINavigationController
             let tableVC = navVC.viewControllers.first as! AddWorkoutViewController
             
