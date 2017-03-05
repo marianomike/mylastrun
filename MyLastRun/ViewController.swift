@@ -372,21 +372,22 @@ class ViewController: UIViewController, UITextFieldDelegate, UIImagePickerContro
     
     func updateToKM(){
         let distanceInMiles = Double(DistanceInput.text!)
-        var distanceInKilometers = milesToKilometers(speedInMPH: distanceInMiles!)
-        distanceInKilometers = distanceInKilometers.roundTo(places: 2)
-        DistanceInput.text = String(describing:distanceInKilometers)
-        
-        let duration = parseDuration(TimeInput.text!)
-        let pace = duration/distanceInKilometers
-        print(pace)
-        
-        formatter.unitsStyle = .positional
-        formatter.allowedUnits = [ .minute, .second ]
-        formatter.zeroFormattingBehavior = [ .pad ]
-        
-        let convertedPace = formatter.string(from: pace)
-        PaceInput.text = convertedPace
-        
+        if(distanceInMiles != nil){
+            var distanceInKilometers = milesToKilometers(speedInMPH: distanceInMiles!)
+            distanceInKilometers = distanceInKilometers.roundTo(places: 2)
+            DistanceInput.text = String(describing:distanceInKilometers)
+            
+            let duration = parseDuration(TimeInput.text!)
+            let pace = duration/distanceInKilometers
+            print(pace)
+            
+            formatter.unitsStyle = .positional
+            formatter.allowedUnits = [ .minute, .second ]
+            formatter.zeroFormattingBehavior = [ .pad ]
+            
+            let convertedPace = formatter.string(from: pace)
+            PaceInput.text = convertedPace
+        }
     }
     
     func parseDuration(_ timeString:String) -> TimeInterval {
@@ -406,20 +407,22 @@ class ViewController: UIViewController, UITextFieldDelegate, UIImagePickerContro
     
     func updateToMiles(){
         let distanceInKm = Double(DistanceInput.text!)
-        var distanceInMiles = kilometersToMiles(speedInMPH: distanceInKm!)
-        distanceInMiles = distanceInMiles.roundTo(places: 2)
-        DistanceInput.text = String(describing:distanceInMiles)
-        
-        let duration = parseDuration(TimeInput.text!)
-        let pace = duration/distanceInMiles
-        print(pace)
-        
-        formatter.unitsStyle = .positional
-        formatter.allowedUnits = [ .minute, .second ]
-        formatter.zeroFormattingBehavior = [ .pad ]
-        
-        let convertedPace = formatter.string(from: pace)
-        PaceInput.text = convertedPace
+        if(distanceInKm != nil){
+            var distanceInMiles = kilometersToMiles(speedInMPH: distanceInKm!)
+            distanceInMiles = distanceInMiles.roundTo(places: 2)
+            DistanceInput.text = String(describing:distanceInMiles)
+            
+            let duration = parseDuration(TimeInput.text!)
+            let pace = duration/distanceInMiles
+            print(pace)
+            
+            formatter.unitsStyle = .positional
+            formatter.allowedUnits = [ .minute, .second ]
+            formatter.zeroFormattingBehavior = [ .pad ]
+            
+            let convertedPace = formatter.string(from: pace)
+            PaceInput.text = convertedPace
+        }
     }
     
  
