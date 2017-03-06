@@ -16,6 +16,9 @@ class PhotoPickerViewController: UIViewController, UIImagePickerControllerDelega
     var passedImage: UIImage!
     var currentLayout = 1
     
+    @IBOutlet weak var ToggleDurationPace: UIButton!
+    var showStats:Bool! = true
+    
     @IBOutlet weak var PhotoView: UIView!
     @IBOutlet weak var Layout1: UIView!
     @IBOutlet weak var Layout2: UIView!
@@ -46,6 +49,9 @@ class PhotoPickerViewController: UIViewController, UIImagePickerControllerDelega
     @IBOutlet weak var PhotoDegrees: UITextField!
     @IBOutlet weak var PhotoDuration: UITextField!
     @IBOutlet weak var PhotoPace: UITextField!
+    @IBOutlet weak var IconTimer1: UIImageView!
+    @IBOutlet weak var IconClock1: UIImageView!
+    @IBOutlet weak var PhotoDistance1b: UITextField!
     
     // Layout 2
     @IBOutlet weak var PhotoTitle2: UITextField!
@@ -55,6 +61,8 @@ class PhotoPickerViewController: UIViewController, UIImagePickerControllerDelega
     @IBOutlet weak var PhotoWeatherIcon2: UIImageView!
     @IBOutlet weak var PhotoDuration2: UITextField!
     @IBOutlet weak var PhotoPace2: UITextField!
+    @IBOutlet weak var IconClock2: UIImageView!
+    @IBOutlet weak var IconTimer2: UIImageView!
     
     // Layout 3
     @IBOutlet weak var PhotoTitle3: UITextField!
@@ -64,6 +72,7 @@ class PhotoPickerViewController: UIViewController, UIImagePickerControllerDelega
     @IBOutlet weak var PhotoDuration3: UITextField!
     @IBOutlet weak var PhotoPace3: UITextField!
     @IBOutlet weak var PhotoLocation3: UITextField!
+    @IBOutlet weak var TimeBacker3: UIImageView!
     
     // Layout 4
     @IBOutlet weak var PhotoTitle4: UITextField!
@@ -71,6 +80,10 @@ class PhotoPickerViewController: UIViewController, UIImagePickerControllerDelega
     @IBOutlet weak var PhotoDate4: UITextField!
     @IBOutlet weak var PhotoTime4: UITextField!
     @IBOutlet weak var PhotoLocation4: UITextField!
+    @IBOutlet weak var DistanceBacker4: UIImageView!
+    @IBOutlet weak var DistanceBacker4b: UIImageView!
+    @IBOutlet weak var PhotoDistance4b: UITextField!
+    @IBOutlet weak var PhotoTitle4b: UITextField!
     
     // Layout 5
     @IBOutlet weak var PhotoTitle5: UITextField!
@@ -94,6 +107,8 @@ class PhotoPickerViewController: UIViewController, UIImagePickerControllerDelega
     @IBOutlet weak var PhotoMetrics7: UITextField!
     @IBOutlet weak var PhotoTime7: UITextField!
     @IBOutlet weak var PhotoPace7: UITextField!
+    @IBOutlet weak var IconTimer7: UIImageView!
+    @IBOutlet weak var IconClock7: UIImageView!
     
     // create variables for the text fields to display
     var userTitleText:String! = ""
@@ -128,6 +143,8 @@ class PhotoPickerViewController: UIViewController, UIImagePickerControllerDelega
         // set the text fields to the variables
         PhotoTitle.text = userTitleText
         PhotoDistance.text = userDistanceText + " " + userDistanceChoice
+        PhotoDistance1b.text = userDistanceText + " " + userDistanceChoice
+        PhotoDistance1b.alpha = 0
         PhotoLocation.text = userLocationText
         PhotoDay.text = userDay
         PhotoMonth.text = userMonth.uppercased()
@@ -168,7 +185,12 @@ class PhotoPickerViewController: UIViewController, UIImagePickerControllerDelega
         
         // populate layout 4
         PhotoTitle4.text = userTitleText.uppercased()
+        PhotoTitle4b.text = userTitleText.uppercased()
+        PhotoTitle4b.alpha = 0
         PhotoDistance4.text = userDistanceText + " " + userDistanceChoice
+        PhotoDistance4b.text = userDistanceText + " " + userDistanceChoice
+        PhotoDistance4b.alpha = 0
+        DistanceBacker4b.alpha = 0
         PhotoLocation4.text = userLocationText
         PhotoDate4.text = userMonth + " " + userDay + ", " + userYear
         PhotoTime4.text = "Duration: " + userDuration + "・" + "Pace: " + userPace
@@ -267,7 +289,12 @@ class PhotoPickerViewController: UIViewController, UIImagePickerControllerDelega
             PhotoWeatherIcon.image = #imageLiteral(resourceName: "IconSnow")
             PhotoWeatherIcon2.image = #imageLiteral(resourceName: "IconSnow")
         }
-        
+        if (showStats == true){
+            showStats = false
+        }else if (showStats == false){
+            showStats = true
+        }
+        toggleStats(isShowing: showStats)
     }
     
     
@@ -378,6 +405,100 @@ class PhotoPickerViewController: UIViewController, UIImagePickerControllerDelega
         sender.isSelected = true
     }
     
+    @IBAction func toggleDuratonAndPace(_ sender: UIButton) {
+        toggleStats(isShowing: showStats)
+    }
+    
+    func toggleStats(isShowing: Bool){
+        if (isShowing == true){
+            showStats = false
+            ToggleDurationPace.setImage(#imageLiteral(resourceName: "Unchecked"), for: UIControlState.normal)
+            
+            // layout 1
+            PhotoDuration.alpha = 0
+            PhotoPace.alpha = 0
+            IconClock1.alpha = 0
+            IconTimer1.alpha = 0
+            PhotoDistance1b.alpha = 1
+            PhotoDistance.alpha = 0
+            
+            // layout 2
+            PhotoDuration2.alpha = 0
+            PhotoPace2.alpha = 0
+            IconClock2.alpha = 0
+            IconTimer2.alpha = 0
+            
+            // layout 3
+            PhotoDuration3.alpha = 0
+            PhotoPace3.alpha = 0
+            TimeBacker3.alpha = 0
+            
+            // layout 4
+            PhotoTime4.alpha = 0
+            PhotoDistance4.alpha = 0
+            DistanceBacker4.alpha = 0
+            PhotoDistance4b.alpha = 1
+            DistanceBacker4b.alpha = 0.4
+            PhotoTitle4b.alpha = 1
+            PhotoTitle4.alpha = 0
+            
+            // layout 5
+            PhotoTime5.alpha = 0
+            
+            // layout 6
+            PhotoTime6.alpha = 0
+            
+            // layout 7
+            PhotoTime7.alpha = 0
+            PhotoPace7.alpha = 0
+            IconTimer7.alpha = 0
+            IconClock7.alpha = 0
+        }else if (isShowing == false){
+            showStats = true
+            ToggleDurationPace.setImage(#imageLiteral(resourceName: "Checked"), for: UIControlState.normal)
+            
+            // layout 1
+            PhotoDuration.alpha = 1
+            PhotoPace.alpha = 1
+            IconClock1.alpha = 1
+            IconTimer1.alpha = 1
+            PhotoDistance1b.alpha = 0
+            PhotoDistance.alpha = 1
+            
+            // layout 2
+            PhotoDuration2.alpha = 1
+            PhotoPace2.alpha = 1
+            IconClock2.alpha = 1
+            IconTimer2.alpha = 1
+            
+            // layout 3
+            PhotoDuration3.alpha = 1
+            PhotoPace3.alpha = 1
+            TimeBacker3.alpha = 1
+            
+            // layout 4
+            PhotoTime4.alpha = 1
+            PhotoDistance4.alpha = 1
+            DistanceBacker4.alpha = 0.4
+            PhotoDistance4b.alpha = 0
+            DistanceBacker4b.alpha = 0
+            PhotoTitle4b.alpha = 0
+            PhotoTitle4.alpha = 1
+            
+            // layout 5
+            PhotoTime5.alpha = 1
+            
+            // layout 6
+            PhotoTime6.alpha = 1
+            
+            // layout 7
+            PhotoTime7.alpha = 1
+            PhotoPace7.alpha = 1
+            IconTimer7.alpha = 1
+            IconClock7.alpha = 1
+        }
+    }
+    
     func saveImage() {
         //Create the UIImage
         //UIGraphicsBeginImageContext(PhotoView.frame.size)
@@ -426,6 +547,7 @@ class PhotoPickerViewController: UIViewController, UIImagePickerControllerDelega
     func navigationController(_ navigationController: UINavigationController, willShow viewController: UIViewController, animated: Bool) {
         if let controller = viewController as? ViewController {
             controller.photoLayout = currentLayout
+            controller.showStats = showStats
         }
     }
     
@@ -451,6 +573,7 @@ class PhotoPickerViewController: UIViewController, UIImagePickerControllerDelega
     
     @IBAction func backToStats(_ sender: UIBarButtonItem) {
         self.performSegue(withIdentifier: "unwindToStats", sender: self)
+
     }
     
     
@@ -467,8 +590,8 @@ class PhotoPickerViewController: UIViewController, UIImagePickerControllerDelega
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
         let mainViewController = segue.destination as? ViewController
-        print (currentLayout)
-        mainViewController?.photoLayout = currentLayout
+        mainViewController?.showStats = showStats
+        print(showStats)
     }
     */
 

@@ -47,6 +47,7 @@ class ViewController: UIViewController, UITextFieldDelegate, UIImagePickerContro
     var lastRun = [HKWorkout]()
     var selectedRun: Int!
     var photoLayout = 1
+    var showStats:Bool! = true
     
     let monthFormatter = DateFormatter()
     let formatMonth = "MMM"
@@ -581,6 +582,7 @@ class ViewController: UIViewController, UITextFieldDelegate, UIImagePickerContro
             picChooserViewController?.userDuration = TimeInput.text
             picChooserViewController?.userPace = PaceInput.text
             picChooserViewController?.currentLayout = photoLayout
+            picChooserViewController?.showStats = showStats
         }else if segue.identifier == "showWorkouts"{
             
             print("trying to pass \(selectedRun)")
