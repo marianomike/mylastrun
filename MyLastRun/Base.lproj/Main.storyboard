@@ -330,6 +330,7 @@
                         <barButtonItem key="backBarButtonItem" title="Back" id="wfJ-Nh-xFA">
                             <color key="tintColor" red="0.66131019589999995" green="0.79670530559999997" blue="0.28946194050000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         </barButtonItem>
+                        <barButtonItem key="leftBarButtonItem" title="Settings" style="plain" id="Exf-Jz-joc"/>
                         <barButtonItem key="rightBarButtonItem" title="All Runs" id="IsE-9G-b8E">
                             <connections>
                                 <segue destination="AjS-XI-KTt" kind="presentation" identifier="showWorkouts" id="mqo-0T-IDg"/>
@@ -371,7 +372,7 @@
                                 <rect key="frame" x="0.0" y="28" width="375" height="70"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="51H-8T-Uoo" id="kjF-Ko-hun">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="69"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="69.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="qYf-5i-b2W">
@@ -382,7 +383,7 @@
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Detail" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Y3f-ey-zOC">
-                                            <rect key="frame" x="316" y="25" width="44" height="20"/>
+                                            <rect key="frame" x="316.5" y="25" width="43.5" height="20"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
                                             <color key="textColor" red="0.47450980390000003" green="0.57647058819999997" blue="0.2784313725" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

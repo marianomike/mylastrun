@@ -153,10 +153,12 @@ class AddWorkoutViewController: UITableViewController, UINavigationControllerDel
         
         let workout = workouts[indexPath.row]
         let startDate = convertDate(date: workout.startDate)
-        let distance = convertKMToMiles(distance: workout.totalDistance!)
-        
-        cell.textLabel?.text = startDate
-        cell.detailTextLabel?.text = distance + " m"
+        if(workout.totalDistance != nil){
+            let distance = convertKMToMiles(distance: workout.totalDistance!)
+            
+            cell.textLabel?.text = startDate
+            cell.detailTextLabel?.text = distance + " m"
+        }
 
         // Configure the cell...
 
