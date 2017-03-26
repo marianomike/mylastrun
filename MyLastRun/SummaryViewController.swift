@@ -20,6 +20,7 @@ class SummaryViewController: UIViewController {
     
     var typeChoice:String! = ""
     var parentVC:ViewController!
+    //var myContainerViewDelegate: ParentViewControllerOrProtocol
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         // Hide the keyboard.
@@ -29,20 +30,17 @@ class SummaryViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        //SummaryCategory.text = typeChoice
-        //parentVC = self.parent as! ViewController!
-        //SummaryCategory.text = parentVC.typeChoice
-        // Do any additional setup after loading the view.
+        print("Passed from parent: \(typeChoice)")
+        SummaryCategory.text = typeChoice
+    }
+    
+    func updateLabels(){
+        SummaryCategory.text = typeChoice
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
-    }
-    
-    override func viewWillAppear(_ animated: Bool) {
-        //SummaryCategory.text = parentVC.typeChoice
     }
     
 

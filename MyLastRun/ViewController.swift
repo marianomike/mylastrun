@@ -52,7 +52,7 @@ class ViewController: UIViewController, UITextFieldDelegate, UIImagePickerContro
     var selectedRun: Int!
     var photoLayout = 1
     var showStats:Bool! = true
-    var typeChoice:String! = "Last"
+    var typeChoice:String! = "Single"
     
     let monthFormatter = DateFormatter()
     let formatMonth = "MMM"
@@ -69,7 +69,6 @@ class ViewController: UIViewController, UITextFieldDelegate, UIImagePickerContro
     
     let formatter = DateComponentsFormatter()
     let distanceFormatter = LengthFormatter()
-    var mySummaryView:ViewController!
     
     // checked variables
     var titleIsChecked: Bool!
@@ -250,20 +249,23 @@ class ViewController: UIViewController, UITextFieldDelegate, UIImagePickerContro
         
         if CalendarTabs.selectedSegmentIndex == 0 {
             typeChoice = "Year"
+            sendData(MyStringToSend: typeChoice)
             SummaryView.isHidden = false
         } else if CalendarTabs.selectedSegmentIndex == 1 {
             typeChoice = "Month"
+            sendData(MyStringToSend: typeChoice)
             SummaryView.isHidden = false
         } else if CalendarTabs.selectedSegmentIndex == 2 {
-            typeChoice = "Last"
+            typeChoice = "Single"
             SummaryView.isHidden = true
         }
-        //updateStats()
         
     }
     
-    func updateStats() {
-        self.performSegue(withIdentifier: "SummaryStats", sender: self);
+    func sendData(MyStringToSend : String) {
+        let CVC = childViewControllers.last as! SummaryViewController
+        CVC.typeChoice = MyStringToSend
+        CVC.updateLabels()
     }
     
     func getHealthKitPermission() {
@@ -623,12 +625,6 @@ class ViewController: UIViewController, UITextFieldDelegate, UIImagePickerContro
             
             tableVC.passedInt = selectedRun
             tableVC.workouts = workouts
-            
-        }else if segue.identifier == "SummaryStats"{
-            let summaryStatsViewController = segue.destination as? SummaryViewController
-
-            summaryStatsViewController?.typeChoice = typeChoice
-            print(typeChoice)
             
         }
     }
