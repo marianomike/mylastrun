@@ -41,6 +41,10 @@ class ViewController: UIViewController, UITextFieldDelegate, UIImagePickerContro
     @IBOutlet weak var ChooseStackView: UIStackView!
     @IBOutlet weak var DeletePhoto: UIButton!
     
+    @IBOutlet weak var CalendarTabs: UISegmentedControl!
+    @IBOutlet weak var SummaryView: UIView!
+    
+    
     let healthManager:HealthKitManager = HealthKitManager()
     var distance:HKQuantitySample?
     var workouts = [HKWorkout]()
@@ -48,6 +52,7 @@ class ViewController: UIViewController, UITextFieldDelegate, UIImagePickerContro
     var selectedRun: Int!
     var photoLayout = 1
     var showStats:Bool! = true
+    var typeChoice:String! = "Last"
     
     let monthFormatter = DateFormatter()
     let formatMonth = "MMM"
@@ -64,6 +69,7 @@ class ViewController: UIViewController, UITextFieldDelegate, UIImagePickerContro
     
     let formatter = DateComponentsFormatter()
     let distanceFormatter = LengthFormatter()
+    var mySummaryView:ViewController!
     
     // checked variables
     var titleIsChecked: Bool!
@@ -124,7 +130,7 @@ class ViewController: UIViewController, UITextFieldDelegate, UIImagePickerContro
         getHealthKitPermission()
         
         // title bar
-        navigationItem.title = "MY LAST RUN"
+        //navigationItem.title = "MY LAST RUN"
         navigationController?.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName: UIColor(red: 169/255, green: 203/255, blue: 74/255, alpha: 1.0)]
         
         // get today's date
@@ -142,6 +148,8 @@ class ViewController: UIViewController, UITextFieldDelegate, UIImagePickerContro
         
         // hide the delete photo button
         DeletePhoto.alpha = 0;
+        
+        SummaryView.isHidden = true
         
         // Handle the text field's user input through delegate callbacks.
         TitleInput.delegate = self
@@ -236,6 +244,26 @@ class ViewController: UIViewController, UITextFieldDelegate, UIImagePickerContro
         MetricsInput.inputAccessoryView = toolBar
         TimeInput.inputAccessoryView = toolBar
         PaceInput.inputAccessoryView = toolBar
+    }
+    
+    @IBAction func segmentControlValueChanged(_ sender: UISegmentedControl) {
+        
+        if CalendarTabs.selectedSegmentIndex == 0 {
+            typeChoice = "Year"
+            SummaryView.isHidden = false
+        } else if CalendarTabs.selectedSegmentIndex == 1 {
+            typeChoice = "Month"
+            SummaryView.isHidden = false
+        } else if CalendarTabs.selectedSegmentIndex == 2 {
+            typeChoice = "Last"
+            SummaryView.isHidden = true
+        }
+        //updateStats()
+        
+    }
+    
+    func updateStats() {
+        self.performSegue(withIdentifier: "SummaryStats", sender: self);
     }
     
     func getHealthKitPermission() {
@@ -564,6 +592,7 @@ class ViewController: UIViewController, UITextFieldDelegate, UIImagePickerContro
         }
     }
     
+    
     // pass variables through to next view
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "showPicChooser" {
@@ -594,6 +623,12 @@ class ViewController: UIViewController, UITextFieldDelegate, UIImagePickerContro
             
             tableVC.passedInt = selectedRun
             tableVC.workouts = workouts
+            
+        }else if segue.identifier == "SummaryStats"{
+            let summaryStatsViewController = segue.destination as? SummaryViewController
+
+            summaryStatsViewController?.typeChoice = typeChoice
+            print(typeChoice)
             
         }
     }

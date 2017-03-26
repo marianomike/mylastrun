@@ -22,6 +22,7 @@
 		7A3307831E387FBB00BC47BA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7A3307811E387FBB00BC47BA /* LaunchScreen.storyboard */; };
 		7A33078E1E387FBB00BC47BA /* MyLastRunTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A33078D1E387FBB00BC47BA /* MyLastRunTests.swift */; };
 		7A4AD4B91E3B362B00A79076 /* PhotoPickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A4AD4B81E3B362B00A79076 /* PhotoPickerViewController.swift */; };
+		7A77F9691E874C1000CECAD2 /* SummaryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A77F9681E874C1000CECAD2 /* SummaryViewController.swift */; };
 		7AD2B7E41E58C8CC00612025 /* AddWorkoutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AD2B7E31E58C8CC00612025 /* AddWorkoutViewController.swift */; };
 		7AD952C21E51487D00BE7C56 /* HealthKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7AD952C11E51487D00BE7C56 /* HealthKit.framework */; };
 		7AD952C61E518A7200BE7C56 /* HealthKitManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AD952C51E518A7200BE7C56 /* HealthKitManager.swift */; };
@@ -58,6 +59,7 @@
 		7A33078D1E387FBB00BC47BA /* MyLastRunTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyLastRunTests.swift; sourceTree = "<group>"; };
 		7A33078F1E387FBB00BC47BA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7A4AD4B81E3B362B00A79076 /* PhotoPickerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotoPickerViewController.swift; sourceTree = "<group>"; };
+		7A77F9681E874C1000CECAD2 /* SummaryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SummaryViewController.swift; sourceTree = "<group>"; };
 		7AD2B7E31E58C8CC00612025 /* AddWorkoutViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddWorkoutViewController.swift; sourceTree = "<group>"; };
 		7AD952BF1E51487D00BE7C56 /* My Last Run.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "My Last Run.entitlements"; sourceTree = "<group>"; };
 		7AD952C11E51487D00BE7C56 /* HealthKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HealthKit.framework; path = System/Library/Frameworks/HealthKit.framework; sourceTree = SDKROOT; };
@@ -107,6 +109,7 @@
 		7A3307771E387FBB00BC47BA /* MyLastRun */ = {
 			isa = PBXGroup;
 			children = (
+				7A77F9681E874C1000CECAD2 /* SummaryViewController.swift */,
 				7A3307781E387FBB00BC47BA /* AppDelegate.swift */,
 				7A33077A1E387FBB00BC47BA /* ViewController.swift */,
 				7A33077C1E387FBB00BC47BA /* Main.storyboard */,
@@ -273,6 +276,7 @@
 				7AD2B7E41E58C8CC00612025 /* AddWorkoutViewController.swift in Sources */,
 				7AD952C61E518A7200BE7C56 /* HealthKitManager.swift in Sources */,
 				7A4AD4B91E3B362B00A79076 /* PhotoPickerViewController.swift in Sources */,
+				7A77F9691E874C1000CECAD2 /* SummaryViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
