@@ -30,11 +30,11 @@ class SummaryViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        print("Passed from parent: \(typeChoice)")
         SummaryCategory.text = typeChoice
     }
     
     func updateLabels(){
+        print("Passed from parent: \(typeChoice)")
         SummaryCategory.text = typeChoice
     }
 
@@ -42,7 +42,6 @@ class SummaryViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
 
     /*
     // MARK: - Navigation

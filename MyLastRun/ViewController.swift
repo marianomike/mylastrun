@@ -48,11 +48,13 @@ class ViewController: UIViewController, UITextFieldDelegate, UIImagePickerContro
     let healthManager:HealthKitManager = HealthKitManager()
     var distance:HKQuantitySample?
     var workouts = [HKWorkout]()
+    var monthlyRuns = [HKWorkout]()
     var lastRun = [HKWorkout]()
     var selectedRun: Int!
     var photoLayout = 1
     var showStats:Bool! = true
     var typeChoice:String! = "Single"
+    var totalMilesMonth:Float = 0
     
     let monthFormatter = DateFormatter()
     let formatMonth = "MMM"
@@ -249,11 +251,11 @@ class ViewController: UIViewController, UITextFieldDelegate, UIImagePickerContro
         
         if CalendarTabs.selectedSegmentIndex == 0 {
             typeChoice = "Year"
-            sendData(MyStringToSend: typeChoice)
+            sendSummaryType(type: typeChoice)
             SummaryView.isHidden = false
         } else if CalendarTabs.selectedSegmentIndex == 1 {
             typeChoice = "Month"
-            sendData(MyStringToSend: typeChoice)
+            sendSummaryType(type: typeChoice)
             SummaryView.isHidden = false
         } else if CalendarTabs.selectedSegmentIndex == 2 {
             typeChoice = "Single"
@@ -262,10 +264,10 @@ class ViewController: UIViewController, UITextFieldDelegate, UIImagePickerContro
         
     }
     
-    func sendData(MyStringToSend : String) {
-        let CVC = childViewControllers.last as! SummaryViewController
-        CVC.typeChoice = MyStringToSend
-        CVC.updateLabels()
+    func sendSummaryType(type : String) {
+        let summaryVC = childViewControllers.last as! SummaryViewController
+        summaryVC.typeChoice = type
+        summaryVC.updateLabels()
     }
     
     func getHealthKitPermission() {
@@ -305,6 +307,8 @@ class ViewController: UIViewController, UITextFieldDelegate, UIImagePickerContro
     }
     
     func getAllRuns(){
+        let currentDate = Date()
+        
         self.healthManager.readRunningWorkouts(completion: { (results, error) -> Void in
             if( error != nil )
             {
@@ -319,17 +323,25 @@ class ViewController: UIViewController, UITextFieldDelegate, UIImagePickerContro
             self.workouts = results as! [HKWorkout]
             
             // print workouts
-            print(self.workouts.count)
+            //print(self.workouts.count)
             
-            //for i in 0 ..< self.workouts.count{
+            for i in 0 ..< self.workouts.count{
+                //push this months runs to array
+                if(self.getMonth(date: self.workouts[i].endDate) == self.getMonth(date: currentDate)){
+                    self.monthlyRuns.append(self.workouts[i])
+                }
+            }
+            
+            for i in 0 ..< self.monthlyRuns.count{
                 //print(self.convertKMToMiles(distance: self.workouts[i].totalDistance!))
-               //print(self.workouts[i].duration)
-                //print(self.calculatePace(distance: self.workouts[i].totalDistance!, duration: self.workouts[i].duration))
-                //print(self.milesToKilometers(speedInMPH: 3.16))
-                //print(self.workouts[i].accessibilityActivationPoint)
-                //print(self.convertDuration(duration: self.workouts[i].duration))
-            //}
- 
+                //let distanceString:String = self.convertKMToMiles(distance: self.workouts[i].totalDistance!)
+                let distance = self.convertKMToMiles(distance: self.workouts[i].totalDistance!)
+                //print(Float(distance))
+                self.totalMilesMonth = self.totalMilesMonth + Float(distance)!
+                
+            }
+            print(self.totalMilesMonth)
+            
             
             DispatchQueue.main.async(){
                 
@@ -349,6 +361,12 @@ class ViewController: UIViewController, UITextFieldDelegate, UIImagePickerContro
             }
             
         })
+    }
+    
+    func getMonth(date: Date) -> String{
+        monthFormatter.dateFormat = "MMMM"
+        let convertedMonth: String  = monthFormatter.string(from: date)
+        return convertedMonth
     }
     
     func calculatePace(distance: HKQuantity, duration: TimeInterval) -> String{

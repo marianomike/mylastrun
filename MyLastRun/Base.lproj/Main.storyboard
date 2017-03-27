@@ -339,7 +339,7 @@
                         <barButtonItem key="backBarButtonItem" title="Back" id="wfJ-Nh-xFA">
                             <color key="tintColor" red="0.66131019589999995" green="0.79670530559999997" blue="0.28946194050000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         </barButtonItem>
-                        <barButtonItem key="leftBarButtonItem" style="plain" id="7S1-gO-91U">
+                        <barButtonItem key="leftBarButtonItem" id="7S1-gO-91U">
                             <segmentedControl key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" apportionsSegmentWidthsByContent="YES" segmentControlStyle="bar" selectedSegmentIndex="2" id="eSN-3U-oRO">
                                 <rect key="frame" x="16" y="7" width="272" height="30"/>
                                 <autoresizingMask key="autoresizingMask"/>
@@ -381,7 +381,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="916" y="120.98950524737631"/>
+            <point key="canvasLocation" x="916" y="62"/>
         </scene>
         <!--Add Workout View Controller-->
         <scene sceneID="r08-Ir-VNi">
@@ -444,7 +444,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="VaC-XO-eJi" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="9Q1-Xt-FR4" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="1855.2" y="1566.5667166416792"/>
+            <point key="canvasLocation" x="-806" y="62"/>
         </scene>
         <!--Photo Picker View Controller-->
         <scene sceneID="ZHc-PX-Z1D">
@@ -1253,7 +1253,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cO9-U4-MVH" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="OnX-Ea-q1E" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="1709.5999999999999" y="116.49175412293854"/>
+            <point key="canvasLocation" x="2230" y="62"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="rpe-6U-3t5">
@@ -1272,7 +1272,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FJl-Ja-HGv" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="135" y="124"/>
+            <point key="canvasLocation" x="916" y="-654"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="k4f-J2-jjv">
@@ -1290,7 +1290,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pZO-td-cH0" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1855.2" y="846.9265367316342"/>
+            <point key="canvasLocation" x="20" y="62"/>
         </scene>
         <!--Summary View Controller-->
         <scene sceneID="Wev-5W-zgj">
@@ -1448,7 +1448,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="i7f-66-Awl" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="84" y="961"/>
+            <point key="canvasLocation" x="956" y="787"/>
         </scene>
     </scenes>
     <resources>

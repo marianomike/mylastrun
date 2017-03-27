@@ -57,4 +57,61 @@ class HealthKitManager {
         self.healthKitStore.execute(sampleQuery)
     }
     
+    func getMonthlyRuns(completion: (([AnyObject]?, NSError?) -> Void)!) {
+        
+        
+        
+        //let calendar = NSCalendar.current
+        //let interval = NSDateComponents()
+        //interval.day =
+        
+        let endDate = NSDate()
+        let startDate = NSCalendar.current.date(byAdding: .month, value: -1, to: endDate as Date)
+        
+        let type = HKSampleType.quantityType(forIdentifier: HKQuantityTypeIdentifier.distanceWalkingRunning)
+        let predicate =  HKQuery.predicateForSamples(withStart: startDate, end: endDate as Date, options: [])
+         //let predicate =  HKQuery.pr
+        
+        let sampleQuery = HKSampleQuery(sampleType: type!, predicate: predicate, limit: 0, sortDescriptors: nil) {
+            (sampleQuery, results, error ) -> Void in
+            
+            if let queryError = error {
+                completion?(nil, queryError as NSError?)
+                return
+            }
+            
+            if completion != nil {
+                completion(results, nil)
+            }
+        }
+        
+        self.healthKitStore.execute(sampleQuery)
+    
+    }
+    
+    /*
+    func perfromQueryForWeightSamples() {
+        let endDate = NSDate()
+        let startDate = NSCalendar.current.dateByAddingUnit(.CalendarUnitMonth,
+                                                                      value: -2, toDate: endDate, options: nil)
+        
+        let weightSampleType = HKSampleType.quantityTypeForIdentifier(HKQuantityTypeIdentifierBodyMass)
+        let predicate = HKQuery.predicateForSamplesWithStartDate(startDate,
+                                                                 endDate: endDate, options: .None)
+        
+        let query = HKSampleQuery(sampleType: weightSampleType, predicate: predicate,
+                                  limit: 0, sortDescriptors: nil, resultsHandler: {
+                                    (query, results, error) in
+                                    if !results {
+                                        println("There was an error running the query: \(error)")
+                                    }
+                                    dispatch_async(dispatch_get_main_queue()) {
+                                        self.weightSamples = results as! [HKQuantitySample]
+                                        self.tableView.reloadData()
+                                    }
+        })
+        self.healthStore?.executeQuery(query)
+    }
+ */
+    
 }
