@@ -360,6 +360,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="BtnAllRuns" destination="IsE-9G-b8E" id="dRJ-mJ-7vh"/>
                         <outlet property="BtnCamera" destination="k67-5q-xbS" id="m5Y-K3-5bo"/>
                         <outlet property="BtnNext" destination="kbD-Jl-iTl" id="yol-wW-SkB"/>
                         <outlet property="BtnPhotos" destination="b0O-dp-vZw" id="eug-wY-3lM"/>
@@ -1296,6 +1297,10 @@
         <scene sceneID="Wev-5W-zgj">
             <objects>
                 <viewController storyboardIdentifier="SummaryViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="LaC-6Z-soP" customClass="SummaryViewController" customModule="My_Last_Run" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="uv9-1D-pQT"/>
+                        <viewControllerLayoutGuide type="bottom" id="ICm-YZ-MAP"/>
+                    </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="8ta-6M-GXR">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="609"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1449,6 +1454,24 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="i7f-66-Awl" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="956" y="787"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="LOC-Ht-k16">
+            <objects>
+                <viewController id="W3o-lg-x6J" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="9ke-3G-QBP"/>
+                        <viewControllerLayoutGuide type="bottom" id="0KZ-r3-2TJ"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="rAn-Se-sp9">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="i4D-Nb-kD6" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2218" y="823"/>
         </scene>
     </scenes>
     <resources>

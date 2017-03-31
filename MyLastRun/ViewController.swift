@@ -21,6 +21,7 @@ class ViewController: UIViewController, UITextFieldDelegate, UIImagePickerContro
     
     @IBOutlet weak var BtnNext: UIBarButtonItem!
     @IBOutlet weak var MetricsInput: UITextField!
+    @IBOutlet weak var BtnAllRuns: UIBarButtonItem!
     
     // input variables
     @IBOutlet weak var TitleInput: UITextField!
@@ -49,12 +50,18 @@ class ViewController: UIViewController, UITextFieldDelegate, UIImagePickerContro
     var distance:HKQuantitySample?
     var workouts = [HKWorkout]()
     var monthlyRuns = [HKWorkout]()
+    var yearlyRuns = [HKWorkout]()
+    var monthlyDuration = [HKWorkout]()
+    var yearlyDuration = [HKWorkout]()
     var lastRun = [HKWorkout]()
     var selectedRun: Int!
     var photoLayout = 1
     var showStats:Bool! = true
     var typeChoice:String! = "Single"
-    var totalMilesMonth:Float = 0
+    var totalMilesMonth:Double = 0
+    var totalMilesYear:Double = 0
+    var totalDurationMonth:TimeInterval = 0
+    var totalDurationYear:TimeInterval = 0
     
     let monthFormatter = DateFormatter()
     let formatMonth = "MMM"
@@ -253,13 +260,19 @@ class ViewController: UIViewController, UITextFieldDelegate, UIImagePickerContro
             typeChoice = "Year"
             sendSummaryType(type: typeChoice)
             SummaryView.isHidden = false
+            BtnAllRuns.isEnabled = false
+            BtnAllRuns.tintColor = UIColor.clear
         } else if CalendarTabs.selectedSegmentIndex == 1 {
             typeChoice = "Month"
             sendSummaryType(type: typeChoice)
             SummaryView.isHidden = false
+            BtnAllRuns.isEnabled = false
+            BtnAllRuns.tintColor = UIColor.clear
         } else if CalendarTabs.selectedSegmentIndex == 2 {
             typeChoice = "Single"
             SummaryView.isHidden = true
+            BtnAllRuns.isEnabled = true
+            BtnAllRuns.tintColor = UIColor(red: 140/255, green: 162/255, blue: 98/255, alpha: 1.0)
         }
         
     }
@@ -267,6 +280,11 @@ class ViewController: UIViewController, UITextFieldDelegate, UIImagePickerContro
     func sendSummaryType(type : String) {
         let summaryVC = childViewControllers.last as! SummaryViewController
         summaryVC.typeChoice = type
+        if(type == "Year"){
+            summaryVC.totalDistance = totalMilesYear
+        }else if(type == "Month"){
+            summaryVC.totalDistance = totalMilesMonth
+        }
         summaryVC.updateLabels()
     }
     
@@ -325,27 +343,42 @@ class ViewController: UIViewController, UITextFieldDelegate, UIImagePickerContro
             // print workouts
             //print(self.workouts.count)
             
-            for i in 0 ..< self.workouts.count{
-                //push this months runs to array
-                if(self.getMonth(date: self.workouts[i].endDate) == self.getMonth(date: currentDate)){
-                    self.monthlyRuns.append(self.workouts[i])
-                }
-            }
-            
-            for i in 0 ..< self.monthlyRuns.count{
-                //print(self.convertKMToMiles(distance: self.workouts[i].totalDistance!))
-                //let distanceString:String = self.convertKMToMiles(distance: self.workouts[i].totalDistance!)
-                let distance = self.convertKMToMiles(distance: self.workouts[i].totalDistance!)
-                //print(Float(distance))
-                self.totalMilesMonth = self.totalMilesMonth + Float(distance)!
-                
-            }
-            print(self.totalMilesMonth)
             
             
             DispatchQueue.main.async(){
                 
                 if(self.workouts.count != 0){
+                    
+                    for i in 0 ..< self.workouts.count{
+                        //push this months runs to array
+                        if(self.getMonth(date: self.workouts[i].endDate) == self.getMonth(date: currentDate)){
+                            self.monthlyRuns.append(self.workouts[i])
+                        }
+                        //push this months runs to array
+                        if(self.getYear(date: self.workouts[i].endDate) == self.getYear(date: currentDate)){
+                            self.yearlyRuns.append(self.workouts[i])
+                        }
+                    }
+                    
+                    for i in 0 ..< self.monthlyRuns.count{
+                        let distance = self.convertKMToMiles(distance: self.monthlyRuns[i].totalDistance!)
+                        self.totalMilesMonth = self.totalMilesMonth + Double(distance)!
+                        
+                        self.totalDurationMonth = self.totalDurationMonth + self.monthlyRuns[i].duration
+                    }
+                    print("Miles this month: \(self.totalMilesMonth)")
+                    print("Duration this month: \(self.convertDuration(duration:self.totalDurationMonth))")
+                    print("Average Pace this month: \(self.calculateAveragePace(distance: self.totalMilesMonth, duration: self.totalDurationMonth))")
+                    
+                    for i in 0 ..< self.yearlyRuns.count{
+                        let distance = self.convertKMToMiles(distance: self.yearlyRuns[i].totalDistance!)
+                        self.totalMilesYear = self.totalMilesYear + Double(distance)!
+                        
+                        self.totalDurationYear = self.totalDurationYear + self.yearlyRuns[i].duration
+                    }
+                    print("Miles this year: \(self.totalMilesYear)")
+                    print("Duration this year: \(self.convertDuration(duration:self.totalDurationYear))")
+                    print("Average Pace this year: \(self.calculateAveragePace(distance: self.totalMilesYear, duration: self.totalDurationYear))")
                 
                     let lastDistance = self.convertKMToMiles(distance: self.workouts[0].totalDistance!)
                 
@@ -367,6 +400,24 @@ class ViewController: UIViewController, UITextFieldDelegate, UIImagePickerContro
         monthFormatter.dateFormat = "MMMM"
         let convertedMonth: String  = monthFormatter.string(from: date)
         return convertedMonth
+    }
+    
+    func getYear(date: Date) -> String{
+        yearFormatter.dateFormat = formatYear
+        let convertedYear: String  = yearFormatter.string(from: date)
+        return convertedYear
+    }
+    
+    func calculateAveragePace(distance: Double, duration: TimeInterval) -> String{
+        let pace = duration/distance
+        
+        formatter.unitsStyle = .positional
+        formatter.allowedUnits = [ .minute, .second ]
+        formatter.zeroFormattingBehavior = [ .pad ]
+        
+        let convertedPace = formatter.string(from: pace)
+        return convertedPace!
+        
     }
     
     func calculatePace(distance: HKQuantity, duration: TimeInterval) -> String{

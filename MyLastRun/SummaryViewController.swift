@@ -20,6 +20,7 @@ class SummaryViewController: UIViewController {
     
     var typeChoice:String! = ""
     var parentVC:ViewController!
+    var totalDistance:Double = 0
     //var myContainerViewDelegate: ParentViewControllerOrProtocol
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
@@ -36,6 +37,7 @@ class SummaryViewController: UIViewController {
     func updateLabels(){
         print("Passed from parent: \(typeChoice)")
         SummaryCategory.text = typeChoice
+        TotalDistanceInput.text = String(totalDistance)
     }
 
     override func didReceiveMemoryWarning() {
