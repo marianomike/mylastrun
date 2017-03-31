@@ -62,6 +62,12 @@ class ViewController: UIViewController, UITextFieldDelegate, UIImagePickerContro
     var totalMilesYear:Double = 0
     var totalDurationMonth:TimeInterval = 0
     var totalDurationYear:TimeInterval = 0
+    var curYear:String = "2017"
+    var curMonth:String = "January"
+    var durationMonth:String = ""
+    var paceMonth:String = ""
+    var durationYear:String = ""
+    var paceYear:String = ""
     
     let monthFormatter = DateFormatter()
     let formatMonth = "MMM"
@@ -282,8 +288,14 @@ class ViewController: UIViewController, UITextFieldDelegate, UIImagePickerContro
         summaryVC.typeChoice = type
         if(type == "Year"){
             summaryVC.totalDistance = totalMilesYear
+            summaryVC.summaryDate = curYear
+            summaryVC.summaryDuration = durationYear
+            summaryVC.summaryPace = paceYear
         }else if(type == "Month"){
             summaryVC.totalDistance = totalMilesMonth
+            summaryVC.summaryDate = curMonth
+            summaryVC.summaryDuration = durationMonth
+            summaryVC.summaryPace = paceMonth
         }
         summaryVC.updateLabels()
     }
@@ -326,6 +338,8 @@ class ViewController: UIViewController, UITextFieldDelegate, UIImagePickerContro
     
     func getAllRuns(){
         let currentDate = Date()
+        self.curMonth = self.getMonth(date: currentDate)
+        self.curYear = self.getYear(date: currentDate)
         
         self.healthManager.readRunningWorkouts(completion: { (results, error) -> Void in
             if( error != nil )
@@ -349,6 +363,7 @@ class ViewController: UIViewController, UITextFieldDelegate, UIImagePickerContro
                 
                 if(self.workouts.count != 0){
                     
+                    
                     for i in 0 ..< self.workouts.count{
                         //push this months runs to array
                         if(self.getMonth(date: self.workouts[i].endDate) == self.getMonth(date: currentDate)){
@@ -366,6 +381,10 @@ class ViewController: UIViewController, UITextFieldDelegate, UIImagePickerContro
                         
                         self.totalDurationMonth = self.totalDurationMonth + self.monthlyRuns[i].duration
                     }
+                    
+                    self.durationMonth = self.convertDuration(duration:self.totalDurationMonth)
+                    self.paceMonth = self.calculateAveragePace(distance: self.totalMilesMonth, duration: self.totalDurationMonth)
+                            
                     print("Miles this month: \(self.totalMilesMonth)")
                     print("Duration this month: \(self.convertDuration(duration:self.totalDurationMonth))")
                     print("Average Pace this month: \(self.calculateAveragePace(distance: self.totalMilesMonth, duration: self.totalDurationMonth))")
@@ -376,6 +395,10 @@ class ViewController: UIViewController, UITextFieldDelegate, UIImagePickerContro
                         
                         self.totalDurationYear = self.totalDurationYear + self.yearlyRuns[i].duration
                     }
+                    
+                    self.durationYear = self.convertDuration(duration:self.totalDurationYear)
+                    self.paceYear = self.calculateAveragePace(distance: self.totalMilesYear, duration: self.totalDurationYear)
+                    
                     print("Miles this year: \(self.totalMilesYear)")
                     print("Duration this year: \(self.convertDuration(duration:self.totalDurationYear))")
                     print("Average Pace this year: \(self.calculateAveragePace(distance: self.totalMilesYear, duration: self.totalDurationYear))")
@@ -646,6 +669,19 @@ class ViewController: UIViewController, UITextFieldDelegate, UIImagePickerContro
         datePickerView.addTarget(self, action: #selector(ViewController.datePickerValueChanged(_:)), for: UIControlEvents.valueChanged)
     }
     
+    @IBAction func showPreview(_ sender: UIBarButtonItem) {
+        //self.navigationController?.pushViewController(nextViewController, animated: true)
+        if(typeChoice == "Single"){
+            self.performSegue(withIdentifier: "showSingle", sender: self)
+        }else if(typeChoice == "Month"){
+            self.performSegue(withIdentifier: "showSummary", sender: self)
+        }else if(typeChoice == "Year"){
+            self.performSegue(withIdentifier: "showSummary", sender: self)
+        }
+        
+    }
+    
+    
     
     @IBAction func unwindToStats(segue: UIStoryboardSegue) {
         if let modalVC = segue.source as? AddWorkoutViewController, segue.identifier == "closeModal" {
@@ -666,7 +702,7 @@ class ViewController: UIViewController, UITextFieldDelegate, UIImagePickerContro
     
     // pass variables through to next view
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "showPicChooser" {
+        if segue.identifier == "showSingle" {
             let picChooserViewController = segue.destination as? PhotoPickerViewController
             
             picChooserViewController?.userTitleText = TitleInput.text

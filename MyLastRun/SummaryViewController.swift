@@ -8,7 +8,7 @@
 
 import UIKit
 
-class SummaryViewController: UIViewController {
+class SummaryViewController: UIViewController, UITextFieldDelegate, UIPickerViewDataSource, UIPickerViewDelegate {
     
     @IBOutlet weak var SummaryCategory: UILabel!
     @IBOutlet weak var SummaryCategoryInput: UITextField!
@@ -19,6 +19,9 @@ class SummaryViewController: UIViewController {
     @IBOutlet weak var CommentsInput: UITextField!
     
     var typeChoice:String! = ""
+    var summaryDate:String! = ""
+    var summaryDuration:String! = "00:00:00"
+    var summaryPace:String! = "00:00:00"
     var parentVC:ViewController!
     var totalDistance:Double = 0
     //var myContainerViewDelegate: ParentViewControllerOrProtocol
@@ -32,11 +35,17 @@ class SummaryViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         SummaryCategory.text = typeChoice
+        SummaryCategoryInput.text = summaryDate
+        TotalDurationInput.text = summaryDuration
+        AveragePaceInput.text = summaryPace
     }
     
     func updateLabels(){
-        print("Passed from parent: \(typeChoice)")
+        //print("Passed from parent: \(typeChoice)")
         SummaryCategory.text = typeChoice
+        SummaryCategoryInput.text = summaryDate
+        TotalDurationInput.text = summaryDuration
+        AveragePaceInput.text = summaryPace
         TotalDistanceInput.text = String(totalDistance)
     }
 
