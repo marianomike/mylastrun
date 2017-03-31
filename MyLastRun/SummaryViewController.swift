@@ -8,7 +8,7 @@
 
 import UIKit
 
-class SummaryViewController: UIViewController, UITextFieldDelegate, UIPickerViewDataSource, UIPickerViewDelegate {
+class SummaryViewController: UIViewController, UITextFieldDelegate, UIPickerViewDelegate {
     
     @IBOutlet weak var SummaryCategory: UILabel!
     @IBOutlet weak var SummaryCategoryInput: UITextField!
