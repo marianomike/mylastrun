@@ -18,6 +18,7 @@ class SummaryViewController: UIViewController, UITextFieldDelegate, UIPickerView
     @IBOutlet weak var AveragePaceInput: UITextField!
     @IBOutlet weak var CommentsInput: UITextField!
     
+    
     var typeChoice:String! = ""
     var summaryDate:String! = ""
     var summaryDuration:String! = "00:00:00"

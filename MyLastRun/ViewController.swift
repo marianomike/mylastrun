@@ -344,7 +344,7 @@ class ViewController: UIViewController, UITextFieldDelegate, UIImagePickerContro
         self.healthManager.readRunningWorkouts(completion: { (results, error) -> Void in
             if( error != nil )
             {
-                print("Error reading workouts: \(error?.localizedDescription)")
+                print("Error reading workouts: \(String(describing: error?.localizedDescription))")
                 return;
             }
             else
@@ -382,12 +382,15 @@ class ViewController: UIViewController, UITextFieldDelegate, UIImagePickerContro
                         self.totalDurationMonth = self.totalDurationMonth + self.monthlyRuns[i].duration
                     }
                     
-                    self.durationMonth = self.convertDuration(duration:self.totalDurationMonth)
-                    self.paceMonth = self.calculateAveragePace(distance: self.totalMilesMonth, duration: self.totalDurationMonth)
+                    if(self.totalDurationMonth != 0){
+                        self.durationMonth = self.convertDuration(duration:self.totalDurationMonth)
+                        self.paceMonth = self.calculateAveragePace(distance: self.totalMilesMonth, duration: self.totalDurationMonth)
+                        print("Miles this month: \(self.totalMilesMonth)")
+                        print("Duration this month: \(self.convertDuration(duration:self.totalDurationMonth))")
+                        print("Average Pace this month: \(self.calculateAveragePace(distance: self.totalMilesMonth, duration: self.totalDurationMonth))")
+                    }
                             
-                    print("Miles this month: \(self.totalMilesMonth)")
-                    print("Duration this month: \(self.convertDuration(duration:self.totalDurationMonth))")
-                    print("Average Pace this month: \(self.calculateAveragePace(distance: self.totalMilesMonth, duration: self.totalDurationMonth))")
+                    
                     
                     for i in 0 ..< self.yearlyRuns.count{
                         let distance = self.convertKMToMiles(distance: self.yearlyRuns[i].totalDistance!)
@@ -396,12 +399,15 @@ class ViewController: UIViewController, UITextFieldDelegate, UIImagePickerContro
                         self.totalDurationYear = self.totalDurationYear + self.yearlyRuns[i].duration
                     }
                     
-                    self.durationYear = self.convertDuration(duration:self.totalDurationYear)
-                    self.paceYear = self.calculateAveragePace(distance: self.totalMilesYear, duration: self.totalDurationYear)
+                    if(self.totalDurationYear != 0){
+                        self.durationYear = self.convertDuration(duration:self.totalDurationYear)
+                        self.paceYear = self.calculateAveragePace(distance: self.totalMilesYear, duration: self.totalDurationYear)
+                        print("Miles this year: \(self.totalMilesYear)")
+                        print("Duration this year: \(self.convertDuration(duration:self.totalDurationYear))")
+                        print("Average Pace this year: \(self.calculateAveragePace(distance: self.totalMilesYear, duration: self.totalDurationYear))")
+                    }
                     
-                    print("Miles this year: \(self.totalMilesYear)")
-                    print("Duration this year: \(self.convertDuration(duration:self.totalDurationYear))")
-                    print("Average Pace this year: \(self.calculateAveragePace(distance: self.totalMilesYear, duration: self.totalDurationYear))")
+                    
                 
                     let lastDistance = self.convertKMToMiles(distance: self.workouts[0].totalDistance!)
                 
@@ -432,7 +438,8 @@ class ViewController: UIViewController, UITextFieldDelegate, UIImagePickerContro
     }
     
     func calculateAveragePace(distance: Double, duration: TimeInterval) -> String{
-        let pace = duration/distance
+        
+        let pace = duration / distance
         
         formatter.unitsStyle = .positional
         formatter.allowedUnits = [ .minute, .second ]

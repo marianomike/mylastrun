@@ -15,6 +15,7 @@
 		7A0142581E614D5900D9B06E /* WalkwayExpandSemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7A0142571E614D5900D9B06E /* WalkwayExpandSemiBold.ttf */; };
 		7A0142621E615A7A00D9B06E /* OstrichSans-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = 7A0142611E615A7A00D9B06E /* OstrichSans-Medium.otf */; };
 		7A0142641E615AA600D9B06E /* OstrichSans-Black.otf in Resources */ = {isa = PBXBuildFile; fileRef = 7A0142631E615AA600D9B06E /* OstrichSans-Black.otf */; };
+		7A246F1E1E8FF7370055519B /* SummaryPreviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A246F1D1E8FF7370055519B /* SummaryPreviewViewController.swift */; };
 		7A3307791E387FBB00BC47BA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A3307781E387FBB00BC47BA /* AppDelegate.swift */; };
 		7A33077B1E387FBB00BC47BA /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A33077A1E387FBB00BC47BA /* ViewController.swift */; };
 		7A33077E1E387FBB00BC47BA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7A33077C1E387FBB00BC47BA /* Main.storyboard */; };
@@ -48,6 +49,7 @@
 		7A0142571E614D5900D9B06E /* WalkwayExpandSemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = WalkwayExpandSemiBold.ttf; sourceTree = "<group>"; };
 		7A0142611E615A7A00D9B06E /* OstrichSans-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OstrichSans-Medium.otf"; sourceTree = "<group>"; };
 		7A0142631E615AA600D9B06E /* OstrichSans-Black.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OstrichSans-Black.otf"; sourceTree = "<group>"; };
+		7A246F1D1E8FF7370055519B /* SummaryPreviewViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SummaryPreviewViewController.swift; sourceTree = "<group>"; };
 		7A3307751E387FBB00BC47BA /* My Last Run.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "My Last Run.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		7A3307781E387FBB00BC47BA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7A33077A1E387FBB00BC47BA /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -113,6 +115,7 @@
 				7A3307781E387FBB00BC47BA /* AppDelegate.swift */,
 				7A33077A1E387FBB00BC47BA /* ViewController.swift */,
 				7A33077C1E387FBB00BC47BA /* Main.storyboard */,
+				7A246F1D1E8FF7370055519B /* SummaryPreviewViewController.swift */,
 				7A4AD4B81E3B362B00A79076 /* PhotoPickerViewController.swift */,
 				7A33077F1E387FBB00BC47BA /* Assets.xcassets */,
 				7A01424B1E5FFFF100D9B06E /* SnellRoundhand.ttc */,
@@ -271,6 +274,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7A246F1E1E8FF7370055519B /* SummaryPreviewViewController.swift in Sources */,
 				7A33077B1E387FBB00BC47BA /* ViewController.swift in Sources */,
 				7A3307791E387FBB00BC47BA /* AppDelegate.swift in Sources */,
 				7AD2B7E41E58C8CC00612025 /* AddWorkoutViewController.swift in Sources */,
