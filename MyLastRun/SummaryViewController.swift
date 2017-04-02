@@ -16,7 +16,6 @@ class SummaryViewController: UIViewController, UITextFieldDelegate, UIPickerView
     @IBOutlet weak var TotalMetricInput: UITextField!
     @IBOutlet weak var TotalDurationInput: UITextField!
     @IBOutlet weak var AveragePaceInput: UITextField!
-    @IBOutlet weak var CommentsInput: UITextField!
     
     var typeChoice:String! = ""
     var summaryDate:String! = ""
@@ -91,7 +90,7 @@ class SummaryViewController: UIViewController, UITextFieldDelegate, UIPickerView
         AveragePaceInput.delegate = self
         TotalDistanceInput.delegate = self
         SummaryCategoryInput.delegate = self
-        CommentsInput.delegate = self
+        //CommentsInput.delegate = self
         
         picker.delegate = self
         picker.dataSource = self
@@ -256,7 +255,7 @@ class SummaryViewController: UIViewController, UITextFieldDelegate, UIPickerView
         self.view.endEditing(true)
     }
     
-    /*
+    
     func textFieldDidBeginEditing(_ textField: UITextField) {
         animateViewMoving(up: true, moveValue: 100)
     }
@@ -273,7 +272,6 @@ class SummaryViewController: UIViewController, UITextFieldDelegate, UIPickerView
         self.view.frame = self.view.frame.offsetBy(dx: 0,  dy: movement)
         UIView.commitAnimations()
     }
- */
     
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
         

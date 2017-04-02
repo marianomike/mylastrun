@@ -56,7 +56,9 @@ class ViewController: UIViewController, UITextFieldDelegate, UIImagePickerContro
     var lastRun = [HKWorkout]()
     var selectedRun: Int!
     var photoLayout = 1
+    var photoSummaryLayout = 1
     var showStats:Bool! = true
+    var showSummaryStats:Bool! = true
     var typeChoice:String! = "Single"
     var totalMilesMonth:Double = 0
     var totalMilesYear:Double = 0
@@ -64,10 +66,10 @@ class ViewController: UIViewController, UITextFieldDelegate, UIImagePickerContro
     var totalDurationYear:TimeInterval = 0
     var curYear:String = "2017"
     var curMonth:String = "January"
-    var durationMonth:String = ""
-    var paceMonth:String = ""
-    var durationYear:String = ""
-    var paceYear:String = ""
+    var durationMonth:String = "00:00:00"
+    var paceMonth:String = "00:00"
+    var durationYear:String = "00:00:00"
+    var paceYear:String = "00:00"
     
     let monthFormatter = DateFormatter()
     let formatMonth = "MMM"
@@ -151,7 +153,7 @@ class ViewController: UIViewController, UITextFieldDelegate, UIImagePickerContro
         let currentDate = Date()
         let currentDateFormatter = DateFormatter()
         currentDateFormatter.dateStyle = DateFormatter.Style.medium
-        currentDateFormatter.timeStyle = DateFormatter.Style.short
+        currentDateFormatter.timeStyle = DateFormatter.Style.none
         
         // Initialize variables
         titleIsChecked = true
@@ -733,8 +735,16 @@ class ViewController: UIViewController, UITextFieldDelegate, UIImagePickerContro
             
         }else if segue.identifier == "showSummary"{
             let summaryPreviewVC = segue.destination as? SummaryPreviewViewController
+            let summaryVC = childViewControllers.last as! SummaryViewController
             
             summaryPreviewVC?.passedImage = ImageChoice.image
+            summaryPreviewVC?.userDistanceText = summaryVC.TotalDistanceInput.text
+            summaryPreviewVC?.userDistanceChoice = summaryVC.TotalMetricInput.text
+            summaryPreviewVC?.userTitleText = summaryVC.SummaryCategoryInput.text
+            summaryPreviewVC?.userPace = summaryVC.AveragePaceInput.text
+            summaryPreviewVC?.userDuration = summaryVC.TotalDurationInput.text
+            summaryPreviewVC?.currentLayout = photoSummaryLayout
+            summaryPreviewVC?.showStats = showSummaryStats
         }
     }
     
