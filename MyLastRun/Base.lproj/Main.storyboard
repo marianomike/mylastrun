@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12118" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="LSZ-5p-ToD">
-    <device id="retina4_7" orientation="portrait">
+    <device id="retina5_5" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
@@ -30,32 +30,32 @@
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QaI-sI-jHt">
-                                <rect key="frame" x="0.0" y="64" width="375" height="559"/>
+                                <rect key="frame" x="0.0" y="64" width="414" height="628"/>
                                 <subviews>
-                                    <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Mlc-OZ-qXC">
-                                        <rect key="frame" x="0.0" y="-64" width="375" height="950"/>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Mlc-OZ-qXC">
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="950"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="25" translatesAutoresizingMaskIntoConstraints="NO" id="5KX-x3-qlR" userLabel="Stats Stack View">
-                                                <rect key="frame" x="20" y="221" width="335" height="609"/>
+                                                <rect key="frame" x="20" y="260" width="374" height="570"/>
                                                 <subviews>
                                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="p07-Ww-E58" userLabel="Title Stack View">
-                                                        <rect key="frame" x="0.0" y="0.0" width="335" height="65.5"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="374" height="60"/>
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Oaw-rB-vlN">
-                                                                <rect key="frame" x="0.0" y="0.0" width="335" height="19"/>
+                                                                <rect key="frame" x="0.0" y="0.0" width="374" height="19"/>
                                                                 <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="16"/>
                                                                 <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
                                                             <stackView opaque="NO" contentMode="scaleToFill" spacing="7" translatesAutoresizingMaskIntoConstraints="NO" id="djG-op-b48" userLabel="Title Input Stack View">
-                                                                <rect key="frame" x="0.0" y="29" width="335" height="36.5"/>
+                                                                <rect key="frame" x="0.0" y="29" width="374" height="31"/>
                                                                 <subviews>
                                                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" horizontalHuggingPriority="249" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="Zm9-m6-8ro">
-                                                                        <rect key="frame" x="0.0" y="0.0" width="335" height="36.5"/>
+                                                                        <rect key="frame" x="0.0" y="0.0" width="374" height="31"/>
                                                                         <color key="textColor" red="0.47450980392156861" green="0.57647058823529407" blue="0.27843137254901962" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                         <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="20"/>
                                                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences" returnKeyType="done"/>
@@ -65,25 +65,25 @@
                                                         </subviews>
                                                     </stackView>
                                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="Pd7-Bo-4vf" userLabel="Distance Stack View">
-                                                        <rect key="frame" x="0.0" y="90.5" width="335" height="65.5"/>
+                                                        <rect key="frame" x="0.0" y="85" width="374" height="60"/>
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Distance" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="961-x5-LDJ" userLabel="Distance">
-                                                                <rect key="frame" x="0.0" y="0.0" width="335" height="19"/>
+                                                                <rect key="frame" x="0.0" y="0.0" width="374" height="19"/>
                                                                 <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="16"/>
                                                                 <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
                                                             <stackView opaque="NO" contentMode="scaleToFill" spacing="7" translatesAutoresizingMaskIntoConstraints="NO" id="zhb-wW-gX1" userLabel="Distance Input Stack View">
-                                                                <rect key="frame" x="0.0" y="29" width="335" height="36.5"/>
+                                                                <rect key="frame" x="0.0" y="29" width="374" height="31"/>
                                                                 <subviews>
                                                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="0.0" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="WJn-Ze-kSo">
-                                                                        <rect key="frame" x="0.0" y="0.0" width="178" height="36.5"/>
+                                                                        <rect key="frame" x="0.0" y="0.0" width="217" height="31"/>
                                                                         <color key="textColor" red="0.47450980390000003" green="0.57647058819999997" blue="0.2784313725" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                         <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="20"/>
                                                                         <textInputTraits key="textInputTraits" keyboardType="decimalPad" returnKeyType="done"/>
                                                                     </textField>
                                                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Miles" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="E2h-wa-wqh">
-                                                                        <rect key="frame" x="185" y="0.0" width="150" height="36.5"/>
+                                                                        <rect key="frame" x="224" y="0.0" width="150" height="31"/>
                                                                         <constraints>
                                                                             <constraint firstAttribute="width" constant="150" id="CT7-0e-CfV"/>
                                                                         </constraints>
@@ -96,19 +96,19 @@
                                                         </subviews>
                                                     </stackView>
                                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="ZDd-Su-9O1" userLabel="Time Stack View">
-                                                        <rect key="frame" x="0.0" y="181" width="335" height="65.5"/>
+                                                        <rect key="frame" x="0.0" y="170" width="374" height="60"/>
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Duration" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4OQ-Wn-iuh" userLabel="Time">
-                                                                <rect key="frame" x="0.0" y="0.0" width="335" height="19"/>
+                                                                <rect key="frame" x="0.0" y="0.0" width="374" height="19"/>
                                                                 <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="16"/>
                                                                 <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
                                                             <stackView opaque="NO" contentMode="scaleToFill" spacing="7" translatesAutoresizingMaskIntoConstraints="NO" id="jBc-Qs-cfd" userLabel="Time Input Stack View">
-                                                                <rect key="frame" x="0.0" y="29" width="335" height="36.5"/>
+                                                                <rect key="frame" x="0.0" y="29" width="374" height="31"/>
                                                                 <subviews>
                                                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" horizontalHuggingPriority="249" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="00:00:00" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="bda-ng-J0N">
-                                                                        <rect key="frame" x="0.0" y="0.0" width="335" height="36.5"/>
+                                                                        <rect key="frame" x="0.0" y="0.0" width="374" height="31"/>
                                                                         <color key="textColor" red="0.47450980390000003" green="0.57647058819999997" blue="0.2784313725" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                         <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="20"/>
                                                                         <textInputTraits key="textInputTraits" keyboardType="numbersAndPunctuation" returnKeyType="done"/>
@@ -118,19 +118,19 @@
                                                         </subviews>
                                                     </stackView>
                                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="Nfa-Ah-qX8" userLabel="Pace Stack View">
-                                                        <rect key="frame" x="0.0" y="271.5" width="335" height="66"/>
+                                                        <rect key="frame" x="0.0" y="255" width="374" height="60"/>
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Pace" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xBO-AF-RjE" userLabel="Time">
-                                                                <rect key="frame" x="0.0" y="0.0" width="335" height="19"/>
+                                                                <rect key="frame" x="0.0" y="0.0" width="374" height="19"/>
                                                                 <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="16"/>
                                                                 <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
                                                             <stackView opaque="NO" contentMode="scaleToFill" spacing="7" translatesAutoresizingMaskIntoConstraints="NO" id="maB-W2-axZ" userLabel="Time Input Stack View">
-                                                                <rect key="frame" x="0.0" y="29" width="335" height="37"/>
+                                                                <rect key="frame" x="0.0" y="29" width="374" height="31"/>
                                                                 <subviews>
                                                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" horizontalHuggingPriority="249" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="00:00" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="XUl-6S-S6W">
-                                                                        <rect key="frame" x="0.0" y="0.0" width="335" height="37"/>
+                                                                        <rect key="frame" x="0.0" y="0.0" width="374" height="31"/>
                                                                         <color key="textColor" red="0.47450980390000003" green="0.57647058819999997" blue="0.2784313725" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                         <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="20"/>
                                                                         <textInputTraits key="textInputTraits" keyboardType="numbersAndPunctuation" returnKeyType="done"/>
@@ -140,19 +140,19 @@
                                                         </subviews>
                                                     </stackView>
                                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="1fp-G4-R0U" userLabel="Date Stack View">
-                                                        <rect key="frame" x="0.0" y="362.5" width="335" height="65.5"/>
+                                                        <rect key="frame" x="0.0" y="340" width="374" height="60"/>
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Date and Time" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7zY-Cg-PXp" userLabel="Date">
-                                                                <rect key="frame" x="0.0" y="0.0" width="335" height="19"/>
+                                                                <rect key="frame" x="0.0" y="0.0" width="374" height="19"/>
                                                                 <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="16"/>
                                                                 <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
                                                             <stackView opaque="NO" contentMode="scaleToFill" spacing="7" translatesAutoresizingMaskIntoConstraints="NO" id="E45-Ir-FLv" userLabel="Date Input Stack View">
-                                                                <rect key="frame" x="0.0" y="29" width="335" height="36.5"/>
+                                                                <rect key="frame" x="0.0" y="29" width="374" height="31"/>
                                                                 <subviews>
                                                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" horizontalHuggingPriority="249" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Jan 31, 2017 5:40 PM" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="NEk-Df-gvO">
-                                                                        <rect key="frame" x="0.0" y="0.0" width="335" height="36.5"/>
+                                                                        <rect key="frame" x="0.0" y="0.0" width="374" height="31"/>
                                                                         <color key="textColor" red="0.47450980390000003" green="0.57647058819999997" blue="0.2784313725" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                         <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="20"/>
                                                                         <textInputTraits key="textInputTraits" returnKeyType="done"/>
@@ -165,25 +165,25 @@
                                                         </subviews>
                                                     </stackView>
                                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="tNS-zz-TKi" userLabel="Weather Stack View">
-                                                        <rect key="frame" x="0.0" y="453" width="335" height="65.5"/>
+                                                        <rect key="frame" x="0.0" y="425" width="374" height="60"/>
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Weather" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="g4j-8W-lzM" userLabel="Date">
-                                                                <rect key="frame" x="0.0" y="0.0" width="335" height="19"/>
+                                                                <rect key="frame" x="0.0" y="0.0" width="374" height="19"/>
                                                                 <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="16"/>
                                                                 <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
                                                             <stackView opaque="NO" contentMode="scaleToFill" spacing="7" translatesAutoresizingMaskIntoConstraints="NO" id="jQM-IU-Lwa" userLabel="Date Input Stack View">
-                                                                <rect key="frame" x="0.0" y="29" width="335" height="36.5"/>
+                                                                <rect key="frame" x="0.0" y="29" width="374" height="31"/>
                                                                 <subviews>
                                                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" horizontalHuggingPriority="249" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="80°" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="eHc-kd-N4y">
-                                                                        <rect key="frame" x="0.0" y="0.0" width="128" height="36.5"/>
+                                                                        <rect key="frame" x="0.0" y="0.0" width="167" height="31"/>
                                                                         <color key="textColor" red="0.47450980390000003" green="0.57647058819999997" blue="0.2784313725" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                         <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="20"/>
                                                                         <textInputTraits key="textInputTraits" keyboardType="decimalPad" returnKeyType="done"/>
                                                                     </textField>
                                                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" horizontalHuggingPriority="249" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="None" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="XAN-Lg-9jz">
-                                                                        <rect key="frame" x="135" y="0.0" width="200" height="36.5"/>
+                                                                        <rect key="frame" x="174" y="0.0" width="200" height="31"/>
                                                                         <constraints>
                                                                             <constraint firstAttribute="width" constant="200" id="8mx-dr-6uF"/>
                                                                         </constraints>
@@ -196,19 +196,19 @@
                                                         </subviews>
                                                     </stackView>
                                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="w0O-79-KdO" userLabel="Location Stack View">
-                                                        <rect key="frame" x="0.0" y="543.5" width="335" height="65.5"/>
+                                                        <rect key="frame" x="0.0" y="510" width="374" height="60"/>
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Location" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9J6-w3-QEd" userLabel="Location">
-                                                                <rect key="frame" x="0.0" y="0.0" width="335" height="19"/>
+                                                                <rect key="frame" x="0.0" y="0.0" width="374" height="19"/>
                                                                 <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="16"/>
                                                                 <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
                                                             <stackView opaque="NO" contentMode="scaleToFill" spacing="7" translatesAutoresizingMaskIntoConstraints="NO" id="xeI-7F-mXG" userLabel="Location Input Stack View">
-                                                                <rect key="frame" x="0.0" y="29" width="335" height="36.5"/>
+                                                                <rect key="frame" x="0.0" y="29" width="374" height="31"/>
                                                                 <subviews>
                                                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" horizontalHuggingPriority="249" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="vSa-Si-9Oh">
-                                                                        <rect key="frame" x="0.0" y="0.0" width="335" height="36.5"/>
+                                                                        <rect key="frame" x="0.0" y="0.0" width="374" height="31"/>
                                                                         <color key="textColor" red="0.47450980390000003" green="0.57647058819999997" blue="0.2784313725" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                         <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="20"/>
                                                                         <textInputTraits key="textInputTraits" returnKeyType="done"/>
@@ -219,33 +219,32 @@
                                                     </stackView>
                                                 </subviews>
                                             </stackView>
-                                            <containerView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Xim-Ad-tgE">
-                                                <rect key="frame" x="0.0" y="221" width="375" height="609"/>
-                                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Xim-Ad-tgE">
+                                                <rect key="frame" x="8" y="260" width="398" height="570"/>
                                                 <connections>
                                                     <segue destination="LaC-6Z-soP" kind="embed" identifier="SummaryStats" id="R5F-Og-gQk"/>
                                                 </connections>
                                             </containerView>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rfm-8e-KxR">
-                                                <rect key="frame" x="88" y="0.0" width="201" height="201"/>
+                                                <rect key="frame" x="88" y="0.0" width="240" height="240"/>
                                                 <subviews>
                                                     <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="WGe-KE-Q7a">
-                                                        <rect key="frame" x="0.0" y="0.0" width="201" height="201"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="240" height="240"/>
                                                     </imageView>
                                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="o11-Uk-oeI" userLabel="Choose Stack View">
-                                                        <rect key="frame" x="6" y="38.5" width="190" height="125.5"/>
+                                                        <rect key="frame" x="25.666666666666671" y="57.666666666666679" width="190" height="125.33333333333331"/>
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="CHOOSE A PICTURE" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VJA-bA-HRO">
-                                                                <rect key="frame" x="0.0" y="0.0" width="190" height="20.5"/>
+                                                                <rect key="frame" x="0.0" y="0.0" width="190" height="20.333333333333329"/>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                                 <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
                                                             <stackView opaque="NO" contentMode="scaleToFill" distribution="equalCentering" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="Wfa-ag-Ad0" userLabel="Choose Photo Stack View">
-                                                                <rect key="frame" x="0.0" y="40.5" width="190" height="85"/>
+                                                                <rect key="frame" x="0.0" y="40.333333333333329" width="190" height="85"/>
                                                                 <subviews>
                                                                     <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" horizontalCompressionResistancePriority="751" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="b0O-dp-vZw">
-                                                                        <rect key="frame" x="0.0" y="0.0" width="85" height="85"/>
+                                                                        <rect key="frame" x="0.0" y="0.0" width="84.999999999999986" height="85"/>
                                                                         <gestureRecognizers/>
                                                                         <state key="normal" image="BtnPhotos"/>
                                                                         <connections>
@@ -253,7 +252,7 @@
                                                                         </connections>
                                                                     </button>
                                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="k67-5q-xbS">
-                                                                        <rect key="frame" x="105" y="0.0" width="85" height="85"/>
+                                                                        <rect key="frame" x="104.99999999999999" y="0.0" width="85.000000000000014" height="85"/>
                                                                         <gestureRecognizers/>
                                                                         <state key="normal" image="BtnCamera"/>
                                                                         <connections>
@@ -265,7 +264,7 @@
                                                         </subviews>
                                                     </stackView>
                                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tV8-ZM-ocL">
-                                                        <rect key="frame" x="153" y="8" width="40" height="40"/>
+                                                        <rect key="frame" x="192" y="8" width="40" height="40"/>
                                                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxY="YES"/>
                                                         <state key="normal" title="0" image="Delete"/>
                                                         <connections>
@@ -286,15 +285,19 @@
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <constraints>
+                                            <constraint firstItem="Xim-Ad-tgE" firstAttribute="bottom" secondItem="5KX-x3-qlR" secondAttribute="bottom" id="5dz-Q7-VzL"/>
                                             <constraint firstAttribute="height" constant="950" id="CCI-L8-NPm"/>
                                             <constraint firstItem="5KX-x3-qlR" firstAttribute="top" secondItem="rfm-8e-KxR" secondAttribute="bottom" constant="20" id="TuB-mF-WI8"/>
                                             <constraint firstItem="5KX-x3-qlR" firstAttribute="centerX" secondItem="Mlc-OZ-qXC" secondAttribute="centerX" id="Va4-jI-rIw"/>
+                                            <constraint firstAttribute="trailingMargin" secondItem="Xim-Ad-tgE" secondAttribute="trailing" id="ZOc-7y-Ed3"/>
                                             <constraint firstItem="rfm-8e-KxR" firstAttribute="top" secondItem="Mlc-OZ-qXC" secondAttribute="top" id="ZoL-YH-CKj"/>
                                             <constraint firstItem="rfm-8e-KxR" firstAttribute="top" secondItem="Mlc-OZ-qXC" secondAttribute="top" id="byZ-67-UU8"/>
+                                            <constraint firstItem="Xim-Ad-tgE" firstAttribute="leading" secondItem="Mlc-OZ-qXC" secondAttribute="leadingMargin" id="dq3-XC-jt7"/>
                                             <constraint firstItem="5KX-x3-qlR" firstAttribute="leading" secondItem="Mlc-OZ-qXC" secondAttribute="leading" constant="20" id="fYf-ly-zPW"/>
                                             <constraint firstAttribute="trailing" secondItem="rfm-8e-KxR" secondAttribute="trailing" constant="86" id="iTo-go-TGc"/>
                                             <constraint firstItem="rfm-8e-KxR" firstAttribute="leading" secondItem="Mlc-OZ-qXC" secondAttribute="leading" constant="88" id="oVu-ow-Ovx"/>
                                             <constraint firstAttribute="bottom" secondItem="5KX-x3-qlR" secondAttribute="bottom" constant="120" id="ox7-dd-wGv"/>
+                                            <constraint firstItem="Xim-Ad-tgE" firstAttribute="top" secondItem="rfm-8e-KxR" secondAttribute="bottom" constant="20" id="ya9-eD-tH7"/>
                                         </constraints>
                                     </view>
                                 </subviews>
@@ -310,7 +313,7 @@
                                 </constraints>
                             </scrollView>
                             <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="a9d-uN-Z45">
-                                <rect key="frame" x="0.0" y="623" width="375" height="44"/>
+                                <rect key="frame" x="0.0" y="692" width="414" height="44"/>
                                 <items>
                                     <barButtonItem systemItem="flexibleSpace" id="b4N-v5-qV9"/>
                                     <barButtonItem title="PREVIEW" id="kbD-Jl-iTl">
@@ -391,15 +394,15 @@
             <objects>
                 <tableViewController id="XKT-Wm-Q2y" customClass="AddWorkoutViewController" customModule="My_Last_Run" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="b8T-px-CHi">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="gray" indentationWidth="10" reuseIdentifier="RunCell" textLabel="qYf-5i-b2W" detailTextLabel="Y3f-ey-zOC" rowHeight="70" style="IBUITableViewCellStyleValue1" id="51H-8T-Uoo">
-                                <rect key="frame" x="0.0" y="28" width="375" height="70"/>
+                                <rect key="frame" x="0.0" y="28" width="414" height="70"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="51H-8T-Uoo" id="kjF-Ko-hun">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="69.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="69.666666666666671"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="qYf-5i-b2W">
@@ -410,7 +413,7 @@
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Detail" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Y3f-ey-zOC">
-                                            <rect key="frame" x="316.5" y="25" width="43.5" height="20"/>
+                                            <rect key="frame" x="355.66666666666669" y="25" width="43.333333333333336" height="20"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
                                             <color key="textColor" red="0.47450980390000003" green="0.57647058819999997" blue="0.2784313725" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -458,11 +461,11 @@
                         <viewControllerLayoutGuide type="bottom" id="7Yd-6w-hmP"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="cAg-1d-rvw">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zRe-0x-Eu5">
-                                <rect key="frame" x="27.5" y="74" width="320" height="320"/>
+                                <rect key="frame" x="47" y="74" width="320" height="320"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LUr-4g-A3Q">
                                         <rect key="frame" x="0.0" y="0.0" width="320" height="320"/>
@@ -495,137 +498,11 @@
                                             <constraint firstItem="2Pw-XO-W2K" firstAttribute="leading" secondItem="PoA-bH-1FE" secondAttribute="leading" id="wWO-Gu-p29"/>
                                         </constraints>
                                     </view>
-                                    <view opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="6m2-K7-Z9m" userLabel="Layout2">
-                                        <rect key="frame" x="-1" y="0.0" width="320" height="320"/>
-                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                        <subviews>
-                                            <imageView userInteractionEnabled="NO" alpha="0.80000000000000004" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="TopGradient" translatesAutoresizingMaskIntoConstraints="NO" id="jzV-ad-g3x">
-                                                <rect key="frame" x="1" y="8" width="210" height="34"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            </imageView>
-                                            <textField opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.80000000000000004" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="MARATHON TRAINING" textAlignment="center" minimumFontSize="1" background="TitleGradient" translatesAutoresizingMaskIntoConstraints="NO" id="vd3-DN-qJ0">
-                                                <rect key="frame" x="7" y="255" width="305" height="37"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                                <fontDescription key="fontDescription" name="HelveticaNeue-ThinItalic" family="Helvetica Neue" pointSize="28"/>
-                                                <textInputTraits key="textInputTraits" autocapitalizationType="allCharacters"/>
-                                            </textField>
-                                            <textField opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.80000000000000004" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="July 24, 1977 at 8:45 am" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="sSA-Pl-FBF">
-                                                <rect key="frame" x="81" y="297" width="158" height="17"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="14"/>
-                                                <textInputTraits key="textInputTraits"/>
-                                            </textField>
-                                            <imageView userInteractionEnabled="NO" alpha="0.80000000000000004" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="IconClock-1" translatesAutoresizingMaskIntoConstraints="NO" id="Px6-oC-rS7">
-                                                <rect key="frame" x="89" y="46" width="16" height="16"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            </imageView>
-                                            <textField opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.80000000000000004" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="4:28:59" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="b3s-Tr-T2v">
-                                                <rect key="frame" x="28" y="45" width="60" height="20"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
-                                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="14"/>
-                                                <textInputTraits key="textInputTraits"/>
-                                            </textField>
-                                            <textField opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.80000000000000004" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="15.88 Miles" textAlignment="natural" adjustsFontSizeToFit="NO" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="OBC-6E-JmI">
-                                                <rect key="frame" x="8" y="8" width="206" height="34"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                                <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="28"/>
-                                                <textInputTraits key="textInputTraits"/>
-                                            </textField>
-                                            <textField opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.80000000000000004" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="FREMONT, CA" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="t5D-Hv-q1I">
-                                                <rect key="frame" x="8" y="234" width="304" height="18"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="14"/>
-                                                <textInputTraits key="textInputTraits"/>
-                                            </textField>
-                                            <imageView userInteractionEnabled="NO" alpha="0.80000000000000004" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="IconTimer" translatesAutoresizingMaskIntoConstraints="NO" id="mnS-Jo-rvL">
-                                                <rect key="frame" x="8" y="45" width="15" height="17"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
-                                            </imageView>
-                                            <imageView userInteractionEnabled="NO" alpha="0.80000000000000004" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="IconLightClouds" translatesAutoresizingMaskIntoConstraints="NO" id="gHy-1x-nUQ">
-                                                <rect key="frame" x="285" y="8" width="27" height="31"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            </imageView>
-                                            <textField opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.80000000000000004" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="8'44&quot;" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="KZD-7j-1NP">
-                                                <rect key="frame" x="111" y="45" width="54" height="20"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
-                                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="14"/>
-                                                <textInputTraits key="textInputTraits"/>
-                                            </textField>
-                                        </subviews>
-                                    </view>
-                                    <view opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="F31-cg-QtU" userLabel="Layout3">
+                                    <view opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="anZ-9h-bgM" userLabel="Layout5">
                                         <rect key="frame" x="0.0" y="0.0" width="320" height="320"/>
-                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                        <subviews>
-                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="DistanceCircle" translatesAutoresizingMaskIntoConstraints="NO" id="lMb-HM-hgq">
-                                                <rect key="frame" x="90" y="92" width="140" height="140"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
-                                            </imageView>
-                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="TimeBacker" translatesAutoresizingMaskIntoConstraints="NO" id="mS0-bz-lby">
-                                                <rect key="frame" x="90" y="8" width="140" height="20"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
-                                            </imageView>
-                                            <textField opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.80000001192092896" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="MARATHON TRAINING" textAlignment="center" minimumFontSize="1" translatesAutoresizingMaskIntoConstraints="NO" id="KTJ-tc-cUL">
-                                                <rect key="frame" x="7" y="275" width="305" height="37"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
-                                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                                <fontDescription key="fontDescription" name="NexaBold" family="Nexa Bold" pointSize="20"/>
-                                                <textInputTraits key="textInputTraits" autocapitalizationType="allCharacters"/>
-                                            </textField>
-                                            <textField opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.80000001192092896" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="4:28:59" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="3uS-gP-4IX">
-                                                <rect key="frame" x="90" y="8" width="69" height="20"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
-                                                <fontDescription key="fontDescription" name="NexaBold" family="Nexa Bold" pointSize="14"/>
-                                                <textInputTraits key="textInputTraits"/>
-                                            </textField>
-                                            <textField opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.80000001192092896" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="M" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="a0i-4B-aDd">
-                                                <rect key="frame" x="97" y="180" width="124" height="30"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                                <fontDescription key="fontDescription" name="NexaBold" family="Nexa Bold" pointSize="26"/>
-                                                <textInputTraits key="textInputTraits"/>
-                                            </textField>
-                                            <textField opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.80000001192092896" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="8'44&quot;" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="FY7-DL-PUd">
-                                                <rect key="frame" x="160" y="8" width="69" height="20"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
-                                                <fontDescription key="fontDescription" name="NexaBold" family="Nexa Bold" pointSize="14"/>
-                                                <textInputTraits key="textInputTraits"/>
-                                            </textField>
-                                            <textField opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.80000001192092896" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="FREMONT, CA" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="5yp-Oe-JWg">
-                                                <rect key="frame" x="8" y="234" width="304" height="18"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
-                                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                                <fontDescription key="fontDescription" name="NexaBold" family="Nexa Bold" pointSize="14"/>
-                                                <textInputTraits key="textInputTraits"/>
-                                            </textField>
-                                            <textField opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.80000001192092896" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="July 24, 1977 at 8:45 am" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="qjg-XL-IPq">
-                                                <rect key="frame" x="59" y="67" width="202" height="17"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
-                                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                                <fontDescription key="fontDescription" name="NexaBold" family="Nexa Bold" pointSize="14"/>
-                                                <textInputTraits key="textInputTraits"/>
-                                            </textField>
-                                            <textField opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.80000001192092896" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="26.2" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="a2I-ZG-KnQ">
-                                                <rect key="frame" x="98" y="129" width="124" height="63"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
-                                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                                <fontDescription key="fontDescription" name="NexaBold" family="Nexa Bold" pointSize="50"/>
-                                                <textInputTraits key="textInputTraits"/>
-                                            </textField>
-                                        </subviews>
-                                    </view>
-                                    <view opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="anZ-9h-bgM" userLabel="Layout5">
-                                        <rect key="frame" x="0.0" y="0.0" width="321" height="320"/>
-                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                         <subviews>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="ScriptFrame" translatesAutoresizingMaskIntoConstraints="NO" id="9d7-9y-GdF">
-                                                <rect key="frame" x="22" y="78" width="276" height="165"/>
+                                                <rect key="frame" x="21" y="78" width="276" height="165"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                                             </imageView>
                                             <imageView userInteractionEnabled="NO" alpha="0.59999999999999998" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="CenterBlur" translatesAutoresizingMaskIntoConstraints="NO" id="u9D-2a-pAp">
@@ -633,131 +510,137 @@
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             </imageView>
                                             <textField opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.80000001192092896" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Fremont, Ca" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="TrG-iJ-GGa">
-                                                <rect key="frame" x="8" y="26" width="304" height="18"/>
+                                                <rect key="frame" x="7" y="26" width="304" height="18"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <fontDescription key="fontDescription" name="SnellRoundhand" family="Snell Roundhand" pointSize="18"/>
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
                                             <textField opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.80000001192092896" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="26.2" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="uyg-13-vIs">
-                                                <rect key="frame" x="8" y="155" width="304" height="42"/>
+                                                <rect key="frame" x="7" y="155" width="304" height="42"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="40"/>
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
                                             <textField opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.80000001192092896" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="July 24, 1977 at 8:45 am" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="1UF-eU-GLt">
-                                                <rect key="frame" x="8" y="8" width="304" height="17"/>
+                                                <rect key="frame" x="7" y="8" width="304" height="17"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
                                             <textField opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.80000001192092896" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Duration: 4:28:59" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="GQe-5z-eWN">
-                                                <rect key="frame" x="8" y="293" width="304" height="25"/>
+                                                <rect key="frame" x="7" y="293" width="304" height="25"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
                                             <textField opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Marathon Training" textAlignment="center" minimumFontSize="1" translatesAutoresizingMaskIntoConstraints="NO" id="1hP-z2-k7P">
-                                                <rect key="frame" x="8" y="121" width="305" height="45"/>
+                                                <rect key="frame" x="7" y="121" width="305" height="45"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <fontDescription key="fontDescription" name="SnellRoundhand" family="Snell Roundhand" pointSize="28"/>
                                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                             </textField>
                                         </subviews>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="320" id="7Tm-DK-FjK"/>
+                                            <constraint firstAttribute="height" constant="320" id="KcH-Do-9zo"/>
+                                        </constraints>
                                     </view>
-                                    <view opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="vUK-v9-g9y" userLabel="Layout6">
-                                        <rect key="frame" x="-1" y="0.0" width="322" height="320"/>
-                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                    <view opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vUK-v9-g9y" userLabel="Layout6">
+                                        <rect key="frame" x="0.0" y="0.0" width="320" height="320"/>
                                         <subviews>
                                             <imageView userInteractionEnabled="NO" alpha="0.80000000000000004" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Label" translatesAutoresizingMaskIntoConstraints="NO" id="mOx-7v-4Qf">
-                                                <rect key="frame" x="40" y="113" width="244" height="87"/>
+                                                <rect key="frame" x="38" y="113" width="244" height="87"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                                             </imageView>
                                             <textField opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.80000001192092896" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Fremont, Ca" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="S2l-qi-TdK">
-                                                <rect key="frame" x="9" y="77" width="304" height="28"/>
+                                                <rect key="frame" x="8" y="77" width="304" height="28"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <fontDescription key="fontDescription" name="Streetwear" family="Streetwear" pointSize="18"/>
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
                                             <textField opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.80000001192092896" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="6/12/13" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="I1S-Rp-dFy">
-                                                <rect key="frame" x="10" y="162" width="304" height="17"/>
+                                                <rect key="frame" x="8" y="162" width="304" height="17"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <fontDescription key="fontDescription" name="Copperplate" family="Copperplate" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
                                             <textField opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.80000001192092896" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Duration: 4:28:59" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="usE-hw-ERn">
-                                                <rect key="frame" x="9" y="202" width="304" height="25"/>
+                                                <rect key="frame" x="8" y="202" width="304" height="25"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <fontDescription key="fontDescription" name="Copperplate" family="Copperplate" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
                                             <textField opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Marathon Training" textAlignment="center" minimumFontSize="1" translatesAutoresizingMaskIntoConstraints="NO" id="hur-U3-OSz">
-                                                <rect key="frame" x="7" y="216" width="305" height="52"/>
+                                                <rect key="frame" x="6" y="216" width="305" height="52"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <fontDescription key="fontDescription" name="Streetwear" family="Streetwear" pointSize="20"/>
                                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                             </textField>
                                             <textField opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.80000001192092896" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="26.2" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="wCj-mF-Sdh">
-                                                <rect key="frame" x="65" y="112" width="193" height="42"/>
+                                                <rect key="frame" x="63" y="112" width="193" height="42"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                                                 <fontDescription key="fontDescription" name="Copperplate-Bold" family="Copperplate" pointSize="40"/>
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
                                         </subviews>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="320" id="PuW-kh-yvo"/>
+                                            <constraint firstAttribute="width" constant="320" id="xeY-Tz-HGx"/>
+                                        </constraints>
                                     </view>
-                                    <view opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="tFr-rc-TjC" userLabel="Layout7">
-                                        <rect key="frame" x="-1" y="0.0" width="322" height="320"/>
-                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                    <view opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tFr-rc-TjC" userLabel="Layout7">
+                                        <rect key="frame" x="0.0" y="0.0" width="320" height="320"/>
                                         <subviews>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Ribbon" translatesAutoresizingMaskIntoConstraints="NO" id="odg-y4-TeQ">
-                                                <rect key="frame" x="18" y="0.0" width="74" height="126"/>
+                                                <rect key="frame" x="17" y="0.0" width="74" height="126"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                                             </imageView>
                                             <textField opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.80000001192092896" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Fremont, Ca" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="naQ-KY-ssz">
-                                                <rect key="frame" x="102" y="49" width="212" height="28"/>
+                                                <rect key="frame" x="100" y="49" width="212" height="28"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <fontDescription key="fontDescription" name="Copperplate" family="Copperplate" pointSize="16"/>
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
                                             <textField opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.80000001192092896" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Dec 31, 2017" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="iHR-zl-7K9">
-                                                <rect key="frame" x="8" y="134" width="99" height="17"/>
+                                                <rect key="frame" x="7" y="134" width="99" height="17"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <fontDescription key="fontDescription" name="Copperplate" family="Copperplate" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
                                             <textField opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Marathon Training" textAlignment="center" minimumFontSize="1" translatesAutoresizingMaskIntoConstraints="NO" id="9c9-o8-wtL">
-                                                <rect key="frame" x="100" y="27" width="212" height="36"/>
+                                                <rect key="frame" x="98" y="27" width="212" height="36"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                                <fontDescription key="fontDescription" name="Streetwear" family="Streetwear" pointSize="20"/>
+                                                <fontDescription key="fontDescription" name="Copperplate" family="Copperplate" pointSize="20"/>
                                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                             </textField>
                                             <textField opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.80000001192092896" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="M" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="etB-fb-g7C">
-                                                <rect key="frame" x="44" y="20" width="23" height="10"/>
+                                                <rect key="frame" x="43" y="20" width="23" height="10"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="12"/>
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
                                             <textField opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.80000001192092896" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="4:28:59" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="V8A-gE-Drv">
-                                                <rect key="frame" x="160" y="8" width="60" height="20"/>
+                                                <rect key="frame" x="158" y="8" width="60" height="20"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <fontDescription key="fontDescription" name="Copperplate" family="Copperplate" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
                                             <imageView userInteractionEnabled="NO" alpha="0.80000001192092896" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="IconTimer" translatesAutoresizingMaskIntoConstraints="NO" id="Quk-Nd-oLM">
-                                                <rect key="frame" x="223" y="8" width="15" height="17"/>
+                                                <rect key="frame" x="221" y="8" width="15" height="17"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                                             </imageView>
                                             <imageView userInteractionEnabled="NO" alpha="0.80000001192092896" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="IconClock-1" translatesAutoresizingMaskIntoConstraints="NO" id="egp-79-BeG">
@@ -765,26 +648,30 @@
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             </imageView>
                                             <textField opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.80000001192092896" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="8'44&quot;" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Sov-MA-NE4">
-                                                <rect key="frame" x="246" y="8" width="54" height="20"/>
+                                                <rect key="frame" x="244" y="8" width="54" height="20"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <fontDescription key="fontDescription" name="Copperplate" family="Copperplate" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
                                             <textField opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.80000001192092896" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="15.5" textAlignment="center" minimumFontSize="20" translatesAutoresizingMaskIntoConstraints="NO" id="Llc-KA-772">
-                                                <rect key="frame" x="30" y="24" width="51" height="50"/>
+                                                <rect key="frame" x="29" y="24" width="51" height="50"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <fontDescription key="fontDescription" name="HelveticaNeue-CondensedBlack" family="Helvetica Neue" pointSize="40"/>
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
                                         </subviews>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="320" id="2c1-lW-wVV"/>
+                                            <constraint firstAttribute="height" constant="320" id="Hd4-ug-XKU"/>
+                                        </constraints>
                                     </view>
                                     <view opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eLF-RL-ERj" userLabel="Layout1">
                                         <rect key="frame" x="0.0" y="0.0" width="320" height="320"/>
                                         <subviews>
                                             <textField opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.5" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="RUN" textAlignment="center" minimumFontSize="8" translatesAutoresizingMaskIntoConstraints="NO" id="my5-v9-val">
-                                                <rect key="frame" x="26" y="108" width="265" height="119"/>
+                                                <rect key="frame" x="26" y="108" width="266" height="119"/>
                                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <fontDescription key="fontDescription" name="AquaGrotesque" family="Aqua Grotesque" pointSize="100"/>
@@ -883,7 +770,7 @@
                                                 </constraints>
                                             </stackView>
                                             <textField opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="15.88 Miles" textAlignment="natural" adjustsFontSizeToFit="NO" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="w9i-YU-lxW">
-                                                <rect key="frame" x="8" y="248" width="303" height="47"/>
+                                                <rect key="frame" x="10" y="248" width="303" height="47"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="34"/>
@@ -894,14 +781,14 @@
                                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                                             </imageView>
                                             <textField opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.80000000000000004" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="60°" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="9sl-8Z-3Lc">
-                                                <rect key="frame" x="52" y="25" width="224" height="34"/>
+                                                <rect key="frame" x="53" y="25" width="224" height="34"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="36"/>
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
                                             <textField opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="15.88 Miles" textAlignment="natural" adjustsFontSizeToFit="NO" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="uDL-Ts-fZI">
-                                                <rect key="frame" x="9" y="265" width="303" height="47"/>
+                                                <rect key="frame" x="11" y="265" width="303" height="47"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="34"/>
@@ -916,11 +803,12 @@
                                             <constraint firstItem="swn-Vf-tI0" firstAttribute="leading" secondItem="wZM-12-Yzn" secondAttribute="trailing" id="9zi-YV-JAC"/>
                                             <constraint firstItem="8vD-Nm-XBs" firstAttribute="top" secondItem="eLF-RL-ERj" secondAttribute="top" constant="8" id="GLO-pz-ibj"/>
                                             <constraint firstAttribute="bottom" secondItem="swn-Vf-tI0" secondAttribute="bottom" constant="8" id="IHY-g7-fUc"/>
+                                            <constraint firstAttribute="width" constant="320" id="a3L-Wx-KdN"/>
+                                            <constraint firstAttribute="height" constant="320" id="xuE-Il-6h9"/>
                                         </constraints>
                                     </view>
-                                    <view opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="dee-wy-bS9" userLabel="Layout4">
-                                        <rect key="frame" x="-1" y="0.0" width="321" height="320"/>
-                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                    <view opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dee-wy-bS9" userLabel="Layout4">
+                                        <rect key="frame" x="0.0" y="0.0" width="320" height="320"/>
                                         <subviews>
                                             <imageView userInteractionEnabled="NO" alpha="0.40000000000000002" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Slp-mQ-LA8">
                                                 <rect key="frame" x="0.0" y="247" width="325" height="43"/>
@@ -933,74 +821,201 @@
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             </imageView>
                                             <textField opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.80000001192092896" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="FREMONT, CA" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Fah-ap-bTv">
-                                                <rect key="frame" x="8" y="26" width="305" height="18"/>
+                                                <rect key="frame" x="7" y="26" width="305" height="18"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="12"/>
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
                                             <textField opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.80000001192092896" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="26.2" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="0yI-Ff-w8d">
-                                                <rect key="frame" x="8" y="247" width="305" height="43"/>
+                                                <rect key="frame" x="7" y="247" width="305" height="43"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                                                 <nil key="textColor"/>
                                                 <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="32"/>
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
                                             <textField opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.80000001192092896" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="26.2" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Q1U-4F-tuS">
-                                                <rect key="frame" x="8" y="269" width="305" height="43"/>
+                                                <rect key="frame" x="7" y="269" width="305" height="43"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                                                 <nil key="textColor"/>
                                                 <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="32"/>
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
                                             <textField opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.80000001192092896" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="July 24, 1977 at 8:45 am" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="qyg-OS-s1s">
-                                                <rect key="frame" x="8" y="8" width="305" height="17"/>
+                                                <rect key="frame" x="7" y="8" width="305" height="17"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
                                             <textField opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.80000001192092896" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="MARATHON TRAINING" minimumFontSize="1" translatesAutoresizingMaskIntoConstraints="NO" id="KCL-2B-D23">
-                                                <rect key="frame" x="8" y="225" width="305" height="23"/>
+                                                <rect key="frame" x="7" y="225" width="305" height="23"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits" autocapitalizationType="allCharacters"/>
                                             </textField>
                                             <textField opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.80000001192092896" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Duration: 4:28:59" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="wYs-EY-rNF">
-                                                <rect key="frame" x="8" y="293" width="305" height="25"/>
+                                                <rect key="frame" x="7" y="293" width="305" height="25"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
                                             <textField opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.80000001192092896" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="MARATHON TRAINING" minimumFontSize="1" translatesAutoresizingMaskIntoConstraints="NO" id="Jpe-gx-zw8">
-                                                <rect key="frame" x="8" y="247" width="305" height="23"/>
+                                                <rect key="frame" x="7" y="247" width="305" height="23"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits" autocapitalizationType="allCharacters"/>
                                             </textField>
                                         </subviews>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="320" id="ZWL-qd-V9c"/>
+                                            <constraint firstAttribute="width" constant="320" id="fSj-e2-L3R"/>
+                                        </constraints>
+                                    </view>
+                                    <view opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6m2-K7-Z9m" userLabel="Layout2">
+                                        <rect key="frame" x="0.0" y="0.0" width="320" height="320"/>
+                                        <subviews>
+                                            <imageView userInteractionEnabled="NO" alpha="0.80000000000000004" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="TopGradient" translatesAutoresizingMaskIntoConstraints="NO" id="jzV-ad-g3x">
+                                                <rect key="frame" x="1" y="8" width="210" height="34"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            </imageView>
+                                            <textField opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.80000000000000004" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="MARATHON TRAINING" textAlignment="center" minimumFontSize="1" background="TitleGradient" translatesAutoresizingMaskIntoConstraints="NO" id="vd3-DN-qJ0">
+                                                <rect key="frame" x="7" y="255" width="305" height="37"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                <fontDescription key="fontDescription" name="HelveticaNeue-BoldItalic" family="Helvetica Neue" pointSize="28"/>
+                                                <textInputTraits key="textInputTraits" autocapitalizationType="allCharacters"/>
+                                            </textField>
+                                            <textField opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.80000000000000004" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="July 24, 1977 at 8:45 am" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="sSA-Pl-FBF">
+                                                <rect key="frame" x="81" y="297" width="158" height="17"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                            </textField>
+                                            <imageView userInteractionEnabled="NO" alpha="0.80000000000000004" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="IconClock-1" translatesAutoresizingMaskIntoConstraints="NO" id="Px6-oC-rS7">
+                                                <rect key="frame" x="89" y="46" width="16" height="16"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            </imageView>
+                                            <textField opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.80000000000000004" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="4:28:59" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="b3s-Tr-T2v">
+                                                <rect key="frame" x="28" y="45" width="60" height="20"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                            </textField>
+                                            <textField opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.80000000000000004" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="15.88 Miles" textAlignment="natural" adjustsFontSizeToFit="NO" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="OBC-6E-JmI">
+                                                <rect key="frame" x="8" y="8" width="206" height="34"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="28"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                            </textField>
+                                            <textField opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.80000000000000004" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="FREMONT, CA" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="t5D-Hv-q1I">
+                                                <rect key="frame" x="8" y="234" width="304" height="18"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                            </textField>
+                                            <imageView userInteractionEnabled="NO" alpha="0.80000000000000004" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="IconTimer" translatesAutoresizingMaskIntoConstraints="NO" id="mnS-Jo-rvL">
+                                                <rect key="frame" x="8" y="45" width="15" height="17"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                                            </imageView>
+                                            <imageView userInteractionEnabled="NO" alpha="0.80000000000000004" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="IconLightClouds" translatesAutoresizingMaskIntoConstraints="NO" id="gHy-1x-nUQ">
+                                                <rect key="frame" x="285" y="8" width="27" height="31"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            </imageView>
+                                            <textField opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.80000000000000004" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="8'44&quot;" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="KZD-7j-1NP">
+                                                <rect key="frame" x="110" y="45" width="54" height="20"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                            </textField>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="320" id="ZaY-oK-1eA"/>
+                                            <constraint firstAttribute="width" constant="320" id="izR-DA-BDO"/>
+                                        </constraints>
+                                    </view>
+                                    <view opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="F31-cg-QtU" userLabel="Layout3">
+                                        <rect key="frame" x="0.0" y="0.0" width="320" height="320"/>
+                                        <subviews>
+                                            <imageView userInteractionEnabled="NO" alpha="0.29999999999999999" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="iAR-xy-ZtW">
+                                                <rect key="frame" x="0.0" y="302" width="320" height="18"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                            </imageView>
+                                            <textField opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="MARATHON TRAINING" textAlignment="center" minimumFontSize="1" translatesAutoresizingMaskIntoConstraints="NO" id="KTJ-tc-cUL">
+                                                <rect key="frame" x="7" y="276" width="305" height="27"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                <fontDescription key="fontDescription" name="NexaBold" family="Nexa Bold" pointSize="20"/>
+                                                <textInputTraits key="textInputTraits" autocapitalizationType="allCharacters"/>
+                                            </textField>
+                                            <textField opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="July 24, 1977" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="qjg-XL-IPq">
+                                                <rect key="frame" x="230" y="4" width="85" height="12"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                <fontDescription key="fontDescription" name="NexaBold" family="Nexa Bold" pointSize="12"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                            </textField>
+                                            <textField opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="2.4 MILES・DURATION: 4:28:59・PACE: 8:30" textAlignment="center" minimumFontSize="2" translatesAutoresizingMaskIntoConstraints="NO" id="3uS-gP-4IX">
+                                                <rect key="frame" x="0.0" y="305" width="320" height="15"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                <fontDescription key="fontDescription" name="NexaBold" family="Nexa Bold" pointSize="13"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                            </textField>
+                                            <textField opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="FREMONT, CA" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="5yp-Oe-JWg">
+                                                <rect key="frame" x="7" y="4" width="165" height="12"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                <fontDescription key="fontDescription" name="NexaBold" family="Nexa Bold" pointSize="12"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                            </textField>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="320" id="1tG-kh-gpC"/>
+                                            <constraint firstAttribute="height" constant="320" id="NLi-7m-uSk"/>
+                                        </constraints>
                                     </view>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
+                                    <constraint firstItem="eLF-RL-ERj" firstAttribute="centerX" secondItem="zRe-0x-Eu5" secondAttribute="centerX" id="4ce-SC-WHS"/>
                                     <constraint firstItem="LUr-4g-A3Q" firstAttribute="trailing" secondItem="eLF-RL-ERj" secondAttribute="trailing" id="BRm-b2-iGa"/>
+                                    <constraint firstItem="6m2-K7-Z9m" firstAttribute="centerX" secondItem="zRe-0x-Eu5" secondAttribute="centerX" id="Bsl-Nj-QFK"/>
+                                    <constraint firstItem="dee-wy-bS9" firstAttribute="centerX" secondItem="zRe-0x-Eu5" secondAttribute="centerX" id="Dll-JM-5FE"/>
                                     <constraint firstAttribute="bottom" secondItem="eLF-RL-ERj" secondAttribute="bottom" id="MTO-Nn-Jca"/>
+                                    <constraint firstItem="anZ-9h-bgM" firstAttribute="centerY" secondItem="zRe-0x-Eu5" secondAttribute="centerY" id="N6s-IM-VoU"/>
+                                    <constraint firstItem="dee-wy-bS9" firstAttribute="centerY" secondItem="zRe-0x-Eu5" secondAttribute="centerY" id="PEi-54-fcz"/>
                                     <constraint firstItem="LUr-4g-A3Q" firstAttribute="leading" secondItem="eLF-RL-ERj" secondAttribute="leading" id="Slt-k4-9Ss"/>
+                                    <constraint firstItem="eLF-RL-ERj" firstAttribute="centerY" secondItem="zRe-0x-Eu5" secondAttribute="centerY" id="Unc-qm-1C0"/>
+                                    <constraint firstItem="vUK-v9-g9y" firstAttribute="centerY" secondItem="zRe-0x-Eu5" secondAttribute="centerY" id="VQL-MZ-EbJ"/>
+                                    <constraint firstItem="tFr-rc-TjC" firstAttribute="centerY" secondItem="zRe-0x-Eu5" secondAttribute="centerY" id="Wy0-c8-9NS"/>
+                                    <constraint firstItem="tFr-rc-TjC" firstAttribute="centerX" secondItem="zRe-0x-Eu5" secondAttribute="centerX" id="aZT-8z-k1C"/>
+                                    <constraint firstItem="F31-cg-QtU" firstAttribute="centerY" secondItem="zRe-0x-Eu5" secondAttribute="centerY" id="byf-8n-XUE"/>
                                     <constraint firstAttribute="bottom" secondItem="eLF-RL-ERj" secondAttribute="bottom" id="cev-e4-GZk"/>
                                     <constraint firstItem="eLF-RL-ERj" firstAttribute="top" secondItem="zRe-0x-Eu5" secondAttribute="top" id="cfk-le-Sqo"/>
                                     <constraint firstAttribute="height" constant="320" id="cpb-Gy-o7M"/>
+                                    <constraint firstItem="F31-cg-QtU" firstAttribute="centerX" secondItem="zRe-0x-Eu5" secondAttribute="centerX" id="hLF-5h-yzv"/>
+                                    <constraint firstItem="vUK-v9-g9y" firstAttribute="centerX" secondItem="zRe-0x-Eu5" secondAttribute="centerX" id="i3K-dU-Zda"/>
                                     <constraint firstItem="LUr-4g-A3Q" firstAttribute="top" secondItem="zRe-0x-Eu5" secondAttribute="top" id="iAe-hL-dAe"/>
                                     <constraint firstItem="eLF-RL-ERj" firstAttribute="leading" secondItem="zRe-0x-Eu5" secondAttribute="leading" id="mpv-rb-GJv"/>
                                     <constraint firstAttribute="bottom" secondItem="LUr-4g-A3Q" secondAttribute="bottom" id="n5s-WB-VHv"/>
+                                    <constraint firstItem="anZ-9h-bgM" firstAttribute="centerX" secondItem="zRe-0x-Eu5" secondAttribute="centerX" id="pEE-Dg-Njm"/>
                                     <constraint firstAttribute="trailing" secondItem="eLF-RL-ERj" secondAttribute="trailing" id="q7L-E1-dYo"/>
+                                    <constraint firstItem="6m2-K7-Z9m" firstAttribute="centerY" secondItem="zRe-0x-Eu5" secondAttribute="centerY" id="qoU-GE-h2S"/>
                                     <constraint firstAttribute="width" constant="320" id="tsV-fY-Ar3"/>
                                 </constraints>
                             </view>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="lTQ-gG-SR0">
-                                <rect key="frame" x="34.5" y="402" width="305" height="73"/>
+                                <rect key="frame" x="54" y="402" width="305" height="73"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="UZN-Hf-WWk">
                                         <rect key="frame" x="0.0" y="0.0" width="305" height="35"/>
@@ -1155,7 +1170,7 @@
                                 </constraints>
                             </stackView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vAx-mL-n2z">
-                                <rect key="frame" x="157" y="589" width="70" height="70"/>
+                                <rect key="frame" x="177" y="658" width="70" height="70"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
                                 <state key="normal" title="SHARE" image="Share">
@@ -1202,7 +1217,6 @@
                         <outlet property="PhotoDistance" destination="w9i-YU-lxW" id="2CD-OY-HR1"/>
                         <outlet property="PhotoDistance1b" destination="uDL-Ts-fZI" id="qqq-D5-Ckj"/>
                         <outlet property="PhotoDistance2" destination="OBC-6E-JmI" id="m9i-nD-Pu2"/>
-                        <outlet property="PhotoDistance3" destination="a2I-ZG-KnQ" id="xs2-tW-Gi1"/>
                         <outlet property="PhotoDistance4" destination="0yI-Ff-w8d" id="W3h-7U-HPq"/>
                         <outlet property="PhotoDistance4b" destination="Q1U-4F-tuS" id="mEW-eR-bW3"/>
                         <outlet property="PhotoDistance5" destination="uyg-13-vIs" id="McF-PQ-cn7"/>
@@ -1210,7 +1224,7 @@
                         <outlet property="PhotoDistance7" destination="Llc-KA-772" id="ZiN-3B-r3K"/>
                         <outlet property="PhotoDuration" destination="7gG-8Q-OYA" id="Kbm-OF-hBo"/>
                         <outlet property="PhotoDuration2" destination="b3s-Tr-T2v" id="CMe-dt-O8o"/>
-                        <outlet property="PhotoDuration3" destination="3uS-gP-4IX" id="cV9-aQ-9v2"/>
+                        <outlet property="PhotoInfo3" destination="3uS-gP-4IX" id="aFZ-d2-ofQ"/>
                         <outlet property="PhotoLocation" destination="mG2-ZO-Ccd" id="kY0-sO-GnR"/>
                         <outlet property="PhotoLocation2" destination="t5D-Hv-q1I" id="o0R-dT-5se"/>
                         <outlet property="PhotoLocation3" destination="5yp-Oe-JWg" id="kKS-2B-0el"/>
@@ -1218,12 +1232,10 @@
                         <outlet property="PhotoLocation5" destination="TrG-iJ-GGa" id="5Py-Vk-F3A"/>
                         <outlet property="PhotoLocation6" destination="S2l-qi-TdK" id="Rcb-SW-3Sp"/>
                         <outlet property="PhotoLocation7" destination="naQ-KY-ssz" id="FbG-Hg-AtO"/>
-                        <outlet property="PhotoMetrics3" destination="a0i-4B-aDd" id="30b-vH-qaZ"/>
                         <outlet property="PhotoMetrics7" destination="etB-fb-g7C" id="FTM-ii-3QT"/>
                         <outlet property="PhotoMonth" destination="6nY-ms-wMO" id="YDz-O6-fnh"/>
                         <outlet property="PhotoPace" destination="adH-OU-Lll" id="U51-b9-2Yy"/>
                         <outlet property="PhotoPace2" destination="KZD-7j-1NP" id="Bdr-gX-JdK"/>
-                        <outlet property="PhotoPace3" destination="FY7-DL-PUd" id="tBo-4G-kOn"/>
                         <outlet property="PhotoPace7" destination="Sov-MA-NE4" id="h40-Sl-Z33"/>
                         <outlet property="PhotoTime4" destination="wYs-EY-rNF" id="Tts-LJ-4sP"/>
                         <outlet property="PhotoTime5" destination="GQe-5z-eWN" id="6cu-6p-TlX"/>
@@ -1241,7 +1253,6 @@
                         <outlet property="PhotoWeatherIcon" destination="1dB-O0-27c" id="dfA-Fm-prQ"/>
                         <outlet property="PhotoWeatherIcon2" destination="gHy-1x-nUQ" id="FOQ-9f-vfe"/>
                         <outlet property="PhotoYear" destination="ANd-0N-dA2" id="rWj-YP-Ynj"/>
-                        <outlet property="TimeBacker3" destination="mS0-bz-lby" id="CWk-Vf-2kF"/>
                         <outlet property="ToggleDurationPace" destination="YWQ-78-HrE" id="6dj-Yg-3UC"/>
                         <outlet property="btnLayout1" destination="gXP-qn-DdZ" id="bLw-PW-UuS"/>
                         <outlet property="btnLayout2" destination="VJx-YW-38H" id="XXg-bk-RJE"/>
@@ -1257,7 +1268,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cO9-U4-MVH" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="OnX-Ea-q1E" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="1945" y="62"/>
+            <point key="canvasLocation" x="1944.8" y="61.619190404797607"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="rpe-6U-3t5">
@@ -1294,7 +1305,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pZO-td-cH0" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="20" y="825"/>
+            <point key="canvasLocation" x="19" y="847"/>
         </scene>
         <!--Summary View Controller-->
         <scene sceneID="Wev-5W-zgj">
@@ -1305,26 +1316,26 @@
                         <viewControllerLayoutGuide type="bottom" id="ICm-YZ-MAP"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="8ta-6M-GXR">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="609"/>
+                        <rect key="frame" x="0.0" y="0.0" width="398" height="570"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="25" translatesAutoresizingMaskIntoConstraints="NO" id="s5s-PI-1ib" userLabel="Stats Stack View">
-                                <rect key="frame" x="20" y="20" width="335" height="429"/>
+                                <rect key="frame" x="10" y="0.0" width="378" height="410"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="SHI-9O-2m6" userLabel="Date Stack View">
-                                        <rect key="frame" x="0.0" y="0.0" width="335" height="66"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="378" height="62"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Month" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AlJ-AF-AiX" userLabel="Date">
-                                                <rect key="frame" x="0.0" y="0.0" width="335" height="19"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="378" height="19"/>
                                                 <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="16"/>
                                                 <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <stackView opaque="NO" contentMode="scaleToFill" spacing="7" translatesAutoresizingMaskIntoConstraints="NO" id="vnu-WG-B6h" userLabel="Date Input Stack View">
-                                                <rect key="frame" x="0.0" y="29" width="335" height="37"/>
+                                                <rect key="frame" x="0.0" y="29" width="378" height="33"/>
                                                 <subviews>
                                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" horizontalHuggingPriority="249" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="January" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="3ed-Ez-DdA">
-                                                        <rect key="frame" x="0.0" y="0.0" width="335" height="37"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="378" height="33"/>
                                                         <color key="textColor" red="0.47450980390000003" green="0.57647058819999997" blue="0.2784313725" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="20"/>
                                                         <textInputTraits key="textInputTraits" returnKeyType="done"/>
@@ -1337,25 +1348,25 @@
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="sj9-w4-gXb" userLabel="Distance Stack View">
-                                        <rect key="frame" x="0.0" y="91" width="335" height="65.5"/>
+                                        <rect key="frame" x="0.0" y="87" width="378" height="62"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Total Distance" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="l9e-yC-51s" userLabel="Distance">
-                                                <rect key="frame" x="0.0" y="0.0" width="335" height="19"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="378" height="19"/>
                                                 <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="16"/>
                                                 <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <stackView opaque="NO" contentMode="scaleToFill" spacing="7" translatesAutoresizingMaskIntoConstraints="NO" id="m5R-aB-Fu4" userLabel="Distance Input Stack View">
-                                                <rect key="frame" x="0.0" y="29" width="335" height="36.5"/>
+                                                <rect key="frame" x="0.0" y="29" width="378" height="33"/>
                                                 <subviews>
                                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="0.0" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="wnb-RU-wOQ">
-                                                        <rect key="frame" x="0.0" y="0.0" width="178" height="36.5"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="221" height="33"/>
                                                         <color key="textColor" red="0.47450980390000003" green="0.57647058819999997" blue="0.2784313725" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="20"/>
                                                         <textInputTraits key="textInputTraits" keyboardType="decimalPad" returnKeyType="done"/>
                                                     </textField>
                                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Miles" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Fzw-yw-rIS">
-                                                        <rect key="frame" x="185" y="0.0" width="150" height="36.5"/>
+                                                        <rect key="frame" x="228" y="0.0" width="150" height="33"/>
                                                         <constraints>
                                                             <constraint firstAttribute="width" constant="150" id="O7K-hQ-Ryt"/>
                                                         </constraints>
@@ -1368,19 +1379,19 @@
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="cUF-sc-Ixn" userLabel="Time Stack View">
-                                        <rect key="frame" x="0.0" y="181.5" width="335" height="66"/>
+                                        <rect key="frame" x="0.0" y="174" width="378" height="62"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Total Duration" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wEx-vL-qCK" userLabel="Time">
-                                                <rect key="frame" x="0.0" y="0.0" width="335" height="19"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="378" height="19"/>
                                                 <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="16"/>
                                                 <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <stackView opaque="NO" contentMode="scaleToFill" spacing="7" translatesAutoresizingMaskIntoConstraints="NO" id="An6-qP-yNZ" userLabel="Time Input Stack View">
-                                                <rect key="frame" x="0.0" y="29" width="335" height="37"/>
+                                                <rect key="frame" x="0.0" y="29" width="378" height="33"/>
                                                 <subviews>
                                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" horizontalHuggingPriority="249" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="00:00:00" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="8tu-nM-Ya6">
-                                                        <rect key="frame" x="0.0" y="0.0" width="335" height="37"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="378" height="33"/>
                                                         <color key="textColor" red="0.47450980390000003" green="0.57647058819999997" blue="0.2784313725" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="20"/>
                                                         <textInputTraits key="textInputTraits" keyboardType="numbersAndPunctuation" returnKeyType="done"/>
@@ -1390,19 +1401,19 @@
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="3Q7-gp-2Db" userLabel="Pace Stack View">
-                                        <rect key="frame" x="0.0" y="272.5" width="335" height="65.5"/>
+                                        <rect key="frame" x="0.0" y="261" width="378" height="62"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Average Pace" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bWU-FK-1kP" userLabel="Time">
-                                                <rect key="frame" x="0.0" y="0.0" width="335" height="19"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="378" height="19"/>
                                                 <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="16"/>
                                                 <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <stackView opaque="NO" contentMode="scaleToFill" spacing="7" translatesAutoresizingMaskIntoConstraints="NO" id="hFF-oB-7mx" userLabel="Time Input Stack View">
-                                                <rect key="frame" x="0.0" y="29" width="335" height="36.5"/>
+                                                <rect key="frame" x="0.0" y="29" width="378" height="33"/>
                                                 <subviews>
                                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" horizontalHuggingPriority="249" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="00:00" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="7Tc-No-ZG3">
-                                                        <rect key="frame" x="0.0" y="0.0" width="335" height="36.5"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="378" height="33"/>
                                                         <color key="textColor" red="0.47450980390000003" green="0.57647058819999997" blue="0.2784313725" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="20"/>
                                                         <textInputTraits key="textInputTraits" keyboardType="numbersAndPunctuation" returnKeyType="done"/>
@@ -1412,19 +1423,19 @@
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="L1e-cC-T5E" userLabel="Title Stack View">
-                                        <rect key="frame" x="0.0" y="363" width="335" height="66"/>
+                                        <rect key="frame" x="0.0" y="348" width="378" height="62"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Comments" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="w0O-XP-RZv">
-                                                <rect key="frame" x="0.0" y="0.0" width="335" height="19"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="378" height="19"/>
                                                 <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="16"/>
                                                 <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <stackView opaque="NO" contentMode="scaleToFill" spacing="7" translatesAutoresizingMaskIntoConstraints="NO" id="jSS-4b-lbt" userLabel="Title Input Stack View">
-                                                <rect key="frame" x="0.0" y="29" width="335" height="37"/>
+                                                <rect key="frame" x="0.0" y="29" width="378" height="33"/>
                                                 <subviews>
                                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" horizontalHuggingPriority="249" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="qHy-e7-OnI">
-                                                        <rect key="frame" x="0.0" y="0.0" width="335" height="37"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="378" height="33"/>
                                                         <color key="textColor" red="0.47450980390000003" green="0.57647058819999997" blue="0.2784313725" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="20"/>
                                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences" returnKeyType="done"/>
@@ -1438,10 +1449,10 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="s5s-PI-1ib" firstAttribute="top" secondItem="8ta-6M-GXR" secondAttribute="topMargin" constant="20" id="9bc-Ub-Y5c"/>
-                            <constraint firstAttribute="trailing" secondItem="s5s-PI-1ib" secondAttribute="trailing" constant="20" id="9fh-qX-yUH"/>
+                            <constraint firstItem="s5s-PI-1ib" firstAttribute="top" secondItem="8ta-6M-GXR" secondAttribute="topMargin" id="9bc-Ub-Y5c"/>
+                            <constraint firstAttribute="trailing" secondItem="s5s-PI-1ib" secondAttribute="trailing" constant="10" id="9fh-qX-yUH"/>
                             <constraint firstAttribute="bottomMargin" secondItem="s5s-PI-1ib" secondAttribute="bottom" constant="160" id="h4p-Gf-as4"/>
-                            <constraint firstItem="s5s-PI-1ib" firstAttribute="leading" secondItem="8ta-6M-GXR" secondAttribute="leading" constant="20" id="lhu-5u-rkx"/>
+                            <constraint firstItem="s5s-PI-1ib" firstAttribute="leading" secondItem="8ta-6M-GXR" secondAttribute="leading" constant="10" id="lhu-5u-rkx"/>
                         </constraints>
                     </view>
                     <connections>
@@ -1456,7 +1467,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="i7f-66-Awl" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="996" y="936"/>
+            <point key="canvasLocation" x="997" y="944"/>
         </scene>
         <!--Summary Preview View Controller-->
         <scene sceneID="LOC-Ht-k16">
@@ -1467,11 +1478,11 @@
                         <viewControllerLayoutGuide type="bottom" id="0KZ-r3-2TJ"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="rAn-Se-sp9">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Nsk-UD-VgA">
-                                <rect key="frame" x="28" y="74" width="320" height="320"/>
+                                <rect key="frame" x="47" y="74" width="320" height="320"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="FUE-0G-cPp">
                                         <rect key="frame" x="0.0" y="0.0" width="320" height="320"/>
@@ -1498,31 +1509,6 @@
                                         <rect key="frame" x="93" y="57" width="134" height="205"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                                         <subviews>
-                                            <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="FFa-kt-8S8">
-                                                <rect key="frame" x="22" y="34" width="488" height="311"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                <subviews>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="99" textAlignment="center" lineBreakMode="tailTruncation" minimumFontSize="2" translatesAutoresizingMaskIntoConstraints="NO" id="vyD-si-IZh">
-                                                        <rect key="frame" x="0.0" y="0.0" width="488" height="72"/>
-                                                        <fontDescription key="fontDescription" type="system" weight="black" pointSize="60"/>
-                                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                                        <nil key="highlightedColor"/>
-                                                        <size key="shadowOffset" width="0.0" height="0.0"/>
-                                                    </label>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="MILES" textAlignment="center" lineBreakMode="tailTruncation" minimumFontSize="2" translatesAutoresizingMaskIntoConstraints="NO" id="Gdm-9A-1Lt">
-                                                        <rect key="frame" x="0.0" y="72" width="488" height="119.5"/>
-                                                        <fontDescription key="fontDescription" type="system" weight="black" pointSize="100"/>
-                                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                                        <nil key="highlightedColor"/>
-                                                    </label>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="JANUARY" textAlignment="center" lineBreakMode="tailTruncation" minimumFontSize="2" translatesAutoresizingMaskIntoConstraints="NO" id="8Eh-h0-glH">
-                                                        <rect key="frame" x="0.0" y="191.5" width="488" height="119.5"/>
-                                                        <fontDescription key="fontDescription" type="system" weight="black" pointSize="100"/>
-                                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                                        <nil key="highlightedColor"/>
-                                                    </label>
-                                                </subviews>
-                                            </stackView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="38:00:00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="2" translatesAutoresizingMaskIntoConstraints="NO" id="Cvo-C5-LDI">
                                                 <rect key="frame" x="22" y="141" width="88" height="14"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
@@ -1564,16 +1550,133 @@
                                     <constraint firstAttribute="width" constant="320" id="fOn-ME-00T"/>
                                 </constraints>
                             </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5kQ-Rq-DFg">
+                                <rect key="frame" x="172" y="658" width="70" height="70"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="70" id="A0e-pV-OtA"/>
+                                    <constraint firstAttribute="height" constant="70" id="DTt-km-8b9"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
+                                <state key="normal" title="SHARE" image="Share">
+                                    <color key="titleColor" red="0.47450980390000003" green="0.57647058819999997" blue="0.2784313725" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="SaveToCamaraRoll:" destination="Uq2-wN-0xa" eventType="touchUpInside" id="WSw-0l-6d7"/>
+                                    <action selector="ShareImage:" destination="W3o-lg-x6J" eventType="touchUpInside" id="bbc-A1-0ce"/>
+                                </connections>
+                            </button>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="6Xq-IX-OYP">
+                                <rect key="frame" x="54.666666666666657" y="402" width="305" height="73"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" translatesAutoresizingMaskIntoConstraints="NO" id="RIZ-h9-Asi">
+                                        <rect key="frame" x="0.0" y="0.0" width="305" height="35"/>
+                                        <subviews>
+                                            <button opaque="NO" alpha="0.0" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MEG-qJ-g7A">
+                                                <rect key="frame" x="0.0" y="0.0" width="100" height="35"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="100" id="x8E-hc-xhG"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="17"/>
+                                                <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                <state key="normal" title="2" backgroundImage="LayoutCircle">
+                                                    <color key="titleColor" red="0.47450980390000003" green="0.57647058819999997" blue="0.2784313725" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="showLayout2:" destination="Uq2-wN-0xa" eventType="touchUpInside" id="fdR-6V-swj"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="q9U-HI-Kgs">
+                                                <rect key="frame" x="111.66666666666669" y="0.0" width="35" height="35"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="35" id="70I-vd-kos"/>
+                                                    <constraint firstAttribute="width" constant="35" id="OoG-W0-Hpd"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="17"/>
+                                                <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                <state key="normal" title="1" backgroundImage="LayoutCircle">
+                                                    <color key="titleColor" red="0.47450980390000003" green="0.57647058819999997" blue="0.2784313725" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="showLayout1:" destination="Uq2-wN-0xa" eventType="touchUpInside" id="aJC-vh-hjO"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4O2-vZ-0cA">
+                                                <rect key="frame" x="158.33333333333334" y="0.0" width="35" height="35"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="35" id="4gF-l7-EDU"/>
+                                                    <constraint firstAttribute="width" constant="35" id="qJs-aT-cS6"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="17"/>
+                                                <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                <state key="normal" title="2" backgroundImage="LayoutCircle">
+                                                    <color key="titleColor" red="0.47450980390000003" green="0.57647058819999997" blue="0.2784313725" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="showLayout2:" destination="Uq2-wN-0xa" eventType="touchUpInside" id="09e-2I-w6Q"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" alpha="0.0" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pQw-Ww-V1Z">
+                                                <rect key="frame" x="205.00000000000003" y="0.0" width="99.999999999999972" height="35"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="100" id="ooo-Tp-Lhm"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="17"/>
+                                                <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                <state key="normal" title="2" backgroundImage="LayoutCircle">
+                                                    <color key="titleColor" red="0.47450980390000003" green="0.57647058819999997" blue="0.2784313725" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="showLayout2:" destination="Uq2-wN-0xa" eventType="touchUpInside" id="b8t-hs-kFh"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jei-H3-ZFJ">
+                                        <rect key="frame" x="0.0" y="43" width="305" height="30"/>
+                                        <subviews>
+                                            <textField opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Show Duration and Pace" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Gvs-vs-VDZ">
+                                                <rect key="frame" x="0.0" y="0.0" width="275" height="30"/>
+                                                <color key="textColor" red="0.47450980390000003" green="0.57647058819999997" blue="0.2784313725" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                            </textField>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="R0n-WS-l5O">
+                                                <rect key="frame" x="275" y="0.0" width="30" height="30"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="30" id="4XH-BF-5Fj"/>
+                                                    <constraint firstAttribute="height" constant="30" id="liK-qf-TfL"/>
+                                                </constraints>
+                                                <state key="normal" image="Checked"/>
+                                                <connections>
+                                                    <action selector="toggleDuratonAndPace:" destination="Uq2-wN-0xa" eventType="touchUpInside" id="W9H-Gj-yy5"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="305" id="EGI-1e-otu"/>
+                                    <constraint firstItem="jei-H3-ZFJ" firstAttribute="centerX" secondItem="6Xq-IX-OYP" secondAttribute="centerX" id="dDR-gI-MNQ"/>
+                                    <constraint firstItem="RIZ-h9-Asi" firstAttribute="centerX" secondItem="6Xq-IX-OYP" secondAttribute="centerX" id="hGk-BG-SNi"/>
+                                </constraints>
+                            </stackView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="6Xq-IX-OYP" firstAttribute="centerX" secondItem="Nsk-UD-VgA" secondAttribute="centerX" id="ITi-pP-mqn"/>
+                            <constraint firstItem="0KZ-r3-2TJ" firstAttribute="top" secondItem="5kQ-Rq-DFg" secondAttribute="bottom" constant="8" id="ScO-q2-vio"/>
                             <constraint firstItem="Nsk-UD-VgA" firstAttribute="centerX" secondItem="rAn-Se-sp9" secondAttribute="centerX" id="bSd-ef-F93"/>
                             <constraint firstItem="Nsk-UD-VgA" firstAttribute="top" secondItem="9ke-3G-QBP" secondAttribute="bottom" constant="10" id="lA3-HK-Dfi"/>
+                            <constraint firstItem="6Xq-IX-OYP" firstAttribute="top" secondItem="Nsk-UD-VgA" secondAttribute="bottom" constant="8" symbolic="YES" id="nsP-Zf-qby"/>
+                            <constraint firstItem="5kQ-Rq-DFg" firstAttribute="centerX" secondItem="rAn-Se-sp9" secondAttribute="centerX" id="pAp-bu-d0E"/>
+                            <constraint firstItem="0KZ-r3-2TJ" firstAttribute="top" secondItem="5kQ-Rq-DFg" secondAttribute="bottom" constant="8" symbolic="YES" id="qdy-Dw-fVY"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="aoq-kr-fMh"/>
                     <connections>
                         <outlet property="MileageView" destination="rAn-Se-sp9" id="B4i-TL-Ldz"/>
+                        <outlet property="PhotoImage" destination="Nsk-UD-VgA" id="OC6-Ux-uhQ"/>
+                        <outlet property="PhotoSummary" destination="A9R-Lh-ZYz" id="eZF-sY-GGp"/>
                         <outlet property="dragMileage" destination="JHe-cv-odj" id="M83-RM-tgH"/>
                     </connections>
                 </viewController>
@@ -1584,7 +1687,7 @@
                     </connections>
                 </panGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="1944.8" y="825.33733133433293"/>
+            <point key="canvasLocation" x="1944" y="848"/>
         </scene>
     </scenes>
     <resources>
@@ -1593,7 +1696,6 @@
         <image name="CenterBlur" width="600" height="385"/>
         <image name="Checked" width="40" height="40"/>
         <image name="Delete" width="76" height="76"/>
-        <image name="DistanceCircle" width="264" height="264"/>
         <image name="IconClock-1" width="25" height="25"/>
         <image name="IconLightClouds" width="49" height="43"/>
         <image name="IconTimer" width="25" height="29"/>
@@ -1603,7 +1705,6 @@
         <image name="Ribbon" width="158" height="246"/>
         <image name="ScriptFrame" width="472" height="322"/>
         <image name="Share" width="170" height="170"/>
-        <image name="TimeBacker" width="393" height="50"/>
         <image name="TitleGradient" width="640" height="60"/>
         <image name="TopGradient" width="640" height="77"/>
         <image name="Vignette" width="375" height="375"/>

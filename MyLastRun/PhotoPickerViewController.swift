@@ -8,7 +8,7 @@
 
 import UIKit
 
-class PhotoPickerViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+class PhotoPickerViewController: UIViewController, UINavigationControllerDelegate {
     
     // reference the Image
     @IBOutlet weak var photoImageView: UIImageView!
@@ -66,13 +66,9 @@ class PhotoPickerViewController: UIViewController, UIImagePickerControllerDelega
     
     // Layout 3
     @IBOutlet weak var PhotoTitle3: UITextField!
-    @IBOutlet weak var PhotoDistance3: UITextField!
-    @IBOutlet weak var PhotoMetrics3: UITextField!
     @IBOutlet weak var PhotoDate3: UITextField!
-    @IBOutlet weak var PhotoDuration3: UITextField!
-    @IBOutlet weak var PhotoPace3: UITextField!
     @IBOutlet weak var PhotoLocation3: UITextField!
-    @IBOutlet weak var TimeBacker3: UIImageView!
+    @IBOutlet weak var PhotoInfo3: UITextField!
     
     // Layout 4
     @IBOutlet weak var PhotoTitle4: UITextField!
@@ -170,18 +166,14 @@ class PhotoPickerViewController: UIViewController, UIImagePickerControllerDelega
         
         // populate layout 3
         PhotoTitle3.text = userTitleText.uppercased()
-        PhotoDistance3.text = userDistanceText
         PhotoLocation3.text = userLocationText
         PhotoDate3.text = userMonth + " " + userDay + ", " + userYear
-        PhotoDuration3.text = userDuration
-        PhotoPace3.text = userPace
         
         if(userDistanceChoice == "Miles"){
-            PhotoMetrics3.text = "M"
+            PhotoInfo3.text = userDistanceText + " M" + "・" + "TIME: " + userDuration + "・" + "PACE: " + userPace
         }else if(userDistanceChoice == "Kilometers"){
-            PhotoMetrics3.text = "K"
+            PhotoInfo3.text = userDistanceText + " KM" + "・" + "TIME: " + userDuration + "・" + "PACE: " + userPace
         }
-        
         
         // populate layout 4
         PhotoTitle4.text = userTitleText.uppercased()
@@ -193,7 +185,7 @@ class PhotoPickerViewController: UIViewController, UIImagePickerControllerDelega
         DistanceBacker4b.alpha = 0
         PhotoLocation4.text = userLocationText
         PhotoDate4.text = userMonth + " " + userDay + ", " + userYear
-        PhotoTime4.text = "Duration: " + userDuration + "・" + "Pace: " + userPace
+        PhotoTime4.text = "Time: " + userDuration + "・" + "Pace: " + userPace
         
         // populate layout 5
         PhotoTitle5.text = userTitleText
@@ -204,7 +196,7 @@ class PhotoPickerViewController: UIViewController, UIImagePickerControllerDelega
         }
         PhotoLocation5.text = userLocationText
         PhotoDate5.text = userMonth + " " + userDay + ", " + userYear
-        PhotoTime5.text = "Duration: " + userDuration + "・" + "Pace: " + userPace
+        PhotoTime5.text = "Time: " + userDuration + "・" + "Pace: " + userPace
         
         // populate layout 6
         PhotoTitle6.text = userTitleText
@@ -215,7 +207,7 @@ class PhotoPickerViewController: UIViewController, UIImagePickerControllerDelega
         }
         PhotoLocation6.text = userLocationText
         PhotoDate6.text = userMonth + " " + userDay + ", " + userYear
-        PhotoTime6.text = "Duration: " + userDuration + "・" + "Pace: " + userPace
+        PhotoTime6.text = "Time: " + userDuration + "・" + "Pace: " + userPace
         
         // populate layout 7
         PhotoTitle7.text = userTitleText
@@ -429,9 +421,11 @@ class PhotoPickerViewController: UIViewController, UIImagePickerControllerDelega
             IconTimer2.alpha = 0
             
             // layout 3
-            PhotoDuration3.alpha = 0
-            PhotoPace3.alpha = 0
-            TimeBacker3.alpha = 0
+            if(userDistanceChoice == "Miles"){
+                PhotoInfo3.text = userDistanceText + " M"
+            }else if(userDistanceChoice == "Kilometers"){
+                PhotoInfo3.text = userDistanceText + " KM"
+            }
             
             // layout 4
             PhotoTime4.alpha = 0
@@ -472,9 +466,11 @@ class PhotoPickerViewController: UIViewController, UIImagePickerControllerDelega
             IconTimer2.alpha = 1
             
             // layout 3
-            PhotoDuration3.alpha = 1
-            PhotoPace3.alpha = 1
-            TimeBacker3.alpha = 1
+            if(userDistanceChoice == "Miles"){
+                PhotoInfo3.text = userDistanceText + " M" + "・" + "TIME: " + userDuration + "・" + "PACE: " + userPace
+            }else if(userDistanceChoice == "Kilometers"){
+                PhotoInfo3.text = userDistanceText + " KM" + "・" + "TIME: " + userDuration + "・" + "PACE: " + userPace
+            }
             
             // layout 4
             PhotoTime4.alpha = 1

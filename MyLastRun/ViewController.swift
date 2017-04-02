@@ -389,8 +389,6 @@ class ViewController: UIViewController, UITextFieldDelegate, UIImagePickerContro
                         print("Duration this month: \(self.convertDuration(duration:self.totalDurationMonth))")
                         print("Average Pace this month: \(self.calculateAveragePace(distance: self.totalMilesMonth, duration: self.totalDurationMonth))")
                     }
-                            
-                    
                     
                     for i in 0 ..< self.yearlyRuns.count{
                         let distance = self.convertKMToMiles(distance: self.yearlyRuns[i].totalDistance!)
@@ -406,8 +404,6 @@ class ViewController: UIViewController, UITextFieldDelegate, UIImagePickerContro
                         print("Duration this year: \(self.convertDuration(duration:self.totalDurationYear))")
                         print("Average Pace this year: \(self.calculateAveragePace(distance: self.totalMilesYear, duration: self.totalDurationYear))")
                     }
-                    
-                    
                 
                     let lastDistance = self.convertKMToMiles(distance: self.workouts[0].totalDistance!)
                 
@@ -688,8 +684,6 @@ class ViewController: UIViewController, UITextFieldDelegate, UIImagePickerContro
         
     }
     
-    
-    
     @IBAction func unwindToStats(segue: UIStoryboardSegue) {
         if let modalVC = segue.source as? AddWorkoutViewController, segue.identifier == "closeModal" {
                 
@@ -705,7 +699,6 @@ class ViewController: UIViewController, UITextFieldDelegate, UIImagePickerContro
             // Now do stuff with the text.
         }
     }
-    
     
     // pass variables through to next view
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -738,6 +731,10 @@ class ViewController: UIViewController, UITextFieldDelegate, UIImagePickerContro
             tableVC.passedInt = selectedRun
             tableVC.workouts = workouts
             
+        }else if segue.identifier == "showSummary"{
+            let summaryPreviewVC = segue.destination as? SummaryPreviewViewController
+            
+            summaryPreviewVC?.passedImage = ImageChoice.image
         }
     }
     
