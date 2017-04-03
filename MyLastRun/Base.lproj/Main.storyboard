@@ -859,12 +859,12 @@
                                                 <rect key="frame" x="0.0" y="18" width="210" height="34"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             </imageView>
-                                            <textField opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="MARATHON TRAINING" textAlignment="center" minimumFontSize="1" background="TitleGradient" translatesAutoresizingMaskIntoConstraints="NO" id="vd3-DN-qJ0">
-                                                <rect key="frame" x="7" y="275" width="305" height="37"/>
+                                            <textField opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="MARATHON TRAINING" textAlignment="center" minimumFontSize="1" translatesAutoresizingMaskIntoConstraints="NO" id="vd3-DN-qJ0">
+                                                <rect key="frame" x="7" y="285" width="305" height="32"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                                <fontDescription key="fontDescription" name="qontra-Regular" family="qontra" pointSize="28"/>
-                                                <textInputTraits key="textInputTraits" autocapitalizationType="allCharacters"/>
+                                                <fontDescription key="fontDescription" name="HelveticaNeue-Italic" family="Helvetica Neue" pointSize="20"/>
+                                                <textInputTraits key="textInputTraits"/>
                                             </textField>
                                             <textField opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="July 24, 1977 at 8:45 am" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="sSA-Pl-FBF">
                                                 <rect key="frame" x="8" y="3" width="150" height="14"/>
@@ -884,7 +884,7 @@
                                                 <fontDescription key="fontDescription" name="qontra-Regular" family="qontra" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
-                                            <textField opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="15.88 Miles" textAlignment="natural" adjustsFontSizeToFit="NO" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="OBC-6E-JmI">
+                                            <textField opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="15.88 Miles" textAlignment="natural" minimumFontSize="2" translatesAutoresizingMaskIntoConstraints="NO" id="OBC-6E-JmI">
                                                 <rect key="frame" x="7" y="18" width="206" height="34"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -1337,7 +1337,7 @@
                                             <stackView opaque="NO" contentMode="scaleToFill" spacing="7" translatesAutoresizingMaskIntoConstraints="NO" id="vnu-WG-B6h" userLabel="Date Input Stack View">
                                                 <rect key="frame" x="0.0" y="28.999999999999996" width="378" height="34.666666666666657"/>
                                                 <subviews>
-                                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" horizontalHuggingPriority="249" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="January" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="3ed-Ez-DdA">
+                                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" horizontalHuggingPriority="249" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="January" borderStyle="roundedRect" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="3ed-Ez-DdA">
                                                         <rect key="frame" x="0.0" y="0.0" width="378" height="34.666666666666664"/>
                                                         <color key="textColor" red="0.47450980390000003" green="0.57647058819999997" blue="0.2784313725" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="20"/>
@@ -1940,7 +1940,6 @@
         <image name="Ribbon" width="158" height="246"/>
         <image name="ScriptFrame" width="472" height="322"/>
         <image name="Share" width="170" height="170"/>
-        <image name="TitleGradient" width="640" height="60"/>
         <image name="TopGradient" width="640" height="77"/>
         <image name="Vignette" width="375" height="375"/>
     </resources>
