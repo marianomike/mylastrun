@@ -20,9 +20,9 @@ class SummaryViewController: UIViewController, UITextFieldDelegate, UIPickerView
     var typeChoice:String! = ""
     var summaryDate:String! = ""
     var summaryDuration:String! = "00:00:00"
-    var summaryPace:String! = "00:00:00"
+    var summaryPace:String! = "00:00"
     var parentVC:ViewController!
-    var totalDistance:Double = 0
+    var totalDistance:Double = 0.0
     
     let monthFormatter = DateFormatter()
     let formatMonth = "MMM"
@@ -79,7 +79,7 @@ class SummaryViewController: UIViewController, UITextFieldDelegate, UIPickerView
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.updateLabels()
+        //self.updateLabels()
         
         // Assign Tags to pickers
         picker.tag = 1
@@ -166,9 +166,27 @@ class SummaryViewController: UIViewController, UITextFieldDelegate, UIPickerView
         //print("Passed from parent: \(typeChoice)")
         SummaryCategory.text = typeChoice
         SummaryCategoryInput.text = summaryDate
-        TotalDurationInput.text = summaryDuration
-        AveragePaceInput.text = summaryPace
-        TotalDistanceInput.text = String(totalDistance)
+        if(summaryDuration == "00:00:00"){
+            TotalDurationInput.text = nil
+        }else{
+             TotalDurationInput.text = summaryDuration
+        }
+        
+        if(summaryPace == "00:00"){
+            AveragePaceInput.text = nil
+        }else{
+            AveragePaceInput.text = summaryPace
+        }
+        
+        if(totalDistance == 0.0){
+            TotalDistanceInput.text = nil
+        }else{
+            TotalDistanceInput.text = String(totalDistance)
+        }
+        
+        //reset to miles
+        picker.selectRow(0, inComponent: 0, animated: true)
+        TotalMetricInput.text = "Miles"
     }
     
     func milesToKilometers(speedInMPH:Double) ->Double {

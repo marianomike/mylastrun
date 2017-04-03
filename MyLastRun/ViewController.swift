@@ -60,8 +60,8 @@ class ViewController: UIViewController, UITextFieldDelegate, UIImagePickerContro
     var showStats:Bool! = true
     var showSummaryStats:Bool! = true
     var typeChoice:String! = "Single"
-    var totalMilesMonth:Double = 0
-    var totalMilesYear:Double = 0
+    var totalMilesMonth:Double = 0.0
+    var totalMilesYear:Double = 0.0
     var totalDurationMonth:TimeInterval = 0
     var totalDurationYear:TimeInterval = 0
     var curYear:String = "2017"
@@ -295,8 +295,9 @@ class ViewController: UIViewController, UITextFieldDelegate, UIImagePickerContro
             summaryVC.summaryPace = paceYear
         }else if(type == "Month"){
             summaryVC.totalDistance = totalMilesMonth
-            summaryVC.summaryDate = curMonth
             summaryVC.summaryDuration = durationMonth
+            summaryVC.summaryDate = curMonth
+            
             summaryVC.summaryPace = paceMonth
         }
         summaryVC.updateLabels()
@@ -797,6 +798,7 @@ class ViewController: UIViewController, UITextFieldDelegate, UIImagePickerContro
             MetricsInput.text = metricsOptions[row]
             
             if(metricsOptions[row] == "Miles"){
+                //if()
                 updateToMiles()
             }else if(metricsOptions[row] == "Kilometers"){
                 updateToKM()
