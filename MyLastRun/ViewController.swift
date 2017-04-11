@@ -450,6 +450,7 @@ class ViewController: UIViewController, UITextFieldDelegate, UIImagePickerContro
     }
     
     func calculatePace(distance: HKQuantity, duration: TimeInterval) -> String{
+
         let distanceInKM = distance.doubleValue(for: HKUnit.mile())
         let pace = duration/distanceInKM
         
@@ -490,32 +491,37 @@ class ViewController: UIViewController, UITextFieldDelegate, UIImagePickerContro
     }
     
     func milesToKilometers(speedInMPH:Double) ->Double {
+        print("Miles entered: \(speedInMPH as Any)")
         let speedInKPH = speedInMPH * 1.60934
         return speedInKPH as Double
     }
     
     func kilometersToMiles(speedInMPH:Double) ->Double {
+        print("Miles entered: \(speedInMPH as Any)")
         let speedInKPH = speedInMPH / 1.60934
         return speedInKPH as Double
     }
     
     func updateToKM(){
         let distanceInMiles = Double(DistanceInput.text!)
+        print("Miles entered: \(distanceInMiles as Any)")
         if(distanceInMiles != nil){
             var distanceInKilometers = milesToKilometers(speedInMPH: distanceInMiles!)
             distanceInKilometers = distanceInKilometers.roundTo(places: 2)
             DistanceInput.text = String(describing:distanceInKilometers)
-            
             let duration = parseDuration(TimeInput.text!)
-            let pace = duration/distanceInKilometers
-            print(pace)
-            
-            formatter.unitsStyle = .positional
-            formatter.allowedUnits = [ .minute, .second ]
-            formatter.zeroFormattingBehavior = [ .pad ]
-            
-            let convertedPace = formatter.string(from: pace)
-            PaceInput.text = convertedPace
+            print("Duration entered: \(duration as Any)")
+            if(duration != 0.0){
+                let pace = duration/distanceInKilometers
+                print(pace)
+                
+                formatter.unitsStyle = .positional
+                formatter.allowedUnits = [ .minute, .second ]
+                formatter.zeroFormattingBehavior = [ .pad ]
+                
+                let convertedPace = formatter.string(from: pace)
+                PaceInput.text = convertedPace
+            }
         }
     }
     
@@ -542,15 +548,17 @@ class ViewController: UIViewController, UITextFieldDelegate, UIImagePickerContro
             DistanceInput.text = String(describing:distanceInMiles)
             
             let duration = parseDuration(TimeInput.text!)
-            let pace = duration/distanceInMiles
-            print(pace)
-            
-            formatter.unitsStyle = .positional
-            formatter.allowedUnits = [ .minute, .second ]
-            formatter.zeroFormattingBehavior = [ .pad ]
-            
-            let convertedPace = formatter.string(from: pace)
-            PaceInput.text = convertedPace
+            if(duration != 0.0){
+                let pace = duration/distanceInMiles
+                print(pace)
+                
+                formatter.unitsStyle = .positional
+                formatter.allowedUnits = [ .minute, .second ]
+                formatter.zeroFormattingBehavior = [ .pad ]
+                
+                let convertedPace = formatter.string(from: pace)
+                PaceInput.text = convertedPace
+            }
         }
     }
     

@@ -222,15 +222,17 @@ class SummaryViewController: UIViewController, UITextFieldDelegate, UIPickerView
             TotalDistanceInput.text = String(describing:distanceInKilometers)
             
             let duration = parseDuration(TotalDurationInput.text!)
-            let pace = duration/distanceInKilometers
-            print(pace)
-            
-            formatter.unitsStyle = .positional
-            formatter.allowedUnits = [ .minute, .second ]
-            formatter.zeroFormattingBehavior = [ .pad ]
-            
-            let convertedPace = formatter.string(from: pace)
-            AveragePaceInput.text = convertedPace
+            if(duration != 0.0){
+                let pace = duration/distanceInKilometers
+                print(pace)
+                
+                formatter.unitsStyle = .positional
+                formatter.allowedUnits = [ .minute, .second ]
+                formatter.zeroFormattingBehavior = [ .pad ]
+                
+                let convertedPace = formatter.string(from: pace)
+                AveragePaceInput.text = convertedPace
+            }
         }
     }
     
@@ -242,15 +244,17 @@ class SummaryViewController: UIViewController, UITextFieldDelegate, UIPickerView
             TotalDistanceInput.text = String(describing:distanceInMiles)
             
             let duration = parseDuration(TotalDurationInput.text!)
-            let pace = duration/distanceInMiles
-            print(pace)
-            
-            formatter.unitsStyle = .positional
-            formatter.allowedUnits = [ .minute, .second ]
-            formatter.zeroFormattingBehavior = [ .pad ]
-            
-            let convertedPace = formatter.string(from: pace)
-            AveragePaceInput.text = convertedPace
+            if(duration != 0.0){
+                let pace = duration/distanceInMiles
+                print(pace)
+                
+                formatter.unitsStyle = .positional
+                formatter.allowedUnits = [ .minute, .second ]
+                formatter.zeroFormattingBehavior = [ .pad ]
+                
+                let convertedPace = formatter.string(from: pace)
+                AveragePaceInput.text = convertedPace
+            }
         }
     }
 
